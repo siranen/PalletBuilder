@@ -54,7 +54,7 @@
             this.gbPallet = new System.Windows.Forms.GroupBox();
             this.lbDescription = new System.Windows.Forms.Label();
             this.lbPalletDescription = new System.Windows.Forms.Label();
-            this.pbPallet = new System.Windows.Forms.PictureBox();
+            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             this.cbPallet = new System.Windows.Forms.ComboBox();
             this.lbPallet = new System.Windows.Forms.Label();
             this.gbConstraints = new System.Windows.Forms.GroupBox();
@@ -80,7 +80,7 @@
             this.gbCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaseWeight)).BeginInit();
             this.gbPallet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPallet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlPallet)).BeginInit();
             this.gbConstraints.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxPalletWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxPalletHeight)).BeginInit();
@@ -293,7 +293,7 @@
             // 
             this.gbPallet.Controls.Add(this.lbDescription);
             this.gbPallet.Controls.Add(this.lbPalletDescription);
-            this.gbPallet.Controls.Add(this.pbPallet);
+            this.gbPallet.Controls.Add(this.graphCtrlPallet);
             this.gbPallet.Controls.Add(this.cbPallet);
             this.gbPallet.Controls.Add(this.lbPallet);
             resources.ApplyResources(this.gbPallet, "gbPallet");
@@ -312,9 +312,9 @@
             // 
             // pbPallet
             // 
-            resources.ApplyResources(this.pbPallet, "pbPallet");
-            this.pbPallet.Name = "pbPallet";
-            this.pbPallet.TabStop = false;
+            resources.ApplyResources(this.graphCtrlPallet, "pbPallet");
+            this.graphCtrlPallet.Name = "pbPallet";
+            this.graphCtrlPallet.TabStop = false;
             // 
             // cbPallet
             // 
@@ -469,8 +469,6 @@
             this.Name = "FormDefineAnalysis";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDefineAnalysis_FormClosing);
-            this.Load += new System.EventHandler(this.FormDefineAnalysis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCaseLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaseWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaseHeight)).EndInit();
@@ -482,7 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCaseWeight)).EndInit();
             this.gbPallet.ResumeLayout(false);
             this.gbPallet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPallet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlPallet)).EndInit();
             this.gbConstraints.ResumeLayout(false);
             this.gbConstraints.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxPalletWeight)).EndInit();
@@ -517,7 +515,7 @@
         private System.Windows.Forms.GroupBox gbPallet;
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Label lbPalletDescription;
-        private System.Windows.Forms.PictureBox pbPallet;
+        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
         private System.Windows.Forms.ComboBox cbPallet;
         private System.Windows.Forms.Label lbPallet;
         private System.Windows.Forms.GroupBox gbConstraints;

@@ -31,6 +31,24 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -59,6 +77,18 @@
     </Compile>
     <Compile Include="FormDefineAnalysis.Designer.cs">
       <DependentUpon>FormDefineAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDefineBundleCaseAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDefineBundleCaseAnalysis.Designer.cs">
+      <DependentUpon>FormDefineBundleCaseAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDefineBundlePalletAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDefineBundlePalletAnalysis.Designer.cs">
+      <DependentUpon>FormDefineBundlePalletAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDefineCaseOptimization.cs">
       <SubType>Form</SubType>
@@ -123,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDefineAnalysis.resx">
       <DependentUpon>FormDefineAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDefineBundleCaseAnalysis.resx">
+      <DependentUpon>FormDefineBundleCaseAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDefineBundlePalletAnalysis.resx">
+      <DependentUpon>FormDefineBundlePalletAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDefineCaseOptimization.fr-FR.resx">
       <DependentUpon>FormDefineCaseOptimization.cs</DependentUpon>

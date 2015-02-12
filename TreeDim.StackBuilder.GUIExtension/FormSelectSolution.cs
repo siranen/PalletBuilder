@@ -22,7 +22,7 @@ using TreeDim.StackBuilder.GUIExtension.Properties;
 
 namespace TreeDim.StackBuilder.GUIExtension
 {
-    public partial class FormSelectSolution : Form
+    public partial class FormSelectSolution : Form, IDrawingContainer
     {
         #region Constructor
         public FormSelectSolution(Document doc, CasePalletAnalysis analysis)
@@ -37,6 +37,7 @@ namespace TreeDim.StackBuilder.GUIExtension
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            graphCtrlSolution.DrawingContainer = this;
             // fill grid
             FillGrid();
 
@@ -160,7 +161,7 @@ namespace TreeDim.StackBuilder.GUIExtension
 
             // select first solution
             gridSolutions.Selection.SelectRow(1, true);
-            Draw();
+            graphCtrlSolution.Invalidate();
         }
 
         private string PalletSolutionLimitToString(CasePalletSolution.Limit limit)
@@ -214,7 +215,7 @@ namespace TreeDim.StackBuilder.GUIExtension
             // no selection -> exit
             if (indexes.Length == 0) return;
             // redraw
-            Draw();
+            graphCtrlSolution.Invalidate();
         }
         #endregion
 
@@ -288,39 +289,18 @@ namespace TreeDim.StackBuilder.GUIExtension
         #region Handlers
         private void onRedrawNeeded(object sender, EventArgs e)
         {
-            Draw();
+            graphCtrlSolution.Invalidate();
         }
         #endregion
 
         #region Drawing
-        private void Draw()
+        public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
             try
             {
-                // sanity check
-                if (pictureBoxSolution.Size.Width < 1 || pictureBoxSolution.Size.Height < 1)
-                    return;
-                // instantiate graphics
-                Graphics3DImage graphics = new Graphics3DImage(pictureBoxSolution.Size);
-                // set camera position 
-                double angleHorizRad = trackBarAngleHoriz.Value * Math.PI / 180.0;
-                double angleVertRad = trackBarAngleVert.Value * Math.PI / 180.0;
-                graphics.CameraPosition = new Vector3D(
-                    _cameraDistance * Math.Cos(angleHorizRad) * Math.Cos(angleVertRad)
-                    , _cameraDistance * Math.Sin(angleHorizRad) * Math.Cos(angleVertRad)
-                    , _cameraDistance * Math.Sin(angleVertRad));
-                // set camera target
-                graphics.Target = Vector3D.Zero;
-                // set viewport (not actually needed)
-                graphics.SetViewport(-500.0f, -500.0f, 500.0f, 500.0f);
-                // show images
-                graphics.ShowTextures = true;
                 // instantiate solution viewer
                 CasePalletSolutionViewer sv = new CasePalletSolutionViewer(CurrentSolution);
                 sv.Draw(graphics);
-
-                // show generated bitmap on picture box control
-                pictureBoxSolution.Image = graphics.Bitmap;
             }
             catch (Exception ex)
             {
@@ -332,10 +312,6 @@ namespace TreeDim.StackBuilder.GUIExtension
         #region Data members
         private Document _document;
         private CasePalletAnalysis _analysis;
-        /// <summary>
-        /// view parameters
-        /// </summary>
-        private const double _cameraDistance = 10000.0;
         /// <summary>
         /// log4net
         /// </summary>

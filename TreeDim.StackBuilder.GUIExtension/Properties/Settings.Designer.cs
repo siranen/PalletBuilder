@@ -109,7 +109,7 @@ namespace TreeDim.StackBuilder.GUIExtension.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public double CaseWeight {
             get {
                 return ((double)(this["CaseWeight"]));
@@ -269,6 +269,66 @@ namespace TreeDim.StackBuilder.GUIExtension.Properties {
             }
             set {
                 this["ForceVerticalBoxOrientation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public double BoxFlatWeight {
+            get {
+                return ((double)(this["BoxFlatWeight"]));
+            }
+            set {
+                this["BoxFlatWeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public double CaseLength {
+            get {
+                return ((double)(this["CaseLength"]));
+            }
+            set {
+                this["CaseLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public double CaseWidth {
+            get {
+                return ((double)(this["CaseWidth"]));
+            }
+            set {
+                this["CaseWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public double CaseHeight {
+            get {
+                return ((double)(this["CaseHeight"]));
+            }
+            set {
+                this["CaseHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int NoFlatsInBundle {
+            get {
+                return ((int)(this["NoFlatsInBundle"]));
+            }
+            set {
+                this["NoFlatsInBundle"] = value;
             }
         }
     }

@@ -260,7 +260,10 @@ namespace TreeDim.StackBuilder.Graphics
         }
         public int BundleFlats
         {
-            get { return _noFlats; }
+            get
+            {
+                return _noFlats; 
+            }
         }
 
         public Face TopFace

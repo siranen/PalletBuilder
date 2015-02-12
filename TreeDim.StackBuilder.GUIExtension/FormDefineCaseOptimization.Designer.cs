@@ -45,7 +45,7 @@
             this.nudPalletHeight = new System.Windows.Forms.NumericUpDown();
             this.lbPalletHeight = new System.Windows.Forms.Label();
             this.gbPallet = new System.Windows.Forms.GroupBox();
-            this.pbPallet = new System.Windows.Forms.PictureBox();
+            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             this.cbPallet = new System.Windows.Forms.ComboBox();
             this.lbPallet = new System.Windows.Forms.Label();
             this.btSetMaximum = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPalletHeight)).BeginInit();
             this.gbPallet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPallet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlPallet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallThickness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallsHeightDir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallsWidthDir)).BeginInit();
@@ -233,7 +233,7 @@
             // gbPallet
             // 
             resources.ApplyResources(this.gbPallet, "gbPallet");
-            this.gbPallet.Controls.Add(this.pbPallet);
+            this.gbPallet.Controls.Add(this.graphCtrlPallet);
             this.gbPallet.Controls.Add(this.nudPalletHeight);
             this.gbPallet.Controls.Add(this.lbPalletHeight);
             this.gbPallet.Controls.Add(this.cbPallet);
@@ -243,9 +243,9 @@
             // 
             // pbPallet
             // 
-            resources.ApplyResources(this.pbPallet, "pbPallet");
-            this.pbPallet.Name = "pbPallet";
-            this.pbPallet.TabStop = false;
+            resources.ApplyResources(this.graphCtrlPallet, "pbPallet");
+            this.graphCtrlPallet.Name = "pbPallet";
+            this.graphCtrlPallet.TabStop = false;
             // 
             // cbPallet
             // 
@@ -521,8 +521,6 @@
             this.Name = "FormDefineCaseOptimization";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDefineCaseOptimization_FormClosing);
-            this.Load += new System.EventHandler(this.FormDefineCaseOptimization_Load);
             this.statusStripDef.ResumeLayout(false);
             this.statusStripDef.PerformLayout();
             this.groupBox.ResumeLayout(false);
@@ -534,7 +532,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPalletHeight)).EndInit();
             this.gbPallet.ResumeLayout(false);
             this.gbPallet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPallet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlPallet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallThickness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallsHeightDir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWallsWidthDir)).EndInit();
@@ -597,13 +595,13 @@
         private System.Windows.Forms.Label lbMaxCaseDimensions;
         private System.Windows.Forms.Label lbMinCaseDimensions;
         private System.Windows.Forms.Button btOptimize;
-        private SourceGrid.Grid gridSolutions;
-        private System.Windows.Forms.PictureBox pbPallet;
         private System.Windows.Forms.PictureBox pbBoxesLayout;
         private System.Windows.Forms.PictureBox pbPalletSolution;
         private System.Windows.Forms.ToolStrip toolStripTools;
         private System.Windows.Forms.ToolStripButton toolStripButtonReport;
         private System.Windows.Forms.ToolStripButton toolStripButtonStackBuilder;
         private System.Windows.Forms.SaveFileDialog saveFileDialogAsStb;
+        private SourceGrid.Grid gridSolutions;
+        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
     }
 }

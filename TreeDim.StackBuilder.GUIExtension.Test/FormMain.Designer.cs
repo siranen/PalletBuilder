@@ -30,6 +30,8 @@
         {
             this.bnCasePalletAnalysis = new System.Windows.Forms.Button();
             this.bnBoxCasePalletOptimization = new System.Windows.Forms.Button();
+            this.bnBundlePalletAnalysis = new System.Windows.Forms.Button();
+            this.bnBundleCaseAnalysis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bnCasePalletAnalysis
@@ -52,11 +54,33 @@
             this.bnBoxCasePalletOptimization.UseVisualStyleBackColor = true;
             this.bnBoxCasePalletOptimization.Click += new System.EventHandler(this.bnBoxCasePalletOptimization_Click);
             // 
+            // bnBundlePalletAnalysis
+            // 
+            this.bnBundlePalletAnalysis.Location = new System.Drawing.Point(16, 66);
+            this.bnBundlePalletAnalysis.Name = "bnBundlePalletAnalysis";
+            this.bnBundlePalletAnalysis.Size = new System.Drawing.Size(178, 23);
+            this.bnBundlePalletAnalysis.TabIndex = 2;
+            this.bnBundlePalletAnalysis.Text = "Bundle / Pallet analysis";
+            this.bnBundlePalletAnalysis.UseVisualStyleBackColor = true;
+            this.bnBundlePalletAnalysis.Click += new System.EventHandler(this.bnBundlePalletAnalysis_Click);
+            // 
+            // bnBundleCaseAnalysis
+            // 
+            this.bnBundleCaseAnalysis.Location = new System.Drawing.Point(16, 95);
+            this.bnBundleCaseAnalysis.Name = "bnBundleCaseAnalysis";
+            this.bnBundleCaseAnalysis.Size = new System.Drawing.Size(178, 23);
+            this.bnBundleCaseAnalysis.TabIndex = 3;
+            this.bnBundleCaseAnalysis.Text = "Bundle / Case analysis";
+            this.bnBundleCaseAnalysis.UseVisualStyleBackColor = true;
+            this.bnBundleCaseAnalysis.Click += new System.EventHandler(this.bnBundleCaseAnalysis_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.bnBundleCaseAnalysis);
+            this.Controls.Add(this.bnBundlePalletAnalysis);
             this.Controls.Add(this.bnBoxCasePalletOptimization);
             this.Controls.Add(this.bnCasePalletAnalysis);
             this.Name = "FormMain";
@@ -69,6 +93,8 @@
 
         private System.Windows.Forms.Button bnCasePalletAnalysis;
         private System.Windows.Forms.Button bnBoxCasePalletOptimization;
+        private System.Windows.Forms.Button bnBundlePalletAnalysis;
+        private System.Windows.Forms.Button bnBundleCaseAnalysis;
     }
 }
 

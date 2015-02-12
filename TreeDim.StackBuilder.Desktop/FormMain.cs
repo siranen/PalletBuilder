@@ -1530,9 +1530,5 @@ namespace TreeDim.StackBuilder.Desktop
             return _instance;
         }
         #endregion
-
-
-
-
     }
 }

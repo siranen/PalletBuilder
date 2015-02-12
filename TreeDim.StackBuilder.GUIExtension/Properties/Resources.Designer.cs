@@ -115,6 +115,15 @@ namespace TreeDim.StackBuilder.GUIExtension.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to # bundles.
+        /// </summary>
+        internal static string ID_BUNDLECOUNT {
+            get {
+                return ResourceManager.GetString("ID_BUNDLECOUNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Case count.
         /// </summary>
         internal static string ID_CASECOUNT {
@@ -138,6 +147,15 @@ namespace TreeDim.StackBuilder.GUIExtension.Properties {
         internal static string ID_CASESPALLET {
             get {
                 return ResourceManager.GetString("ID_CASESPALLET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Case weight.
+        /// </summary>
+        internal static string ID_CASEWEIGHT {
+            get {
+                return ResourceManager.GetString("ID_CASEWEIGHT", resourceCulture);
             }
         }
         

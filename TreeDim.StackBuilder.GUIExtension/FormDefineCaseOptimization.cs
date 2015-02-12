@@ -24,7 +24,7 @@ using TreeDim.StackBuilder.GUIExtension.Properties;
 
 namespace TreeDim.StackBuilder.GUIExtension
 {
-    public partial class FormDefineCaseOptimization : Form
+    public partial class FormDefineCaseOptimization : Form, IDrawingContainer
     {
         #region Data members
         private string _boxName;
@@ -129,8 +129,10 @@ namespace TreeDim.StackBuilder.GUIExtension
         #endregion
 
         #region Load / Close
-        private void FormDefineCaseOptimization_Load(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+            graphCtrlPallet.DrawingContainer = this;
             // load pallets
             LoadPallets();
             // set default pallet height
@@ -151,8 +153,9 @@ namespace TreeDim.StackBuilder.GUIExtension
             // fill grid
             FillGrid();
         }
-        private void FormDefineCaseOptimization_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
+ 	        base.OnClosing(e);
             try
             {
                 // save setings
@@ -175,7 +178,7 @@ namespace TreeDim.StackBuilder.GUIExtension
             PalletItem item = cbPallet.Items[cbPallet.SelectedIndex] as PalletItem;
             _palletProperties = item.Item;
             // update pallet image
-            DrawPallet();
+            graphCtrlPallet.Invalidate();
         }
         private void btOptimize_Click(object sender, EventArgs e)
         {
@@ -416,9 +419,16 @@ namespace TreeDim.StackBuilder.GUIExtension
             cbPallet.SelectedIndex = selectedIndex;
         }
 
-        private void DrawPallet()
+        public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
-            PalletToPictureBox.Draw(SelectedPallet, pbPallet);
+            if (graphCtrlPallet == ctrl)
+            {
+                PalletProperties pp = SelectedPallet;
+                Pallet pallet = new Pallet(pp);
+                pallet.Draw(graphics, Transform3D.Identity);
+                DimensionCube dc = new DimensionCube(pp.Length, pp.Width, pp.Height) { FontSize = 6.0f };
+                graphics.AddDimensions(dc);
+            }
         }
  
         private int SelectedSolutionIndex

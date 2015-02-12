@@ -62,6 +62,11 @@ namespace TreeDim.StackBuilder.Basics
         {
             _color = color;
         }
+        public override double Weight
+        {
+            get { return _unitWeight * _noFlats; }
+            set { base.Weight = value; }
+        }
         public double UnitThickness
         {
             get { return _unitThickness; }

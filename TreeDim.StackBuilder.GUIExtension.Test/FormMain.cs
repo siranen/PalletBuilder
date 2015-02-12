@@ -23,8 +23,7 @@ namespace TreeDim.StackBuilder.GUIExtension.Test
         {
             try
             {
-                Palletization palletization = new Palletization();
-                palletization.StartPalletization("Default case", 220, 140, 145);
+                Palletization.StartPalletization("Default case", 220, 140, 145);
             }
             catch (Exception ex)
             {
@@ -36,8 +35,31 @@ namespace TreeDim.StackBuilder.GUIExtension.Test
         {
             try
             {
-                Palletization palletization = new Palletization();
-                palletization.StartCaseOptimization("Default box", 100, 60, 40); 
+                Palletization.StartCaseOptimization("Default box", 100, 60, 40); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void bnBundlePalletAnalysis_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Palletization.StartBundlePalletAnalysis("Default bundle", 600, 400, 5.0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void bnBundleCaseAnalysis_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Palletization.StartBundleCaseAnalysis("Default bundle", 60, 40, 1.0);
             }
             catch (Exception ex)
             {

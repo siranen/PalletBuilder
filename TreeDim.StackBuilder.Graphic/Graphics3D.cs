@@ -698,7 +698,7 @@ namespace TreeDim.StackBuilder.Graphics
                 if (box.IsBundle && i < 4)
                 {
                     Pen penPathThin = new Pen(brushPath, 1.5f);
-                    int noSlice = box.BundleFlats;
+                    int noSlice = Math.Min(box.BundleFlats, 4);
                     for (int iSlice = 0; iSlice < noSlice - 1; ++iSlice)
                     {
                         Vector3D[] ptSlice = new Vector3D[2];

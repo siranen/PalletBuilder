@@ -22,7 +22,7 @@ namespace TreeDim.StackBuilder.Graphics
     #endregion
 
     #region Graphics3DControl
-    public partial class Graphics3DControl : UserControl
+    public partial class Graphics3DControl : UserControl, ISupportInitialize
     {
         #region Data members
         public double _angleHoriz = 45.0, _angleVert = 45.0;
@@ -137,6 +137,15 @@ namespace TreeDim.StackBuilder.Graphics
             // draw toolbar
             if (ShowToolBar)
                 DrawToolBar(e.Graphics);
+        }
+        #endregion
+
+        #region ISupportInitialize
+        public void BeginInit()
+        { 
+        }
+        public void EndInit()
+        { 
         }
         #endregion
 

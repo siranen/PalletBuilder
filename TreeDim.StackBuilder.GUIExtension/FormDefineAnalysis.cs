@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Sharp3D.Math.Core;
+
 using TreeDim.StackBuilder.Basics;
 using TreeDim.StackBuilder.Graphics;
 
@@ -15,7 +17,7 @@ using TreeDim.StackBuilder.Graphics;
 
 namespace TreeDim.StackBuilder.GUIExtension
 {
-    public partial class FormDefineAnalysis : Form
+    public partial class FormDefineAnalysis : Form, IDrawingContainer
     {
         #region Constructor
         public FormDefineAnalysis()
@@ -28,6 +30,11 @@ namespace TreeDim.StackBuilder.GUIExtension
         #endregion
 
         #region Public properties
+        public List<PalletProperties> Pallets
+        {
+            get { return _pallets; }
+            set { _pallets = value; }        
+        }
         public string CaseName
         {
             get { return _caseName; }
@@ -91,9 +98,11 @@ namespace TreeDim.StackBuilder.GUIExtension
         }
         #endregion
 
-        #region Load / close 
-        private void FormDefineAnalysis_Load(object sender, EventArgs e)
+        #region Form override 
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+            graphCtrlPallet.DrawingContainer = this;
             // loads pallets
             LoadPallets();
             // draw box positions
@@ -113,8 +122,9 @@ namespace TreeDim.StackBuilder.GUIExtension
             chkMaxPalletWeight.Checked = Properties.Settings.Default.UseMaximumPalletWeight;
             nudMaxPalletWeight.Value = (decimal)Properties.Settings.Default.MaximumPalletWeight;
         }
-        private void FormDefineAnalysis_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
+            base.OnClosing(e);
             // save allowed case positions
             Properties.Settings.Default.AllowOrientationX = chkX.Checked;
             Properties.Settings.Default.AllowOrientationY = chkY.Checked;
@@ -144,7 +154,7 @@ namespace TreeDim.StackBuilder.GUIExtension
             // update description
             lbPalletDescription.Text = _palletProperties.Description;
             // update pallet image
-            DrawPallet();
+            graphCtrlPallet.Invalidate();
         }
 
         private void CaseDimensionChanged(object sender, EventArgs e)
@@ -169,18 +179,9 @@ namespace TreeDim.StackBuilder.GUIExtension
         {
             string palletName = Properties.Settings.Default.PalletName;
             int selectedIndex = -1;
-            List<PalletProperties> pallets = new List<PalletProperties>();
-
-            pallets.Add(new PalletProperties(null, "BLOCK", 1200.0, 1000.0, 150.0)); pallets[0].Name = "Block";  pallets[0].Description = "Wood block";
-            pallets.Add(new PalletProperties(null, "UK Standard", 1200.0, 1000.0, 150.0)); pallets[1].Name = "Standard UK"; pallets[1].Description = "Standard UK pallet";
-            pallets.Add(new PalletProperties(null, "GMA 48x40", 1219.2, 1016.0, 120.7)); pallets[2].Name = "GMA 48x40"; pallets[2].Description = "Grocery Manufacturer Association (North America)";
-            pallets.Add(new PalletProperties(null, "EUR", 1200.0, 800.0, 144.0)); pallets[3].Name = "EUR"; pallets[3].Description = "EUR-EPAL (European Pallet Association)";
-            pallets.Add(new PalletProperties(null, "EUR2", 1200.0, 1000.0, 144.0)); pallets[4].Name = "EUR2"; pallets[4].Description = "EUR2-EPAL (European Pallet Association)";
-            pallets.Add(new PalletProperties(null, "EUR3", 1200.0, 1000.0, 144.0)); pallets[5].Name = "EUR3"; pallets[5].Description = "EUR3-EPAL (European Pallet Association)";
-            pallets.Add(new PalletProperties(null, "EUR6", 800.0, 600.0, 144.0)); pallets[6].Name = "EUR6"; pallets[6].Description = "EUR6-EPAL (European Pallet Association)";
 
             int i = 0;
-            foreach (PalletProperties pallet in pallets)
+            foreach (PalletProperties pallet in _pallets)
             {
                 cbPallet.Items.Add(new PalletItem(pallet));
                 if (palletName == pallet.Name)
@@ -197,9 +198,18 @@ namespace TreeDim.StackBuilder.GUIExtension
             BoxToPictureBox.Draw(currentCase, HalfAxis.HAxis.AXIS_Y_P, pbCaseY);
             BoxToPictureBox.Draw(currentCase, HalfAxis.HAxis.AXIS_Z_P, pbCaseZ);
         }
-        private void DrawPallet()
+        #endregion
+
+        #region Implementation IDrawingContainer
+        public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
-            PalletToPictureBox.Draw(_palletProperties, pbPallet);
+            if (graphCtrlPallet == ctrl)
+            {
+                Pallet pallet = new Pallet(_palletProperties);
+                pallet.Draw(graphics, Transform3D.Identity);
+                DimensionCube dc = new DimensionCube(_palletProperties.Length, _palletProperties.Width, _palletProperties.Height) { FontSize = 6.0f };
+                graphics.AddDimensions(dc);                
+            }
         }
         #endregion
 
@@ -208,6 +218,7 @@ namespace TreeDim.StackBuilder.GUIExtension
         private PalletProperties _palletProperties;
         private InterlayerProperties _interlayerProperties;
         private bool _revertX, _revertY, _revertZ;
+        private List<PalletProperties> _pallets;
         #endregion
     }
 }

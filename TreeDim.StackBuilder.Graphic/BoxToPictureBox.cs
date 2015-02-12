@@ -50,32 +50,4 @@ namespace TreeDim.StackBuilder.Graphics
             pictureBox.Image = graphics.Bitmap;
         }
     }
-
-    /// <summary>
-    /// Used to draw a pallet to picture boxes in winforms UIs
-    /// </summary>
-    public class PalletToPictureBox
-    {
-        public static void Draw(PalletProperties palletProperties, PictureBox pictureBox)
-        {
-            double angle = 45.0;
-            Graphics3DImage graphics = new Graphics3DImage(pictureBox.Size);
-            graphics.CameraPosition = new Vector3D(
-                Math.Cos(angle * Math.PI / 180.0) * Math.Sqrt(2.0) * 10000.0
-                , Math.Sin(angle * Math.PI / 180.0) * Math.Sqrt(2.0) * 10000.0
-                , 10000.0);
-            graphics.Target = Vector3D.Zero;
-            graphics.SetViewport(-500.0f, -500.0f, 500.0f, 500.0f);
-
-            Pallet pallet = new Pallet(palletProperties);
-            pallet.Draw(graphics, Transform3D.Identity);
-            DimensionCube dc = new DimensionCube(palletProperties.Length, palletProperties.Width, palletProperties.Height)
-                                    {
-                                        FontSize = 6.0f
-                                    };
-            graphics.AddDimensions(dc);
-            graphics.Flush();
-            pictureBox.Image = graphics.Bitmap;
-        }
-    }
 }
