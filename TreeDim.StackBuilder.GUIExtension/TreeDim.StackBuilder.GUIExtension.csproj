@@ -154,8 +154,14 @@
     <EmbeddedResource Include="FormDefineAnalysis.resx">
       <DependentUpon>FormDefineAnalysis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDefineBundleCaseAnalysis.fr-FR.resx">
+      <DependentUpon>FormDefineBundleCaseAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDefineBundleCaseAnalysis.resx">
       <DependentUpon>FormDefineBundleCaseAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDefineBundlePalletAnalysis.fr-FR.resx">
+      <DependentUpon>FormDefineBundlePalletAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDefineBundlePalletAnalysis.resx">
       <DependentUpon>FormDefineBundlePalletAnalysis.cs</DependentUpon>

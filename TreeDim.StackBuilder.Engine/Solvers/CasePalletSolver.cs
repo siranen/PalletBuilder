@@ -273,6 +273,8 @@ namespace TreeDim.StackBuilder.Engine
 
                                     // check height
                                     maxHeightReached = _constraintSet.UseMaximumHeight && (zLayer + _bProperties.Dimension(axisOrtho1) > _constraintSet.MaximumHeight);
+                                    // check number
+                                    maxNumberReached = _constraintSet.UseMaximumNumberOfCases && (iCount + 1 > _constraintSet.MaximumNumberOfItems);
                                 }
 
                                 if (maxHeightReached && _constraintSet.AllowLastLayerOrientationChange)

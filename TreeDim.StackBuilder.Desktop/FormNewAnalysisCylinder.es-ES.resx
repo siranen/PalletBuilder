@@ -216,4 +216,7 @@
 	<data name="lbMm.Text" xml:space="preserve">
 		<value>mm</value>
 	</data>
+	<data name="checkBoxInterlayerAntiSlip.Text" xml:space="preserve">
+		<value>Anti-Slip Interlayer</value>
+	</data>
 </root>

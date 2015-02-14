@@ -161,6 +161,7 @@ namespace TreeDim.StackBuilder.Desktop
                 else
                 {
                     PalletConstraintSet constraintSet = _analysis.ConstraintSet;
+                    InterlayerPeriod = Math.Max(constraintSet.InterlayerPeriod, 1);
                     AllowVerticalX = constraintSet.AllowOrthoAxis(HalfAxis.HAxis.AXIS_X_N) || constraintSet.AllowOrthoAxis(HalfAxis.HAxis.AXIS_X_P);
                     AllowVerticalY = constraintSet.AllowOrthoAxis(HalfAxis.HAxis.AXIS_Y_N) || constraintSet.AllowOrthoAxis(HalfAxis.HAxis.AXIS_Y_P);
                     AllowVerticalZ = constraintSet.AllowOrthoAxis(HalfAxis.HAxis.AXIS_Z_N) || constraintSet.AllowOrthoAxis(HalfAxis.HAxis.AXIS_Z_P);

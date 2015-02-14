@@ -4,7 +4,7 @@
     <Package Id="27807e7c-accd-496f-8cfe-09de354c6051" Manufacturer="Microsoft" InstallerVersion="200" />
     <DirectoryRef Id="BIN32">
       <Component Id="StackBuilder" Guid="{AF1B8D78-642E-4370-8BFC-3775DDB3B67E}">
-        <File KeyPath="yes" Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.GUIExtension.dll" />
+        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.GUIExtension.dll" KeyPath="yes" />
         <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Basics.dll" />
         <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Engine.dll" />
         <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Graphics.dll" />

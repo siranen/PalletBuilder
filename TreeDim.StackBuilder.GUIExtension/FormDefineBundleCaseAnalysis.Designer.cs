@@ -82,50 +82,40 @@
             // 
             // splitContainerHoriz
             // 
-            this.splitContainerHoriz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainerHoriz.Location = new System.Drawing.Point(0, 194);
+            resources.ApplyResources(this.splitContainerHoriz, "splitContainerHoriz");
             this.splitContainerHoriz.Name = "splitContainerHoriz";
-            this.splitContainerHoriz.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainerHoriz.Panel1
             // 
+            resources.ApplyResources(this.splitContainerHoriz.Panel1, "splitContainerHoriz.Panel1");
             this.splitContainerHoriz.Panel1.Controls.Add(this.gridSolutions);
             // 
             // splitContainerHoriz.Panel2
             // 
+            resources.ApplyResources(this.splitContainerHoriz.Panel2, "splitContainerHoriz.Panel2");
             this.splitContainerHoriz.Panel2.Controls.Add(this.graphCtrlSolution);
-            this.splitContainerHoriz.Size = new System.Drawing.Size(624, 543);
-            this.splitContainerHoriz.SplitterDistance = 154;
-            this.splitContainerHoriz.TabIndex = 4;
             // 
             // gridSolutions
             // 
             this.gridSolutions.AcceptsInputChar = false;
-            this.gridSolutions.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.gridSolutions, "gridSolutions");
             this.gridSolutions.EnableSort = false;
-            this.gridSolutions.Location = new System.Drawing.Point(0, 0);
             this.gridSolutions.Name = "gridSolutions";
             this.gridSolutions.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
             this.gridSolutions.SelectionMode = SourceGrid.GridSelectionMode.Row;
-            this.gridSolutions.Size = new System.Drawing.Size(624, 154);
             this.gridSolutions.SpecialKeys = SourceGrid.GridSpecialKeys.Arrows;
-            this.gridSolutions.TabIndex = 0;
             this.gridSolutions.TabStop = true;
             this.gridSolutions.ToolTipText = "";
             // 
             // graphCtrlSolution
             // 
-            this.graphCtrlSolution.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.graphCtrlSolution.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.graphCtrlSolution, "graphCtrlSolution");
             this.graphCtrlSolution.Name = "graphCtrlSolution";
-            this.graphCtrlSolution.Size = new System.Drawing.Size(624, 385);
-            this.graphCtrlSolution.TabIndex = 0;
             this.graphCtrlSolution.TabStop = false;
             // 
             // gbFlatDim
             // 
+            resources.ApplyResources(this.gbFlatDim, "gbFlatDim");
             this.gbFlatDim.Controls.Add(this.nudFlatWeight);
             this.gbFlatDim.Controls.Add(this.lbWeight);
             this.gbFlatDim.Controls.Add(this.nudNumberOfFlats);
@@ -136,17 +126,13 @@
             this.gbFlatDim.Controls.Add(this.lbThickness);
             this.gbFlatDim.Controls.Add(this.lbWidth);
             this.gbFlatDim.Controls.Add(this.lbLength);
-            this.gbFlatDim.Location = new System.Drawing.Point(4, 28);
             this.gbFlatDim.Name = "gbFlatDim";
-            this.gbFlatDim.Size = new System.Drawing.Size(508, 68);
-            this.gbFlatDim.TabIndex = 0;
             this.gbFlatDim.TabStop = false;
-            this.gbFlatDim.Text = "Flat dimensions";
             // 
             // nudFlatWeight
             // 
+            resources.ApplyResources(this.nudFlatWeight, "nudFlatWeight");
             this.nudFlatWeight.DecimalPlaces = 2;
-            this.nudFlatWeight.Location = new System.Drawing.Point(68, 42);
             this.nudFlatWeight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -158,8 +144,6 @@
             0,
             0});
             this.nudFlatWeight.Name = "nudFlatWeight";
-            this.nudFlatWeight.Size = new System.Drawing.Size(70, 20);
-            this.nudFlatWeight.TabIndex = 9;
             this.nudFlatWeight.Value = new decimal(new int[] {
             1,
             0,
@@ -169,24 +153,18 @@
             // 
             // lbWeight
             // 
-            this.lbWeight.AutoSize = true;
-            this.lbWeight.Location = new System.Drawing.Point(7, 46);
+            resources.ApplyResources(this.lbWeight, "lbWeight");
             this.lbWeight.Name = "lbWeight";
-            this.lbWeight.Size = new System.Drawing.Size(41, 13);
-            this.lbWeight.TabIndex = 8;
-            this.lbWeight.Text = "Weight";
             // 
             // nudNumberOfFlats
             // 
-            this.nudNumberOfFlats.Location = new System.Drawing.Point(415, 43);
+            resources.ApplyResources(this.nudNumberOfFlats, "nudNumberOfFlats");
             this.nudNumberOfFlats.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudNumberOfFlats.Name = "nudNumberOfFlats";
-            this.nudNumberOfFlats.Size = new System.Drawing.Size(69, 20);
-            this.nudNumberOfFlats.TabIndex = 7;
             this.nudNumberOfFlats.Value = new decimal(new int[] {
             1,
             0,
@@ -196,17 +174,13 @@
             // 
             // lbNumberOfFlats
             // 
-            this.lbNumberOfFlats.AutoSize = true;
-            this.lbNumberOfFlats.Location = new System.Drawing.Point(335, 47);
+            resources.ApplyResources(this.lbNumberOfFlats, "lbNumberOfFlats");
             this.lbNumberOfFlats.Name = "lbNumberOfFlats";
-            this.lbNumberOfFlats.Size = new System.Drawing.Size(78, 13);
-            this.lbNumberOfFlats.TabIndex = 6;
-            this.lbNumberOfFlats.Text = "Number of flats";
             // 
             // nudFlatThickness
             // 
+            resources.ApplyResources(this.nudFlatThickness, "nudFlatThickness");
             this.nudFlatThickness.DecimalPlaces = 2;
-            this.nudFlatThickness.Location = new System.Drawing.Point(415, 16);
             this.nudFlatThickness.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -218,8 +192,6 @@
             0,
             0});
             this.nudFlatThickness.Name = "nudFlatThickness";
-            this.nudFlatThickness.Size = new System.Drawing.Size(70, 20);
-            this.nudFlatThickness.TabIndex = 5;
             this.nudFlatThickness.Value = new decimal(new int[] {
             1,
             0,
@@ -229,8 +201,8 @@
             // 
             // nudFlatWidth
             // 
+            resources.ApplyResources(this.nudFlatWidth, "nudFlatWidth");
             this.nudFlatWidth.DecimalPlaces = 2;
-            this.nudFlatWidth.Location = new System.Drawing.Point(238, 16);
             this.nudFlatWidth.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -242,8 +214,6 @@
             0,
             0});
             this.nudFlatWidth.Name = "nudFlatWidth";
-            this.nudFlatWidth.Size = new System.Drawing.Size(70, 20);
-            this.nudFlatWidth.TabIndex = 4;
             this.nudFlatWidth.Value = new decimal(new int[] {
             1,
             0,
@@ -253,8 +223,8 @@
             // 
             // nudFlatLength
             // 
+            resources.ApplyResources(this.nudFlatLength, "nudFlatLength");
             this.nudFlatLength.DecimalPlaces = 2;
-            this.nudFlatLength.Location = new System.Drawing.Point(68, 16);
             this.nudFlatLength.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -266,8 +236,6 @@
             0,
             0});
             this.nudFlatLength.Name = "nudFlatLength";
-            this.nudFlatLength.Size = new System.Drawing.Size(70, 20);
-            this.nudFlatLength.TabIndex = 3;
             this.nudFlatLength.Value = new decimal(new int[] {
             1,
             0,
@@ -277,33 +245,22 @@
             // 
             // lbThickness
             // 
-            this.lbThickness.AutoSize = true;
-            this.lbThickness.Location = new System.Drawing.Point(335, 20);
+            resources.ApplyResources(this.lbThickness, "lbThickness");
             this.lbThickness.Name = "lbThickness";
-            this.lbThickness.Size = new System.Drawing.Size(56, 13);
-            this.lbThickness.TabIndex = 2;
-            this.lbThickness.Text = "Thickness";
             // 
             // lbWidth
             // 
-            this.lbWidth.AutoSize = true;
-            this.lbWidth.Location = new System.Drawing.Point(174, 20);
+            resources.ApplyResources(this.lbWidth, "lbWidth");
             this.lbWidth.Name = "lbWidth";
-            this.lbWidth.Size = new System.Drawing.Size(35, 13);
-            this.lbWidth.TabIndex = 1;
-            this.lbWidth.Text = "Width";
             // 
             // lbLength
             // 
-            this.lbLength.AutoSize = true;
-            this.lbLength.Location = new System.Drawing.Point(7, 20);
+            resources.ApplyResources(this.lbLength, "lbLength");
             this.lbLength.Name = "lbLength";
-            this.lbLength.Size = new System.Drawing.Size(40, 13);
-            this.lbLength.TabIndex = 0;
-            this.lbLength.Text = "Length";
             // 
             // gbCaseDim
             // 
+            resources.ApplyResources(this.gbCaseDim, "gbCaseDim");
             this.gbCaseDim.Controls.Add(this.nudCaseWeight);
             this.gbCaseDim.Controls.Add(this.lbCaseWeight);
             this.gbCaseDim.Controls.Add(this.nudCaseHeight);
@@ -312,165 +269,117 @@
             this.gbCaseDim.Controls.Add(this.lbCaseHeight);
             this.gbCaseDim.Controls.Add(this.lbCaseWidth);
             this.gbCaseDim.Controls.Add(this.lbCaseLength);
-            this.gbCaseDim.Location = new System.Drawing.Point(4, 102);
             this.gbCaseDim.Name = "gbCaseDim";
-            this.gbCaseDim.Size = new System.Drawing.Size(508, 74);
-            this.gbCaseDim.TabIndex = 1;
             this.gbCaseDim.TabStop = false;
-            this.gbCaseDim.Text = "Case inner dimensions";
             // 
             // nudCaseWeight
             // 
+            resources.ApplyResources(this.nudCaseWeight, "nudCaseWeight");
             this.nudCaseWeight.DecimalPlaces = 2;
-            this.nudCaseWeight.Location = new System.Drawing.Point(68, 43);
             this.nudCaseWeight.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudCaseWeight.Name = "nudCaseWeight";
-            this.nudCaseWeight.Size = new System.Drawing.Size(70, 20);
-            this.nudCaseWeight.TabIndex = 7;
             this.nudCaseWeight.ValueChanged += new System.EventHandler(this.DimensionChanged);
             // 
             // lbCaseWeight
             // 
-            this.lbCaseWeight.AutoSize = true;
-            this.lbCaseWeight.Location = new System.Drawing.Point(10, 46);
+            resources.ApplyResources(this.lbCaseWeight, "lbCaseWeight");
             this.lbCaseWeight.Name = "lbCaseWeight";
-            this.lbCaseWeight.Size = new System.Drawing.Size(41, 13);
-            this.lbCaseWeight.TabIndex = 6;
-            this.lbCaseWeight.Text = "Weight";
             // 
             // nudCaseHeight
             // 
+            resources.ApplyResources(this.nudCaseHeight, "nudCaseHeight");
             this.nudCaseHeight.DecimalPlaces = 2;
-            this.nudCaseHeight.Location = new System.Drawing.Point(415, 16);
             this.nudCaseHeight.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudCaseHeight.Name = "nudCaseHeight";
-            this.nudCaseHeight.Size = new System.Drawing.Size(70, 20);
-            this.nudCaseHeight.TabIndex = 5;
             this.nudCaseHeight.ValueChanged += new System.EventHandler(this.DimensionChanged);
             // 
             // nudCaseWidth
             // 
+            resources.ApplyResources(this.nudCaseWidth, "nudCaseWidth");
             this.nudCaseWidth.DecimalPlaces = 2;
-            this.nudCaseWidth.Location = new System.Drawing.Point(238, 16);
             this.nudCaseWidth.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudCaseWidth.Name = "nudCaseWidth";
-            this.nudCaseWidth.Size = new System.Drawing.Size(70, 20);
-            this.nudCaseWidth.TabIndex = 4;
             this.nudCaseWidth.ValueChanged += new System.EventHandler(this.DimensionChanged);
             // 
             // nudCaseLength
             // 
+            resources.ApplyResources(this.nudCaseLength, "nudCaseLength");
             this.nudCaseLength.DecimalPlaces = 2;
-            this.nudCaseLength.Location = new System.Drawing.Point(68, 16);
             this.nudCaseLength.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudCaseLength.Name = "nudCaseLength";
-            this.nudCaseLength.Size = new System.Drawing.Size(70, 20);
-            this.nudCaseLength.TabIndex = 3;
             this.nudCaseLength.ValueChanged += new System.EventHandler(this.DimensionChanged);
             // 
             // lbCaseHeight
             // 
-            this.lbCaseHeight.AutoSize = true;
-            this.lbCaseHeight.Location = new System.Drawing.Point(335, 20);
+            resources.ApplyResources(this.lbCaseHeight, "lbCaseHeight");
             this.lbCaseHeight.Name = "lbCaseHeight";
-            this.lbCaseHeight.Size = new System.Drawing.Size(38, 13);
-            this.lbCaseHeight.TabIndex = 2;
-            this.lbCaseHeight.Text = "Height";
             // 
             // lbCaseWidth
             // 
-            this.lbCaseWidth.AutoSize = true;
-            this.lbCaseWidth.Location = new System.Drawing.Point(174, 20);
+            resources.ApplyResources(this.lbCaseWidth, "lbCaseWidth");
             this.lbCaseWidth.Name = "lbCaseWidth";
-            this.lbCaseWidth.Size = new System.Drawing.Size(35, 13);
-            this.lbCaseWidth.TabIndex = 1;
-            this.lbCaseWidth.Text = "Width";
             // 
             // lbCaseLength
             // 
-            this.lbCaseLength.AutoSize = true;
-            this.lbCaseLength.Location = new System.Drawing.Point(10, 20);
+            resources.ApplyResources(this.lbCaseLength, "lbCaseLength");
             this.lbCaseLength.Name = "lbCaseLength";
-            this.lbCaseLength.Size = new System.Drawing.Size(40, 13);
-            this.lbCaseLength.TabIndex = 0;
-            this.lbCaseLength.Text = "Length";
             // 
             // toolStripTools
             // 
+            resources.ApplyResources(this.toolStripTools, "toolStripTools");
             this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonReport,
             this.toolStripButtonStackBuilder});
-            this.toolStripTools.Location = new System.Drawing.Point(0, 0);
             this.toolStripTools.Name = "toolStripTools";
-            this.toolStripTools.Size = new System.Drawing.Size(624, 25);
-            this.toolStripTools.TabIndex = 2;
-            this.toolStripTools.Text = "toolStripTools";
             // 
             // toolStripButtonReport
             // 
+            resources.ApplyResources(this.toolStripButtonReport, "toolStripButtonReport");
             this.toolStripButtonReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonReport.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReport.Image")));
-            this.toolStripButtonReport.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButtonReport.Name = "toolStripButtonReport";
-            this.toolStripButtonReport.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonReport.Text = "Generate report...";
             this.toolStripButtonReport.Click += new System.EventHandler(this.ToolsGenerateReport);
             // 
             // toolStripButtonStackBuilder
             // 
+            resources.ApplyResources(this.toolStripButtonStackBuilder, "toolStripButtonStackBuilder");
             this.toolStripButtonStackBuilder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonStackBuilder.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonStackBuilder.Image")));
-            this.toolStripButtonStackBuilder.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButtonStackBuilder.Name = "toolStripButtonStackBuilder";
-            this.toolStripButtonStackBuilder.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonStackBuilder.Text = "Generate StackBuilder project...";
             this.toolStripButtonStackBuilder.Click += new System.EventHandler(this.ToolsGenerateStackBuilderProject);
             // 
             // bnClose
             // 
-            this.bnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.bnClose, "bnClose");
             this.bnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bnClose.Location = new System.Drawing.Point(537, 28);
             this.bnClose.Name = "bnClose";
-            this.bnClose.Size = new System.Drawing.Size(82, 23);
-            this.bnClose.TabIndex = 3;
-            this.bnClose.Text = "Close";
             this.bnClose.UseVisualStyleBackColor = true;
             // 
             // bnRefreh
             // 
-            this.bnRefreh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bnRefreh.Location = new System.Drawing.Point(537, 153);
+            resources.ApplyResources(this.bnRefreh, "bnRefreh");
             this.bnRefreh.Name = "bnRefreh";
-            this.bnRefreh.Size = new System.Drawing.Size(82, 23);
-            this.bnRefreh.TabIndex = 5;
-            this.bnRefreh.Text = "Refresh";
             this.bnRefreh.UseVisualStyleBackColor = true;
             this.bnRefreh.Click += new System.EventHandler(this.bnRefresh_Click);
             // 
             // statusStrip
             // 
-            this.statusStrip.Location = new System.Drawing.Point(0, 740);
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(624, 22);
-            this.statusStrip.TabIndex = 6;
-            this.statusStrip.Text = "statusStrip1";
             // 
             // timerRefresh
             // 
@@ -480,15 +389,13 @@
             // saveFileDialogAsStb
             // 
             this.saveFileDialogAsStb.DefaultExt = "stb";
-            this.saveFileDialogAsStb.Filter = "StackBuilder (*.stb)|*.stb";
-            this.saveFileDialogAsStb.Title = "Save as StackBuilder project...";
+            resources.ApplyResources(this.saveFileDialogAsStb, "saveFileDialogAsStb");
             // 
             // FormDefineBundleCaseAnalysis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bnClose;
-            this.ClientSize = new System.Drawing.Size(624, 762);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.bnRefreh);
             this.Controls.Add(this.splitContainerHoriz);
@@ -501,7 +408,6 @@
             this.Name = "FormDefineBundleCaseAnalysis";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Bundle / Case analysis...";
             this.splitContainerHoriz.Panel1.ResumeLayout(false);
             this.splitContainerHoriz.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).EndInit();

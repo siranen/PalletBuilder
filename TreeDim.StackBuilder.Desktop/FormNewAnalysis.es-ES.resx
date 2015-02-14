@@ -1533,4 +1533,7 @@
 	<data name="bnCancel.Text" xml:space="preserve">
 		<value>Cancelar</value>
 	</data>
+	<data name="tabPageInterlayerAntiSlip.Text" xml:space="preserve">
+		<value>Anti-Slip Interlayer</value>
+	</data>
 </root>

@@ -1076,4 +1076,25 @@
 	<data name="caseOptimisationToolStripMenu.Text" xml:space="preserve">
     <value>Buscar el embalaje óptimo</value>
   </data>
+	<data name="toolStripSBCylinderPalletAnalysis.Text" xml:space="preserve">
+		<value>Create new cylinder/pallet analysis</value>
+	</data>
+	<data name="toolStripMenuItemCylinderPalletVertical.Text" xml:space="preserve">
+		<value>Vertical</value>
+	</data>
+	<data name="toolStripMenuItemCylinderPalletVertical.ToolTipText" xml:space="preserve">
+		<value>Add new vertical cylinder/pallet analysis</value>
+	</data>
+	<data name="toolStripMenuItemCylinderPalletHorizontal.Text" xml:space="preserve">
+		<value>Horizontal</value>
+	</data>
+	<data name="toolStripMenuItemCylinderPalletHorizontal.ToolTipText" xml:space="preserve">
+		<value>Add new horizontal cylinder/pallet analysis</value>
+	</data>
+	<data name="toolStripMenuItemCylinderPalletAnalysisV.Text" xml:space="preserve">
+		<value>Vertical</value>
+	</data>
+	<data name="toolStripMenuItemCylinderPalletH.Text" xml:space="preserve">
+		<value>Horizontal</value>
+	</data>
 </root>
