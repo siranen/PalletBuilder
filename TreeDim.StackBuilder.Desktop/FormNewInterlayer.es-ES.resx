@@ -888,4 +888,28 @@
 	<data name="cbColor.Items1" xml:space="preserve">
 		<value>Color</value>
 	</data>
+	<data name="uLengthThickness.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthWidth.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthLength.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="cbColor.Items26" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items27" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items28" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items29" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items30" xml:space="preserve">
+		<value>Color</value>
+	</data>
 </root>

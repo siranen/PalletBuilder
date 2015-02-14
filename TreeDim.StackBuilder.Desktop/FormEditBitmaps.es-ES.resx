@@ -837,4 +837,16 @@
 	<data name="bnCancel.Text" xml:space="preserve">
 		<value>Cancelar</value>
 	</data>
+	<data name="uLengthOriginX.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthSizeX.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthOriginY.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthSizeY.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
 </root>

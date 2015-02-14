@@ -842,7 +842,7 @@
 		<value>Mostrar registro</value>
 	</data>
 	<data name="label2.Text" xml:space="preserve">
-		<value>Grueso</value>
+		<value>Derecha</value>
 	</data>
 	<data name="lbPrintedSurface.Text" xml:space="preserve">
 		<value>Superficie impresa</value>

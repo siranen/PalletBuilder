@@ -1405,7 +1405,7 @@
 		<value>Espiral</value>
 	</data>
 	<data name="lbBox.Text" xml:space="preserve">
-		<value>Caja</value>
+		<value>Embalaje</value>
 	</data>
 	<data name="checkBoxNumberOfPallets.Text" xml:space="preserve">
 		<value>Mostrar el número de palets que se tienen que apilar</value>
@@ -1444,7 +1444,7 @@
 		<value>Nombre</value>
 	</data>
 	<data name="gbOverhangUnderhang.Text" xml:space="preserve">
-		<value>Sobresalido/atrasado del palet</value>
+		<value>Pallet saliente / colgando en</value>
 	</data>
 	<data name="checkBoxPositionZ.Text" xml:space="preserve">
 		<value>Z</value>
@@ -1498,7 +1498,7 @@
 		<value>Fin de apilamiento:</value>
 	</data>
 	<data name="lbInterlayerFreq2.Text" xml:space="preserve">
-		<value>capas</value>
+		<value>Capas</value>
 	</data>
 	<data name="checkBoxMaximumLoadOnBox.Text" xml:space="preserve">
 		<value>cuando la carga sobre las cajas inferiores llegue a</value>
@@ -1535,5 +1535,17 @@
 	</data>
 	<data name="tabPageInterlayerAntiSlip.Text" xml:space="preserve">
 		<value>Anti-Slip Interlayer</value>
+	</data>
+	<data name="uLengthPalletHeight.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthOverhangY.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthOverhangX.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="tabPageInterlayer.Text" xml:space="preserve">
+		<value>Separadores</value>
 	</data>
 </root>

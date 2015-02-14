@@ -467,4 +467,10 @@
 	<data name="bnCancel.Text" xml:space="preserve">
 		<value>Cancelar</value>
 	</data>
+	<data name="uLengthDistancePalletWalls.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthTruckRoof.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
 </root>

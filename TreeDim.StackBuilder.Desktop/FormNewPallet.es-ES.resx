@@ -876,4 +876,31 @@
 	<data name="bnCancel.Text" xml:space="preserve">
 		<value>Cancelar</value>
 	</data>
+	<data name="uLengthLength.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthWidth.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="uLengthHeight.Text" xml:space="preserve">
+		<value>mm</value>
+	</data>
+	<data name="cbColor.Items11" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items12" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items13" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items14" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items15" xml:space="preserve">
+		<value>Color</value>
+	</data>
+	<data name="cbColor.Items16" xml:space="preserve">
+		<value>Color</value>
+	</data>
 </root>
