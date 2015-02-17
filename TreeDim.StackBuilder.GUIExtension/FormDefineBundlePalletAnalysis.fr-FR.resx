@@ -140,9 +140,6 @@
   <data name="toolStripButtonStackBuilder.Text" xml:space="preserve">
     <value>Générer un projet StackBuilder...</value>
   </data>
-  <data name="gbFlatDim.Text" xml:space="preserve">
-    <value>Plat/Liasse</value>
-  </data>
   <data name="lbNumberOfFlats.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
   </data>
@@ -167,11 +164,11 @@
   <data name="lbLength.Text" xml:space="preserve">
     <value>Longueur</value>
   </data>
+  <data name="gbFlatDim.Text" xml:space="preserve">
+    <value>Plat/Liasse</value>
+  </data>
   <data name="bnClose.Text" xml:space="preserve">
     <value>Fermer</value>
-  </data>
-  <data name="gbPallet.Text" xml:space="preserve">
-    <value>Palette</value>
   </data>
   <data name="lbMaximumPalletHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 13</value>
@@ -183,6 +180,9 @@
     <value>40, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
+    <value>Palette</value>
+  </data>
+  <data name="gbPallet.Text" xml:space="preserve">
     <value>Palette</value>
   </data>
   <data name="bnRefresh.Text" xml:space="preserve">

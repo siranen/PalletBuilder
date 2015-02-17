@@ -127,15 +127,24 @@
   <data name="lbNumberOfFlats.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbNumberOfFlats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
   <data name="bnClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbLength.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
   </data>
   <data name="&gt;&gt;lbNumberOfFlats.Parent" xml:space="preserve">
     <value>gbFlatDim</value>
+  </data>
+  <data name="&gt;&gt;bnClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timerRefresh.Name" xml:space="preserve">
+    <value>timerRefresh</value>
   </data>
   <data name="lbWidth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -150,14 +159,17 @@
   <data name="bnRefresh.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;lbPalletDescription.Name" xml:space="preserve">
+    <value>lbPalletDescription</value>
+  </data>
+  <data name="lbNumberOfFlats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 47</value>
+  </data>
   <data name="&gt;&gt;lbMaximumPalletHeight.Name" xml:space="preserve">
     <value>lbMaximumPalletHeight</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Parent" xml:space="preserve">
     <value>gbPallet</value>
-  </data>
-  <data name="gbPallet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 100</value>
   </data>
   <data name="&gt;&gt;nudMaxPalletHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -174,14 +186,11 @@
   <data name="graphCtrlPallet.Location" type="System.Drawing.Point, System.Drawing">
     <value>415, 12</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
+  <data name="gbPallet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 101</value>
   </data>
   <data name="bnRefresh.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
-  </data>
-  <data name="nudMaxPalletHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="lbWeight.Text" xml:space="preserve">
     <value>Weight</value>
@@ -198,17 +207,11 @@
   <data name="&gt;&gt;lbThickness.Parent" xml:space="preserve">
     <value>gbFlatDim</value>
   </data>
-  <data name="lbNumberOfFlats.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="lbThickness.Text" xml:space="preserve">
     <value>Thickness</value>
   </data>
   <data name="gbFlatDim.Size" type="System.Drawing.Size, System.Drawing">
     <value>527, 68</value>
-  </data>
-  <data name="nudFlatThickness.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="splitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -234,11 +237,11 @@
   <data name="&gt;&gt;nudFlatWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;nudMaxPalletHeight.Name" xml:space="preserve">
     <value>nudMaxPalletHeight</value>
+  </data>
+  <data name="&gt;&gt;lbDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="toolStripButtonStackBuilder.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -249,8 +252,8 @@
   <data name="lbPalletDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
   </data>
-  <data name="&gt;&gt;bnRefresh.Name" xml:space="preserve">
-    <value>bnRefresh</value>
+  <data name="&gt;&gt;lbWeight.Parent" xml:space="preserve">
+    <value>gbFlatDim</value>
   </data>
   <data name="&gt;&gt;toolStripButtonStackBuilder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -270,9 +273,6 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;gbFlatDim.Name" xml:space="preserve">
-    <value>gbFlatDim</value>
-  </data>
   <data name="&gt;&gt;lbThickness.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
@@ -288,11 +288,17 @@
   <data name="lbDescription.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;lbDescription.Name" xml:space="preserve">
+    <value>lbDescription</value>
+  </data>
   <data name="&gt;&gt;splitContainer.Name" xml:space="preserve">
     <value>splitContainer</value>
   </data>
   <data name="&gt;&gt;gbFlatDim.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbMaximumPalletHeight.Parent" xml:space="preserve">
+    <value>gbPallet</value>
   </data>
   <data name="graphCtrlPallet.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -336,6 +342,9 @@
   <data name="&gt;&gt;lbPalletDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;bnRefresh.Name" xml:space="preserve">
+    <value>bnRefresh</value>
+  </data>
   <data name="&gt;&gt;graphCtrlSolution.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -354,17 +363,17 @@
   <data name="lbMaximumPalletHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;nudNumberOfFlats.Parent" xml:space="preserve">
-    <value>gbFlatDim</value>
+  <data name="lbThickness.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 20</value>
+  </data>
+  <data name="&gt;&gt;bnRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 20</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 18</value>
-  </data>
-  <data name="nudNumberOfFlats.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="&gt;&gt;lbLength.Parent" xml:space="preserve">
     <value>gbFlatDim</value>
@@ -375,8 +384,8 @@
   <data name="&gt;&gt;lbWidth.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;bnRefresh.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="saveFileDialogAsStb.Filter" xml:space="preserve">
+    <value>StackBuilder (*.stb)|*.stb</value>
   </data>
   <data name="lbLength.Text" xml:space="preserve">
     <value>Length</value>
@@ -387,20 +396,17 @@
   <data name="lbDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>624, 762</value>
+  </data>
   <data name="&gt;&gt;nudFlatWeight.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripButtonReport.Name" xml:space="preserve">
     <value>toolStripButtonReport</value>
   </data>
   <data name="&gt;&gt;nudFlatLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="saveFileDialogAsStb.Filter" xml:space="preserve">
-    <value>StackBuilder (*.stb)|*.stb</value>
   </data>
   <data name="lbDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 43</value>
@@ -411,6 +417,9 @@
   <data name="&gt;&gt;lbDescription.Parent" xml:space="preserve">
     <value>gbPallet</value>
   </data>
+  <data name="&gt;&gt;graphCtrlPallet.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;nudFlatLength.Parent" xml:space="preserve">
     <value>gbFlatDim</value>
   </data>
@@ -420,11 +429,8 @@
   <data name="&gt;&gt;bnRefresh.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="toolStripButtonReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
+  <data name="&gt;&gt;splitContainer.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer</value>
   </data>
   <data name="nudNumberOfFlats.Location" type="System.Drawing.Point, System.Drawing">
     <value>415, 43</value>
@@ -465,19 +471,14 @@
   <data name="&gt;&gt;splitContainer.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;cbPallet.Name" xml:space="preserve">
+    <value>cbPallet</value>
+  </data>
   <data name="nudFlatWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 20</value>
   </data>
   <data name="&gt;&gt;splitContainer.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButtonStackBuilder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAABwSURBVDhPzU9BDsAgCOPp/twBK5EJDpftsMaGalsS6Z/o
-        fJQdc6ERv2IO3WlUBtTcYbbAHn0g1W6iyrc5VGncUVc1zAcadVXBTLXMdIEZFd2y1l58AWXhCW9WOpQF
-        ZvpgptOyQIwdcjSWATMrfg2iA8fKbLBCRCQNAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="&gt;&gt;nudFlatWeight.Parent" xml:space="preserve">
     <value>gbFlatDim</value>
@@ -485,7 +486,7 @@
   <data name="toolStripButtonReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAABkSURBVDhPzYxBDoBACAP3/5/GFC0phAPuenCSapka11pm
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAABkSURBVDhPzYxBDoBACAP3/5/GFC0phAPuenCSapka11pm
         Z7kfm/zsB3gzpHMgeY5JPnQOJK9jSOka9exxgDpOehygjpMeB6jjpMcBODJK571XoVE6770KjdJ57/XD
         N3z3g92YXauEAwxp1v7WAAAAAElFTkSuQmCC
 </value>
@@ -529,20 +530,20 @@
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="graphCtrlSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>620, 372</value>
+  </data>
   <data name="&gt;&gt;gbPallet.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;gbPallet.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="nudFlatWeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 42</value>
-  </data>
   <data name="bnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;lbWeight.Parent" xml:space="preserve">
-    <value>gbFlatDim</value>
+  <data name="lbDescription.Text" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="&gt;&gt;toolStripButtonStackBuilder.Name" xml:space="preserve">
     <value>toolStripButtonStackBuilder</value>
@@ -553,8 +554,8 @@
   <data name="lbMaximumPalletHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
   </data>
-  <data name="graphCtrlSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>620, 372</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="gbFlatDim.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -588,9 +589,6 @@
   </data>
   <data name="toolStripButtonReport.Text" xml:space="preserve">
     <value>Generate report...</value>
-  </data>
-  <data name="&gt;&gt;cbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="toolStripButtonStackBuilder.Text" xml:space="preserve">
     <value>Generate StackBuilder project...</value>
@@ -631,8 +629,8 @@
   <data name="lbWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;cbPallet.Name" xml:space="preserve">
-    <value>cbPallet</value>
+  <data name="nudFlatThickness.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lbLength.Name" xml:space="preserve">
     <value>lbLength</value>
@@ -646,11 +644,11 @@
   <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lbWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;lbMaximumPalletHeight.Parent" xml:space="preserve">
-    <value>gbPallet</value>
+  <data name="lbNumberOfFlats.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="nudMaxPalletHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 20</value>
@@ -661,11 +659,14 @@
   <data name="bnClose.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;lbPalletDescription.Name" xml:space="preserve">
-    <value>lbPalletDescription</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
   </data>
   <data name="gridSolutions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="cbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 21</value>
   </data>
   <data name="&gt;&gt;gbFlatDim.Parent" xml:space="preserve">
     <value>$this</value>
@@ -676,20 +677,17 @@
   <data name="&gt;&gt;nudNumberOfFlats.Name" xml:space="preserve">
     <value>nudNumberOfFlats</value>
   </data>
-  <data name="lbThickness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 20</value>
+  <data name="&gt;&gt;gbFlatDim.Name" xml:space="preserve">
+    <value>gbFlatDim</value>
   </data>
-  <data name="lbNumberOfFlats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+  <data name="nudMaxPalletHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="lbDescription.Text" xml:space="preserve">
-    <value>Description</value>
+  <data name="&gt;&gt;nudNumberOfFlats.Parent" xml:space="preserve">
+    <value>gbFlatDim</value>
   </data>
   <data name="gridSolutions.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="lbMaximumPalletHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Pallet</value>
@@ -709,8 +707,8 @@
   <data name="&gt;&gt;lbWeight.Name" xml:space="preserve">
     <value>lbWeight</value>
   </data>
-  <data name="&gt;&gt;bnClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbPallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbPalletDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -724,20 +722,17 @@
   <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;gridSolutions.Type" xml:space="preserve">
     <value>SourceGrid.Grid, SourceGrid, Version=4.30.3918.24227, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
   </data>
-  <data name="&gt;&gt;splitContainer.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="nudFlatLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>68, 16</value>
   </data>
-  <data name="&gt;&gt;timerRefresh.Name" xml:space="preserve">
-    <value>timerRefresh</value>
+  <data name="gbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>608, 100</value>
   </data>
   <data name="&gt;&gt;nudFlatThickness.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -748,8 +743,8 @@
   <data name="&gt;&gt;lbWeight.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 762</value>
+  <data name="nudFlatWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 42</value>
   </data>
   <data name="cbPallet.Location" type="System.Drawing.Point, System.Drawing">
     <value>146, 14</value>
@@ -778,8 +773,8 @@
   <data name="graphCtrlSolution.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lbWeight.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
+    <value>toolStrip</value>
   </data>
   <data name="&gt;&gt;nudFlatThickness.Parent" xml:space="preserve">
     <value>gbFlatDim</value>
@@ -787,11 +782,16 @@
   <data name="&gt;&gt;nudNumberOfFlats.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;graphCtrlPallet.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbPallet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 21</value>
+  <data name="toolStripButtonStackBuilder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAABwSURBVDhPzU9BDsAgCOPp/twBK5EJDpftsMaGalsS6Z/o
+        fJQdc6ERv2IO3WlUBtTcYbbAHn0g1W6iyrc5VGncUVc1zAcadVXBTLXMdIEZFd2y1l58AWXhCW9WOpQF
+        ZvpgptOyQIwdcjSWATMrfg2iA8fKbLBCRCQNAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="lbWeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 46</value>
@@ -805,8 +805,8 @@
   <data name="gbFlatDim.Text" xml:space="preserve">
     <value>Flat/Bundle</value>
   </data>
-  <data name="&gt;&gt;lbDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStripButtonReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
   <data name="&gt;&gt;gridSolutions.Name" xml:space="preserve">
     <value>gridSolutions</value>
@@ -814,11 +814,11 @@
   <data name="lbWidth.Text" xml:space="preserve">
     <value>Width</value>
   </data>
-  <data name="&gt;&gt;lbDescription.Name" xml:space="preserve">
-    <value>lbDescription</value>
+  <data name="nudNumberOfFlats.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="gbPallet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 101</value>
+  <data name="&gt;&gt;lbWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbMaximumPalletHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -835,8 +835,8 @@
   <data name="&gt;&gt;gbFlatDim.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lbNumberOfFlats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 47</value>
+  <data name="lbMaximumPalletHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cbPallet.ZOrder" xml:space="preserve">
     <value>4</value>

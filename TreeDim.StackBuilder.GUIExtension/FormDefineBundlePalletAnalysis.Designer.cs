@@ -312,6 +312,7 @@
             0,
             0});
             this.nudMaxPalletHeight.Name = "nudMaxPalletHeight";
+            this.nudMaxPalletHeight.ValueChanged += new System.EventHandler(this.DimensionsChanged);
             // 
             // lbMaximumPalletHeight
             // 

@@ -14,6 +14,9 @@
       <Component Id="SourceGrid" Guid="{35E01101-97AF-427B-A2E7-DD37F99A21C6}">
         <File KeyPath="yes" Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\SourceGrid.dll" />
       </Component>
+      <Component Id ="Cureos.Measures.dll" Guid="{9B81D151-632D-4BC9-86BB-F4747CF33C18}">
+        <File KeyPath="yes" Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\Cureos.Measures.dll" />
+      </Component>
     </DirectoryRef>
     <DirectoryRef Id="REPORTTEMPLATES">
       <Component Id="ReportTemplates" Guid="{08CB4826-0A0B-4c82-9783-E037106599AE}">
