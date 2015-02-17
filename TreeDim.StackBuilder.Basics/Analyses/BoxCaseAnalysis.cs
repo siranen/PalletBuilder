@@ -50,8 +50,8 @@ namespace TreeDim.StackBuilder.Basics
         {
             if (!constraintSet.IsValid)
                 throw new Exception("Using invalid box/case constraintset -> Can not instantiate box/case analysis!");
-            _bProperties = bProperties;
-            _caseProperties = caseProperties;
+            this.BProperties = bProperties;
+            this.CaseProperties = caseProperties;
             _constraintSet = constraintSet;
         }
         #endregion
@@ -62,15 +62,25 @@ namespace TreeDim.StackBuilder.Basics
         public BProperties BProperties
         {
             get { return _bProperties; }
-            set { _bProperties = value; }
+            set
+            {
+                if (value == _bProperties) return;
+                if (null != _bProperties) _bProperties.RemoveDependancy(this);
+                _bProperties = value;
+                _bProperties.AddDependancy(this);
+            }
         }
-
         public BoxProperties CaseProperties
         {
             get { return _caseProperties; }
-            set { _caseProperties = value; }
+            set
+            {
+                if (value == _caseProperties) return;
+                if (null != _caseProperties) _caseProperties.RemoveDependancy(this);
+                _caseProperties = value;
+                _caseProperties.AddDependancy(this);
+            }
         }
-
         public BCaseConstraintSet ConstraintSet
         { get { return _constraintSet; } }
 

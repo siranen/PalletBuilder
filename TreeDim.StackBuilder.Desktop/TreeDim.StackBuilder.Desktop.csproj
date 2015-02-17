@@ -740,9 +740,6 @@
     <EmbeddedResource Include="FormMain.de-DE.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.de.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.es-ES.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
