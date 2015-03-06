@@ -104,6 +104,7 @@
             // 
             // nudLength
             // 
+            this.nudLength.DecimalPlaces = 3;
             resources.ApplyResources(this.nudLength, "nudLength");
             this.nudLength.Maximum = new decimal(new int[] {
             10000,
@@ -125,6 +126,7 @@
             // 
             // nudThickness
             // 
+            this.nudThickness.DecimalPlaces = 3;
             resources.ApplyResources(this.nudThickness, "nudThickness");
             this.nudThickness.Maximum = new decimal(new int[] {
             10000,
@@ -176,6 +178,7 @@
             // 
             // nudWidth
             // 
+            this.nudWidth.DecimalPlaces = 3;
             resources.ApplyResources(this.nudWidth, "nudWidth");
             this.nudWidth.Maximum = new decimal(new int[] {
             10000,
@@ -254,7 +257,8 @@
             resources.GetString("cbColor.Items27"),
             resources.GetString("cbColor.Items28"),
             resources.GetString("cbColor.Items29"),
-            resources.GetString("cbColor.Items30")});
+            resources.GetString("cbColor.Items30"),
+            resources.GetString("cbColor.Items31")});
             this.cbColor.Name = "cbColor";
             this.cbColor.SelectedColorChanged += new System.EventHandler(this.onInterlayerPropertyChanged);
             // 

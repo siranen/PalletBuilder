@@ -638,6 +638,7 @@ namespace TreeDim.StackBuilder.Desktop
                     analysis.BProperties = form.SelectedBox;
                     analysis.PalletProperties = form.SelectedPallet;
                     analysis.InterlayerProperties = form.SelectedInterlayer;
+                    analysis.InterlayerPropertiesAntiSlip = form.SelectedInterlayerAntiSlip;
                     // build constraint set
                     CasePalletConstraintSet constraintSet = analysis.ConstraintSet as CasePalletConstraintSet;
                     // overhang / underhang
@@ -739,6 +740,7 @@ namespace TreeDim.StackBuilder.Desktop
                 analysis.CylinderProperties = form.SelectedCylinder;
                 analysis.PalletProperties = form.SelectedPallet;
                 analysis.InterlayerProperties = form.SelectedInterlayer;
+                analysis.InterlayerPropertiesAntiSlip = form.SelectedInterlayerAntiSlip;
                 // analysis name / description
                 analysis.Name = form.AnalysisName;
                 analysis.Description = form.AnalysisDescription;
