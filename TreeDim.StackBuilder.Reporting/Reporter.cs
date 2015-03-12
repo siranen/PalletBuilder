@@ -1842,6 +1842,7 @@ namespace TreeDim.StackBuilder.Reporting
                 // instantiate solution viewer
                 TruckSolutionViewer sv = new TruckSolutionViewer(truckSolution);
                 sv.Draw(graphics);
+                graphics.Flush();
                 // ---
                 XmlElement elemImage = xmlDoc.CreateElement(viewName, ns);
                 TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
