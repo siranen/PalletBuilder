@@ -133,11 +133,6 @@
             0,
             0,
             0});
-            this.nudThickness.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudThickness.Name = "nudThickness";
             this.nudThickness.Value = new decimal(new int[] {
             1,
@@ -258,7 +253,8 @@
             resources.GetString("cbColor.Items28"),
             resources.GetString("cbColor.Items29"),
             resources.GetString("cbColor.Items30"),
-            resources.GetString("cbColor.Items31")});
+            resources.GetString("cbColor.Items31"),
+            resources.GetString("cbColor.Items32")});
             this.cbColor.Name = "cbColor";
             this.cbColor.SelectedColorChanged += new System.EventHandler(this.onInterlayerPropertyChanged);
             // 

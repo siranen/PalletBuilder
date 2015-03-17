@@ -36,6 +36,7 @@ namespace TreeDim.StackBuilder.Desktop
             // initialize value
             InterlayerLength = UnitsManager.ConvertLengthFrom(1200.0, UnitsManager.UnitSystem.UNIT_METRIC1);
             InterlayerWidth = UnitsManager.ConvertLengthFrom(1000.0, UnitsManager.UnitSystem.UNIT_METRIC1);
+            Thickness = UnitsManager.ConvertLengthFrom(1.0, UnitsManager.UnitSystem.UNIT_METRIC1);
             // disable Ok button
             UpdateButtonOkStatus();
         }

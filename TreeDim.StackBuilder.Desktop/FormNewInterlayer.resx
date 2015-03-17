@@ -651,6 +651,9 @@
   <data name="cbColor.Items31" xml:space="preserve">
     <value>Color</value>
   </data>
+  <data name="cbColor.Items32" xml:space="preserve">
+    <value>Color</value>
+  </data>
   <data name="cbColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 16</value>
   </data>
@@ -664,7 +667,7 @@
     <value>cbColor</value>
   </data>
   <data name="&gt;&gt;cbColor.Type" xml:space="preserve">
-    <value>OfficePickers.ColorPicker.ComboBoxColorPicker, OfficePickers, Version=1.1.5526.24898, Culture=neutral, PublicKeyToken=null</value>
+    <value>OfficePickers.ColorPicker.ComboBoxColorPicker, OfficePickers, Version=1.1.5549.31310, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbColor.Parent" xml:space="preserve">
     <value>gbColor</value>
