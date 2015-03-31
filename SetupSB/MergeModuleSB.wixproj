@@ -26,7 +26,6 @@
     <Compile Include="Components.wxs" />
     <Compile Include="DirectoryTreeMM.wxs" />
     <Compile Include="MergeModule.wxs" />
-    <Compile Include="Plugin_INTEX.wxs" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUtilExtension">
