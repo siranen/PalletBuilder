@@ -34,8 +34,8 @@ namespace TreeDim.StackBuilder.Desktop
         public BoxProperties _boxProperties;
         public Mode _mode;
         public List<Pair<HalfAxis.HAxis, Texture>> _textures;
-        static readonly ILog _log = LogManager.GetLogger(typeof(FormNewBox));
         private double _thicknessLength = 0.0, _thicknessWidth = 0.0, _thicknessHeight = 0.0;
+        static readonly ILog _log = LogManager.GetLogger(typeof(FormNewBox));
         #endregion
 
         #region Constructor
@@ -91,6 +91,8 @@ namespace TreeDim.StackBuilder.Desktop
             _textures = new List<Pair<HalfAxis.HAxis, Texture>>();
             // set default face
             cbFace.SelectedIndex = 0;
+            // net weight
+            NetWeight = new OptDouble(false, UnitsManager.ConvertMassFrom(0.0, UnitsManager.UnitSystem.UNIT_METRIC1));
             // disable Ok button
             UpdateButtonOkStatus();
         }
@@ -124,7 +126,10 @@ namespace TreeDim.StackBuilder.Desktop
             nudInsideWidth.Value = (decimal)_boxProperties.InsideWidth;
             nudHeight.Value = (decimal)_boxProperties.Height;
             nudInsideHeight.Value = (decimal)_boxProperties.InsideHeight;
-            nudWeight.Value = (decimal)_boxProperties.Weight;
+            // weight
+            vcWeight.Value = _boxProperties.Weight;
+            // net weight
+            ovcNetWeight.Value = _boxProperties.NetWeight;
             // color : all faces set together / face by face
             chkAllFaces.Checked = _boxProperties.UniqueColor;
             chkAllFaces_CheckedChanged(this, null);
@@ -209,8 +214,8 @@ namespace TreeDim.StackBuilder.Desktop
         /// </summary>
         public double Weight
         {
-            get { return (double)nudWeight.Value; }
-            set { nudWeight.Value = (decimal)value; }
+            get { return vcWeight.Value; }
+            set { vcWeight.Value = value; }
         }
         /// <summary>
         /// Colors
@@ -383,6 +388,9 @@ namespace TreeDim.StackBuilder.Desktop
             // case height consistency
             else if (_mode == Mode.MODE_CASE && InsideHeight > BoxHeight)
                 message = string.Format(Resources.ID_INVALIDINSIDEHEIGHT, InsideHeight, BoxHeight);
+            // box/case net weight consistency
+            else if (NetWeight.Activated && NetWeight > Weight)
+                message = string.Format(Resources.ID_INVALIDNETWEIGHT, NetWeight.Value, Weight);
             // accept
             bnOK.Enabled = string.IsNullOrEmpty(message);
             toolStripStatusLabelDef.ForeColor = string.IsNullOrEmpty(message) ? Color.Black : Color.Red;
@@ -440,6 +448,14 @@ namespace TreeDim.StackBuilder.Desktop
         }
         #endregion
 
+        #region Net weight
+        public OptDouble NetWeight
+        {
+            get { return ovcNetWeight.Value; }
+            set { ovcNetWeight.Value = value; }
+        }
+        #endregion
+
         #region Draw box
         public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
@@ -454,5 +470,6 @@ namespace TreeDim.StackBuilder.Desktop
             graphics.AddDimensions(new DimensionCube((double)nudLength.Value, (double)nudWidth.Value, (double)nudHeight.Value));
         }
         #endregion
+
     }
 }

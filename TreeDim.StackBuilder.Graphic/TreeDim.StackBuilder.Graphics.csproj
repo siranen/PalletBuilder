@@ -71,17 +71,19 @@
     <Compile Include="CylinderComparer.cs" />
     <Compile Include="DrawableComparerSimplifiedPainterAlgo.cs" />
     <Compile Include="Film.cs" />
-    <Compile Include="Graphics3DControl.cs">
+    <Compile Include="Controls\Graphics3DControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Graphics3DControl.Designer.cs">
+    <Compile Include="Controls\Graphics3DControl.Designer.cs">
       <DependentUpon>Graphics3DControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Graphics3DControl1.Designer.cs">
+    <Compile Include="Controls\Graphics3DControl1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Graphics3DControl.resx</DependentUpon>
     </Compile>
+    <Compile Include="SolutionViewers\PackPalletSolutionViewer.cs" />
+    <Compile Include="Types\Pack.cs" />
     <Compile Include="Properties\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,7 +165,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Graphics3DControl.resx">
+    <EmbeddedResource Include="Controls\Graphics3DControl.resx">
       <DependentUpon>Graphics3DControl.cs</DependentUpon>
       <SubType>Designer</SubType>
       <LastGenOutput>Graphics3DControl1.Designer.cs</LastGenOutput>

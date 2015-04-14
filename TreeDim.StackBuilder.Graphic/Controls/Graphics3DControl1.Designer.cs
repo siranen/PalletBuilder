@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TreeDim.StackBuilder.Graphics {
+namespace TreeDim.StackBuilder.Graphics.Controls {
     using System;
     
     
@@ -22,11 +22,15 @@ namespace TreeDim.StackBuilder.Graphics {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class Graphics3DControl {
+    public class Graphics3DControl {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Graphics3DControl() {
+        }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
@@ -35,7 +39,7 @@ namespace TreeDim.StackBuilder.Graphics {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TreeDim.StackBuilder.Graphics.Graphics3DControl", typeof(Graphics3DControl).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TreeDim.StackBuilder.Graphics.Controls.Graphics3DControl", typeof(Graphics3DControl).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -59,8 +59,8 @@ namespace TreeDim.StackBuilder.Engine
                 double spaceY = maxSizeYLength + maxSizeYWidth > 1
                     ? (actualWidth - maxSizeYWidth * boxWidth - maxSizeYLength * boxLength) / (maxSizeYLength + maxSizeYWidth - 1)
                     : 0.0;
-                System.Diagnostics.Debug.Assert(spaceX >= 0.0);
-                System.Diagnostics.Debug.Assert(spaceY >= 0.0);
+                //System.Diagnostics.Debug.Assert(spaceX >= 0.0);
+                //System.Diagnostics.Debug.Assert(spaceY >= 0.0);
 
                 double xBase = offsetX + i * (boxLength + spaceX);
                 double yBase = offsetY + i * (boxWidth + spaceY);

@@ -61,7 +61,7 @@ namespace TreeDim.StackBuilder.Engine
         public List<CaseDefinition> CaseDefinitions(int iNumber)
         {
             List<CaseDefinition> caseDefinitionList = new List<CaseDefinition>();
-            foreach (CaseOptimArrangement arr in BoxArrangements(iNumber))
+            foreach (PackArrangement arr in BoxArrangements(iNumber))
             {
                 for (int i=0; i<3; ++i)
                     for (int j=0; j<3; ++j)
@@ -145,7 +145,7 @@ namespace TreeDim.StackBuilder.Engine
         /// </summary>
         /// <param name="iNumber"></param>
         /// <returns></returns>
-        public IEnumerable<CaseOptimArrangement> BoxArrangements(int iNumber)
+        public IEnumerable<PackArrangement> BoxArrangements(int iNumber)
         {
             // get the prime factorisation of iNumber
             List<int> primeList = new List<int>(Eratosthenes.GetPrimeFactors(iNumber));
@@ -161,14 +161,14 @@ namespace TreeDim.StackBuilder.Engine
                 i = j;
             }
 
-            List<CaseOptimArrangement> listArrangements = new List<CaseOptimArrangement>();
+            List<PackArrangement> listArrangements = new List<PackArrangement>();
             // Decomp
             int[] multiples1 = new int[primeMultiples.Count];
             Decomp1(primeMultiples, 0, ref multiples1, ref listArrangements);
             return listArrangements;
         }
 
-        private void Decomp1(List<PrimeMultiple> primeMultiples, int iStep, ref int[] multiples1, ref List<CaseOptimArrangement> listArrangements)
+        private void Decomp1(List<PrimeMultiple> primeMultiples, int iStep, ref int[] multiples1, ref List<PackArrangement> listArrangements)
         {
             if (iStep == primeMultiples.Count)
             {
@@ -185,7 +185,7 @@ namespace TreeDim.StackBuilder.Engine
             }
         }
 
-        private void Decomp2(List<PrimeMultiple> primeMultiples, int iStep, int[] multiples1, ref int[] multiples2, ref List<CaseOptimArrangement> listArrangements)
+        private void Decomp2(List<PrimeMultiple> primeMultiples, int iStep, int[] multiples1, ref int[] multiples2, ref List<PackArrangement> listArrangements)
         {
             if (iStep == primeMultiples.Count)
             {
@@ -199,7 +199,7 @@ namespace TreeDim.StackBuilder.Engine
                 for (int i = 0; i < primeMultiples.Count; ++i)
                     iHeight *= (int)Math.Pow(primeMultiples[i]._iPrime, primeMultiples[i]._iMultiple - multiples1[i] - multiples2[i]);
                 // add new arrangement
-                listArrangements.Add(new CaseOptimArrangement(iLength, iWidth, iHeight));
+                listArrangements.Add(new PackArrangement(iLength, iWidth, iHeight));
             }
             else
             {

@@ -217,7 +217,7 @@ namespace TreeDim.StackBuilder.Graphics
             return new Point((int)vt.X, (int)vt.Y);
         }
 
-        private Transform3D GetWorldToEyeTransformation()
+        public Transform3D GetWorldToEyeTransformation()
         {
             /*
             Orthographic transformation chain
@@ -654,84 +654,102 @@ namespace TreeDim.StackBuilder.Graphics
         {
             System.Drawing.Graphics g = Graphics;
 
-            Vector3D[] points = box.Points;
-
-            Face[] faces = box.Faces;
-            for (int i = 0; i < 6; ++i)
+            if (box is Pack)
             {
-                // Face
-                Face face = faces[i];
-                // face normal
-                Vector3D normal = face.Normal;
-                // visible ?
-                if (!faces[i].IsVisible(_vTarget - _vCameraPos))
-                    continue;
-                // color
-                faces[i].ColorFill = box.Colors[i];
-                double cosA = System.Math.Abs(Vector3D.DotProduct(faces[i].Normal, VLight));
-                Color color = Color.FromArgb((int)(faces[i].ColorFill.R * cosA), (int)(faces[i].ColorFill.G * cosA), (int)(faces[i].ColorFill.B * cosA));
-                // points
-                Vector3D[] points3D = faces[i].Points;
-                Point[] pt = TransformPoint(GetCurrentTransformation(), points3D);
-                //  draw solid face
-                Brush brush = new SolidBrush(color);
-                g.FillPolygon(brush, pt);
-                // draw textures
-                if (null != face.Textures && ShowTextures)
-                    foreach (Texture texture in face.Textures)
-                    {
-                        Point[] ptsImage = TransformPoint(GetCurrentTransformation(), box.PointsImage(i, texture));
-                        Point[] pts = new Point[3];
-                        pts[0] = ptsImage[3];
-                        pts[1] = ptsImage[2];
-                        pts[2] = ptsImage[0];
-                        g.DrawImage(texture.Bitmap, pts);
-                    }
-                // draw path
-                Brush brushPath = new SolidBrush(faces[i].ColorPath);
-                Pen penPathThick = new Pen(brushPath, box.IsBundle ? 2.0f : 1.5f);
-                int ptCount = pt.Length;
-                for (int j = 1; j < ptCount; ++j)
-                    g.DrawLine(penPathThick, pt[j - 1], pt[j]);
-                g.DrawLine(penPathThick, pt[ptCount - 1], pt[0]);
-                // draw bundle lines
-                if (box.IsBundle && i < 4)
-                {
-                    Pen penPathThin = new Pen(brushPath, 1.5f);
-                    int noSlice = Math.Min(box.BundleFlats, 4);
-                    for (int iSlice = 0; iSlice < noSlice - 1; ++iSlice)
-                    {
-                        Vector3D[] ptSlice = new Vector3D[2];
-                        ptSlice[0] = points3D[0] + ((double)(iSlice + 1) / (double)noSlice) * (points3D[3] - points3D[0]);
-                        ptSlice[1] = points3D[1] + ((double)(iSlice + 1) / (double)noSlice) * (points3D[2] - points3D[1]);
+                Pack pack = box as Pack;
+                // draw back faces
 
-                        Point[] pt2D = TransformPoint(GetCurrentTransformation(), ptSlice);
-                        g.DrawLine(penPathThin, pt2D[0], pt2D[1]);
+                // draw content
+                List<Box> innerBoxes = pack.InnerBoxes;
+                innerBoxes.Sort(new BoxComparerSimplifiedPainterAlgo(GetWorldToEyeTransformation()));
+                foreach (Box b in innerBoxes)
+                    Draw(b);
+
+
+                // draw front faces
+
+            }
+            else
+            {
+
+                Vector3D[] points = box.Points;
+
+                Face[] faces = box.Faces;
+                for (int i = 0; i < 6; ++i)
+                {
+                    // Face
+                    Face face = faces[i];
+                    // face normal
+                    Vector3D normal = face.Normal;
+                    // visible ?
+                    if (!faces[i].IsVisible(_vTarget - _vCameraPos))
+                        continue;
+                    // color
+                    faces[i].ColorFill = box.Colors[i];
+                    double cosA = System.Math.Abs(Vector3D.DotProduct(faces[i].Normal, VLight));
+                    Color color = Color.FromArgb((int)(faces[i].ColorFill.R * cosA), (int)(faces[i].ColorFill.G * cosA), (int)(faces[i].ColorFill.B * cosA));
+                    // points
+                    Vector3D[] points3D = faces[i].Points;
+                    Point[] pt = TransformPoint(GetCurrentTransformation(), points3D);
+                    //  draw solid face
+                    Brush brush = new SolidBrush(color);
+                    g.FillPolygon(brush, pt);
+                    // draw textures
+                    if (null != face.Textures && ShowTextures)
+                        foreach (Texture texture in face.Textures)
+                        {
+                            Point[] ptsImage = TransformPoint(GetCurrentTransformation(), box.PointsImage(i, texture));
+                            Point[] pts = new Point[3];
+                            pts[0] = ptsImage[3];
+                            pts[1] = ptsImage[2];
+                            pts[2] = ptsImage[0];
+                            g.DrawImage(texture.Bitmap, pts);
+                        }
+                    // draw path
+                    Brush brushPath = new SolidBrush(faces[i].ColorPath);
+                    Pen penPathThick = new Pen(brushPath, box.IsBundle ? 2.0f : 1.5f);
+                    int ptCount = pt.Length;
+                    for (int j = 1; j < ptCount; ++j)
+                        g.DrawLine(penPathThick, pt[j - 1], pt[j]);
+                    g.DrawLine(penPathThick, pt[ptCount - 1], pt[0]);
+                    // draw bundle lines
+                    if (box.IsBundle && i < 4)
+                    {
+                        Pen penPathThin = new Pen(brushPath, 1.5f);
+                        int noSlice = Math.Min(box.BundleFlats, 4);
+                        for (int iSlice = 0; iSlice < noSlice - 1; ++iSlice)
+                        {
+                            Vector3D[] ptSlice = new Vector3D[2];
+                            ptSlice[0] = points3D[0] + ((double)(iSlice + 1) / (double)noSlice) * (points3D[3] - points3D[0]);
+                            ptSlice[1] = points3D[1] + ((double)(iSlice + 1) / (double)noSlice) * (points3D[2] - points3D[1]);
+
+                            Point[] pt2D = TransformPoint(GetCurrentTransformation(), ptSlice);
+                            g.DrawLine(penPathThin, pt2D[0], pt2D[1]);
+                        }
                     }
                 }
-            }
 
-            // draw box tape
-            if (box.ShowTape && faces[5].IsVisible(_vTarget - _vCameraPos))
-            {
-                // get color
-                double cosA = System.Math.Abs(Vector3D.DotProduct(faces[5].Normal, VLight));
-                Color color = Color.FromArgb((int)(box.TapeColor.R * cosA), (int)(box.TapeColor.G * cosA), (int)(box.TapeColor.B * cosA));
-                // instantiate brush
-                Brush brushTape = new SolidBrush(color);
-                // get tape points
-                Point[] pts = TransformPoint(GetCurrentTransformation(), box.TapePoints);
-                // fill polygon
-                g.FillPolygon(brushTape, pts);
-                // draw path
-                Brush brushPath = new SolidBrush(faces[5].ColorPath);
-                Pen penPathThick = new Pen(brushPath, 1.5f);
-                int ptCount = pts.Length;
-                for (int j = 1; j < ptCount; ++j)
-                    g.DrawLine(penPathThick, pts[j - 1], pts[j]);
-                g.DrawLine(penPathThick, pts[ptCount - 1], pts[0]);
+                // draw box tape
+                if (box.ShowTape && faces[5].IsVisible(_vTarget - _vCameraPos))
+                {
+                    // get color
+                    double cosA = System.Math.Abs(Vector3D.DotProduct(faces[5].Normal, VLight));
+                    Color color = Color.FromArgb((int)(box.TapeColor.R * cosA), (int)(box.TapeColor.G * cosA), (int)(box.TapeColor.B * cosA));
+                    // instantiate brush
+                    Brush brushTape = new SolidBrush(color);
+                    // get tape points
+                    Point[] pts = TransformPoint(GetCurrentTransformation(), box.TapePoints);
+                    // fill polygon
+                    g.FillPolygon(brushTape, pts);
+                    // draw path
+                    Brush brushPath = new SolidBrush(faces[5].ColorPath);
+                    Pen penPathThick = new Pen(brushPath, 1.5f);
+                    int ptCount = pts.Length;
+                    for (int j = 1; j < ptCount; ++j)
+                        g.DrawLine(penPathThick, pts[j - 1], pts[j]);
+                    g.DrawLine(penPathThick, pts[ptCount - 1], pts[0]);
+                }
             }
-
             if (_showBoxIds)
             {
                 // draw box id
@@ -750,6 +768,14 @@ namespace TreeDim.StackBuilder.Graphics
                     , StringFormat.GenericDefault);
             }
             ++_boxDrawingCounter;
+        }
+
+        internal void Draw(Pack pack)
+        {
+            System.Drawing.Graphics g = Graphics;
+
+            Vector3D[] points = pack.Points;
+
         }
         #endregion
 

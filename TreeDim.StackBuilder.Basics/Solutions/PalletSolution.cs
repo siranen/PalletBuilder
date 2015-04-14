@@ -54,8 +54,9 @@ namespace TreeDim.StackBuilder.Basics
     public class BoxLayer : List<BoxPosition>, ILayer
     {
         #region Data members
-        double _zLower = 0.0;
-        string _patternName;
+        private double _zLower = 0.0;
+        private string _patternName;
+        private double _maxSpace = 0.0;
         #endregion
 
         #region Constructor
@@ -75,6 +76,7 @@ namespace TreeDim.StackBuilder.Basics
         public int InterlayerCount { get { return 0; } }
         public int CylinderCount { get { return 0; } }
         public string PatternName { get { return _patternName; } }
+        public double MaximumSpace { get { return _maxSpace; } set { _maxSpace = value; } }
         #endregion
 
         #region Public methods
@@ -117,6 +119,32 @@ namespace TreeDim.StackBuilder.Basics
             }
 
             return bbox;
+        }
+
+        public BBox3D BoundingBox(PackProperties packProperties)
+        {
+            BBox3D bbox = new BBox3D();
+
+            foreach (BoxPosition bpos in this)
+            {
+                Vector3D[] pts = new Vector3D[8];
+                Vector3D vI = HalfAxis.ToVector3D(bpos.DirectionLength);
+                Vector3D vJ = HalfAxis.ToVector3D(bpos.DirectionWidth);
+                Vector3D vK = Vector3D.CrossProduct(vI, vJ);
+                pts[0] = bpos.Position;
+                pts[1] = bpos.Position + packProperties.Length * vI;
+                pts[2] = bpos.Position + packProperties.Width * vJ;
+                pts[3] = bpos.Position + packProperties.Length * vI + packProperties.Width * vJ;
+                pts[4] = bpos.Position + packProperties.Height * vK;
+                pts[5] = bpos.Position + packProperties.Width * vJ + packProperties.Height * vK; ;
+                pts[6] = bpos.Position + HalfAxis.ToVector3D(bpos.DirectionWidth) * packProperties.Width;
+                pts[7] = bpos.Position + HalfAxis.ToVector3D(bpos.DirectionLength) * packProperties.Length + HalfAxis.ToVector3D(bpos.DirectionWidth) * packProperties.Width;
+
+                foreach (Vector3D pt in pts)
+                    bbox.Extend(pt);
+            }
+
+            return bbox;       
         }
 
         public double Thickness(BProperties bProperties)
@@ -193,6 +221,31 @@ namespace TreeDim.StackBuilder.Basics
             if (Count == 0) return 0.0;
             return cylProperties.Height;
         }
+        #endregion
+    }
+    #endregion
+
+    #region Layer descriptor
+    public class LayerDescriptor
+    {
+        #region Data members
+        private bool _swapped = false;
+        private bool _hasInterlayer = true;
+        #endregion
+
+        #region Constructors
+        public LayerDescriptor()
+        { 
+        }
+        public LayerDescriptor(bool swapped, bool hasInterlayer)
+        {
+            _swapped = swapped; _hasInterlayer = hasInterlayer;
+        }
+        #endregion
+
+        #region Public properties
+        public bool Swapped { get { return _swapped; } set { _swapped = value; } }
+        public bool HasInterlayer { get { return _hasInterlayer; } set { _hasInterlayer = value; } }
         #endregion
     }
     #endregion

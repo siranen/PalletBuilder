@@ -23,6 +23,14 @@ namespace TreeDim.StackBuilder.Basics
             , UNIT_IMPERIAL
             , UNIT_US
         }
+        public enum UnitType
+        { 
+            UT_LENGTH
+            , UT_MASS
+            , UT_VOLUME
+            , UT_SURFACEMASS
+            , UT_NONE
+        }
         #endregion
 
         #region Private constructor
@@ -117,12 +125,72 @@ namespace TreeDim.StackBuilder.Basics
         }
         #endregion
 
+        #region Number of decimals
+        public static int LengthNoDecimals
+        {
+            get
+            {
+                switch (Instance._currentUnitSystem)
+                {
+                    case UnitSystem.UNIT_METRIC1:   return 1; 
+                    case UnitSystem.UNIT_METRIC2:   return 1;
+                    case UnitSystem.UNIT_IMPERIAL:  return 2;
+                    case UnitSystem.UNIT_US:        return 2;
+                    default: throw new Exception("Invalid unit system!");
+                }
+            }
+        }
+        public static int MassNoDecimals
+        {   get { return 3; } }
+
+        public static int VolumeNoDecimals
+        {
+            get
+            {
+                switch (Instance._currentUnitSystem)
+                {
+                    case UnitSystem.UNIT_METRIC1: return 3;
+                    case UnitSystem.UNIT_METRIC2: return 3;
+                    case UnitSystem.UNIT_IMPERIAL: return 1;
+                    case UnitSystem.UNIT_US: return 1;
+                    default: throw new Exception("Invalid unit system!");
+                }
+            }
+        }
+
+        public static int SurfaceMassNoDecimals
+        {   get { return 3; } }
+        #endregion
+
         #region Data members
         private static UnitsManager _instance;
         private UnitSystem _currentUnitSystem;
         #endregion
 
         #region UI string transformations
+        static public string UnitString(UnitType ut)
+        {
+            switch (ut)
+            {
+                case UnitType.UT_LENGTH: return LengthUnitString;
+                case UnitType.UT_MASS: return MassUnitString;
+                case UnitType.UT_VOLUME: return VolumeUnitString;
+                case UnitType.UT_SURFACEMASS: return SurfaceMassUnitString;
+                default: return string.Empty;
+            }
+        }
+        static public int NoDecimals(UnitType ut)
+        {
+            switch (ut)
+            {
+                case UnitType.UT_LENGTH: return LengthNoDecimals;
+                case UnitType.UT_MASS: return MassNoDecimals;
+                case UnitType.UT_VOLUME: return VolumeNoDecimals;
+                case UnitType.UT_SURFACEMASS: return SurfaceMassNoDecimals;
+                default: return 3;
+            }
+        }
+
         static public string ReplaceUnitStrings(string s)
         { 
             string sText = s;

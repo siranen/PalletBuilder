@@ -70,11 +70,41 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Analyses\PackPalletAnalysis.cs" />
     <Compile Include="ConstraintSets\CylinderPalletConstraintSet.cs" />
+    <Compile Include="ConstraintSets\PackPalletConstraintSet.cs" />
+    <Compile Include="Containers\PackArrangement.cs" />
+    <Compile Include="Containers\PackProperties.cs" />
+    <Compile Include="Controls\UCtrlTriInt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCtrlTriInt.Designer.cs">
+      <DependentUpon>UCtrlTriInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCtrlOptTriDouble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCtrlOptTriDouble.Designer.cs">
+      <DependentUpon>UCtrlOptTriDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCtrlTriDouble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCtrlTriDouble.Designer.cs">
+      <DependentUpon>UCtrlTriDouble.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\BBox3D.cs" />
     <Compile Include="Analyses\BoxCaseAnalysis.cs" />
     <Compile Include="ConstraintSets\BoxCaseConstraintSet.cs" />
     <Compile Include="Helpers\CylinderPosition.cs" />
+    <Compile Include="Helpers\OptDouble.cs" />
+    <Compile Include="Controls\UCtrlOptDouble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCtrlOptDouble.Designer.cs">
+      <DependentUpon>UCtrlOptDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\OptInt.cs" />
     <Compile Include="PalletDecoration\PalletCornerProperties.cs" />
     <Compile Include="PalletDecoration\PalletCapProperties.cs" />
     <Compile Include="PalletDecoration\PalletFilmProperties.cs" />
@@ -104,6 +134,7 @@
     <Compile Include="ItemBase.cs" />
     <Compile Include="PalletSolutionDatabase.cs" />
     <Compile Include="Solutions\CylinderPalletSolution.cs" />
+    <Compile Include="Solutions\PackPalletSolution.cs" />
     <Compile Include="Solutions\SelSolution.cs" />
     <Compile Include="Solutions\PalletSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +143,12 @@
     <Compile Include="ConstraintSets\TruckConstraintSet.cs" />
     <Compile Include="Solutions\TruckSolution.cs" />
     <Compile Include="UnitsManager.cs" />
+    <Compile Include="Controls\UCtrlDouble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCtrlDouble.Designer.cs">
+      <DependentUpon>UCtrlDouble.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sharp3D.Math\Sharp3D.Math.csproj">
@@ -152,6 +189,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Schemas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\UCtrlTriInt.resx">
+      <DependentUpon>UCtrlTriInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCtrlOptDouble.resx">
+      <DependentUpon>UCtrlOptDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCtrlDouble.resx">
+      <DependentUpon>UCtrlDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCtrlOptTriDouble.resx">
+      <DependentUpon>UCtrlOptTriDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCtrlTriDouble.resx">
+      <DependentUpon>UCtrlTriDouble.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

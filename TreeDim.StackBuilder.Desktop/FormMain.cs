@@ -22,8 +22,6 @@ using TreeDim.StackBuilder.Reporting;
 using TreeDim.StackBuilder.Desktop.Properties;
 using TreeDim.StackBuilder.ColladaExporter;
 
-using Microsoft.Office.Interop;
-
 using treeDiM.StackBuilder.Plugin;
 #endregion
 
@@ -304,6 +302,26 @@ namespace TreeDim.StackBuilder.Desktop
                         box.TapeWidth = form.TapeWidth;
                         box.TapeColor = form.TapeColor;
                         box.EndUpdate();
+                    }
+                }
+                else if (itemProp.GetType() == typeof(PackProperties))
+                {
+                    PackProperties pack = itemProp as PackProperties;
+                    FormNewPack form = new FormNewPack(eventArg.Document, eventArg.ItemBase as PackProperties);
+                    form.Boxes = eventArg.Document.Boxes;
+
+                    if (DialogResult.OK == form.ShowDialog())
+                    {
+                        if (!UserAcknowledgeDependancies(pack)) return;
+                        pack.Name = form.ItemName;
+                        pack.Description = form.ItemDescription;
+                        pack.Box = form.SelectedBox;
+                        pack.BoxOrientation = form.BoxOrientation;
+                        pack.Arrangement = form.Arrangement;
+                        pack.Wrap = form.Wrapper;
+                        if (form.HasForcedOuterDimensions)
+                            pack.ForceOuterDimensions(form.OuterDimensions);
+                        pack.EndUpdate();
                     }
                 }
                 else if (itemProp.GetType() == typeof(CylinderProperties))
@@ -751,6 +769,9 @@ namespace TreeDim.StackBuilder.Desktop
             // new case
             newCaseToolStripMenuItem.Enabled = (null != doc);
             toolStripButtonAddNewCase.Enabled = (null != doc);
+            // new pack
+            newPackToolStripMenuItem.Enabled = (null != doc) && doc.CanCreatePack;
+            toolStripButtonAddNewPack.Enabled = (null != doc) && doc.CanCreatePack;
             // new bundle
             newBundleToolStripMenuItem.Enabled = (null != doc);
             toolStripButtonCreateNewBundle.Enabled = (null != doc);
@@ -778,6 +799,8 @@ namespace TreeDim.StackBuilder.Desktop
             // new case/pallet analysis
             newAnalysisToolStripMenuItem.Enabled = (null != doc) && doc.CanCreateCasePalletAnalysis;
             toolStripButtonCreateNewAnalysis.Enabled = (null != doc) && doc.CanCreateCasePalletAnalysis;
+            // new pack/pallet analysis
+            toolStripButtonCreateNewPackPalletAnalysis.Enabled = (null != doc) && doc.CanCreatePackPalletAnalysis;
             // new cylinder/pallet analysis
             newToolStripMenuItemCylinderPalletAnalysis.Enabled = (null != doc) && doc.CanCreateCylinderPalletAnalysis;
             toolStripSBCylinderPalletAnalysis.Enabled = (null != doc) && doc.CanCreateCylinderPalletAnalysis;
@@ -1020,6 +1043,10 @@ namespace TreeDim.StackBuilder.Desktop
             else
                 CreateOrActivateViewCasePalletAnalysis(analysis); 
         }
+        public void OnNewPackPalletAnalysisCreated(Document doc, PackPalletAnalysis analysis)
+        {
+            CreateOrActivateViewPackPalletAnalysis(analysis);
+        }
         public void OnNewCylinderPalletAnalysisCreated(Document doc, CylinderPalletAnalysis analysis)
         {
             CreateOrActivateViewCylinderPalletAnalysis(analysis);
@@ -1128,6 +1155,11 @@ namespace TreeDim.StackBuilder.Desktop
             try { ((DocumentSB)ActiveDocument).CreateNewCaseUI(); }
             catch (Exception ex) { _log.Error(ex.ToString()); Program.SendCrashReport(ex); }
         }
+        private void toolAddNewPack(object sender, EventArgs e)
+        {
+            try { ((DocumentSB)ActiveDocument).CreateNewPackUI(); }
+            catch (Exception ex) { _log.Error(ex.ToString()); Program.SendCrashReport(ex); }
+        }
         private void toolAddNewBundle(object sender, EventArgs e)
         {
             try { ((DocumentSB)ActiveDocument).CreateNewBundleUI(); }
@@ -1156,6 +1188,11 @@ namespace TreeDim.StackBuilder.Desktop
         private void toolAddNewCasePalletAnalysis(object sender, EventArgs e)
         {
             try { CasePalletAnalysis analysis = ((DocumentSB)ActiveDocument).CreateNewCasePalletAnalysisUI(); }
+            catch (Exception ex) { _log.Error(ex.ToString()); Program.SendCrashReport(ex); }
+        }
+        private void toolAddNewPackPalletAnalysis(object sender, EventArgs e)
+        {
+            try { PackPalletAnalysis analysis = ((DocumentSB)ActiveDocument).CreateNewPackPalletAnalysisUI(); }
             catch (Exception ex) { _log.Error(ex.ToString()); Program.SendCrashReport(ex); }
         }
         private void toolAddNewBundlePalletAnalysis(object sender, EventArgs e)
@@ -1268,6 +1305,28 @@ namespace TreeDim.StackBuilder.Desktop
             // get document
             DocumentSB parentDocument = (DocumentSB)analysis.ParentDocument;
             DockContentCasePalletAnalysis formAnalysis = parentDocument.CreateAnalysisViewCasePallet(analysis);
+            formAnalysis.Show(dockPanel, WeifenLuo.WinFormsUI.Docking.DockState.Document);
+        }
+        public void CreateOrActivateViewPackPalletAnalysis(PackPalletAnalysis analysis)
+        {
+            // ---> search among existing views
+            // ---> activate if found
+            foreach (IDocument doc in Documents)
+                foreach (IView view in doc.Views)
+                {
+                    DockContentPackPalletAnalysis form = view as DockContentPackPalletAnalysis;
+                    if (null == form) continue;
+                    if (analysis == form.Analysis)
+                    {
+                        form.Activate();
+                        return;
+                    }
+                }
+            // ---> not found
+            // ---> create new form
+            // get document
+            DocumentSB parentDocument = (DocumentSB)analysis.ParentDocument;
+            DockContentPackPalletAnalysis formAnalysis = parentDocument.CreateAnalysisViewPackPallet(analysis);
             formAnalysis.Show(dockPanel, WeifenLuo.WinFormsUI.Docking.DockState.Document);
         }
         public void CreateOrActivateViewCylinderPalletAnalysis(CylinderPalletAnalysis analysis)
@@ -1530,5 +1589,7 @@ namespace TreeDim.StackBuilder.Desktop
             return _instance;
         }
         #endregion
+
+
     }
 }

@@ -40,7 +40,6 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.onMouseUp);
             this.Resize += new System.EventHandler(this.onResize);
             this.ResumeLayout(false);
-
         }
         #endregion
     }

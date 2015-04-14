@@ -284,7 +284,7 @@ namespace TreeDim.StackBuilder.Basics
     }
     #endregion
 
-    #region IAnalysisSolver
+    #region ICasePalletAnalysisSolver
     public interface ICasePalletAnalysisSolver
     { 
         void ProcessAnalysis(CasePalletAnalysis analysis);

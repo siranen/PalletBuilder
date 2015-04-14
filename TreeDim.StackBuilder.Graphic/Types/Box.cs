@@ -168,6 +168,26 @@ namespace TreeDim.StackBuilder.Graphics
                     _noFlats = bundleProp.NoFlats;
             }
         }
+        public Box(uint pickId, PackProperties packProperties, BoxPosition bPosition)
+        { 
+            if (!bPosition.IsValid)
+                throw new GraphicsException("Invalid BoxPosition: can not create box");
+            _pickId = pickId;
+            _dim[0] = packProperties.Length;
+            _dim[1] = packProperties.Width;
+            _dim[2] = packProperties.Height;
+
+            _colors = new Color[]
+            {
+                Color.Brown, Color.Brown, Color.Brown, Color.Brown, Color.Brown, Color.Brown
+            };
+            // set position
+            Position = bPosition.Position;
+            // set direction length
+            LengthAxis = HalfAxis.ToVector3D(bPosition.DirectionLength);
+            // set direction width
+            WidthAxis = HalfAxis.ToVector3D(bPosition.DirectionWidth);
+        }
 
         public Box(uint pickId, InterlayerProperties interlayerProperties)
         {

@@ -189,6 +189,12 @@
     <Compile Include="DockContentLogConsole.Designer.cs">
       <DependentUpon>DockContentLogConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="DockContentPackPalletAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockContentPackPalletAnalysis.Designer.cs">
+      <DependentUpon>DockContentPackPalletAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="DockContentReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,18 @@
     </Compile>
     <Compile Include="FormNewInterlayer.Designer.cs">
       <DependentUpon>FormNewInterlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewPack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewPack.Designer.cs">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewAnalysisPackPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewAnalysisPackPallet.Designer.cs">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
     </Compile>
     <Compile Include="FormNewPallet.cs">
       <SubType>Form</SubType>
@@ -622,6 +640,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DockContentLogConsole.resx">
       <DependentUpon>DockContentLogConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockContentPackPalletAnalysis.resx">
+      <DependentUpon>DockContentPackPalletAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DockContentReport.de-DE.resx">
       <DependentUpon>DockContentReport.cs</DependentUpon>
@@ -1031,6 +1052,12 @@
     <EmbeddedResource Include="FormNewInterlayer.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FormNewInterlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPack.resx">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisPackPallet.resx">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewPallet.ca-ES.resx">
       <DependentUpon>FormNewPallet.cs</DependentUpon>
@@ -1498,19 +1525,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Solution.bmp" />
-    <None Include="Resources\Analysis1.bmp" />
     <Content Include="Resources\AnalysisBundle.bmp" />
     <None Include="Resources\Case.bmp" />
     <None Include="Resources\AnalysisCylinder.bmp" />
     <None Include="Resources\AnalysisHCylinder.bmp" />
-    <None Include="Resources\AnalysisBundle1.bmp" />
     <Content Include="Resources\AnalysisStackingStrength.ico" />
     <None Include="Resources\AnalysisStackingStrength.png" />
     <None Include="Resources\BoxCaseAnalysis.bmp" />
-    <None Include="Resources\AnalysisStackingStrength1.png" />
-    <None Include="Resources\Box1.bmp" />
-    <None Include="Resources\Bundle1.bmp" />
-    <None Include="Resources\Case1.bmp" />
     <Content Include="Resources\CaseAnalysis.bmp" />
     <None Include="Resources\Delete.bmp" />
     <None Include="Resources\Database.bmp" />
@@ -1519,31 +1540,18 @@
     <None Include="Resources\IE-icon.png" />
     <None Include="Resources\Chrome.bmp" />
     <None Include="Resources\Cylinder.bmp" />
-    <None Include="Resources\CaseAnalysis1.bmp" />
-    <None Include="Resources\CaseOfBoxes1.bmp" />
-    <None Include="Resources\Chrome1.bmp" />
-    <None Include="Resources\CLSDFOLD1.BMP" />
-    <None Include="Resources\Database1.bmp" />
-    <None Include="Resources\Delete1.bmp" />
-    <None Include="Resources\DOC1.BMP" />
-    <None Include="Resources\IE-icon1.png" />
     <Content Include="Resources\Image.bmp" />
     <None Include="Resources\OptimalCase.bmp" />
     <None Include="Resources\PDF.bmp" />
     <None Include="Resources\PalletCap.bmp" />
     <None Include="Resources\PalletCorners.bmp" />
     <None Include="Resources\PalletFilm.bmp" />
-    <None Include="Resources\Interlayer1.bmp" />
-    <None Include="Resources\OPENFOLD1.BMP" />
-    <None Include="Resources\Pallet1.bmp" />
-    <None Include="Resources\Solution1.bmp" />
+    <None Include="Resources\Pack.bmp" />
+    <None Include="Resources\PackAnalysis.bmp" />
     <Content Include="Resources\StackBuilderAbout.bmp" />
     <None Include="Resources\TruckAnalysis.bmp" />
     <Content Include="Resources\AnalysisStackingStrength.bmp" />
-    <None Include="Resources\Truck1.bmp" />
-    <None Include="Resources\TruckAnalysis1.bmp" />
     <Content Include="Resources\Word.bmp" />
-    <None Include="Resources\Word1.bmp" />
     <Content Include="treeDim.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

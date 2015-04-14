@@ -30,10 +30,6 @@ namespace TreeDim.StackBuilder.Desktop
         /// </summary>
         private CasePalletAnalysis _analysis;
         /// <summary>
-        /// view parameters
-        /// </summary>
-        private const double _cameraDistance = 10000.0;
-        /// <summary>
         /// Currently selected solution
         /// </summary>
         private CasePalletSolution _sol;
@@ -70,9 +66,6 @@ namespace TreeDim.StackBuilder.Desktop
         #endregion
 
         #region Form override
-        private void DockContentAnalysis_Load(object sender, EventArgs e)
-        {
-        }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

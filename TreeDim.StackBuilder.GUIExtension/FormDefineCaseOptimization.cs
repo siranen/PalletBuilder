@@ -332,7 +332,7 @@ namespace TreeDim.StackBuilder.GUIExtension
                 PalletProperties palletProperties = doc.CreateNewPallet(SelectedPallet);
                 // get selected caseOptimSolution
                 CaseOptimSolution sol = SelectedSolution;
-                CaseOptimArrangement arrangement = sol.CaseDefinition.Arrangement;
+                PackArrangement arrangement = sol.CaseDefinition.Arrangement;
                 // build new case name
                 string arrangName = string.Format("{0}_{1}x{2}x{3}_{4}{5}"
                     , boxProperties.Name

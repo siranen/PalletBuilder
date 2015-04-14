@@ -118,6 +118,12 @@ namespace TreeDim.StackBuilder.Desktop
             AddView(form);
             return form;
         }
+        public DockContentPackPalletAnalysis CreateAnalysisViewPackPallet(PackPalletAnalysis analysis)
+        {
+            DockContentPackPalletAnalysis form = new DockContentPackPalletAnalysis(this, analysis);
+            AddView(form);
+            return form;
+        }
         /// <summary>
         /// Creates new DockContentAnalysis view
         /// </summary>
@@ -209,7 +215,7 @@ namespace TreeDim.StackBuilder.Desktop
 
         #region UI item creation
         /// <summary>
-        /// Creates a new BoxProperties object
+        /// Creates a new BoxProperties object with MODE_BOX
         /// </summary>
         public void CreateNewBoxUI()
         {
@@ -220,7 +226,7 @@ namespace TreeDim.StackBuilder.Desktop
                     , form.Weight, form.Colors);
         }
         /// <summary>
-        /// Creates a new 
+        /// Creates a new BoxProperties object with MODE_CASE
         /// </summary>
         public void CreateNewCaseUI()
         {
@@ -234,6 +240,25 @@ namespace TreeDim.StackBuilder.Desktop
                 boxProperties.ShowTape = form.ShowTape;
                 boxProperties.TapeColor = form.TapeColor;
                 boxProperties.TapeWidth = form.TapeWidth;
+            }
+        }
+        /// <summary>
+        /// Creates a new PackProperties object
+        /// </summary>
+        public void CreateNewPackUI()
+        {
+            FormNewPack form = new FormNewPack(this, null);
+            form.Boxes = Boxes;
+            if (DialogResult.OK == form.ShowDialog())
+            {
+                PackProperties packProperties = CreateNewPack(
+                    form.ItemName, form.ItemDescription
+                    , form.SelectedBox
+                    , form.Arrangement
+                    , form.BoxOrientation
+                    , form.Wrapper);
+                if (form.HasForcedOuterDimensions)
+                    packProperties.ForceOuterDimensions(form.OuterDimensions);
             }
         }
 
@@ -400,6 +425,40 @@ namespace TreeDim.StackBuilder.Desktop
                     form.SelectedPalletCorners, form.SelectedPalletCap, form.SelectedPalletFilm,
                     constraintSet,
                     new CasePalletSolver());
+            }
+            return null;
+        }
+        public PackPalletAnalysis CreateNewPackPalletAnalysisUI()
+        {
+            if (!CanCreatePackPalletAnalysis) return null;
+
+            FormNewAnalysisPackPallet form = new FormNewAnalysisPackPallet(this, null);
+            form.Packs = ListByType(typeof(PackProperties)).ToArray();
+            form.Pallets = ListByType(typeof(PalletProperties)).ToArray();
+            form.Interlayers = ListByType(typeof(InterlayerProperties)).ToArray();
+
+            if (DialogResult.OK == form.ShowDialog())
+            {
+                PackPalletConstraintSet constraintSet = new PackPalletConstraintSet();
+                constraintSet.MaximumPalletHeight = form.MaximumPalletHeight;
+                constraintSet.MaximumLayerWeight = form.MaximumPalletWeight;
+                constraintSet.MaximumLayerWeight = form.MaximumLayerWeight;
+                constraintSet.OverhangX = form.OverhangX;
+                constraintSet.OverhangY = form.OverhangY;
+                constraintSet.MinOverhangX = form.MinimumOverhangX;
+                constraintSet.MinOverhangY = form.MinimumOverhangY;
+                constraintSet.MinimumSpace = form.MinimumSpace;
+                constraintSet.MaximumSpaceAllowed = form.MaximumSpace;
+                constraintSet.HasFirstLayerInterlayer = form.HasFirstInterlayer;
+                constraintSet.InterlayerPeriod = form.InterlayerPeriod;
+                constraintSet.LayerSwapPeriod = form.LayerSwapPeriod;
+
+                return CreateNewPackPalletAnalysis(
+                    form.ItemName, form.ItemDescription,
+                    form.PackProperties, form.PalletProperties,
+                    form.InterlayerProperties,
+                    constraintSet,
+                    new PackPalletSolver());
             }
             return null;
         }
@@ -725,6 +784,12 @@ namespace TreeDim.StackBuilder.Desktop
             }
             if (recomputeRequired)
                 analysis.OnEndUpdate(null);
+        }
+
+
+        public void EditPackPalletAnalsyis()
+        { 
+        
         }
 
         public void EditCylinderPalletAnalysis(CylinderPalletAnalysis analysis)

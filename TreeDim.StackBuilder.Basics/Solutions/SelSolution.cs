@@ -343,4 +343,42 @@ namespace TreeDim.StackBuilder.Basics
         #endregion
     }
     #endregion
+
+    #region Pack pallet solution
+    public class SelPackPalletSolution : ItemBase
+    {
+        #region Data members
+        private PackPalletAnalysis _analysis;
+        private PackPalletSolution _solution;
+        #endregion
+
+        #region Constructor
+        public SelPackPalletSolution(Document document, PackPalletAnalysis analysis, PackPalletSolution solution)
+            : base(document)
+        {
+            _analysis = analysis;
+            _solution = solution;
+        }
+        #endregion
+
+        #region Public properties
+        public PackPalletAnalysis Analysis
+        {
+            get { return _analysis; }
+        }
+        public PackPalletSolution Solution
+        {
+            get { return _solution; }
+        }
+        #endregion
+
+        #region ItemBase override
+        protected override void RemoveItselfFromDependancies()
+        {
+            _analysis.RemoveDependancy(this);
+            base.RemoveItselfFromDependancies();
+        }
+        #endregion
+    }
+    #endregion
 }

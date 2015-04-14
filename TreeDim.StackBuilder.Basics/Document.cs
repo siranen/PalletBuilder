@@ -28,6 +28,7 @@ namespace TreeDim.StackBuilder.Basics
         void OnNewDocument(Document doc);
         void OnNewTypeCreated(Document doc, ItemBase itemBase);
         void OnNewCasePalletAnalysisCreated(Document doc, CasePalletAnalysis analysis);
+        void OnNewPackPalletAnalysisCreated(Document doc, PackPalletAnalysis analysis);
         void OnNewCylinderPalletAnalysisCreated(Document doc, CylinderPalletAnalysis analysis);
         void OnNewHCylinderPalletAnalysisCreated(Document doc, HCylinderPalletAnalysis analysis);
         void OnNewBoxCaseAnalysisCreated(Document doc, BoxCaseAnalysis analysis);
@@ -57,6 +58,7 @@ namespace TreeDim.StackBuilder.Basics
         private UnitsManager.UnitSystem _unitSystem;
         private List<ItemBase> _typeList = new List<ItemBase>();
         private List<CasePalletAnalysis> _casePalletAnalyses = new List<CasePalletAnalysis>();
+        private List<PackPalletAnalysis> _packPalletAnalyses = new List<PackPalletAnalysis>();
         private List<CylinderPalletAnalysis> _cylinderPalletAnalyses = new List<CylinderPalletAnalysis>();
         private List<HCylinderPalletAnalysis> _hCylinderPalletAnalyses = new List<HCylinderPalletAnalysis>();
         private List<BoxCaseAnalysis> _boxCaseAnalyses = new List<BoxCaseAnalysis>();
@@ -209,6 +211,7 @@ namespace TreeDim.StackBuilder.Basics
                 , boxProp.Width
                 , boxProp.Height);
             boxPropClone.Weight = boxProp.Weight;
+            boxPropClone.NetWeight = boxProp.NetWeight;
             boxPropClone.Name = boxProp.Name;
             boxPropClone.Description = boxProp.Description;
             boxPropClone.SetAllColors(boxProp.Colors);
@@ -265,6 +268,7 @@ namespace TreeDim.StackBuilder.Basics
                 , boxProp.InsideWidth
                 , boxProp.InsideHeight);
             boxPropClone.Weight = boxProp.Weight;
+            boxPropClone.NetWeight = boxProp.NetWeight;
             boxPropClone.Name = boxProp.Name;
             boxPropClone.Description = boxProp.Description;
             boxPropClone.SetAllColors(boxProp.Colors);
@@ -274,6 +278,38 @@ namespace TreeDim.StackBuilder.Basics
             NotifyOnNewTypeCreated(boxPropClone);
             Modify();
             return boxPropClone;
+        }
+        /// <summary>
+        /// Create a new pack
+        /// </summary>
+        /// <param name="name">Name</param>
+        /// <param name="description">Description</param>
+        /// <param name="box">Inner box</param>
+        /// <param name="arrangement">Arrangement</param>
+        /// <param name="axis">Axis</param>
+        /// <param name="wrapper">Wrapper</param>
+        /// <returns></returns>
+        public PackProperties CreateNewPack(
+            string name, string description
+            , BoxProperties box
+            , PackArrangement arrangement
+            , HalfAxis.HAxis axis
+            , PackWrapper wrapper)
+        { 
+            // instantiate and initialize
+            PackProperties packProperties = new PackProperties(this
+                , box
+                , arrangement
+                , axis
+                , wrapper);
+            packProperties.Name = name;
+            packProperties.Description = description;
+            // insert in list
+            _typeList.Add(packProperties);
+            // notify listeners
+            NotifyOnNewTypeCreated(packProperties);
+            Modify();
+            return packProperties;
         }
 
         public CaseOfBoxesProperties CreateNewCaseOfBoxes(
@@ -533,6 +569,37 @@ namespace TreeDim.StackBuilder.Basics
             Modify();
             return analysis;
         }
+
+        public PackPalletAnalysis CreateNewPackPalletAnalysis(
+            string name, string description
+            , PackProperties pack, PalletProperties pallet
+            , InterlayerProperties interlayer
+            , PackPalletConstraintSet constraintSet
+            , IPackPalletAnalysisSolver solver)
+        {
+            PackPalletAnalysis analysis = new PackPalletAnalysis(
+                pack
+                , pallet
+                , interlayer
+                , constraintSet);
+            analysis.Name = name;
+            analysis.Description = description;
+            // insert in list
+            _packPalletAnalyses.Add(analysis);
+            // compute analysis
+            solver.ProcessAnalysis(analysis);
+            if (analysis.Solutions.Count < 1)
+            {   // remove analysis from list if it has no valid solution
+                _packPalletAnalyses.Remove(analysis);
+                Modify();
+                return null;
+            }
+            // notify listeners
+            NotifyOnNewPackPalletAnalysisCreated(analysis);
+            Modify();
+            return analysis;
+        }
+
         /// <summary>
         /// Creates a new analysis without generating solutions
         /// </summary>
@@ -793,6 +860,7 @@ namespace TreeDim.StackBuilder.Basics
             if (item.GetType() == typeof(BoxProperties)
                 || item.GetType() == typeof(BundleProperties)
                 || item.GetType() == typeof(CaseOfBoxesProperties)
+                || item.GetType() == typeof(PackProperties)
                 || item.GetType() == typeof(PalletProperties)
                 || item.GetType() == typeof(InterlayerProperties)
                 || item.GetType() == typeof(PalletCornerProperties)
@@ -809,6 +877,12 @@ namespace TreeDim.StackBuilder.Basics
             {
                 NotifyOnAnalysisRemoved(item as CasePalletAnalysis);
                 if (!_casePalletAnalyses.Remove(item as CasePalletAnalysis))
+                    _log.Warn(string.Format("Failed to properly remove analysis {0}", item.Name));
+            }
+            else if (item.GetType() == typeof(PackPalletAnalysis))
+            { 
+                NotifyOnAnalysisRemoved(item as PackPalletAnalysis);
+                if (!_packPalletAnalyses.Remove(item as PackPalletAnalysis))
                     _log.Warn(string.Format("Failed to properly remove analysis {0}", item.Name));
             }
             else if (item.GetType() == typeof(BoxCaseAnalysis))
@@ -846,11 +920,12 @@ namespace TreeDim.StackBuilder.Basics
                 ECTAnalysis ectAnalysis = item as ECTAnalysis;
                 NotifyOnECTAnalysisRemoved(ectAnalysis.ParentSelSolution, ectAnalysis);
             }
-            else if (item.GetType() == typeof(SelCasePalletSolution))            {}
-            else if (item.GetType() == typeof(SelBoxCasePalletSolution))         {}
-            else if (item.GetType() == typeof(SelBoxCaseSolution))               {}
-            else if (item.GetType() == typeof(SelCylinderPalletSolution))        {}
-            else if (item.GetType() == typeof(SelHCylinderPalletSolution))       {}
+            else if (item.GetType() == typeof(SelCasePalletSolution)) { }
+            else if (item.GetType() == typeof(SelBoxCasePalletSolution)) { }
+            else if (item.GetType() == typeof(SelBoxCaseSolution)) { }
+            else if (item.GetType() == typeof(SelCylinderPalletSolution)) { }
+            else if (item.GetType() == typeof(SelHCylinderPalletSolution)) { }
+            else if (item.GetType() == typeof(SelPackPalletSolution)) { }
             else
                 Debug.Assert(false);
             Modify();
@@ -1011,12 +1086,22 @@ namespace TreeDim.StackBuilder.Basics
         /// Get list of analyses
         /// </summary>
         public List<CasePalletAnalysis> Analyses
-        {    get { return _casePalletAnalyses; }    }
+        { get { return _casePalletAnalyses; } }
+        /// <summary>
+        /// Returns true if pack can be created i.e. if documents contains at at least a box
+        /// </summary>
+        public bool CanCreatePack
+        { get { return this.Boxes.Count > 0; } }
         /// <summary>
         /// Returns true if pallet analysis can be created i.e. if documents contains at least a case and a pallet
         /// </summary>
         public bool CanCreateCasePalletAnalysis
         { get { return this.Cases.Count > 0 && this.Pallets.Count > 0; } }
+        /// <summary>
+        /// Returns true if a pack analysis can be created i.e. if documents contains at least a pack and a pallet
+        /// </summary>
+        public bool CanCreatePackPalletAnalysis
+        { get { return this.ListByType(typeof(PackProperties)).Count > 0 && this.Pallets.Count > 0; } }
         /// <summary>
         /// Returns true if a bundle analysis can be created i.e. if documents contains at least a bundle and a case
         /// </summary>
@@ -1387,7 +1472,7 @@ namespace TreeDim.StackBuilder.Basics
             string sDim = eltCaseDefinition.Attributes["Orientation"].Value;
             int[] iOrientation = Document.ParseInt2(sDim);
             caseDefinition = new CaseDefinition(
-                CaseOptimArrangement.TryParse(sArrangement)
+                PackArrangement.TryParse(sArrangement)
                 , iOrientation[0]
                 , iOrientation[1]);
         }
@@ -2579,6 +2664,10 @@ namespace TreeDim.StackBuilder.Basics
             XmlAttribute weightAttribute = xmlDoc.CreateAttribute("Weight");
             weightAttribute.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", boxProperties.Weight);
             xmlBoxProperties.Attributes.Append(weightAttribute);
+            // net weight
+            XmlAttribute netWeightAttribute = xmlDoc.CreateAttribute("NetWeight");
+            netWeightAttribute.Value = boxProperties.NetWeight.ToString();
+            xmlBoxProperties.Attributes.Append(netWeightAttribute);
             // colors
             SaveColors(boxProperties.Colors, xmlBoxProperties, xmlDoc);
             // texture
@@ -4180,6 +4269,11 @@ namespace TreeDim.StackBuilder.Basics
         {
             foreach (IDocumentListener listener in _listeners)
                 listener.OnNewCasePalletAnalysisCreated(this, analysis);
+        }
+        private void NotifyOnNewPackPalletAnalysisCreated(PackPalletAnalysis analysis)
+        {
+            foreach (IDocumentListener listener in _listeners)
+                listener.OnNewPackPalletAnalysisCreated(this, analysis);
         }
         private void NotifyOnNewCylinderPalletAnalysisCreated(CylinderPalletAnalysis analysis)
         {

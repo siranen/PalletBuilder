@@ -60,8 +60,9 @@
             this.toolStripMenuItemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.newBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newCylinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBundleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCylinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newPalletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.newInterlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,6 +104,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonAddNewBox = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddNewCase = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAddNewPack = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCreateNewBundle = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddNewCylinder = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddNewPallet = new System.Windows.Forms.ToolStripButton();
@@ -132,6 +134,7 @@
             this.openFileDialogSB = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogSB = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialogWebGL = new System.Windows.Forms.SaveFileDialog();
+            this.toolStripButtonCreateNewPackPalletAnalysis = new System.Windows.Forms.ToolStripButton();
             this.menuStripMain.SuspendLayout();
             this.toolStripStandard.SuspendLayout();
             this.SuspendLayout();
@@ -276,8 +279,9 @@
             this.toolStripMenuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newBoxToolStripMenuItem,
             this.newCaseToolStripMenuItem,
-            this.newCylinderToolStripMenuItem,
+            this.newPackToolStripMenuItem,
             this.newBundleToolStripMenuItem,
+            this.newCylinderToolStripMenuItem,
             this.newPalletToolStripMenuItem,
             this.toolStripSeparator15,
             this.newInterlayerToolStripMenuItem,
@@ -314,17 +318,23 @@
             this.newCaseToolStripMenuItem.Name = "newCaseToolStripMenuItem";
             this.newCaseToolStripMenuItem.Click += new System.EventHandler(this.toolAddNewCase);
             // 
-            // newCylinderToolStripMenuItem
+            // newPackToolStripMenuItem
             // 
-            resources.ApplyResources(this.newCylinderToolStripMenuItem, "newCylinderToolStripMenuItem");
-            this.newCylinderToolStripMenuItem.Name = "newCylinderToolStripMenuItem";
-            this.newCylinderToolStripMenuItem.Click += new System.EventHandler(this.toolAddNewCylinder);
+            resources.ApplyResources(this.newPackToolStripMenuItem, "newPackToolStripMenuItem");
+            this.newPackToolStripMenuItem.Name = "newPackToolStripMenuItem";
+            this.newPackToolStripMenuItem.Click += new System.EventHandler(this.toolAddNewPack);
             // 
             // newBundleToolStripMenuItem
             // 
             resources.ApplyResources(this.newBundleToolStripMenuItem, "newBundleToolStripMenuItem");
             this.newBundleToolStripMenuItem.Name = "newBundleToolStripMenuItem";
             this.newBundleToolStripMenuItem.Click += new System.EventHandler(this.toolAddNewBundle);
+            // 
+            // newCylinderToolStripMenuItem
+            // 
+            resources.ApplyResources(this.newCylinderToolStripMenuItem, "newCylinderToolStripMenuItem");
+            this.newCylinderToolStripMenuItem.Name = "newCylinderToolStripMenuItem";
+            this.newCylinderToolStripMenuItem.Click += new System.EventHandler(this.toolAddNewCylinder);
             // 
             // newPalletToolStripMenuItem
             // 
@@ -528,6 +538,7 @@
             this.toolStripSeparator3,
             this.toolStripButtonAddNewBox,
             this.toolStripButtonAddNewCase,
+            this.toolStripButtonAddNewPack,
             this.toolStripButtonCreateNewBundle,
             this.toolStripButtonAddNewCylinder,
             this.toolStripButtonAddNewPallet,
@@ -540,6 +551,7 @@
             this.toolStripButtonAddNewTruck,
             this.toolStripSeparator4,
             this.toolStripButtonCreateNewAnalysis,
+            this.toolStripButtonCreateNewPackPalletAnalysis,
             this.toolStripButtonCreateNewBundleAnalysis,
             this.toolStripSBCylinderPalletAnalysis,
             this.toolStripButtonBoxCaseAnalysis,
@@ -608,6 +620,13 @@
             resources.ApplyResources(this.toolStripButtonAddNewCase, "toolStripButtonAddNewCase");
             this.toolStripButtonAddNewCase.Name = "toolStripButtonAddNewCase";
             this.toolStripButtonAddNewCase.Click += new System.EventHandler(this.toolAddNewCase);
+            // 
+            // toolStripButtonAddNewPack
+            // 
+            this.toolStripButtonAddNewPack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonAddNewPack, "toolStripButtonAddNewPack");
+            this.toolStripButtonAddNewPack.Name = "toolStripButtonAddNewPack";
+            this.toolStripButtonAddNewPack.Click += new System.EventHandler(this.toolAddNewPack);
             // 
             // toolStripButtonCreateNewBundle
             // 
@@ -793,6 +812,13 @@
             this.saveFileDialogWebGL.DefaultExt = "html";
             resources.ApplyResources(this.saveFileDialogWebGL, "saveFileDialogWebGL");
             // 
+            // toolStripButtonPackPalletAnalysis
+            // 
+            this.toolStripButtonCreateNewPackPalletAnalysis.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonCreateNewPackPalletAnalysis, "toolStripButtonPackPalletAnalysis");
+            this.toolStripButtonCreateNewPackPalletAnalysis.Name = "toolStripButtonPackPalletAnalysis";
+            this.toolStripButtonCreateNewPackPalletAnalysis.Click += new System.EventHandler(this.toolAddNewPackPalletAnalysis);
+            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -902,5 +928,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCylinderPalletHorizontal;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCylinderPalletAnalysisV;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCylinderPalletH;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddNewPack;
+        private System.Windows.Forms.ToolStripMenuItem newPackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCreateNewPackPalletAnalysis;
     }
 }

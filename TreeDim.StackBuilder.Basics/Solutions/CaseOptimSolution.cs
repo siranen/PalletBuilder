@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Sharp3D.Math.Core;
-using System.Text.RegularExpressions;
+
 #endregion
 
 namespace TreeDim.StackBuilder.Basics
@@ -89,56 +89,14 @@ namespace TreeDim.StackBuilder.Basics
     #endregion
 
     #region CaseOptimArrangement
-    public class CaseOptimArrangement
-    {
-        #region Constructor
-        public CaseOptimArrangement(int iLength, int iWidth, int iHeight)
-        {
-            _iLength = iLength; _iWidth = iWidth;   _iHeight = iHeight;
-        }
-        #endregion
 
-        #region Public properties
-        /// <summary>
-        /// Number of inner boxes
-        /// </summary>
-        public int Number
-        {
-            get { return _iLength * _iWidth * _iHeight; }
-        }
-        #endregion
-
-        #region Object override
-        public override string ToString()
-        {
-            return string.Format("{0} {1} {2}", _iLength, _iWidth, _iHeight);
-        }
-        #endregion
-
-        #region Parsing
-        public static CaseOptimArrangement TryParse(string value)
-        { 
-            string regularExp = "(?<i1>.*) (?<i2>.*) (?<i3>.*)";
-			Regex r = new Regex(regularExp, RegexOptions.Singleline);
-    		Match m = r.Match(value);
-		    if (m.Success)
-                return new CaseOptimArrangement(int.Parse(m.Result("${i1}")), int.Parse(m.Result("${i2}")), int.Parse(m.Result("${i3}"))) ;
-		    else
-			    throw new Exception("Failed parsing int[3] from " + value );
-        }
-        #endregion
-
-        #region Data members
-        public int _iLength, _iWidth, _iHeight;
-        #endregion
-    }
     #endregion
 
     #region CaseOptimDefinition
     public class CaseDefinition
     {
         #region Data members
-        private CaseOptimArrangement _arrangement;
+        private PackArrangement _arrangement;
         private int _dim0, _dim1;
         #endregion
 
@@ -149,7 +107,7 @@ namespace TreeDim.StackBuilder.Basics
         /// <param name="arrangement">Box arrangement</param>
         /// <param name="dim0">Dim 0 is 0, 1 or 2</param>
         /// <param name="dim1">Dim 1 is 0, 1 or 2</param>
-        public CaseDefinition(CaseOptimArrangement arrangement, int dim0, int dim1)
+        public CaseDefinition(PackArrangement arrangement, int dim0, int dim1)
         {
             _arrangement = arrangement;
             _dim0 = dim0;
@@ -158,7 +116,7 @@ namespace TreeDim.StackBuilder.Basics
         #endregion
 
         #region Public properties
-        public CaseOptimArrangement Arrangement
+        public PackArrangement Arrangement
         {   get { return _arrangement; }    }
         public double BoxLength(BoxProperties boxProperties)
         { return boxProperties.Dim(_dim0); }

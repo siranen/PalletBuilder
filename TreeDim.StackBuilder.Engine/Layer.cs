@@ -94,6 +94,8 @@ namespace TreeDim.StackBuilder.Engine
         private bool _inversed = false;
         private double _boxLength = 0.0, _boxWidth = 0.0, _boxHeight = 0.0;
         private double _palletLength = 0.0, _palletWidth = 0.0;
+        private double _forcedSpace = 0.0;
+        private double _maximumSpace = 0.0;
         private Vector3D _vecTransf = Vector3D.Zero;
         protected static readonly ILog _log = LogManager.GetLogger(typeof(Layer));
         #endregion
@@ -151,6 +153,18 @@ namespace TreeDim.StackBuilder.Engine
             _palletLength = caseProperties.InsideLength;
             _palletWidth = caseProperties.InsideWidth;
             Initialize(bProperties);
+        }
+
+        public Layer(PackProperties packProperties, PalletProperties palletProperties, PackPalletConstraintSet constraintSet
+            , HalfAxis.HAxis axisOrtho, bool inversed)
+        {
+            _axisOrtho = axisOrtho;
+            _inversed = inversed;
+            _forcedSpace = constraintSet.MinimumSpace.Value;
+            _palletLength = palletProperties.Length + constraintSet.OverhangX + _forcedSpace ;
+            _palletWidth = palletProperties.Width + constraintSet.OverhangY + _forcedSpace;
+
+            Initialize(packProperties);
         }
         #endregion
 
@@ -214,6 +228,31 @@ namespace TreeDim.StackBuilder.Engine
                     _lengthAxis = HalfAxis.HAxis.AXIS_X_P;
                     _widthAxis = HalfAxis.HAxis.AXIS_Y_P;
                     _vecTransf = Vector3D.Zero;
+                    break;
+            }
+        }
+
+        private void Initialize(PackProperties packProperties)
+        {
+            switch (_axisOrtho)
+            {
+                case HalfAxis.HAxis.AXIS_Z_N:
+                    _boxLength = packProperties.Width + _forcedSpace;
+                    _boxWidth = packProperties.Length + _forcedSpace;
+                    _boxHeight = packProperties.Height;
+                    _lengthAxis = HalfAxis.HAxis.AXIS_Y_P;
+                    _widthAxis = HalfAxis.HAxis.AXIS_X_P;
+                    _vecTransf = new Vector3D(0.0, 0.0, packProperties.Height);
+                    break;
+                case HalfAxis.HAxis.AXIS_Z_P:
+                    _boxLength = packProperties.Length + _forcedSpace;
+                    _boxWidth = packProperties.Width + _forcedSpace;
+                    _boxHeight = packProperties.Height;
+                    _lengthAxis = HalfAxis.HAxis.AXIS_X_P;
+                    _widthAxis = HalfAxis.HAxis.AXIS_Y_P;
+                    _vecTransf = Vector3D.Zero;
+                    break;
+                default:
                     break;
             }
         }
@@ -289,13 +328,17 @@ namespace TreeDim.StackBuilder.Engine
             mat.M31 = vAxisHeight.X;
             mat.M32 = vAxisHeight.Y;
             mat.M33 = vAxisHeight.Z;
+            mat.M41 = 0.0;
+            mat.M42 = 0.0;
+            mat.M43 = 0.0;
+            mat.M44 = 1.0;
             Transform3D localTransf = new Transform3D(mat);
             Transform3D localTransfInv = localTransf.Inverse();
-            Transform3D originTranslation = Transform3D.Translation(localTransfInv.transform(_vecTransf));
+            Transform3D originTranslation = Transform3D.Translation(localTransfInv.transform(_vecTransf) - new Vector3D(0.5 * _forcedSpace, 0.5 * _forcedSpace, 0.0));
 
-            Vector3D vPos = originTranslation.transform(new Vector3D(vPosition.X, vPosition.Y, 0.0));
+            Vector3D vPos = originTranslation.transform(new Vector3D(vPosition.X, vPosition.Y, 0.0) + 0.5 * _forcedSpace * vAxisLength + 0.5 * _forcedSpace * vAxisWidth);
             LayerPosition layerPos = new LayerPosition(
-                originTranslation.transform(new Vector3D(vPosition.X, vPosition.Y, 0.0))
+                originTranslation.transform(new Vector3D(vPosition.X, vPosition.Y, 0.0) + 0.5 * _forcedSpace * vAxisLength + 0.5 * _forcedSpace * vAxisWidth)
                 , HalfAxis.ToHalfAxis(localTransfInv.transform(HalfAxis.ToVector3D(_lengthAxis)))
                 , HalfAxis.ToHalfAxis(localTransfInv.transform(HalfAxis.ToVector3D(_widthAxis)))
                 );
@@ -333,6 +376,10 @@ namespace TreeDim.StackBuilder.Engine
         public bool Inversed
         {
             get { return _inversed; }
+        }
+        public double MaximumSpace
+        {
+            get { return _maximumSpace; }
         }
         #endregion
     }

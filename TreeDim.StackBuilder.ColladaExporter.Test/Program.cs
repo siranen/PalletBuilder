@@ -93,6 +93,10 @@ namespace TreeDim.StackBuilder.ColladaExporter.Test
         {
             _log.Info(string.Format("Loaded analysis {0}", analysis.Name));
         }
+        public void OnNewPackPalletAnalysisCreated(Document doc, PackPalletAnalysis analysis)
+        {
+            _log.Info(string.Format("Loaded analysis {0}", analysis.Name));
+        }
         public void OnNewCylinderPalletAnalysisCreated(Document doc, CylinderPalletAnalysis analysis)
         { 
             _log.Info(string.Format("Load cylinder/pallet analysis {0}", analysis.Name));

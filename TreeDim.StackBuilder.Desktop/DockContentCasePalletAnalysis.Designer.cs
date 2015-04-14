@@ -89,7 +89,6 @@
             this.Name = "DockContentCasePalletAnalysis";
             this.ShowHint = WeifenLuo.WinFormsUI.Docking.DockState.Document;
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.DockContentAnalysis_Load);
             this.splitContainerHoriz.Panel1.ResumeLayout(false);
             this.splitContainerHoriz.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).EndInit();
@@ -97,7 +96,6 @@
             this.ResumeLayout(false);
 
         }
-
         #endregion
 
         private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;

@@ -249,7 +249,7 @@ namespace TreeDim.StackBuilder.Desktop
                 PalletProperties palletProperties = SelectedPallet;
                 // get selected caseOptimSolution
                 CaseOptimSolution sol = SelectedSolution;
-                CaseOptimArrangement arrangement = sol.CaseDefinition.Arrangement;
+                PackArrangement arrangement = sol.CaseDefinition.Arrangement;
                 // build new case name
                 string name = string.Format("{0}_{1}*{2}*{3}_{4}{5}"
                     , boxProperties.Name

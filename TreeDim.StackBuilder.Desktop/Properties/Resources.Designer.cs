@@ -376,6 +376,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new Pack/Pallet analysis....
+        /// </summary>
+        internal static string ID_ADDNEWPACKANALYSIS {
+            get {
+                return ResourceManager.GetString("ID_ADDNEWPACKANALYSIS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add new pallet....
         /// </summary>
         internal static string ID_ADDNEWPALLET {
@@ -633,6 +642,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         internal static string ID_CLOSE {
             get {
                 return ResourceManager.GetString("ID_CLOSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # CSU.
+        /// </summary>
+        internal static string ID_CONSUMERSALESUNITS {
+            get {
+                return ResourceManager.GetString("ID_CONSUMERSALESUNITS", resourceCulture);
             }
         }
         
@@ -937,6 +955,24 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Net weight ({0}) should not exceed weight ({1}).
+        /// </summary>
+        internal static string ID_INVALIDNETWEIGHT {
+            get {
+                return ResourceManager.GetString("ID_INVALIDNETWEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outer dimensions ought to exceed content dimensions....
+        /// </summary>
+        internal static string ID_INVALIDOUTERDIMENSION {
+            get {
+                return ResourceManager.GetString("ID_INVALIDOUTERDIMENSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thickness should not exceed width.
         /// </summary>
         internal static string ID_INVALIDTHICKNESSWIDTHPAIR {
@@ -969,6 +1005,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         internal static string ID_LAYERS {
             get {
                 return ResourceManager.GetString("ID_LAYERS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layer weight ({0}).
+        /// </summary>
+        internal static string ID_LAYERWEIGHT {
+            get {
+                return ResourceManager.GetString("ID_LAYERWEIGHT", resourceCulture);
             }
         }
         
@@ -1014,6 +1059,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         internal static string ID_MAXIMUMCASEWEIGHTSHOULDEXCEED {
             get {
                 return ResourceManager.GetString("ID_MAXIMUMCASEWEIGHTSHOULDEXCEED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum space ({0}).
+        /// </summary>
+        internal static string ID_MAXIMUMSPACE {
+            get {
+                return ResourceManager.GetString("ID_MAXIMUMSPACE", resourceCulture);
             }
         }
         
@@ -1090,6 +1144,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Packs.
+        /// </summary>
+        internal static string ID_NODE_PACKS {
+            get {
+                return ResourceManager.GetString("ID_NODE_PACKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pallet caps.
         /// </summary>
         internal static string ID_NODE_PALLETCAPS {
@@ -1149,6 +1212,24 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         internal static string ID_ORIENTATION {
             get {
                 return ResourceManager.GetString("ID_ORIENTATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        internal static string ID_PACK {
+            get {
+                return ResourceManager.GetString("ID_PACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Packs.
+        /// </summary>
+        internal static string ID_PACKCOUNT {
+            get {
+                return ResourceManager.GetString("ID_PACKCOUNT", resourceCulture);
             }
         }
         

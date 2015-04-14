@@ -56,10 +56,8 @@
             this.gbFaceColor = new System.Windows.Forms.GroupBox();
             this.btBitmaps = new System.Windows.Forms.Button();
             this.chkAllFaces = new System.Windows.Forms.CheckBox();
-            this.lbWeight = new System.Windows.Forms.Label();
-            this.nudWeight = new System.Windows.Forms.NumericUpDown();
             this.gbWeight = new System.Windows.Forms.GroupBox();
-            this.uMassWeight = new System.Windows.Forms.Label();
+            this.ovcNetWeight = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
@@ -74,6 +72,7 @@
             this.lbTapeColor = new System.Windows.Forms.Label();
             this.lbTapeWidth = new System.Windows.Forms.Label();
             this.checkBoxTape = new System.Windows.Forms.CheckBox();
+            this.vcWeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
             this.gbDimensions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudInsideLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInsideHeight)).BeginInit();
@@ -82,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             this.gbFaceColor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).BeginInit();
             this.gbWeight.SuspendLayout();
             this.statusStripDef.SuspendLayout();
             this.gbTape.SuspendLayout();
@@ -408,7 +406,19 @@
             resources.GetString("cbColor.Items72"),
             resources.GetString("cbColor.Items73"),
             resources.GetString("cbColor.Items74"),
-            resources.GetString("cbColor.Items75")});
+            resources.GetString("cbColor.Items75"),
+            resources.GetString("cbColor.Items76"),
+            resources.GetString("cbColor.Items77"),
+            resources.GetString("cbColor.Items78"),
+            resources.GetString("cbColor.Items79"),
+            resources.GetString("cbColor.Items80"),
+            resources.GetString("cbColor.Items81"),
+            resources.GetString("cbColor.Items82"),
+            resources.GetString("cbColor.Items83"),
+            resources.GetString("cbColor.Items84"),
+            resources.GetString("cbColor.Items85"),
+            resources.GetString("cbColor.Items86"),
+            resources.GetString("cbColor.Items87")});
             this.cbColor.Name = "cbColor";
             this.cbColor.SelectedColorChanged += new System.EventHandler(this.onFaceColorChanged);
             // 
@@ -437,40 +447,25 @@
             this.chkAllFaces.UseVisualStyleBackColor = true;
             this.chkAllFaces.CheckedChanged += new System.EventHandler(this.chkAllFaces_CheckedChanged);
             // 
-            // lbWeight
-            // 
-            resources.ApplyResources(this.lbWeight, "lbWeight");
-            this.lbWeight.Name = "lbWeight";
-            // 
-            // nudWeight
-            // 
-            this.nudWeight.DecimalPlaces = 3;
-            this.nudWeight.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            resources.ApplyResources(this.nudWeight, "nudWeight");
-            this.nudWeight.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudWeight.Name = "nudWeight";
-            // 
             // gbWeight
             // 
-            this.gbWeight.Controls.Add(this.uMassWeight);
-            this.gbWeight.Controls.Add(this.nudWeight);
-            this.gbWeight.Controls.Add(this.lbWeight);
+            this.gbWeight.Controls.Add(this.vcWeight);
+            this.gbWeight.Controls.Add(this.ovcNetWeight);
             resources.ApplyResources(this.gbWeight, "gbWeight");
             this.gbWeight.Name = "gbWeight";
             this.gbWeight.TabStop = false;
             // 
-            // uMassWeight
+            // ovcNetWeight
             // 
-            resources.ApplyResources(this.uMassWeight, "uMassWeight");
-            this.uMassWeight.Name = "uMassWeight";
+            resources.ApplyResources(this.ovcNetWeight, "ovcNetWeight");
+            this.ovcNetWeight.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ovcNetWeight.Name = "ovcNetWeight";
+            this.ovcNetWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.ovcNetWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onBoxPropertyChanged);
             // 
             // lblName
             // 
@@ -616,7 +611,19 @@
             resources.GetString("cbTapeColor.Items73"),
             resources.GetString("cbTapeColor.Items74"),
             resources.GetString("cbTapeColor.Items75"),
-            resources.GetString("cbTapeColor.Items76")});
+            resources.GetString("cbTapeColor.Items76"),
+            resources.GetString("cbTapeColor.Items77"),
+            resources.GetString("cbTapeColor.Items78"),
+            resources.GetString("cbTapeColor.Items79"),
+            resources.GetString("cbTapeColor.Items80"),
+            resources.GetString("cbTapeColor.Items81"),
+            resources.GetString("cbTapeColor.Items82"),
+            resources.GetString("cbTapeColor.Items83"),
+            resources.GetString("cbTapeColor.Items84"),
+            resources.GetString("cbTapeColor.Items85"),
+            resources.GetString("cbTapeColor.Items86"),
+            resources.GetString("cbTapeColor.Items87"),
+            resources.GetString("cbTapeColor.Items88")});
             this.cbTapeColor.Name = "cbTapeColor";
             this.cbTapeColor.SelectedColorChanged += new System.EventHandler(this.onFaceColorChanged);
             // 
@@ -648,6 +655,17 @@
             this.checkBoxTape.Name = "checkBoxTape";
             this.checkBoxTape.UseVisualStyleBackColor = true;
             this.checkBoxTape.CheckedChanged += new System.EventHandler(this.checkBoxTape_CheckedChanged);
+            // 
+            // vcWeight
+            // 
+            resources.ApplyResources(this.vcWeight, "vcWeight");
+            this.vcWeight.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.vcWeight.Name = "vcWeight";
+            this.vcWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
             // 
             // FormNewBox
             // 
@@ -684,9 +702,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit();
             this.gbFaceColor.ResumeLayout(false);
             this.gbFaceColor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).EndInit();
             this.gbWeight.ResumeLayout(false);
-            this.gbWeight.PerformLayout();
             this.statusStripDef.ResumeLayout(false);
             this.statusStripDef.PerformLayout();
             this.gbTape.ResumeLayout(false);
@@ -706,15 +722,12 @@
         private System.Windows.Forms.ComboBox cbFace;
         private OfficePickers.ColorPicker.ComboBoxColorPicker cbColor;
         private System.Windows.Forms.GroupBox gbFaceColor;
-        private System.Windows.Forms.Label lbWeight;
-        private System.Windows.Forms.NumericUpDown nudWeight;
         private System.Windows.Forms.GroupBox gbWeight;
         private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbDescription;
-        private System.Windows.Forms.Label uMassWeight;
         private System.Windows.Forms.Label uLengthHeightInside;
         private System.Windows.Forms.Label uLengthWidthInside;
         private System.Windows.Forms.Label uLengthLengthInside;
@@ -744,5 +757,7 @@
         private System.Windows.Forms.Label lbTapeWidth;
         private System.Windows.Forms.CheckBox checkBoxTape;
         private System.Windows.Forms.Label uLengthTapeWidth;
+        private Basics.UCtrlOptDouble ovcNetWeight;
+        private Basics.UCtrlDouble vcWeight;
     }
 }

@@ -56,6 +56,8 @@ namespace TreeDim.StackBuilder.Desktop
                 ImageList.Images.Add(AnalysisTreeView.AnalysisStackingStrength);    // 19
                 ImageList.Images.Add(AnalysisTreeView.CylinderPalletAnalysis);      // 20
                 ImageList.Images.Add(AnalysisTreeView.HCylinderPalletAnalysis);     // 21
+                ImageList.Images.Add(AnalysisTreeView.Pack);                        // 22
+                ImageList.Images.Add(AnalysisTreeView.PackAnalysis);                // 23
                // instantiate context menu
                 this.ContextMenuStrip = new ContextMenuStrip();
                 // attach event handlers
@@ -132,6 +134,8 @@ namespace TreeDim.StackBuilder.Desktop
                     contextMenuStrip.Items.Add(new ToolStripSeparator());
                 if (((DocumentSB)nodeTag.Document).CanCreateCasePalletAnalysis)
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWANALYSIS, AnalysisTreeView.Analysis, new EventHandler(onCreateNewCasePalletAnalysis)));
+                if (((DocumentSB)nodeTag.Document).CanCreatePackPalletAnalysis)
+                    contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWPACKANALYSIS, AnalysisTreeView.PackAnalysis, new EventHandler(onCreateNewPackPalletAnalysis)));
                 if (((DocumentSB)nodeTag.Document).CanCreateBundlePalletAnalysis)
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWBUNDLEANALYSIS, AnalysisTreeView.AnalysisBundle, new EventHandler(onCreateNewBundleAnalysis)));
                 if (((DocumentSB)nodeTag.Document).CanCreateBoxCaseAnalysis)
@@ -143,6 +147,7 @@ namespace TreeDim.StackBuilder.Desktop
             }
             if (nodeTag.Type == NodeTag.NodeType.NT_BOX
                 || nodeTag.Type == NodeTag.NodeType.NT_CASE
+                || nodeTag.Type == NodeTag.NodeType.NT_PACK
                 || nodeTag.Type == NodeTag.NodeType.NT_CASEOFBOXES
                 || nodeTag.Type == NodeTag.NodeType.NT_CYLINDER
                 || nodeTag.Type == NodeTag.NodeType.NT_PALLET
@@ -159,6 +164,13 @@ namespace TreeDim.StackBuilder.Desktop
             }
             else if (nodeTag.Type == NodeTag.NodeType.NT_CASEPALLETANALYSIS)
             {
+                string message = string.Format(Resources.ID_EDIT, nodeTag.CasePalletAnalysis.Name);
+                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, null, new EventHandler(onEditCasePalletAnalysis)));
+                message = string.Format(Resources.ID_DELETE, nodeTag.CasePalletAnalysis.Name);
+                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.DELETE, new EventHandler(onDeleteCasePalletAnalysis)));
+            }
+            else if (nodeTag.Type == NodeTag.NodeType.NT_ANALYSISPACK)
+            { 
                 string message = string.Format(Resources.ID_EDIT, nodeTag.CasePalletAnalysis.Name);
                 contextMenuStrip.Items.Add(new ToolStripMenuItem(message, null, new EventHandler(onEditCasePalletAnalysis)));
                 message = string.Format(Resources.ID_DELETE, nodeTag.CasePalletAnalysis.Name);
@@ -225,6 +237,8 @@ namespace TreeDim.StackBuilder.Desktop
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWANALYSIS, AnalysisTreeView.Analysis, new EventHandler(onCreateNewCasePalletAnalysis)));
                 if (nodeTag.Document.CanCreateBundlePalletAnalysis)
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWBUNDLEANALYSIS, AnalysisTreeView.AnalysisBundle, new EventHandler(onCreateNewBundleAnalysis)));
+                if (nodeTag.Document.CanCreatePackPalletAnalysis)
+                    contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWPACKANALYSIS, AnalysisTreeView.PackAnalysis, new EventHandler(onCreateNewPackPalletAnalysis)));
                 if (nodeTag.Document.CanCreateBoxCaseAnalysis)
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(Resources.ID_ADDNEWBOXCASEANALYSIS, AnalysisTreeView.BoxCaseAnalysis, new EventHandler(onCreateNewBoxCaseAnalysis)));
                 if (nodeTag.Document.CanCreateBoxCasePalletAnalysis)
@@ -255,6 +269,14 @@ namespace TreeDim.StackBuilder.Desktop
                     message = string.Format(Resources.ID_GENERATECOLLADA, nodeTag.SelSolution.Name);
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.COLLADAWEBGL, new EventHandler(onAnalysisExportCollada)));
                 }
+            }
+            else if (nodeTag.Type == NodeTag.NodeType.NT_PACKPALLETANALYSISSOLUTION)
+            { 
+                string message = string.Format(Resources.ID_GENERATEREPORTHTML, nodeTag.SelSolution.Name);
+                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.HTML, new EventHandler(onAnalysisReportHTML)));
+                message = string.Format(Resources.ID_GENERATEREPORTMSWORD, nodeTag.SelSolution.Name);
+                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.WORD, new EventHandler(onAnalysisReportMSWord)));
+                message = string.Format(Resources.ID_GENERATEREPORTPDF, nodeTag.SelSolution.Name);
             }
             else if (nodeTag.Type == NodeTag.NodeType.NT_CYLINDERPALLETANALYSISSOLUTION)
             {
@@ -488,6 +510,15 @@ namespace TreeDim.StackBuilder.Desktop
             }
             catch (Exception ex) { _log.Error(ex.ToString()); }
         }
+        private void onCreateNewPack(object sender, EventArgs e)
+        {
+            try
+            {
+                NodeTag tag = SelectedNode.Tag as NodeTag;
+                ((DocumentSB)tag.Document).CreateNewPackUI();
+            }
+            catch (Exception ex) { _log.Error(ex.ToString()); }
+        }
         private void onCreateNewCylinder(object sender, EventArgs e)
         {
             try
@@ -566,6 +597,15 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 NodeTag tag = SelectedNode.Tag as NodeTag;
                 ((DocumentSB)tag.Document).CreateNewCasePalletAnalysisUI();
+            }
+            catch (Exception ex) { _log.Error(ex.ToString()); }
+        }
+        private void onCreateNewPackPalletAnalysis(object sender, EventArgs e)
+        {
+            try
+            {
+                NodeTag tag = SelectedNode.Tag as NodeTag;
+                ((DocumentSB)tag.Document).CreateNewPackPalletAnalysisUI();
             }
             catch (Exception ex) { _log.Error(ex.ToString()); }
         }
@@ -760,6 +800,7 @@ namespace TreeDim.StackBuilder.Desktop
                     || (tag.Type == NodeTag.NodeType.NT_ANALYSISINTERLAYER)
                     || (tag.Type == NodeTag.NodeType.NT_BOX)
                     || (tag.Type == NodeTag.NodeType.NT_CASE)
+                    || (tag.Type == NodeTag.NodeType.NT_PACK)
                     || (tag.Type == NodeTag.NodeType.NT_BUNDLE)
                     || (tag.Type == NodeTag.NodeType.NT_CYLINDER)
                     || (tag.Type == NodeTag.NodeType.NT_CASEOFBOXES)
@@ -821,6 +862,11 @@ namespace TreeDim.StackBuilder.Desktop
             if (null != node)
             {
                 NodeTag tag = node.Tag as NodeTag;
+                if (null == tag)
+                {
+                    _log.Error(string.Format("Node {0} has no valid NodeTag", node.Text));
+                    return null;
+                }
                 if (tag.Equals(nodeTag))
                     return node;
             }
@@ -878,6 +924,10 @@ namespace TreeDim.StackBuilder.Desktop
             TreeNode nodeCases = new TreeNode(Resources.ID_NODE_CASES, 0, 1);
             nodeCases.Tag = new NodeTag(NodeTag.NodeType.NT_LISTCASE, doc);
             nodeDoc.Nodes.Add(nodeCases);
+            // add pack list node
+            TreeNode nodePacks = new TreeNode(Resources.ID_NODE_PACKS, 0, 1);
+            nodePacks.Tag = new NodeTag(NodeTag.NodeType.NT_LISTPACK, doc);
+            nodeDoc.Nodes.Add(nodePacks);
             // add bundle list node
             TreeNode nodeBundles = new TreeNode(Resources.ID_NODE_BUNDLES, 0, 1);
             nodeBundles.Tag = new NodeTag(NodeTag.NodeType.NT_LISTBUNDLE, doc);
@@ -996,6 +1046,12 @@ namespace TreeDim.StackBuilder.Desktop
                 nodeType = NodeTag.NodeType.NT_PALLETFILM;
                 parentNodeType = NodeTag.NodeType.NT_LISTPALLETFILM;
             }
+            else if (itemProperties.GetType() == typeof(PackProperties))
+            {
+                iconIndex = 22;
+                nodeType = NodeTag.NodeType.NT_PACK;
+                parentNodeType = NodeTag.NodeType.NT_LISTPACK;
+            }
             else
             {
                 Debug.Assert(false);
@@ -1044,7 +1100,6 @@ namespace TreeDim.StackBuilder.Desktop
             parentNode.Nodes.Add(nodeAnalysis);
             parentNode.Expand();
             CasePalletAnalysis_InsertSubNodes(doc, analysis, nodeAnalysis);
-
             // add event handlers for solution selection
             analysis.Modified += new CasePalletAnalysis.ModifyAnalysis(onCasePalletAnalysisModified);
             analysis.SolutionSelected += new CasePalletAnalysis.SelectSolution(onPalletAnalysisSolutionSelected);
@@ -1103,6 +1158,46 @@ namespace TreeDim.StackBuilder.Desktop
                 nodeAnalysis.Nodes.Add(subPalletFilm);
             }
             nodeAnalysis.Expand();        
+        }
+        #endregion
+        #region PackPalletAnalysis
+        public void OnNewPackPalletAnalysisCreated(Document doc, PackPalletAnalysis analysis)
+        {
+            // get parent node
+            TreeNode parentNode = FindNode(null, new NodeTag(NodeTag.NodeType.NT_LISTANALYSIS, doc));
+            // insert analysis node
+            int indexIconAnalysis = 23;
+            TreeNode nodeAnalysis = new TreeNode(analysis.Name, indexIconAnalysis, indexIconAnalysis);
+            nodeAnalysis.Tag = new NodeTag(NodeTag.NodeType.NT_PACKPALLETANALYSIS, doc, analysis);
+            parentNode.Nodes.Add(nodeAnalysis);
+            parentNode.Expand();
+            PackPalletAnalysis_InsertSubNodes(doc, analysis, nodeAnalysis);
+            // add event handlers for solution selection
+            analysis.Modified += new PackPalletAnalysis.ModifyAnalysis(onPackPalletAnalysisModified);
+            analysis.SolutionSelected += new PackPalletAnalysis.SelectSolution(onPackPalletAnalysisSolutionSelected);
+            analysis.SolutionSelectionRemoved += new PackPalletAnalysis.SelectSolution(onPackPalletAnalysisSolutionSelectionRemoved);
+        }
+
+        void PackPalletAnalysis_InsertSubNodes(Document doc, PackPalletAnalysis analysis, TreeNode nodeAnalysis)
+        {
+            // sanity check
+            if (null == nodeAnalysis) return;
+            // remove any existing subnodes
+            nodeAnalysis.Nodes.Clear();
+            // insert sub pack node
+            TreeNode subPackNode = new TreeNode(analysis.PackProperties.Name, 22, 22);
+            subPackNode.Tag = new NodeTag(NodeTag.NodeType.NT_ANALYSISPACK, doc, analysis, analysis.PackProperties);
+            nodeAnalysis.Nodes.Add(subPackNode);
+            TreeNode subPalletNode = new TreeNode(analysis.PalletProperties.Name, 7, 7);
+            subPalletNode.Tag = new NodeTag(NodeTag.NodeType.NT_ANALYSISPALLET, doc, analysis, analysis.PalletProperties);
+            nodeAnalysis.Nodes.Add(subPalletNode);
+            if (analysis.HasInterlayer)
+            {
+                TreeNode subInterlayerNode = new TreeNode(analysis.InterlayerProperties.Name, 7, 7);
+                subInterlayerNode.Tag = new NodeTag(NodeTag.NodeType.NT_ANALYSISINTERLAYER, doc, analysis, analysis.InterlayerProperties);
+                nodeAnalysis.Nodes.Add(subInterlayerNode);
+            }
+            nodeAnalysis.Expand();
         }
         #endregion
         #region Cylinder/Pallet analyses
@@ -1303,8 +1398,8 @@ namespace TreeDim.StackBuilder.Desktop
             }
             else if (itemBase.GetType() == typeof(BundleProperties))
                 nodeType = NodeTag.NodeType.NT_BUNDLE;
-            else if (itemBase.GetType() == typeof(CaseOfBoxesProperties))
-                nodeType = NodeTag.NodeType.NT_CASEOFBOXES;
+            else if (itemBase.GetType() == typeof(PackProperties))
+                nodeType = NodeTag.NodeType.NT_PACK;
             else if (itemBase.GetType() == typeof(CaseOfBoxesProperties))
                 nodeType = NodeTag.NodeType.NT_CASEOFBOXES;
             else if (itemBase.GetType() == typeof(InterlayerProperties))
@@ -1327,7 +1422,8 @@ namespace TreeDim.StackBuilder.Desktop
             // get node
             TreeNode typeNode = FindNode(null, new NodeTag(nodeType, doc, itemBase));
             // remove node
-            Nodes.Remove(typeNode);
+            if (null != typeNode)
+                Nodes.Remove(typeNode);
         }
 
         public void OnAnalysisRemoved(Document doc, ItemBase analysis)
@@ -1469,7 +1565,6 @@ namespace TreeDim.StackBuilder.Desktop
             // expand tree node
             parentNode.Expand();
         }
-
         private void onPalletAnalysisSolutionSelected(CasePalletAnalysis analysis, SelCasePalletSolution selSolution)
         {
             // retrieve parent document
@@ -1480,6 +1575,32 @@ namespace TreeDim.StackBuilder.Desktop
             // insert selected solution node
             TreeNode nodeSelSolution = new TreeNode(selSolution.Name, 15, 15);
             nodeSelSolution.Tag = new NodeTag(NodeTag.NodeType.NT_CASEPALLETANALYSISSOLUTION, doc, analysis, selSolution);
+            parentNode.Nodes.Add(nodeSelSolution);
+            // expand tree nodes
+            parentNode.Expand();
+        }
+        private void onPackPalletAnalysisModified(PackPalletAnalysis analysis)
+        { 
+            // retrieve parent document
+            Document doc = analysis.ParentDocument;
+            // get parent node
+            TreeNode parentNode = FindNode(null, new NodeTag(NodeTag.NodeType.NT_PACKPALLETANALYSIS, doc, analysis));
+            if (null == parentNode) throw new Exception("Failed to locate Analysis (NT_PACKPALLETANALYSIS) node...");
+            // insert case/pallet/interlayer node
+            PackPalletAnalysis_InsertSubNodes(doc, analysis, parentNode);
+            // expand tree node
+            parentNode.Expand();
+        }
+        private void onPackPalletAnalysisSolutionSelected(PackPalletAnalysis analysis, SelPackPalletSolution selSolution)
+        {
+            // retrieve parent document
+            Document doc = analysis.ParentDocument;
+            // get parent node
+            TreeNode parentNode = FindNode(null, new NodeTag(NodeTag.NodeType.NT_PACKPALLETANALYSIS, doc, analysis));
+            if (null == parentNode) throw new Exception("Failed to locate Analysis (NT_PACKPALLETANALYSIS) node...");
+            // insert selected solution node
+            TreeNode nodeSelSolution = new TreeNode(selSolution.Name, 15, 15);
+            nodeSelSolution.Tag = new NodeTag(NodeTag.NodeType.NT_PACKPALLETANALYSISSOLUTION, doc, analysis, selSolution);
             parentNode.Nodes.Add(nodeSelSolution);
             // expand tree nodes
             parentNode.Expand();
@@ -1569,6 +1690,21 @@ namespace TreeDim.StackBuilder.Desktop
             // remove node
             Nodes.Remove(selSolutionNode);
         }
+        private void onPackPalletAnalysisSolutionSelectionRemoved(PackPalletAnalysis analysis, SelPackPalletSolution selSolution)
+        { 
+            // retrieve parent document
+            Document doc = analysis.ParentDocument;
+            // get node
+            TreeNode selSolutionNode = FindNode(null, new NodeTag(NodeTag.NodeType.NT_PACKPALLETANALYSISSOLUTION, doc, analysis, selSolution));
+            // test
+            if (null == selSolutionNode)
+            {
+                _log.Error(string.Format("Failed to find a valid tree node for selSolution {0}", selSolution.Name));
+                return;
+            }
+            // remove node
+            Nodes.Remove(selSolutionNode);
+        }
         private void onCylinderPalletSolutionSelectionRemoved(CylinderPalletAnalysis analysis, SelCylinderPalletSolution selSolution)
         { 
             // retrieve parent document
@@ -1647,6 +1783,10 @@ namespace TreeDim.StackBuilder.Desktop
             /// </summary>
             NT_LISTCASE,
             /// <summary>
+            /// list of pack
+            /// </summary>
+            NT_LISTPACK,
+            /// <summary>
             /// list of cylinders
             /// </summary>
             NT_LISTCYLINDER,
@@ -1691,6 +1831,10 @@ namespace TreeDim.StackBuilder.Desktop
             /// </summary>
             NT_CASE,
             /// <summary>
+            /// pack
+            /// </summary>
+            NT_PACK,
+            /// <summary>
             /// case of boxes
             /// </summary>
             NT_CASEOFBOXES,
@@ -1731,6 +1875,10 @@ namespace TreeDim.StackBuilder.Desktop
             /// </summary>
             NT_CASEPALLETANALYSIS,
             /// <summary>
+            /// pack/pallet analysis
+            /// </summary>
+            NT_PACKPALLETANALYSIS,
+            /// <summary>
             /// cylinder/pallet analysis
             /// </summary>
             NT_CYLINDERPALLETANALYSIS,
@@ -1742,6 +1890,10 @@ namespace TreeDim.StackBuilder.Desktop
             /// analysis box
             /// </summary>
             NT_ANALYSISBOX,
+            /// <summary>
+            /// analysis pack
+            /// </summary>
+            NT_ANALYSISPACK,
             /// <summary>
             /// analysis pallet
             /// </summary>
@@ -1766,6 +1918,10 @@ namespace TreeDim.StackBuilder.Desktop
             /// analysis solution
             /// </summary>
             NT_CASEPALLETANALYSISSOLUTION,
+            /// <summary>
+            /// pack/pallet analysis solution
+            /// </summary>
+            NT_PACKPALLETANALYSISSOLUTION,
             /// <summary>
             /// cylinder pallet analysis solution
             /// </summary>
@@ -1826,9 +1982,11 @@ namespace TreeDim.StackBuilder.Desktop
         private Document _document;
         private ItemBase _itemProperties;
         private CasePalletAnalysis _casePalletAnalysis;
+        private PackPalletAnalysis _packPalletAnalysis;
         private CylinderPalletAnalysis _cylinderPalletAnalysis;
         private HCylinderPalletAnalysis _hCylinderPalletAnalysis;
         private SelCasePalletSolution _selSolution;
+        private SelPackPalletSolution _selPackPalletSolution;
         private SelCylinderPalletSolution _selCylinderPalletSolution;
         private SelHCylinderPalletSolution _selHCylinderPalletSolution;
         private BoxCaseAnalysis _boxCaseAnalysis;
@@ -1899,6 +2057,21 @@ namespace TreeDim.StackBuilder.Desktop
             _casePalletAnalysis = analysis;
             _selSolution = selSolution;
             _truckAnalysis = truckAnalysis;
+        }
+        public NodeTag(NodeType type, Document document, PackPalletAnalysis analysis, ItemBase itemProperties)
+        {
+            _type = type;
+            _document = document;
+            _itemProperties = itemProperties;
+            _packPalletAnalysis = analysis;
+        }
+        public NodeTag(NodeType type, Document document, PackPalletAnalysis analysis, SelPackPalletSolution selSolution)
+        {
+            _type = type;
+            _document = document;
+            _itemProperties = null;
+            _packPalletAnalysis = analysis;
+            _selPackPalletSolution = selSolution;
         }
         public NodeTag(NodeType type, Document document, CasePalletAnalysis analysis, SelCasePalletSolution selSolution, ECTAnalysis ectAnalysis)
         {

@@ -34,7 +34,6 @@ namespace TreeDim.StackBuilder.Graphics
         /// <summary>
         /// Use this method when drawing a solution that belongs an analysis
         /// </summary>
-        /// <param name="graphics"></param>
         public void Draw(Graphics3D graphics)
         {
             if (null == _solution)
