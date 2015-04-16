@@ -169,12 +169,12 @@ namespace TreeDim.StackBuilder.Desktop
                 message = string.Format(Resources.ID_DELETE, nodeTag.CasePalletAnalysis.Name);
                 contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.DELETE, new EventHandler(onDeleteCasePalletAnalysis)));
             }
-            else if (nodeTag.Type == NodeTag.NodeType.NT_ANALYSISPACK)
+            else if (nodeTag.Type == NodeTag.NodeType.NT_PACKPALLETANALYSIS)
             { 
-                string message = string.Format(Resources.ID_EDIT, nodeTag.CasePalletAnalysis.Name);
-                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, null, new EventHandler(onEditCasePalletAnalysis)));
-                message = string.Format(Resources.ID_DELETE, nodeTag.CasePalletAnalysis.Name);
-                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.DELETE, new EventHandler(onDeleteCasePalletAnalysis)));
+                string message = string.Format(Resources.ID_EDIT, nodeTag.PackPalletAnalysis.Name);
+                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, null, new EventHandler(onEditPackPalletAnalysis)));
+                message = string.Format(Resources.ID_DELETE, nodeTag.PackPalletAnalysis.Name);
+                contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.DELETE, new EventHandler(onDeletePackPalletAnalysis)));
             }
             else if (nodeTag.Type == NodeTag.NodeType.NT_CYLINDERPALLETANALYSIS)
             {
@@ -339,6 +339,16 @@ namespace TreeDim.StackBuilder.Desktop
             }
             catch (Exception ex) { _log.Error(ex.ToString()); }
         }
+        private void onEditPackPalletAnalysis(object sender, EventArgs e)
+        {
+            try
+            {
+                NodeTag tag = SelectedNode.Tag as NodeTag;
+                ((DocumentSB)tag.Document).EditPackPalletAnalsyis(tag.PackPalletAnalysis);
+            }
+            catch (Exception ex) { _log.Error(ex.ToString()); }
+        }
+
         private void onEditCylinderPalletAnalysis(object sender, EventArgs e)
         {
             try
@@ -381,6 +391,15 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 NodeTag tag = SelectedNode.Tag as NodeTag;
                 tag.Document.RemoveItem(tag.CasePalletAnalysis);
+            }
+            catch (Exception ex) { _log.Error(ex.ToString()); }
+        }
+        private void onDeletePackPalletAnalysis(object sender, EventArgs e)
+        {
+            try
+            {
+                NodeTag tag = SelectedNode.Tag as NodeTag;
+                tag.Document.RemoveItem(tag.PackPalletAnalysis);
             }
             catch (Exception ex) { _log.Error(ex.ToString()); }
         }
@@ -789,6 +808,7 @@ namespace TreeDim.StackBuilder.Desktop
                 NodeTag.NodeType tagType = tag.Type;
                 if (null != AnalysisNodeClicked &&
                     (tag.Type == NodeTag.NodeType.NT_CASEPALLETANALYSIS)
+                    || (tag.Type == NodeTag.NodeType.NT_PACKPALLETANALYSIS)
                     || (tag.Type == NodeTag.NodeType.NT_TRUCKANALYSIS)
                     || (tag.Type == NodeTag.NodeType.NT_BOXCASEANALYSIS)
                     || (tag.Type == NodeTag.NodeType.NT_BOXCASEPALLETANALYSIS)
@@ -1430,6 +1450,7 @@ namespace TreeDim.StackBuilder.Desktop
         {
             NodeTag.NodeType nodeType = NodeTag.NodeType.NT_UNKNOWN;
             if (analysis.GetType() == typeof(CasePalletAnalysis)) nodeType = NodeTag.NodeType.NT_CASEPALLETANALYSIS;
+            else if (analysis.GetType() == typeof(PackPalletAnalysis)) nodeType = NodeTag.NodeType.NT_PACKPALLETANALYSIS;
             else if (analysis.GetType() == typeof(CylinderPalletAnalysis)) nodeType = NodeTag.NodeType.NT_CYLINDERPALLETANALYSIS;
             else if (analysis.GetType() == typeof(HCylinderPalletAnalysis)) nodeType = NodeTag.NodeType.NT_HCYLINDERPALLETANALYSIS;
             else if (analysis.GetType() == typeof(BoxCaseAnalysis)) nodeType = NodeTag.NodeType.NT_BOXCASEANALYSIS;
@@ -2013,6 +2034,11 @@ namespace TreeDim.StackBuilder.Desktop
                 _casePalletAnalysis = itemProperties as CasePalletAnalysis;
                 _itemProperties = null;
             }
+            else if (_type == NodeType.NT_PACKPALLETANALYSIS && itemProperties is PackPalletAnalysis)
+            {
+                _packPalletAnalysis = itemProperties as PackPalletAnalysis;
+                _itemProperties = null;
+            }
             else if (_type == NodeType.NT_BOXCASEANALYSIS && itemProperties is BoxCaseAnalysis)
             {
                 _boxCaseAnalysis = itemProperties as BoxCaseAnalysis;
@@ -2033,6 +2059,7 @@ namespace TreeDim.StackBuilder.Desktop
                 _hCylinderPalletAnalysis = itemProperties as HCylinderPalletAnalysis;
                 _itemProperties = null;
             }
+
         }
         public NodeTag(NodeType type, Document document, CasePalletAnalysis analysis, ItemBase itemProperties)
         {
@@ -2221,6 +2248,10 @@ namespace TreeDim.StackBuilder.Desktop
         /// </summary>
         public CasePalletAnalysis CasePalletAnalysis { get { return _casePalletAnalysis; } }
         /// <summary>
+        /// returns pack pallet analysis
+        /// </summary>
+        public PackPalletAnalysis PackPalletAnalysis { get { return _packPalletAnalysis; } }
+        /// <summary>
         /// return cylinder/pallet analysis if any
         /// </summary>
         public CylinderPalletAnalysis CylinderPalletAnalysis { get { return _cylinderPalletAnalysis; } }
@@ -2299,6 +2330,10 @@ namespace TreeDim.StackBuilder.Desktop
         /// Analysis
         /// </summary>
         public CasePalletAnalysis Analysis { get { return _nodeTag.CasePalletAnalysis; } }
+        /// <summary>
+        /// PackPammetAnalysis
+        /// </summary>
+        public PackPalletAnalysis PackPalletAnalysis { get { return _nodeTag.PackPalletAnalysis; } }
         /// <summary>
         /// Cylinder/pallet analysis
         /// </summary>

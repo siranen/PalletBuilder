@@ -49,6 +49,7 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 cbDir.SelectedIndex = (int)(_packProperties.BoxOrientation);
                 Arrangement = _packProperties.Arrangement;
+                Wrapper = _packProperties.Wrap;
             }
             else
             { 
@@ -128,7 +129,80 @@ namespace TreeDim.StackBuilder.Desktop
         {
             get
             {
-                return new WrapperPolyethilene(0.1);  
+                PackWrapper wrapper = null;
+                switch (cbType.SelectedIndex)
+                {
+                    case 0:
+                        wrapper = new WrapperPolyethilene(
+                            uCtrlThickness.Value, uCtrlWeight.Value, cbColor.Color, chkbTransparent.Checked);
+                        break;
+                    case 1:
+                        wrapper = new WrapperPaper(
+                            uCtrlThickness.Value, uCtrlWeight.Value, cbColor.Color
+                            );
+                        break;
+                    case 2:
+                        {
+                            WrapperCardboard wrapperCardboard = new WrapperCardboard(
+                                uCtrlThickness.Value, uCtrlWeight.Value, cbColor.Color
+                                );
+                            wrapperCardboard.SetNoWalls(uCtrlWalls.NoX, uCtrlWalls.NoY, uCtrlWalls.NoZ);
+                            wrapper = wrapperCardboard;
+                        }
+                        break;
+                    case 3:
+                        {
+                            WrapperTray wrapperTray = new WrapperTray(
+                                uCtrlThickness.Value, uCtrlHeight.Value, cbColor.Color
+                                );
+                            wrapperTray.SetNoWalls(uCtrlWalls.NoX, uCtrlWalls.NoY, uCtrlWalls.NoZ);
+                            wrapperTray.Height = uCtrlHeight.Value;
+                            wrapper = wrapperTray;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return wrapper;  
+            }
+            set
+            {
+                PackWrapper wrapper = value;
+                if (null == wrapper) return;
+                cbType.SelectedIndex = (int)wrapper.Type;
+                onWrapperTypeChanged(this, null);
+
+                uCtrlThickness.Value = wrapper.UnitThickness;
+                uCtrlWeight.Value = wrapper.Weight;
+                cbColor.Color = wrapper.Color;
+
+                switch (wrapper.Type)
+                {
+                    case PackWrapper.WType.WT_POLYETHILENE:
+                        chkbTransparent.Checked = wrapper.Transparent;
+                        break;
+                    case PackWrapper.WType.WT_PAPER:
+                        break;
+                    case PackWrapper.WType.WT_CARDBOARD:
+                        {
+                            WrapperCardboard wrapperCardboard = wrapper as WrapperCardboard;
+                            uCtrlWalls.NoX = wrapperCardboard.Wall(0);
+                            uCtrlWalls.NoY = wrapperCardboard.Wall(1);
+                            uCtrlWalls.NoZ = wrapperCardboard.Wall(2);
+                        }
+                        break;
+                    case PackWrapper.WType.WT_TRAY:
+                        {
+                            WrapperTray wrapperTray = wrapper as WrapperTray;
+                            uCtrlWalls.NoX = wrapperTray.Wall(0);
+                            uCtrlWalls.NoY = wrapperTray.Wall(1);
+                            uCtrlWalls.NoZ = wrapperTray.Wall(2);
+                            uCtrlHeight.Value = wrapperTray.Height;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         public bool HasForcedOuterDimensions
@@ -162,6 +236,25 @@ namespace TreeDim.StackBuilder.Desktop
                 uCtrlOuterDimensions.Z = height;
             }
             UpdateStatus(string.Empty);
+            graphCtrl.Invalidate();
+        }
+        private void onWrapperTypeChanged(object sender, EventArgs e)
+        {
+            bool showTransparent = false, showWalls = false, showHeight = false; 
+
+            switch (cbType.SelectedIndex)
+            {
+                case 0: showTransparent = true; showWalls = false; showHeight = false; break;
+                case 1: showTransparent = false; showWalls = false; showHeight = false; break;
+                case 2: showTransparent = false; showWalls = false; showHeight = false; break;
+                case 3: showTransparent = false; showWalls = false; showHeight = false; break;
+                default: showTransparent = false; showWalls = false; showHeight = false; break;
+            }
+
+            chkbTransparent.Visible = showTransparent;
+            uCtrlWalls.Visible = showWalls;
+            uCtrlHeight.Visible = showHeight;
+
             graphCtrl.Invalidate();
         }
         #endregion

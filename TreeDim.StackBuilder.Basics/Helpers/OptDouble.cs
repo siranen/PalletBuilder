@@ -73,13 +73,15 @@ namespace TreeDim.StackBuilder.Basics
         /// <returns>A <see cref="OptDouble"/> that represents the OptValue specified by the <paramref name="value"/> parameters.</returns>
         public static OptDouble Parse(string value)
         {
-            Regex r = new Regex(@"\((?<o>),(?<v>.*)\)", RegexOptions.Singleline);
+            Regex r = new Regex(@"(?<x>.*),(?<y>.*)", RegexOptions.Singleline);
             Match m = r.Match(value);
             if (m.Success)
             {
+                string sx = m.Result("${x}");
+                string sy = m.Result("${y}");
                 return new OptDouble(
-                    bool.Parse(m.Result("${o}")),
-                    double.Parse(m.Result("${v}"), System.Globalization.CultureInfo.InvariantCulture)
+                    int.Parse(sx) == 1,
+                    double.Parse(sy, System.Globalization.CultureInfo.InvariantCulture)
                     );
             }
             else
@@ -135,7 +137,7 @@ namespace TreeDim.StackBuilder.Basics
         }
         public override string ToString()
         {
-            return string.Format("({0}, {1})", _activated.ToString(), _val.ToString(System.Globalization.CultureInfo.InvariantCulture));
+            return string.Format("{0}, {1}", _activated ? 1 : 0, _val.ToString(System.Globalization.CultureInfo.InvariantCulture));
         }
         #endregion
 

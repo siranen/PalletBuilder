@@ -20,13 +20,14 @@ namespace TreeDim.StackBuilder.Basics
             , WT_CARDBOARD
             , WT_TRAY
         }
-        public PackWrapper(double thickness) { _thickness = thickness; }
+        public PackWrapper(double thickness, double weight, Color color) { _thickness = thickness; Weight = weight; Color = color; }
         public double Weight { get; set; }
         public Color Color { get; set; }
         virtual public bool Transparent { get { return false; } } 
 
         abstract public WType Type { get;}
         virtual public double Thickness(int dir) { return _thickness; }
+        virtual public double UnitThickness { get { return _thickness; } }
         // data members
         protected double _thickness;
     }
@@ -35,7 +36,7 @@ namespace TreeDim.StackBuilder.Basics
         /// <summary>
         /// constructor
         /// </summary>
-        public WrapperPolyethilene(double thickness) : base(thickness) { }
+        public WrapperPolyethilene(double thickness, double weight, Color color, bool transparent) : base(thickness, weight, color) { }
         public override bool Transparent { get { return _transparent; } }
         // implement abstract methods
         public override PackWrapper.WType Type { get { return PackWrapper.WType.WT_POLYETHILENE; } }
@@ -47,10 +48,9 @@ namespace TreeDim.StackBuilder.Basics
         /// <summary>
         /// constructor
         /// </summary>
-        public WrapperPaper(double thickness) : base(thickness) { }
+        public WrapperPaper(double thickness, double weight, Color color) : base(thickness, weight, color) { }
         // implement abstract methods
         public override PackWrapper.WType Type { get { return PackWrapper.WType.WT_PAPER; } }
-        // data members
     }
     public class WrapperCardboard : PackWrapper
     {
@@ -58,34 +58,31 @@ namespace TreeDim.StackBuilder.Basics
         /// constructor
         /// </summary>
         /// <param name="thickness">Cardboard thickness</param>
-        public WrapperCardboard(double thickness)  : base(thickness) { }
+        public WrapperCardboard(double thickness, double weight, Color color)  : base(thickness, weight, color) { }
         public void SetNoWalls(int noWallX, int noWallY, int noWallZ)
         { walls[0] = noWallX; walls[1] = noWallY; walls[2] = noWallZ; }
+        public int Wall(int index) { return walls[index]; }
         // implement abstract methods
         public override PackWrapper.WType Type { get { return PackWrapper.WType.WT_CARDBOARD; } }
         public override double Thickness(int dir) { return walls[dir] * _thickness; }
         // data members
         private int[] walls = new int[3];
     }
-    public class WrapperTray : PackWrapper
+    public class WrapperTray : WrapperCardboard
     {
         /// <summary>
         /// constructor
         /// </summary>
         /// <param name="thickness">Cardboard thickness</param>
-        public WrapperTray(double thickness) : base(thickness) {}
-        public void SetNoWalls(int noWallX, int noWallY, int noWallZ)
-        { walls[0] = noWallX; walls[1] = noWallY; walls[2] = noWallZ; }
+        public WrapperTray(double thickness, double weight, Color color) : base(thickness, weight, color) {}
         /// <summary>
         /// Tray height
         /// </summary>
         public double Height { get { return _height; } set { _height = value; } }
         // implement abstract methods
         public override PackWrapper.WType Type { get { return PackWrapper.WType.WT_TRAY; } }
-        public override double Thickness(int dir) { return walls[dir] * _thickness; }
 
         // data members
-        private int[] walls = new int[3];
         private double _height;
     }
     #endregion
@@ -161,6 +158,9 @@ namespace TreeDim.StackBuilder.Basics
         }
         #endregion
         #region Outer dimensions
+        public bool HasForcedOuterDimensions { get { return _forceOuterDimensions; } }
+        public Vector3D OuterDimensions { get { return new Vector3D(Length, Width, Height); } }
+
         public void ForceOuterDimensions(Vector3D outerDimensions)
         {
             _forceOuterDimensions = true;

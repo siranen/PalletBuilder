@@ -96,7 +96,7 @@ namespace TreeDim.StackBuilder.Engine
 
                         PackPalletSolution sol = new PackPalletSolution(null, title, boxLayer);
                         int noLayer = 1,
-                            noInterlayer = (null != _interlayerProperties && _constraintSet.HasFirstLayerInterlayer) ? 1 : 0;
+                            noInterlayer = (null != _interlayerProperties && _constraintSet.HasFirstInterlayer) ? 1 : 0;
 
                         bool maxHeightReached = _constraintSet.MaximumPalletHeight.Activated
                             && ( _packProperties.Height
@@ -111,7 +111,7 @@ namespace TreeDim.StackBuilder.Engine
                         int iCountInterlayer = 0, iCountSwap = 0;
                         while ( !maxHeightReached &&  !maxWeightReached)
                         {
-                            bool bInterlayer = (0 == iCountInterlayer) && ((noLayer != 0) || _constraintSet.HasFirstLayerInterlayer);
+                            bool bInterlayer = (0 == iCountInterlayer) && ((noLayer != 0) || _constraintSet.HasFirstInterlayer);
                             bool bSwap = (0 == iCountSwap);
                             // actually insert new layer
                             sol.AddLayer(bSwap, bInterlayer);

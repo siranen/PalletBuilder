@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using System.Linq;
 
 using TreeDim.StackBuilder.Basics;
 
@@ -597,6 +598,32 @@ namespace TreeDim.StackBuilder.Basics
             // notify listeners
             NotifyOnNewPackPalletAnalysisCreated(analysis);
             Modify();
+            return analysis;
+        }
+
+        public PackPalletAnalysis CreateNewPackPalletAnalysis(
+            string name, string description
+            , PackProperties pack, PalletProperties pallet
+            , InterlayerProperties interlayer
+            , PackPalletConstraintSet constraintSet
+            , List<PackPalletSolution> solutions)
+        {
+            PackPalletAnalysis analysis = new PackPalletAnalysis(
+                pack
+                , pallet
+                , interlayer
+                , constraintSet);
+            analysis.Name = name;
+            analysis.Description = description;
+            // insert in list
+            _packPalletAnalyses.Add(analysis);
+            // set solutions
+            analysis.Solutions = solutions;
+            // notify listeners
+            NotifyOnNewPackPalletAnalysisCreated(analysis);
+            // set solution selected if it is unique
+            if (solutions.Count == 1)
+                analysis.SelectSolutionByIndex(0);
             return analysis;
         }
 
@@ -1214,6 +1241,8 @@ namespace TreeDim.StackBuilder.Basics
                                 LoadBundleProperties(itemPropertiesNode as XmlElement);
                             else if (string.Equals(itemPropertiesNode.Name, "TruckProperties", StringComparison.CurrentCultureIgnoreCase))
                                 LoadTruckProperties(itemPropertiesNode as XmlElement);
+                            else if (string.Equals(itemPropertiesNode.Name, "PackProperties", StringComparison.CurrentCultureIgnoreCase))
+                                LoadPackProperties(itemPropertiesNode as XmlElement);
                         }
                         catch (Exception ex)
                         {
@@ -1315,6 +1344,74 @@ namespace TreeDim.StackBuilder.Basics
             boxProperties.TapeColor = tapeColor;
             boxProperties.TapeWidth = UnitsManager.ConvertLengthFrom(tapeWidth, _unitSystem);
         }
+
+        private void LoadPackProperties(XmlElement eltPackProperties)
+        {
+            string sid = eltPackProperties.Attributes["Id"].Value;
+            string sname = eltPackProperties.Attributes["Name"].Value;
+            string sdescription = eltPackProperties.Attributes["Description"].Value;
+            string sBoxId = eltPackProperties.Attributes["BoxProperties"].Value;
+            string sOrientation = eltPackProperties.Attributes["Orientation"].Value;
+            string sArrangement = eltPackProperties.Attributes["Arrangement"].Value;
+            PackWrapper wrapper = null;
+            foreach (XmlElement wrapperNode in eltPackProperties.ChildNodes)
+                 wrapper = LoadWrapper(wrapperNode as XmlElement);
+            PackProperties packProperties = CreateNewPack(
+                sname
+                , sdescription
+                , GetTypeByGuid(new Guid(sBoxId)) as BoxProperties
+                , PackArrangement.TryParse(sArrangement)
+                , HalfAxis.Parse(sOrientation)
+                , wrapper);
+            packProperties.Guid = new Guid(sid);
+        }
+
+        private PackWrapper LoadWrapper(XmlElement xmlWrapperElt)
+        {
+            if (null == xmlWrapperElt) return null;
+
+            string sType = xmlWrapperElt.Attributes["Type"].Value;
+            string sColor = xmlWrapperElt.Attributes["Color"].Value;
+            string sWeight = xmlWrapperElt.Attributes["Weight"].Value;
+            string sUnitThickness = xmlWrapperElt.Attributes["UnitThickness"].Value;
+
+            double thickness = UnitsManager.ConvertLengthFrom(System.Convert.ToDouble(sUnitThickness, System.Globalization.CultureInfo.InvariantCulture), _unitSystem);
+            Color wrapperColor = Color.FromArgb(System.Convert.ToInt32(sColor));
+            double weight = UnitsManager.ConvertMassFrom(System.Convert.ToDouble(sWeight, System.Globalization.CultureInfo.InvariantCulture), _unitSystem);
+
+            if (sType == "WT_POLYETHILENE")
+            {
+                bool transparent = bool.Parse(xmlWrapperElt.Attributes["Transparent"].Value);
+                return new WrapperPolyethilene(thickness, weight, wrapperColor, transparent);
+            }
+            else if (sType == "WT_PAPER")
+            {
+                return new WrapperPaper(thickness, weight, wrapperColor);
+            }
+            else if (sType == "WT_CARDBOARD")
+            {
+                string sWalls = xmlWrapperElt.Attributes["NumberOfWalls"].Value;
+                int[] walls = sWalls.Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
+                WrapperCardboard wrapper = new WrapperCardboard(thickness, weight, wrapperColor);
+                wrapper.SetNoWalls(walls[0], walls[1], walls[2]);
+                return wrapper;
+            }
+            else if (sType == "WT_TRAY")
+            {
+                string sWalls = xmlWrapperElt.Attributes["NumberOfWalls"].Value;
+                int[] walls = sWalls.Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
+
+                string sHeight = xmlWrapperElt.Attributes["Height"].Value;
+                double height = UnitsManager.ConvertLengthFrom(System.Convert.ToDouble(sHeight, System.Globalization.CultureInfo.InvariantCulture), _unitSystem);
+                WrapperTray wrapper = new WrapperTray(thickness, weight, wrapperColor);
+                wrapper.SetNoWalls(walls[0], walls[1], walls[2]);
+                wrapper.Height = height;
+                return wrapper;
+            }
+            else
+                return null;
+        }
+
 
         private void LoadCylinderProperties(XmlElement eltCylinderProperties)
         {
@@ -1775,6 +1872,46 @@ namespace TreeDim.StackBuilder.Basics
                     }
                 }
             }
+            else if (string.Equals(eltAnalysis.Name, "PackPalletAnalysis", StringComparison.CurrentCultureIgnoreCase))
+            {
+                string sPackId = eltAnalysis.Attributes["PackId"].Value;
+                string sPalletId = eltAnalysis.Attributes["PalletId"].Value;
+
+                // load constraint set / solution list
+                PackPalletConstraintSet constraintSet = null;
+                List<PackPalletSolution> solutions = new List<PackPalletSolution>();
+                List<int> selectedIndices = new List<int>();
+
+                foreach (XmlNode node in eltAnalysis.ChildNodes)
+                { 
+                    // load constraint set
+                    if (string.Equals(node.Name, "ConstraintSet", StringComparison.CurrentCultureIgnoreCase))
+                        constraintSet = LoadPackPalletConstraintSet(node as XmlElement);
+                    // load solutions
+                    else if (string.Equals(node.Name, "Solutions", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        int indexSol = 0;
+                        foreach (XmlNode solutionNode in node.ChildNodes)
+                        {
+                            XmlElement eltSolution = solutionNode as XmlElement;
+                            solutions.Add( LoadPackPalletSolution(eltSolution) );
+                            // is solution selected ?
+                            if (null != eltSolution.Attributes["Selected"] && "true" == eltSolution.Attributes["Selected"].Value)
+                                selectedIndices.Add(indexSol);
+                            ++indexSol;
+                        }
+                    }
+                }
+                PackPalletAnalysis analysis = CreateNewPackPalletAnalysis(
+                    sName
+                    , sDescription
+                    , GetTypeByGuid(new Guid(sPackId)) as PackProperties
+                    , GetTypeByGuid(new Guid(sPalletId)) as PalletProperties
+                    , string.IsNullOrEmpty(sInterlayerId) ? null : GetTypeByGuid(new Guid(sInterlayerId)) as InterlayerProperties
+                    , constraintSet
+                    , solutions
+                    );
+            }
             else if (string.Equals(eltAnalysis.Name, "CylinderPalletAnalysis", StringComparison.CurrentCultureIgnoreCase))
             {
                 string sCylinderId = eltAnalysis.Attributes["CylinderId"].Value;
@@ -2139,6 +2276,49 @@ namespace TreeDim.StackBuilder.Basics
                 throw new Exception("Invalid constraint set");
             return constraints;
         }
+        private PackPalletConstraintSet LoadPackPalletConstraintSet(XmlElement eltContraintSet)
+        {
+            PackPalletConstraintSet constraints = new PackPalletConstraintSet();
+            if (eltContraintSet.HasAttribute("OverhangX"))
+                constraints.OverhangX = UnitsManager.ConvertLengthFrom(double.Parse(eltContraintSet.Attributes["OverhangX"].Value), _unitSystem);
+            if (eltContraintSet.HasAttribute("OverhangY"))
+                constraints.OverhangY = UnitsManager.ConvertLengthFrom(double.Parse(eltContraintSet.Attributes["OverhangY"].Value), _unitSystem);
+            constraints.MinOverhangX = LoadOptDouble(eltContraintSet, "MinOverhangX", UnitsManager.UnitType.UT_LENGTH);
+            constraints.MinOverhangY = LoadOptDouble(eltContraintSet, "MinOverhangY", UnitsManager.UnitType.UT_LENGTH);
+            constraints.MinimumSpace = LoadOptDouble(eltContraintSet, "MinimumSpace", UnitsManager.UnitType.UT_LENGTH);
+            constraints.MaximumSpaceAllowed = LoadOptDouble(eltContraintSet, "MaximumSpaceAllowed", UnitsManager.UnitType.UT_LENGTH);
+            constraints.MaximumPalletHeight = LoadOptDouble(eltContraintSet, "MaximumPalletHeight", UnitsManager.UnitType.UT_LENGTH);
+            constraints.MaximumPalletWeight = LoadOptDouble(eltContraintSet, "MaximumPalletWeight", UnitsManager.UnitType.UT_MASS);
+            constraints.LayerSwapPeriod = int.Parse( eltContraintSet.Attributes["LayerSwapPeriod"].Value );
+            constraints.InterlayerPeriod = int.Parse( eltContraintSet.Attributes["InterlayerPeriod"].Value );
+            if (!constraints.IsValid)
+                throw new Exception("Invalid constraint set");
+            return constraints;
+        }
+
+        private OptDouble LoadOptDouble(XmlElement xmlElement, string attribute, UnitsManager.UnitType unitType)
+        {
+            if (!xmlElement.HasAttribute(attribute))
+                return new OptDouble(false, 0.0);
+            else
+            {
+                OptDouble optD = OptDouble.Parse(xmlElement.Attributes[attribute].Value);
+                switch (unitType)
+                {
+                    case UnitsManager.UnitType.UT_LENGTH:
+                        optD.Value = UnitsManager.ConvertLengthFrom(optD.Value, _unitSystem);
+                        break;
+                    case UnitsManager.UnitType.UT_MASS:
+                        optD.Value = UnitsManager.ConvertMassFrom(optD.Value, _unitSystem);
+                        break;
+                    default:
+                        Debug.Assert(false);
+                        break;
+                }
+                return optD;
+            }
+        }
+
         private CylinderPalletConstraintSet LoadCylinderPalletConstraintSet(XmlElement eltConstraintSet)
         {
             CylinderPalletConstraintSet constraints = new CylinderPalletConstraintSet();
@@ -2202,12 +2382,57 @@ namespace TreeDim.StackBuilder.Basics
                 sol.Add( LoadLayer(nodeLayer as XmlElement));
             return sol;
         }
+
+        private PackPalletSolution LoadPackPalletSolution(XmlElement eltSolution)
+        { 
+            // title -> instantiation
+            string stitle = eltSolution.Attributes["Title"].Value;
+            // layer and list
+            ILayer layer = null;
+            List<LayerDescriptor> layerDescriptors = new List<LayerDescriptor>();
+
+            foreach (XmlNode nodeSolChild in eltSolution.ChildNodes)
+            {
+                XmlElement eltChild = nodeSolChild as XmlElement;
+                if (null != eltChild)
+                {
+                    if (string.Equals(eltChild.Name, "BoxLayers", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        foreach (XmlNode nodeLayer in eltChild.ChildNodes)
+                        {
+                            XmlElement eltLayer = nodeLayer as XmlElement;
+                            if (null != eltLayer)
+                                layer = LoadLayer(eltLayer);
+                        }
+                    }
+                    else if (string.Equals(eltChild.Name, "LayerRefs", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        foreach (XmlNode nodeLayerRef in eltChild.ChildNodes)
+                        {
+                            XmlElement eltLayerRef = nodeLayerRef as XmlElement;
+                            if (null != eltLayerRef)
+                            {
+                                bool swapped = bool.Parse(eltLayerRef.Attributes["Swapped"].Value);
+                                bool hasInterlayer = bool.Parse(eltLayerRef.Attributes["HasInterlayer"].Value);
+                                layerDescriptors.Add(new LayerDescriptor(swapped, hasInterlayer));
+                            }
+                        }
+                    }
+                }
+            }
+            // create solution
+            PackPalletSolution sol = new PackPalletSolution(null, stitle, layer as BoxLayer);
+            foreach (LayerDescriptor desc in layerDescriptors)
+                sol.AddLayer(desc.HasInterlayer, desc.Swapped);
+            return sol;
+        }
+
         private CylinderPalletSolution LoadCylinderPalletSolution(XmlElement eltSolution)
         {
             // title -> instantiation
             string stitle = eltSolution.Attributes["Title"].Value;
             CylinderPalletSolution sol = new CylinderPalletSolution(null, stitle, true);
-            // limit reached
+            // layer
             if (eltSolution.HasAttribute("LimitReached"))
             {
                 string sLimitReached = eltSolution.Attributes["LimitReached"].Value;
@@ -2524,12 +2749,23 @@ namespace TreeDim.StackBuilder.Basics
                     TruckProperties truckProperties = itemProperties as TruckProperties;
                     if (null != truckProperties)
                         Save(truckProperties, xmlItemPropertiesElt, xmlDoc);
+                    PackProperties packProperties = itemProperties as PackProperties;
+                    if (null != packProperties) {}
                 }
+                foreach (ItemBase itemProperties in _typeList)
+                {
+                    PackProperties packProperties = itemProperties as PackProperties;
+                    if (null != packProperties)
+                        Save(packProperties, xmlItemPropertiesElt, xmlDoc);
+                }
+
                 // create Analyses element
                 XmlElement xmlAnalysesElt = xmlDoc.CreateElement("Analyses");
                 xmlRootElement.AppendChild(xmlAnalysesElt);
                 foreach (CasePalletAnalysis analysis in _casePalletAnalyses)
                     SavePalletAnalysis(analysis, xmlAnalysesElt, xmlDoc);
+                foreach (PackPalletAnalysis analysis in _packPalletAnalyses)
+                    SavePackPalletAnalysis(analysis, xmlAnalysesElt, xmlDoc);
                 foreach (CylinderPalletAnalysis analysis in _cylinderPalletAnalyses)
                     SaveCylinderPalletAnalysis(analysis, xmlAnalysesElt, xmlDoc);
                 foreach (HCylinderPalletAnalysis analysis in _hCylinderPalletAnalyses)
@@ -2538,6 +2774,7 @@ namespace TreeDim.StackBuilder.Basics
                     SaveBoxCaseAnalysis(analysis, xmlAnalysesElt, xmlDoc);
                 foreach (BoxCasePalletAnalysis analysis in _boxCasePalletOptimizations)
                     SaveCaseAnalysis(analysis, xmlAnalysesElt, xmlDoc);
+
 
                 // finally save XmlDocument
                 xmlDoc.Save(filePath);
@@ -2690,6 +2927,105 @@ namespace TreeDim.StackBuilder.Basics
                 tapeElt.Attributes.Append(tapeColorAttribute);
             }
         }
+        public void Save(PackProperties packProperties, XmlElement parentElement, XmlDocument xmlDoc)
+        {
+            // create xmlPackProperties element
+            XmlElement xmlPackProperties = xmlDoc.CreateElement("PackProperties");
+            parentElement.AppendChild(xmlPackProperties);
+            // Id
+            XmlAttribute guidAttribute = xmlDoc.CreateAttribute("Id");
+            guidAttribute.Value = packProperties.Guid.ToString();
+            xmlPackProperties.Attributes.Append(guidAttribute);
+            // name
+            XmlAttribute nameAttribute = xmlDoc.CreateAttribute("Name");
+            nameAttribute.Value = packProperties.Name;
+            xmlPackProperties.Attributes.Append(nameAttribute);
+            // description
+            XmlAttribute descAttribute = xmlDoc.CreateAttribute("Description");
+            descAttribute.Value = packProperties.Description;
+            xmlPackProperties.Attributes.Append(descAttribute);
+            // boxProperties
+            XmlAttribute boxPropAttribute = xmlDoc.CreateAttribute("BoxProperties");
+            boxPropAttribute.Value = packProperties.Box.Guid.ToString();
+            xmlPackProperties.Attributes.Append(boxPropAttribute);
+            // box orientation
+            XmlAttribute orientationAttribute = xmlDoc.CreateAttribute("Orientation");
+            orientationAttribute.Value = HalfAxis.ToString( packProperties.BoxOrientation );
+            xmlPackProperties.Attributes.Append(orientationAttribute);
+            // arrangement
+            XmlAttribute arrAttribute = xmlDoc.CreateAttribute("Arrangement");
+            arrAttribute.Value = packProperties.Arrangement.ToString();
+            xmlPackProperties.Attributes.Append(arrAttribute);
+            // wrapper
+            XmlElement wrapperElt = xmlDoc.CreateElement("Wrapper");
+            xmlPackProperties.AppendChild(wrapperElt);
+
+            PackWrapper packWrapper = packProperties.Wrap;
+            SaveWrapper(packWrapper as WrapperPolyethilene, wrapperElt, xmlDoc);
+            SaveWrapper(packWrapper as WrapperPaper, wrapperElt, xmlDoc);
+            SaveWrapper(packWrapper as WrapperCardboard, wrapperElt, xmlDoc);
+
+            // outer dimensions
+            if (packProperties.HasForcedOuterDimensions)
+            {
+                XmlAttribute outerDimAttribute = xmlDoc.CreateAttribute("OuterDimensions");
+                outerDimAttribute.Value = packProperties.OuterDimensions.ToString();
+                xmlPackProperties.Attributes.Append(outerDimAttribute);
+            }
+        }
+
+        #region Save Wrappers
+        private void SaveWrapperBase(PackWrapper wrapper, XmlElement wrapperElt, XmlDocument xmlDoc)
+        {
+            if (null == wrapper) return;
+            // type
+            XmlAttribute typeAttrib = xmlDoc.CreateAttribute("Type");
+            typeAttrib.Value = wrapper.Type.ToString();
+            wrapperElt.Attributes.Append(typeAttrib);
+            // color
+            XmlAttribute colorAttrib = xmlDoc.CreateAttribute("Color");
+            colorAttrib.Value = string.Format("{0}", wrapper.Color.ToArgb());
+            wrapperElt.Attributes.Append(colorAttrib);
+            // weight
+            XmlAttribute weightAttrib = xmlDoc.CreateAttribute("Weight");
+            weightAttrib.Value = string.Format("{0}", wrapper.Weight);
+            wrapperElt.Attributes.Append(weightAttrib);
+            // thickness
+            XmlAttribute thicknessAttrib = xmlDoc.CreateAttribute("UnitThickness");
+            thicknessAttrib.Value = string.Format("{0}", wrapper.UnitThickness);
+            wrapperElt.Attributes.Append(thicknessAttrib);
+        }
+        private void SaveWrapper(WrapperPolyethilene wrapper, XmlElement wrapperElt, XmlDocument xmlDoc)
+        {
+            if (null == wrapper) return;
+            SaveWrapperBase(wrapper, wrapperElt, xmlDoc);
+            // transparency
+            XmlAttribute transparentAttrib = xmlDoc.CreateAttribute("Transparent");
+            transparentAttrib.Value = wrapper.Transparent.ToString();
+            wrapperElt.Attributes.Append(transparentAttrib);
+        }
+        private void SaveWrapper(WrapperPaper wrapper, XmlElement wrapperElt, XmlDocument xmlDoc)
+        {
+            if (null == wrapper) return;
+            SaveWrapperBase(wrapper, wrapperElt, xmlDoc);
+        }
+        private void SaveWrapper(WrapperCardboard wrapper, XmlElement wrapperElt, XmlDocument xmlDoc)
+        {
+            if (null == wrapper) return;
+           SaveWrapperBase(wrapper, wrapperElt, xmlDoc);
+           // wall distribution
+           XmlAttribute wallDistribAttrib = xmlDoc.CreateAttribute("NumberOfWalls");
+           wallDistribAttrib.Value = string.Format("{0} {1} {2}", wrapper.Wall(0), wrapper.Wall(1), wrapper.Wall(2));
+           WrapperTray wrapperTray = wrapper as WrapperTray;
+           if (null != wrapperTray)
+           {
+               XmlAttribute heightAttrib = xmlDoc.CreateAttribute("Height");
+               heightAttrib.Value = string.Format("{0}", wrapperTray.Height);
+               wrapperElt.Attributes.Append(heightAttrib);
+           }
+        }
+        #endregion
+
         public void Save(CylinderProperties cylinderProperties, XmlElement parentElement, XmlDocument xmlDoc)
         {
             // create xmlBoxProperties element
@@ -3480,6 +3816,83 @@ namespace TreeDim.StackBuilder.Basics
             }
         }
 
+        public void SavePackPalletAnalysis(PackPalletAnalysis analysis, XmlElement parentElement, XmlDocument xmlDoc)
+        {
+            // create analysis element
+            XmlElement xmlAnalysisElt = xmlDoc.CreateElement("PackPalletAnalysis");
+            parentElement.AppendChild(xmlAnalysisElt);
+            // Name
+            XmlAttribute analysisNameAttribute = xmlDoc.CreateAttribute("Name");
+            analysisNameAttribute.Value = analysis.Name;
+            xmlAnalysisElt.Attributes.Append(analysisNameAttribute);
+            // Description
+            XmlAttribute analysisDescriptionAttribute = xmlDoc.CreateAttribute("Description");
+            analysisDescriptionAttribute.Value = analysis.Description;
+            xmlAnalysisElt.Attributes.Append(analysisDescriptionAttribute);
+            // BoxId
+            XmlAttribute packIdAttribute = xmlDoc.CreateAttribute("PackId");
+            packIdAttribute.Value = string.Format("{0}", analysis.PackProperties.Guid);
+            xmlAnalysisElt.Attributes.Append(packIdAttribute);
+            // PalletId
+            XmlAttribute palletIdAttribute = xmlDoc.CreateAttribute("PalletId");
+            palletIdAttribute.Value = string.Format("{0}", analysis.PalletProperties.Guid);
+            xmlAnalysisElt.Attributes.Append(palletIdAttribute);
+            // InterlayerId
+            if (null != analysis.InterlayerProperties)
+            {
+                XmlAttribute interlayerIdAttribute = xmlDoc.CreateAttribute("InterlayerId");
+                interlayerIdAttribute.Value = string.Format("{0}", analysis.InterlayerProperties.Guid);
+                xmlAnalysisElt.Attributes.Append(interlayerIdAttribute);
+            }
+            // Constraint set
+            XmlElement constraintSetElt = xmlDoc.CreateElement("ConstraintSet");
+            xmlAnalysisElt.AppendChild(constraintSetElt);
+            SaveDouble(analysis.ConstraintSet.OverhangX, xmlDoc, constraintSetElt, "OverhangX");
+            SaveDouble(analysis.ConstraintSet.OverhangY, xmlDoc, constraintSetElt, "OverhangY");
+            SaveOptDouble(analysis.ConstraintSet.MinOverhangX, xmlDoc, constraintSetElt, "MinOverhangX");
+            SaveOptDouble(analysis.ConstraintSet.MinOverhangY, xmlDoc, constraintSetElt, "MinOverhangY");
+            SaveOptDouble(analysis.ConstraintSet.MinimumSpace, xmlDoc, constraintSetElt, "MinimumSpace");
+            SaveOptDouble(analysis.ConstraintSet.MaximumSpaceAllowed, xmlDoc, constraintSetElt, "MaximumSpaceAllowed");
+            SaveOptDouble(analysis.ConstraintSet.MaximumPalletHeight, xmlDoc, constraintSetElt, "MaximumPalletHeight");
+            SaveOptDouble(analysis.ConstraintSet.MaximumPalletWeight, xmlDoc, constraintSetElt, "MaximumPalletWeight");
+            SaveOptDouble(analysis.ConstraintSet.MaximumLayerWeight, xmlDoc, constraintSetElt, "MaximumLayerWeight");
+            SaveInt(analysis.ConstraintSet.LayerSwapPeriod, xmlDoc, constraintSetElt, "LayerSwapPeriod");
+            SaveInt(analysis.ConstraintSet.InterlayerPeriod, xmlDoc, constraintSetElt, "InterlayerPeriod");
+            // solutions
+            XmlElement solutionsElt = xmlDoc.CreateElement("Solutions");
+            xmlAnalysisElt.AppendChild(solutionsElt);
+            int solIndex = 0;
+            foreach (PackPalletSolution sol in analysis.Solutions)
+            {
+                SavePackPalletSolution(
+                    sol
+                    , analysis.GetSelSolutionBySolutionIndex(solIndex) // null if not selected
+                    , solutionsElt
+                    , xmlDoc);
+                ++solIndex;
+            }
+        }
+        private void SaveInt(int i, XmlDocument xmlDoc, XmlElement xmlElement, string attributeName)
+        {
+            XmlAttribute att = xmlDoc.CreateAttribute(attributeName);
+            att.Value = i.ToString();
+            xmlElement.Attributes.Append(att);
+        }
+
+        private void SaveDouble(double d, XmlDocument xmlDoc, XmlElement xmlElement, string attributeName)
+        {
+            XmlAttribute att = xmlDoc.CreateAttribute(attributeName);
+            att.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", d);
+            xmlElement.Attributes.Append(att);
+        }
+
+        private void SaveOptDouble(OptDouble optD, XmlDocument xmlDoc, XmlElement xmlElement, string attributeName)
+        {
+            XmlAttribute att = xmlDoc.CreateAttribute(attributeName);
+            att.Value = optD.ToString();
+            xmlElement.Attributes.Append(att);
+        }
+
         public void SaveCylinderPalletAnalysis(CylinderPalletAnalysis analysis, XmlElement parentElement, XmlDocument xmlDoc)
         { 
             // create analysis element
@@ -3549,9 +3962,9 @@ namespace TreeDim.StackBuilder.Basics
             overhangY.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", analysis.ConstraintSet.OverhangY);
             constraintSetElement.Attributes.Append(overhangY);
             // solutions
-            int solIndex = 0;
             XmlElement solutionsElt = xmlDoc.CreateElement("Solutions");
             xmlAnalysisElt.AppendChild(solutionsElt);
+            int solIndex = 0;
             foreach (CylinderPalletSolution sol in analysis.Solutions)
             {
                 SaveCylinderPalletSolution(
@@ -3910,6 +4323,40 @@ namespace TreeDim.StackBuilder.Basics
 
                 foreach (ECTAnalysis ectAnalysis in selSolution.EctAnalyses)
                     Save(ectAnalysis, unique, ectAnalysesElt, xmlDoc);
+            }
+        }
+
+        private void SavePackPalletSolution(
+            PackPalletSolution sol
+            , SelPackPalletSolution selSolution
+            , XmlElement solutionsElt
+            , XmlDocument xmlDoc)
+        { 
+            // solution
+            XmlElement solutionElt = xmlDoc.CreateElement("Solution");
+            solutionsElt.AppendChild(solutionElt);
+            // title
+            XmlAttribute titleAttribute = xmlDoc.CreateAttribute("Title");
+            titleAttribute.Value = sol.Title;
+            solutionElt.Attributes.Append(titleAttribute);
+            // layers
+            XmlElement boxLayersElt = xmlDoc.CreateElement("BoxLayers");
+            solutionElt.AppendChild(boxLayersElt);
+            Save(sol.Layer, boxLayersElt, xmlDoc);
+            // layerRefs
+            XmlElement layerRefsElt = xmlDoc.CreateElement("LayerRefs");
+            solutionElt.AppendChild(layerRefsElt);
+            // layers
+            foreach (LayerDescriptor layerDesc in sol.Layers)
+            {
+                XmlElement layerRefElt = xmlDoc.CreateElement("LayerRef");
+                layerRefsElt.AppendChild(layerRefElt);
+                XmlAttribute attributeSwapped = xmlDoc.CreateAttribute("Swapped");
+                attributeSwapped.Value = layerDesc.Swapped.ToString();
+                layerRefElt.Attributes.Append(attributeSwapped);
+                XmlAttribute attributeHasInterlayer = xmlDoc.CreateAttribute("HasInterlayer");
+                attributeHasInterlayer.Value = layerDesc.HasInterlayer.ToString();
+                layerRefElt.Attributes.Append(attributeHasInterlayer);
             }
         }
 

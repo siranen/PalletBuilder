@@ -59,7 +59,7 @@ namespace TreeDim.StackBuilder.Basics
         public double OverhangY { get { return _overhangY; } set { _overhangY = value; } }
         public int InterlayerPeriod { get { return _interlayerPeriod; } set { _interlayerPeriod = value; } }
         public int LayerSwapPeriod { get { return _layerSwapPeriod; } set { _layerSwapPeriod = value; } }
-        public bool HasFirstLayerInterlayer { get { return _hasFirstInterlayer; } set { _hasFirstInterlayer = value; } }
+        public bool HasFirstInterlayer { get { return _hasFirstInterlayer; } set { _hasFirstInterlayer = value; } }
         #endregion
 
         #region Solution filtering

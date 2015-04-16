@@ -265,6 +265,12 @@ namespace TreeDim.StackBuilder.Desktop
                 else
                     CreateOrActivateViewCasePalletAnalysis(eventArg.Analysis);
             }
+            else if ((null == eventArg.ItemBase) && (null == eventArg.Analysis) && (null != eventArg.PackPalletAnalysis)
+                && (null == eventArg.CylinderAnalysis) && (null == eventArg.HCylinderAnalysis)
+                && (null == eventArg.TruckAnalysis) && (null == eventArg.ECTAnalysis))
+            {
+                CreateOrActivateViewPackPalletAnalysis(eventArg.PackPalletAnalysis);
+            }
             else if ((null == eventArg.ItemBase) && (null == eventArg.Analysis)
                 && (null != eventArg.CylinderAnalysis) && (null == eventArg.HCylinderAnalysis)
                 && (null == eventArg.TruckAnalysis) && (null == eventArg.ECTAnalysis))

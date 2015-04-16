@@ -449,7 +449,7 @@ namespace TreeDim.StackBuilder.Desktop
                 constraintSet.MinOverhangY = form.MinimumOverhangY;
                 constraintSet.MinimumSpace = form.MinimumSpace;
                 constraintSet.MaximumSpaceAllowed = form.MaximumSpace;
-                constraintSet.HasFirstLayerInterlayer = form.HasFirstInterlayer;
+                constraintSet.HasFirstInterlayer = form.HasFirstInterlayer;
                 constraintSet.InterlayerPeriod = form.InterlayerPeriod;
                 constraintSet.LayerSwapPeriod = form.LayerSwapPeriod;
 
@@ -787,9 +787,44 @@ namespace TreeDim.StackBuilder.Desktop
         }
 
 
-        public void EditPackPalletAnalsyis()
-        { 
-        
+        public void EditPackPalletAnalsyis(PackPalletAnalysis analysis)
+        {
+            // do we need to recompute analysis
+            bool recomputeRequired = false;
+
+            FormNewAnalysisPackPallet form = new FormNewAnalysisPackPallet(this, analysis);
+            form.Packs = ListByType(typeof(PackProperties)).ToArray();
+            form.Pallets = Pallets.ToArray();
+            form.Interlayers = ListByType(typeof(InterlayerProperties)).ToArray();
+
+            if (DialogResult.OK == form.ShowDialog())
+            {
+                // analysis name / description
+                analysis.Name = form.ItemName;
+                analysis.Description = form.ItemDescription;
+                // analysis pack / pallet /interlayer
+                analysis.PackProperties = form.PackProperties;
+                analysis.PalletProperties = form.PalletProperties;
+                analysis.InterlayerProperties = form.InterlayerProperties;
+                // constraint set
+                PackPalletConstraintSet constraintSet = new PackPalletConstraintSet();
+                constraintSet.OverhangX = form.OverhangX;
+                constraintSet.OverhangY = form.OverhangY;
+                constraintSet.MinOverhangX = form.MinimumOverhangX;
+                constraintSet.MinOverhangY = form.MinimumOverhangY;
+                constraintSet.MinimumSpace = form.MinimumSpace;
+                constraintSet.MaximumSpaceAllowed = form.MaximumSpace;
+
+                constraintSet.LayerSwapPeriod = form.LayerSwapPeriod;
+                constraintSet.InterlayerPeriod = form.InterlayerPeriod;
+                constraintSet.HasFirstInterlayer = form.HasFirstInterlayer;
+
+                // stop criterions
+                constraintSet.MaximumPalletHeight = form.MaximumPalletHeight;
+                constraintSet.MaximumPalletWeight = form.MaximumLayerWeight;
+            }
+            if (recomputeRequired)
+                analysis.OnEndUpdate(null);
         }
 
         public void EditCylinderPalletAnalysis(CylinderPalletAnalysis analysis)

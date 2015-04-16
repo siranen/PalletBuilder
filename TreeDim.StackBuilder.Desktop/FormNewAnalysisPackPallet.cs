@@ -64,7 +64,7 @@ namespace TreeDim.StackBuilder.Desktop
 
             if (null != constraintSet)
             {
-                chkbInterlayerFirstLayer.Checked = constraintSet.HasFirstLayerInterlayer;
+                chkbInterlayerFirstLayer.Checked = constraintSet.HasFirstInterlayer;
 
                 OverhangX = constraintSet.OverhangX;
                 OverhangY = constraintSet.OverhangY;

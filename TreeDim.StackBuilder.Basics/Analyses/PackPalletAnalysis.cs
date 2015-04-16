@@ -120,6 +120,15 @@ namespace TreeDim.StackBuilder.Basics
             if (index < 0 || index > _solutions.Count)
                 return; // no solution with this index
             if (HasSolutionSelected(index)) return;
+            // instantiate new SelSolution
+            SelPackPalletSolution selSolution = new SelPackPalletSolution(ParentDocument, this, _solutions[index]);
+            // insert in list
+            _selectedSolutions.Add(selSolution);
+            // fire event
+            if (null != SolutionSelected)
+                SolutionSelected(this, selSolution);
+            // set document modified (not analysis, otherwise selected solutions are erased)
+            ParentDocument.Modify();
         }
         public void UnselectSolutionByIndex(int index)
         {
@@ -157,10 +166,21 @@ namespace TreeDim.StackBuilder.Basics
         }
         protected override void RemoveItselfFromDependancies()
         {
+            _packProperties.RemoveDependancy(this);
+            _palletProperties.RemoveDependancy(this);
+            if (null != _interlayerProperties)
+                _interlayerProperties.RemoveDependancy(this);
+            // base
             base.RemoveItselfFromDependancies();
         }
         public override void OnAttributeModified(ItemBase modifiedAttribute)
         {
+            // clear selected solutions
+            while (_selectedSolutions.Count > 0)
+                UnSelectSolution(_selectedSolutions[0]);
+            // clear solutions
+            _solutions.Clear();
+            // base
             base.OnAttributeModified(modifiedAttribute);
         }
         public override void OnEndUpdate(ItemBase updatedAttribute)

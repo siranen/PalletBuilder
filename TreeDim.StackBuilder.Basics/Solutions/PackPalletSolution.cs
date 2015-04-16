@@ -43,6 +43,11 @@ namespace TreeDim.StackBuilder.Basics
         }
         #endregion
 
+        #region Public properties
+        public string Title
+        { get { return _title; } }
+        #endregion
+
         #region Add layer method
         public void AddLayer(bool swapped, bool hasInterlayer)
         {
@@ -51,6 +56,14 @@ namespace TreeDim.StackBuilder.Basics
         #endregion
 
         #region Accessing pack positions
+        public BoxLayer Layer
+        {
+            get { return _layer; }
+        }
+        public List<LayerDescriptor> Layers
+        {
+            get { return _listLayers; } 
+        }
         public BoxLayer GetBoxLayer(int iLayerIndex, ref bool hasInterlayer, ref double zInterlayer)
         {
             if (null == _parentAnalysis)
