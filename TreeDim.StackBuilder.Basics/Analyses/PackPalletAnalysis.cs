@@ -17,7 +17,6 @@ namespace TreeDim.StackBuilder.Basics
         private PalletProperties _palletProperties;
         private InterlayerProperties _interlayerProperties;
         private PackPalletConstraintSet _constraintSet;
-        private SelPackPalletSolution _selPackPalletSolution;
         private List<PackPalletSolution> _solutions;
         private List<SelPackPalletSolution> _selectedSolutions = new List<SelPackPalletSolution>();
         private static IPackPalletAnalysisSolver _solver;

@@ -78,10 +78,6 @@ namespace TreeDim.StackBuilder.Desktop
 
             gridSolutions.Selection.SelectionChanged += new SourceGrid.RangeRegionChangedEventHandler(onGridSolutionSelectionChanged);
         }
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-        }
         #endregion
 
         #region Fill grid

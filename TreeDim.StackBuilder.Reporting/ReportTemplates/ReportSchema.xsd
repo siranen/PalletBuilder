@@ -8,6 +8,7 @@
  elementFormDefault="qualified">
   <xs:import schemaLocation="ReportTypes.xsd"
              namespace="/treeDim/StackBuilder/ReportTypes" />
+  <!-- REPORT : BEG-->
   <xs:element name="report">
     <xs:complexType>
       <xs:sequence>
@@ -16,6 +17,7 @@
         <xs:element name="author" type="xs:string" />
         <xs:element name="dateOfCreation" type="xs:string" />
         <xs:element name="companyLogo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <!-- BOXCASEANALYSIS : BEG -->
         <xs:element name="boxCaseAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
@@ -95,6 +97,8 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- BOXCASEANALYSIS : END -->
+        <!-- BOXCASEPALLETANALYSIS : BEG -->
         <xs:element name="boxCasePalletAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
@@ -167,61 +171,15 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- BOXCASEPALLETANALYSIS : END -->
+        <!-- CASEPALLETANALYSIS : BEGIN -->
         <xs:element name="casePalletAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="name" type="xs:string"/>
               <xs:element name="description" type="xs:string"/>
               <xs:element name="pallet" minOccurs="1" maxOccurs="1" type="rpt:pallet"/>
-              <xs:element name="case" minOccurs="0" maxOccurs="1">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="name" type="xs:string"/>
-                    <xs:element name="description" type="xs:string"/>
-                    <xs:element name="length" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="width" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="height" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="weight" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="admissibleLoadOnTop" minOccurs="0" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="view_case_iso" type="xs:string"/>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
+              <xs:element name="case" minOccurs="0" maxOccurs="1" type="rpt:case"/>
               <xs:element name="box" minOccurs="0" maxOccurs="1" type="rpt:box"/>
               <xs:element name="caseOptimConstraintSet" minOccurs="0" maxOccurs="1">
                 <xs:complexType>
@@ -259,47 +217,19 @@
               <xs:element name="constraintSet" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="overhangX" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="overhangY" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element name="overhangX" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="overhangY" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="maximumPalletWeightGroup" minOccurs="0" maxOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="maximumPalletWeight" minOccurs="1" maxOccurs="1">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="unit" type="xs:string"/>
-                                <xs:element name="value" type="xs:string"/>
-                              </xs:sequence>
-                            </xs:complexType>
-                          </xs:element>
+                          <xs:element name="maximumPalletWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="maximumPalletHeightGroup" minOccurs="0" maxOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="maximumPalletHeight" minOccurs="1" maxOccurs="1">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="unit" type="xs:string"/>
-                                <xs:element name="value" type="xs:string"/>
-                              </xs:sequence>
-                            </xs:complexType>
-                          </xs:element>
+                          <xs:element name="maximumPalletHeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -313,14 +243,7 @@
                     <xs:element name="admissibleLoadOnTopGroup" minOccurs="0" maxOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="admissibleLoadOnTop" minOccurs="1" maxOccurs="1">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="unit" type="xs:string"/>
-                                <xs:element name="value" type="xs:string"/>
-                              </xs:sequence>
-                            </xs:complexType>
-                          </xs:element>
+                          <xs:element name="admissibleLoadOnTop" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -344,38 +267,10 @@
                     <xs:element name="title" type="xs:string"/>
                     <xs:element name="homogeneousLayer" type="xs:string"/>
                     <xs:element name="efficiency" type="xs:string"/>
-                    <xs:element name="palletWeight" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="palletLength" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="palletWidth" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="palletHeight" minOccurs="1" maxOccurs="1">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="unit" type="xs:string"/>
-                          <xs:element name="value" type="xs:string"/>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element name="palletWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="palletLength" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="palletWidth" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="palletHeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="caseCount" type="xs:string"/>
                     <xs:element name="layerCount" type="xs:string"/>
                     <xs:element name="interlayerCount" type="xs:string"/>
@@ -403,6 +298,59 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- CASEPALLETANALYSIS : END -->
+        <!-- PACKPALLETANALYSIS : BEGIN -->
+        <xs:element name="packPalletAnalysis" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="description" type="xs:string"/>
+              <xs:element name="pack" minOccurs="1" maxOccurs="1" type="rpt:pack"/>
+              <xs:element name="pallet" minOccurs="1" maxOccurs="1" type="rpt:pallet"/>
+              <xs:element name="interlayer" minOccurs="0" maxOccurs="1" type="rpt:interlayer"/>
+              <xs:element name="packPalletSolution" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="length" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="width" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="height" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="palletPackCount" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                    <xs:element name="palletCSUCount" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                    <xs:element name="palletWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="palletNetWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="view_palletsolution_front" type="xs:string"/>
+                    <xs:element name="view_palletsolution_left" type="xs:string"/>
+                    <xs:element name="view_palletsolution_right" type="xs:string"/>
+                    <xs:element name="view_palletsolution_back" type="xs:string"/>
+                    <xs:element name="view_palletSolution_iso" type="xs:string"/>
+                    <xs:element name="layers" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="layer">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="layerCaseCount" type="xs:string"/>
+                                <xs:element name="layerCSUCount" type="xs:string"/>
+                                <xs:element name="layerWeight" type="xs:string"/>
+                                <xs:element name="layerNetWeight" type="xs:string"/>
+                                <xs:element name="layerLength" type="xs:string"/>
+                                <xs:element name="layerWidth" type="xs:string"/>
+                                <xs:element name="layerHeight" type="xs:string"/>
+                                <xs:element name="layerImage" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>                    
+                  </xs:sequence>
+                </xs:complexType>                
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- PACKPALLETANALYSIS : END -->
+        <!-- CYLINDERPALLETANALYSIS : BEGIN-->
         <xs:element name="cylinderPalletAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
@@ -526,6 +474,8 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- CYLINDERPALLETANALYSIS : END-->
+        <!-- HORIZONTALCYLINDERPALLETANALYSIS : BEG-->
         <xs:element name="hCylinderPalletAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
@@ -624,6 +574,8 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- HORIZONTALCYLINDERPALLETANALYSIS : END-->
+        <!-- TRUCKANALYSIS : BEG-->
         <xs:element name="truckAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
@@ -654,6 +606,8 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- TRUCKANALYSIS : END-->
+        <!-- ECT ANALYSIS : BEG-->
         <xs:element name="ectAnalysis" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
@@ -709,7 +663,9 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- ECT ANALYSIS : END-->
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <!-- REPORT : END-->
 </xs:schema>

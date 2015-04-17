@@ -108,4 +108,9 @@
   <str name="PalletCap">Coiffe</str>
   <str name="PalletFilm">Film</str>
   <str name="NumberOfTurns">Nombre de tours</str>
+  <str name="Pack">Fardeau</str>
+  <str name="Arrangement">Disposition</str>
+  <str name="Dimensions">Dimensions</str>
+  <str name="Net weight">Poid net</str>
+  <str name="Wrapper weight">Poid fardelage</str>
 </strings>

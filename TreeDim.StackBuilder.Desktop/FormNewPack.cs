@@ -55,6 +55,10 @@ namespace TreeDim.StackBuilder.Desktop
             { 
                 cbDir.SelectedIndex = 5; // HalfAxis.HAxis.AXIS_Z_P
                 Arrangement = new PackArrangement(3, 2, 1);
+                Wrapper = new WrapperPolyethilene(0.1, 0.010, Color.LightGray, true);
+
+                uCtrlThickness.Value = UnitsManager.ConvertLengthFrom(0.1, UnitsManager.UnitSystem.UNIT_METRIC1);
+                uCtrlHeight.Value = UnitsManager.ConvertLengthFrom(40, UnitsManager.UnitSystem.UNIT_METRIC1);
             }
             // disable Ok button
             UpdateStatus(string.Empty);
@@ -235,8 +239,8 @@ namespace TreeDim.StackBuilder.Desktop
                 uCtrlOuterDimensions.Y = width;
                 uCtrlOuterDimensions.Z = height;
             }
-            UpdateStatus(string.Empty);
             graphCtrl.Invalidate();
+            UpdateStatus(string.Empty);
         }
         private void onWrapperTypeChanged(object sender, EventArgs e)
         {
@@ -246,8 +250,8 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 case 0: showTransparent = true; showWalls = false; showHeight = false; break;
                 case 1: showTransparent = false; showWalls = false; showHeight = false; break;
-                case 2: showTransparent = false; showWalls = false; showHeight = false; break;
-                case 3: showTransparent = false; showWalls = false; showHeight = false; break;
+                case 2: showTransparent = false; showWalls = true; showHeight = false; break;
+                case 3: showTransparent = false; showWalls = true; showHeight = true; break;
                 default: showTransparent = false; showWalls = false; showHeight = false; break;
             }
 
@@ -264,9 +268,13 @@ namespace TreeDim.StackBuilder.Desktop
         {
             // build pack
             PackProperties pack = new PackProperties(null, SelectedBox, Arrangement, BoxOrientation, Wrapper);
+            if (uCtrlOuterDimensions.Checked)
+                pack.ForceOuterDimensions(
+                    new Vector3D(uCtrlOuterDimensions.X, uCtrlOuterDimensions.Y, uCtrlOuterDimensions.Z) );
             graphics.AddBox(new Pack(0, pack));
             graphics.AddDimensions(new DimensionCube(Vector3D.Zero, pack.Length, pack.Width, pack.Height, Color.Black, true));
-            graphics.AddDimensions(new DimensionCube(pack.InnerOffset, pack.InnerLength, pack.InnerWidth, pack.InnerHeight, Color.Red, false));
+            if (pack.Wrap.Transparent)
+                graphics.AddDimensions(new DimensionCube(pack.InnerOffset, pack.InnerLength, pack.InnerWidth, pack.InnerHeight, Color.Red, false));
         }
         #endregion
     }

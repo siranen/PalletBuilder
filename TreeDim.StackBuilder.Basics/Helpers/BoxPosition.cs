@@ -78,8 +78,8 @@ namespace TreeDim.StackBuilder.Basics
                 throw new Exception("Invalid box position : can not transform");
             return new BoxPosition(
                 transform.transform(boxPosition.Position)
-                , HalfAxis.ToHalfAxis(transform.transformRot(HalfAxis.ToVector3D(boxPosition.DirectionLength)))
-                , HalfAxis.ToHalfAxis(transform.transformRot(HalfAxis.ToVector3D(boxPosition.DirectionWidth)))
+                , HalfAxis.Transform(boxPosition.DirectionLength, transform)
+                , HalfAxis.Transform(boxPosition.DirectionWidth, transform)
                 );
         }
         #endregion

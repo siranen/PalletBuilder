@@ -21,7 +21,19 @@ namespace TreeDim.StackBuilder.Basics
         /// <summary>
         /// Number of items
         /// </summary>
-        public int Number { get { return _iLength * _iWidth * _iHeight; } }
+        public int Number   { get { return _iLength * _iWidth * _iHeight; } }
+        /// <summary>
+        /// Length
+        /// </summary>
+        public int Length   { get { return _iLength; } }
+        /// <summary>
+        /// Width
+        /// </summary>
+        public int Width    { get { return _iWidth; } }
+        /// <summary>
+        /// Height
+        /// </summary>
+        public int Height   { get { return _iHeight; } }
         #endregion
 
         #region Object override

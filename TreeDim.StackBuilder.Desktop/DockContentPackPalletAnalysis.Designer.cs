@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DockContentPackPalletAnalysis));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
             this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             this.gridSolutions = new SourceGrid.Grid();
@@ -49,35 +50,35 @@
             // splitContainerHoriz.Panel1
             // 
             this.splitContainerHoriz.Panel1.Controls.Add(this.graphCtrlSolution);
+            this.splitContainerHoriz.Panel1.Controls.Add(this.btSelectSolution);
             // 
             // splitContainerHoriz.Panel2
             // 
             this.splitContainerHoriz.Panel2.Controls.Add(this.gridSolutions);
-            this.splitContainerHoriz.Panel2.Controls.Add(this.btSelectSolution);
             this.splitContainerHoriz.Size = new System.Drawing.Size(604, 652);
-            this.splitContainerHoriz.SplitterDistance = 438;
+            this.splitContainerHoriz.SplitterDistance = 450;
             this.splitContainerHoriz.TabIndex = 0;
             // 
             // graphCtrlSolution
             // 
-            this.graphCtrlSolution.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graphCtrlSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.graphCtrlSolution.Location = new System.Drawing.Point(0, 0);
             this.graphCtrlSolution.Name = "graphCtrlSolution";
-            this.graphCtrlSolution.Size = new System.Drawing.Size(604, 438);
+            this.graphCtrlSolution.Size = new System.Drawing.Size(604, 416);
             this.graphCtrlSolution.TabIndex = 0;
             // 
             // gridSolutions
             // 
             this.gridSolutions.AcceptsInputChar = false;
-            this.gridSolutions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSolutions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSolutions.EnableSort = false;
-            this.gridSolutions.Location = new System.Drawing.Point(0, 35);
+            this.gridSolutions.Location = new System.Drawing.Point(0, 0);
             this.gridSolutions.Name = "gridSolutions";
             this.gridSolutions.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
             this.gridSolutions.SelectionMode = SourceGrid.GridSelectionMode.Row;
-            this.gridSolutions.Size = new System.Drawing.Size(604, 175);
+            this.gridSolutions.Size = new System.Drawing.Size(604, 198);
             this.gridSolutions.SpecialKeys = SourceGrid.GridSpecialKeys.Arrows;
             this.gridSolutions.TabIndex = 0;
             this.gridSolutions.TabStop = true;
@@ -85,11 +86,12 @@
             // 
             // btSelectSolution
             // 
-            this.btSelectSolution.Location = new System.Drawing.Point(500, 6);
+            this.btSelectSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSelectSolution.Location = new System.Drawing.Point(501, 422);
             this.btSelectSolution.Name = "btSelectSolution";
-            this.btSelectSolution.Size = new System.Drawing.Size(99, 23);
+            this.btSelectSolution.Size = new System.Drawing.Size(100, 23);
             this.btSelectSolution.TabIndex = 0;
-            this.btSelectSolution.Text = "Select solution";
+            this.btSelectSolution.Text = "Select";
             this.btSelectSolution.UseVisualStyleBackColor = true;
             // 
             // DockContentPackPalletAnalysis
@@ -100,6 +102,7 @@
             this.Controls.Add(this.splitContainerHoriz);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HideOnClose = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DockContentPackPalletAnalysis";
             this.ShowInTaskbar = false;
             this.Text = "Pack/Pallet analysis...";

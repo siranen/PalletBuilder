@@ -376,7 +376,6 @@ namespace TreeDim.StackBuilder.Engine
                 while (solutions[solutions.Count - 1].CaseCount < minBoxCount)
                     solutions.RemoveAt(solutions.Count - 1);
             }
-
             return solutions;
         }
 

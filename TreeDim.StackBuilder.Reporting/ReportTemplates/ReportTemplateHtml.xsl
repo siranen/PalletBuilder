@@ -114,16 +114,18 @@
             </td>
           </tr>
         </table>
-        <xsl:apply-templates select="boxCaseAnalysis"></xsl:apply-templates>
-        <xsl:apply-templates select="boxCasePalletAnalysis"></xsl:apply-templates>
-        <xsl:apply-templates select="casePalletAnalysis"></xsl:apply-templates>
-        <xsl:apply-templates select="cylinderPalletAnalysis"></xsl:apply-templates>
-        <xsl:apply-templates select="hCylinderPalletAnalysis"></xsl:apply-templates>
-        <xsl:apply-templates select="truckAnalysis"></xsl:apply-templates>
-        <xsl:apply-templates select="ectAnalysis"></xsl:apply-templates>
+        <xsl:apply-templates select="boxCaseAnalysis"/>
+        <xsl:apply-templates select="boxCasePalletAnalysis"/>
+        <xsl:apply-templates select="casePalletAnalysis"/>
+        <xsl:apply-templates select="packPalletAnalysis"/>
+        <xsl:apply-templates select="cylinderPalletAnalysis"/>
+        <xsl:apply-templates select="hCylinderPalletAnalysis"/>
+        <xsl:apply-templates select="truckAnalysis"/>
+        <xsl:apply-templates select="ectAnalysis"/>
       </body>
     </html>
   </xsl:template>
+  <!--#### BOX/CASE ANALYSIS ####-->
   <xsl:template match="boxCaseAnalysis">
     <h2>
       <xsl:value-of select="$loc/str[@name='Box/Case analysis']"/>
@@ -134,42 +136,56 @@
     <xsl:apply-templates select="caseConstraintSet"></xsl:apply-templates>
     <xsl:apply-templates select="boxCaseSolution"></xsl:apply-templates>
   </xsl:template>
+  <!--#### BOX/CASE/PALLET ANALYSIS ####-->
   <xsl:template match="boxCasePalletAnalysis">
     <h2>
       <xsl:value-of select="$loc/str[@name='Box/Case/Pallet analysis']"/>
     </h2>
-    <xsl:apply-templates select="box"></xsl:apply-templates>
-    <xsl:apply-templates select="bundle"></xsl:apply-templates>
-    <xsl:apply-templates select="caseWithInnerDims"></xsl:apply-templates>
-    <xsl:apply-templates select="boxCasePalletSolution"></xsl:apply-templates>
+    <xsl:apply-templates select="box"/>
+    <xsl:apply-templates select="bundle"/>
+    <xsl:apply-templates select="caseWithInnerDims"/>
+    <xsl:apply-templates select="boxCasePalletSolution"/>
   </xsl:template>
+  <!--#### CASE/PALLET ANALYSIS ####-->
   <xsl:template match="casePalletAnalysis">
     <h2>
       <xsl:value-of select="$loc/str[@name='Pallet analysis']"/>
     </h2>
-    <xsl:apply-templates select="case"></xsl:apply-templates>
-    <xsl:apply-templates select="bundle"></xsl:apply-templates>
-    <xsl:apply-templates select="box"></xsl:apply-templates>
-    <xsl:apply-templates select="caseOfBoxes"></xsl:apply-templates>
-    <xsl:apply-templates select="interlayer"></xsl:apply-templates>
-    <xsl:apply-templates select="palletCorner"></xsl:apply-templates>
-    <xsl:apply-templates select="palletCap"></xsl:apply-templates>
-    <xsl:apply-templates select="palletFilm"></xsl:apply-templates>
-    <xsl:apply-templates select="pallet"></xsl:apply-templates>
-    <xsl:apply-templates select="constraintSet"></xsl:apply-templates>
-    <xsl:apply-templates select="caseOptimConstraintSet"></xsl:apply-templates>
-    <xsl:apply-templates select="palletSolution"></xsl:apply-templates>
+    <xsl:apply-templates select="case"/>
+    <xsl:apply-templates select="bundle"/>
+    <xsl:apply-templates select="box"/>
+    <xsl:apply-templates select="caseOfBoxes"/>
+    <xsl:apply-templates select="interlayer"/>
+    <xsl:apply-templates select="palletCorner"/>
+    <xsl:apply-templates select="palletCap"/>
+    <xsl:apply-templates select="palletFilm"/>
+    <xsl:apply-templates select="pallet"/>
+    <xsl:apply-templates select="constraintSet"/>
+    <xsl:apply-templates select="caseOptimConstraintSet"/>
+    <xsl:apply-templates select="palletSolution"/>
   </xsl:template>
+  <!--#### PACK/PALLET ANALYSIS ####-->
+  <xsl:template match="packPalletAnalysis">
+    <h2>
+      <xsl:value-of select="$loc/str[@name='Pack/Pallet analysis']"/>
+    </h2>
+    <xsl:apply-templates select="pack"/>
+    <xsl:apply-templates select="pallet"/>
+    <xsl:apply-templates select="interlayer"/>
+    <xsl:apply-templates select="packPalletSolution"/>
+  </xsl:template>
+  <!--#### CYLINDER ANALYSIS ####-->
   <xsl:template match="cylinderAnalysis">
     <h2>
       <xsl:value-of select="$loc/str[@name='Cylinder analysis']"/>
     </h2>
-    <xsl:apply-templates select="cylinder"></xsl:apply-templates>
-    <xsl:apply-templates select="pallet"></xsl:apply-templates>
-    <xsl:apply-templates select="interlayer"></xsl:apply-templates>
-    <xsl:apply-templates select="cylinderPalletConstraintSet"></xsl:apply-templates>
-    <xsl:apply-templates select="cylinderPalletSolution"></xsl:apply-templates>
+    <xsl:apply-templates select="cylinder"/>
+    <xsl:apply-templates select="pallet"/>
+    <xsl:apply-templates select="interlayer"/>
+    <xsl:apply-templates select="cylinderPalletConstraintSet"/>
+    <xsl:apply-templates select="cylinderPalletSolution"/>
   </xsl:template>
+  <!--#### TRUCK ANALYSIS ####-->
   <xsl:template match="truckAnalysis">
     <h2>
       <xsl:value-of select="$loc/str[@name='Truck analysis']"/>
@@ -177,6 +193,7 @@
     <xsl:apply-templates select="truck"></xsl:apply-templates>
     <xsl:apply-templates select="truckSolution"></xsl:apply-templates>
   </xsl:template>
+  <!--#### ECTANALYSIS ####-->
   <xsl:template match="ectAnalysis">
     <h2>
       <xsl:value-of select="$loc/str[@name='Box Compression Test analysis']"/>
@@ -294,6 +311,77 @@
           </td>
         </tr>
       </xsl:if>
+    </table>
+  </xsl:template>
+  <!--#### PACK ####-->
+  <xsl:template match="pack">
+    <h3>
+      <xsl:value-of select="$loc/str[@name='Pack']"/>
+    </h3>
+    <table class="style1" cellpadding="4">
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Name']"/>
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="name"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Description']"/>
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="description"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Dimensions']"/> (<xsl:value-of select="length/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="1">
+          <xsl:value-of select="length/value"/> * <xsl:value-of select="width/value"/> * <xsl:value-of select="height/value"/> 
+        </td>
+        <td rowspan="5" colspan="2" align="middle">
+          <xsl:apply-templates select="view_pack_iso"></xsl:apply-templates>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Net weight']"/> (<xsl:value-of select="netWeight/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="1">
+          <xsl:value-of select="netWeight/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Wrapper weight']"/> (<xsl:value-of select="wrapperWeight/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="1">
+          <xsl:value-of select="wrapperWeight/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Weight']"/> (<xsl:value-of select="weight/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="1">
+          <xsl:value-of select="weight/value"/>
+        </td>
+      </tr>      
     </table>
   </xsl:template>
   <!--#### CYLINDER ####-->
@@ -535,7 +623,7 @@
       </xsl:if>
     </table>
   </xsl:template>
-  <!--BOX-->
+  <!--#### BOX ####-->
   <xsl:template match="box">
     <h3>Box</h3>
     <table class="style1">
@@ -1458,6 +1546,24 @@
       <xsl:apply-templates select="layer"></xsl:apply-templates>
     </table>
   </xsl:template>
+  <!--#### PACK/PALLET SOLUTION ####-->
+  <xsl:template match="packPalletSolution">
+    <h3>
+      <xsl:value-of select="$loc/str[@name='Selected solution']"/>
+    </h3>
+    <table class="style1">
+      <tr>
+        <td class="style2">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Title']"/>
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="title"></xsl:value-of>
+        </td>
+      </tr>
+    </table>
+  </xsl:template>
   <!-- #### CYLINDER PALLET SOLUTION #### -->
   <xsl:template match="cylinderPaletSolution">
     <h3>
@@ -1763,6 +1869,9 @@
   <!--CASE-->
   <xsl:template match="view_case_iso">
     <img src="images\view_case_iso.png" width="150" height="150" align="middle"></img>
+  </xsl:template>
+  <xsl:template match="view_pack_iso">
+    <img src="images\view_pack_iso.png" width="150" height="150" align="middle"></img>
   </xsl:template>
   <!--CYLINDER-->
   <xsl:template match="view_cylinder_iso">

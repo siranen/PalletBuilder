@@ -47,6 +47,9 @@ namespace TreeDim.StackBuilder.Reporting
         private CasePalletSolution _palletSolution;
         private SelCasePalletSolution _selSolution;
 
+        private PackPalletAnalysis _packPalletAnalysis;
+        private SelPackPalletSolution _selPackPalletSolution;
+
         private CylinderPalletAnalysis _cylinderPalletAnalysis;
         private SelCylinderPalletSolution _selCylinderPalletSolution;
 
@@ -66,6 +69,11 @@ namespace TreeDim.StackBuilder.Reporting
             _palletAnalysis = palletAnalysis;
             _selSolution = selSolution;
         }
+        public ReportData(PackPalletAnalysis packPalletAnalysis, SelPackPalletSolution selPackPalletSolution)
+        {
+            _packPalletAnalysis = packPalletAnalysis;
+            _selPackPalletSolution = selPackPalletSolution;
+        }
         public ReportData(BoxCasePalletAnalysis caseAnalysis, SelBoxCasePalletSolution selCaseSolution)
         {
             _caseAnalysis = caseAnalysis;
@@ -76,23 +84,33 @@ namespace TreeDim.StackBuilder.Reporting
             _boxCaseAnalysis = boxCaseAnalysis;
             _selBoxCaseSolution = selBoxCaseSolution;
         }
-        public ReportData(CasePalletAnalysis palletAnalysis, SelCasePalletSolution selSolution
+        public ReportData(
+            CasePalletAnalysis palletAnalysis, SelCasePalletSolution selSolution
             , CylinderPalletAnalysis cylinderPalletAnalysis, SelCylinderPalletSolution selCylinderPalletSolution
             , HCylinderPalletAnalysis hCylinderPalletAnalysis, SelHCylinderPalletSolution selHCylinderPalletSolution
             , BoxCaseAnalysis boxCaseAnalysis, SelBoxCaseSolution selBoxCaseSolution
             , BoxCasePalletAnalysis caseAnalysis, SelBoxCasePalletSolution selCaseSolution
+            , PackPalletAnalysis packPalletAnalysis, SelPackPalletSolution selPackPalletSolution
             )
         {
+            // case/pallet analysis
             _palletAnalysis = palletAnalysis;
             _selSolution = selSolution;
+            // box/case/pallet analysis
             _caseAnalysis = caseAnalysis;
             _selCaseSolution = selCaseSolution;
+            // Cylinder analysis
             _cylinderPalletAnalysis = cylinderPalletAnalysis;
             _selCylinderPalletSolution = selCylinderPalletSolution;
+            // HCylinder analysis
             _hCylinderPalletAnalysis = hCylinderPalletAnalysis;
             _selHCylinderPalletSolution = selHCylinderPalletSolution;
+            // Box case analysis
             _boxCaseAnalysis = boxCaseAnalysis;
             _selBoxCaseSolution = selBoxCaseSolution;
+            // Pack pallet analysis
+            _packPalletAnalysis = packPalletAnalysis;
+            _selPackPalletSolution = selPackPalletSolution; 
         }
         #endregion
 
@@ -103,6 +121,8 @@ namespace TreeDim.StackBuilder.Reporting
             {
                 if (null != _palletAnalysis)
                     return _palletAnalysis.ParentDocument;
+                if (null != _packPalletAnalysis)
+                    return _packPalletAnalysis.ParentDocument;
                 if (null != _cylinderPalletAnalysis)
                     return _cylinderPalletAnalysis.ParentDocument;
                 if (null != _hCylinderPalletAnalysis)
@@ -121,6 +141,8 @@ namespace TreeDim.StackBuilder.Reporting
             {
                 if (null != _selSolution)
                     return _selSolution.Name;
+                else if (null != _selPackPalletSolution)
+                    return _selPackPalletSolution.Name;
                 else if (null != _selCylinderPalletSolution)
                     return _selCylinderPalletSolution.Name;
                 else if (null != _selCaseSolution)
@@ -130,8 +152,6 @@ namespace TreeDim.StackBuilder.Reporting
                 return null;
             }
         }
-
-
 
         public CasePalletAnalysis CasePalletAnalysis
         {
@@ -145,6 +165,12 @@ namespace TreeDim.StackBuilder.Reporting
                     return null;
             }
         }
+
+        public PackPalletAnalysis PackPalletAnalysis
+        { get { return _packPalletAnalysis; } }
+        public SelPackPalletSolution SelPackPalletSolution
+        { get { return _selPackPalletSolution; } }
+
         public CylinderPalletAnalysis CylinderPalletAnalysis
         { get { return _cylinderPalletAnalysis; } }
         public HCylinderPalletAnalysis HCylinderPalletAnalysis
@@ -189,6 +215,8 @@ namespace TreeDim.StackBuilder.Reporting
         { get { return (null != _boxCaseAnalysis) && (null != _selBoxCaseSolution);} }
         public bool IsCasePalletAnalysis
         { get { return (null != _palletAnalysis) && (null != _selSolution);} }
+        public bool IsPackPalletAnalysis
+        { get { return (null != _packPalletAnalysis) && (null != _selPackPalletSolution); } }
         public bool IsCylinderPalletAnalysis
         { get { return (null != _cylinderPalletAnalysis) && (null != _selCylinderPalletSolution); } }
         public bool IsHCylinderPalletAnalysis
@@ -196,7 +224,7 @@ namespace TreeDim.StackBuilder.Reporting
         public bool IsBoxCasePalletAnalysis
         { get { return (null != _caseAnalysis) && (null != _selCaseSolution); } }
         public bool IsValid
-        { get { return IsBoxCasePalletAnalysis ^ IsBoxCaseAnalysis ^ IsCasePalletAnalysis ^ IsCylinderPalletAnalysis ^ IsHCylinderPalletAnalysis; } }
+        { get { return IsBoxCasePalletAnalysis ^ IsBoxCaseAnalysis ^ IsCasePalletAnalysis ^ IsCylinderPalletAnalysis ^ IsHCylinderPalletAnalysis ^ IsPackPalletAnalysis; } }
         public double ActualCaseWeight
         {
             get
@@ -280,6 +308,16 @@ namespace TreeDim.StackBuilder.Reporting
                 else if (null != _palletAnalysis)
                     return _selSolution.Solution;
                 // error!
+                else
+                    return null;
+            }
+        }
+        public PackPalletSolution PackPalletSolution
+        {
+            get
+            {
+                if (null != _selPackPalletSolution)
+                    return _selPackPalletSolution.Solution;
                 else
                     return null;
             }
@@ -533,6 +571,8 @@ namespace TreeDim.StackBuilder.Reporting
             AppendBoxCaseAnalysisElement(inputData, elemDocument, xmlDoc);
             // case/pallet analysis
             AppendCasePalletAnalysisElement(inputData, elemDocument, xmlDoc);
+            // pack/pallet analysis
+            AppendPackPalletAnalysisElement(inputData, elemDocument, xmlDoc);
             // cylinder/pallet analysis
             AppendCylinderPalletAnalysisElement(inputData, elemDocument, xmlDoc);
             // hcylinder/pallet analysis
@@ -557,40 +597,70 @@ namespace TreeDim.StackBuilder.Reporting
             SelCasePalletSolution selSolution = inputData.SelSolution;
 
             // palletAnalysis
-            XmlElement elemPalletAnalysis = xmlDoc.CreateElement("casePalletAnalysis", ns);
-            elemDocument.AppendChild(elemPalletAnalysis);
+            XmlElement eltPalletAnalysis = xmlDoc.CreateElement("casePalletAnalysis", ns);
+            elemDocument.AppendChild(eltPalletAnalysis);
             // name
             XmlElement elemName = xmlDoc.CreateElement("name", ns);
             elemName.InnerText = analysis.Name;
-            elemPalletAnalysis.AppendChild(elemName);
+            eltPalletAnalysis.AppendChild(elemName);
             // description
             XmlElement elemDescription = xmlDoc.CreateElement("description", ns);
             elemDescription.InnerText = analysis.Description;
-            elemPalletAnalysis.AppendChild(elemDescription);
+            eltPalletAnalysis.AppendChild(elemDescription);
             // pallet
-            AppendPalletElement(analysis.PalletProperties, elemPalletAnalysis, xmlDoc);
+            AppendPalletElement(analysis.PalletProperties, eltPalletAnalysis, xmlDoc);
             // case
             if (analysis.BProperties is CaseOfBoxesProperties)
             {
-                AppendInsideBoxElement(analysis, selSolution.Solution, elemPalletAnalysis, xmlDoc);
-                AppendCaseOfBoxesElement(analysis, selSolution.Solution, elemPalletAnalysis, xmlDoc);
+                AppendInsideBoxElement(analysis, selSolution.Solution, eltPalletAnalysis, xmlDoc);
+                AppendCaseOfBoxesElement(analysis, selSolution.Solution, eltPalletAnalysis, xmlDoc);
             }
             else if (analysis.BProperties is BoxProperties && inputData.IsCasePalletAnalysis)
-                AppendCaseElement(analysis, selSolution.Solution, elemPalletAnalysis, xmlDoc);
+                AppendCaseElement(analysis, selSolution.Solution, eltPalletAnalysis, xmlDoc);
             else if (analysis.BProperties is BundleProperties)
-                AppendBundleElement(analysis.BProperties as BundleProperties, elemPalletAnalysis, xmlDoc);
+                AppendBundleElement(analysis.BProperties as BundleProperties, eltPalletAnalysis, xmlDoc);
             // interlayer
-            AppendInterlayerElement(analysis.InterlayerProperties, elemPalletAnalysis, xmlDoc);
+            AppendInterlayerElement(analysis.InterlayerProperties, eltPalletAnalysis, xmlDoc);
             // pallet corners
-            AppendPalletCornerElement(analysis.PalletCornerProperties, elemPalletAnalysis, xmlDoc);
+            AppendPalletCornerElement(analysis.PalletCornerProperties, eltPalletAnalysis, xmlDoc);
             // pallet cap
-            AppendPalletCapElement(analysis.PalletCapProperties, elemPalletAnalysis, xmlDoc);
+            AppendPalletCapElement(analysis.PalletCapProperties, eltPalletAnalysis, xmlDoc);
             // pallet film
-            AppendPalletFilmElement(analysis.PalletFilmProperties, analysis, elemPalletAnalysis, xmlDoc);
+            AppendPalletFilmElement(analysis.PalletFilmProperties, analysis, eltPalletAnalysis, xmlDoc);
             // constraintSet
-            AppendConstraintSet(analysis, selSolution.Solution, elemPalletAnalysis, xmlDoc);
+            AppendConstraintSet(analysis, selSolution.Solution, eltPalletAnalysis, xmlDoc);
             // solution
-            AppendSolutionElement(inputData, elemPalletAnalysis, xmlDoc);
+            AppendSolutionElement(inputData, eltPalletAnalysis, xmlDoc);
+        }
+
+        private void AppendPackPalletAnalysisElement(ReportData inputData, XmlElement elemDocument, XmlDocument xmlDoc)
+        {
+            if (!inputData.IsPackPalletAnalysis)
+                return;
+            string ns = xmlDoc.DocumentElement.NamespaceURI;
+
+            PackPalletAnalysis analysis = inputData.PackPalletAnalysis;
+            SelPackPalletSolution selSolution = inputData.SelPackPalletSolution;
+
+            // packPalletAnalysis element
+            XmlElement eltPackPalletAnalysis = xmlDoc.CreateElement("packPalletAnalysis", ns);
+            elemDocument.AppendChild(eltPackPalletAnalysis);
+            // name
+            XmlElement elemName = xmlDoc.CreateElement("name", ns);
+            elemName.InnerText = analysis.Name;
+            eltPackPalletAnalysis.AppendChild(elemName);
+            // description
+            XmlElement elemDescription = xmlDoc.CreateElement("description", ns);
+            elemDescription.InnerText = analysis.Description;
+            eltPackPalletAnalysis.AppendChild(elemDescription);
+            // pack
+            AppendPackElement(analysis.PackProperties, eltPackPalletAnalysis, xmlDoc);
+            // pallet
+            AppendPalletElement(analysis.PalletProperties, eltPackPalletAnalysis, xmlDoc);
+            // interlayer
+            AppendInterlayerElement(analysis.InterlayerProperties, eltPackPalletAnalysis, xmlDoc);
+            // solution
+            AppendPackPalletSolutionElement(inputData, eltPackPalletAnalysis, xmlDoc);
         }
 
         private void AppendCylinderPalletAnalysisElement(ReportData inputData, XmlElement elemDocument, XmlDocument xmlDoc)
@@ -1408,6 +1478,71 @@ namespace TreeDim.StackBuilder.Reporting
             }
         }
 
+        private void AppendPackPalletSolutionElement(ReportData inputData, XmlElement elemPackPalletAnalysis, XmlDocument xmlDoc)
+        {
+            if (!inputData.IsPackPalletAnalysis) return;
+
+            string ns = xmlDoc.DocumentElement.NamespaceURI;
+
+            SelPackPalletSolution selSolution = inputData.SelPackPalletSolution;
+            PackPalletSolution sol = inputData.PackPalletSolution;
+
+            // solution
+            XmlElement elemSolution = xmlDoc.CreateElement("palletSolution", ns);
+            elemPackPalletAnalysis.AppendChild(elemSolution);
+            // title
+            XmlElement elemTitle = xmlDoc.CreateElement("title", ns);
+            elemTitle.InnerText = sol.Title;
+            elemSolution.AppendChild(elemTitle);
+            // --- pallet images
+            for (int i = 0; i < 5; ++i)
+            {
+                // initialize drawing values
+                string viewName = string.Empty;
+                Vector3D cameraPos = Vector3D.Zero;
+                int imageWidth = ImageSizeDetail;
+                bool showDimensions = false;
+                switch (i)
+                {
+                    case 0:
+                        viewName = "view_palletsolution_front"; cameraPos = Graphics3D.Front; imageWidth = ImageSizeDetail;
+                        break;
+                    case 1:
+                        viewName = "view_palletsolution_left"; cameraPos = Graphics3D.Left; imageWidth = ImageSizeDetail;
+                        break;
+                    case 2:
+                        viewName = "view_palletsolution_right"; cameraPos = Graphics3D.Right; imageWidth = ImageSizeDetail;
+                        break;
+                    case 3:
+                        viewName = "view_palletsolution_back"; cameraPos = Graphics3D.Back; imageWidth = ImageSizeDetail;
+                        break;
+                    case 4:
+                        viewName = "view_palletsolution_iso"; cameraPos = Graphics3D.Corner_180; imageWidth = ImageSizeWide; showDimensions = true;
+                        break;
+                    default:
+                        break;
+                }
+                // instantiate graphics
+                Graphics3DImage graphics = new Graphics3DImage(new Size(imageWidth, imageWidth));
+                // set camera position 
+                graphics.CameraPosition = cameraPos;
+                // instantiate solution viewer
+                PackPalletSolutionViewer sv = new PackPalletSolutionViewer(sol);
+                sv.ShowDimensions = showDimensions;
+                sv.Draw(graphics);
+                graphics.Flush();
+                SaveImageAs(graphics.Bitmap, viewName + ".png");
+                // ---
+                XmlElement elemImage = xmlDoc.CreateElement(viewName, ns);
+                TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
+                elemImage.InnerText = Convert.ToBase64String((byte[])converter.ConvertTo(graphics.Bitmap, typeof(byte[])));
+                XmlAttribute styleAttribute = xmlDoc.CreateAttribute("style");
+                styleAttribute.Value = string.Format("width:{0}pt;height:{1}pt", graphics.Bitmap.Width / 3, graphics.Bitmap.Height / 3);
+                elemImage.Attributes.Append(styleAttribute);
+                elemSolution.AppendChild(elemImage);
+            }
+        }
+
         private void AppendCylinderPalletSolutionElement(ReportData inputData, XmlElement elemPalletAnalysis, XmlDocument xmlDoc)
         {
             if (!inputData.IsCylinderPalletAnalysis) return;
@@ -1926,7 +2061,9 @@ namespace TreeDim.StackBuilder.Reporting
             // solution
             AppendBoxCaseSolutionElement(selBoxCaseSolution.Solution, elemBoxCaseAnalysis, xmlDoc);
         }
+        #endregion
 
+        #region BoxProperties / PackProperties
         private void AppendCaseElement(BoxProperties caseProperties, XmlElement elemCaseAnalysis, XmlDocument xmlDoc)
         {
             string ns = xmlDoc.DocumentElement.NamespaceURI;
@@ -1968,6 +2105,49 @@ namespace TreeDim.StackBuilder.Reporting
             // save image
             SaveImageAs(graphics.Bitmap, "view_case_iso.png");
         }
+        private void AppendPackElement(PackProperties packProperties, XmlElement elemPackAnalysis, XmlDocument xmlDoc)
+        {
+            string ns = xmlDoc.DocumentElement.NamespaceURI;
+            // pack element
+            XmlElement elemPack = CreateElement("pack", null, elemPackAnalysis, xmlDoc, ns);
+            // name
+            CreateElement("name", packProperties.Name, elemPack, xmlDoc, ns);
+            // description
+            CreateElement("description", packProperties.Description, elemPack, xmlDoc, ns);
+            // arrangement
+            PackArrangement arrangement = packProperties.Arrangement;
+            CreateElement(
+                "arrangement"
+                , string.Format("{0} * {1} * {2}", arrangement.Length, arrangement.Width, arrangement.Height)
+                , elemPack, xmlDoc, ns);
+            // length / width /height
+            AppendElementValue(xmlDoc, elemPack, "length", UnitsManager.LengthUnitString, packProperties.Length);
+            AppendElementValue(xmlDoc, elemPack, "width", UnitsManager.LengthUnitString, packProperties.Width);
+            AppendElementValue(xmlDoc, elemPack, "height", UnitsManager.LengthUnitString, packProperties.Height);
+            // weight
+            AppendElementValue(xmlDoc, elemPack, "netweight", UnitsManager.MassUnitString, packProperties.NetWeight);
+            AppendElementValue(xmlDoc, elemPack, "wrapperWeight", UnitsManager.MassUnitString, packProperties.Wrap.Weight);
+            AppendElementValue(xmlDoc, elemPack, "weight", UnitsManager.MassUnitString, packProperties.Weight);
+            // --- build image
+            Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
+            graphics.CameraPosition = Graphics3D.Corner_0;
+            graphics.Target = Vector3D.Zero;
+            Pack pack = new Pack(0, packProperties);
+            graphics.AddBox(pack);
+            DimensionCube dc = new DimensionCube(pack.Length, pack.Width, pack.Height); dc.FontSize = 6.0f;
+            graphics.AddDimensions(dc);
+            graphics.Flush();
+            // view_pack_iso
+            XmlElement elemImage = xmlDoc.CreateElement("view_pack_iso", ns);
+            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
+            elemImage.InnerText = Convert.ToBase64String((byte[])converter.ConvertTo(graphics.Bitmap, typeof(byte[])));
+            XmlAttribute styleAttribute = xmlDoc.CreateAttribute("style");
+            styleAttribute.Value = string.Format("width:{0}pt;height:{1}pt", graphics.Bitmap.Width / 4, graphics.Bitmap.Height / 4);
+            elemImage.Attributes.Append(styleAttribute);
+            elemPack.AppendChild(elemImage);
+            // save image
+            SaveImageAs(graphics.Bitmap, "view_pack_iso.png");
+        }
 
         private void AppendBoxElement(BoxProperties boxProperties, XmlElement elemCaseAnalysis, XmlDocument xmlDoc)
         {
@@ -2004,8 +2184,6 @@ namespace TreeDim.StackBuilder.Reporting
             // save image ?
             SaveImageAs(graphics.Bitmap, "view_box_iso.png");
         }
-
-
         
         private void AppendCaseElement(SelBoxCasePalletSolution caseSolution, XmlElement elemCaseAnalysis, XmlDocument xmlDoc)
         {
@@ -2046,7 +2224,9 @@ namespace TreeDim.StackBuilder.Reporting
             // save image
             SaveImageAs(graphics.Bitmap, "view_case_iso.png");
         }
+        #endregion
 
+        #region Constraint sets : Box/Case
         private void AppendBoxCaseConstraintSet(BCaseConstraintSet bCaseConstraintSet, XmlElement elemDocument, XmlDocument xmlDoc)
         {
             string ns = xmlDoc.DocumentElement.NamespaceURI;
@@ -2273,6 +2453,23 @@ namespace TreeDim.StackBuilder.Reporting
             elt.InnerText = string.Format("{0}", v);
             parentElt.AppendChild(elt);
             return elt;
+        }
+        private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, string eltUnit, OptDouble optValue)
+        {
+            if (optValue.Activated)
+            {
+                // eltName
+                XmlElement createdElement = xmlDoc.CreateElement(eltName, xmlDoc.DocumentElement.NamespaceURI);
+                parent.AppendChild(createdElement);
+                // unit
+                XmlElement unitElement = xmlDoc.CreateElement("unit", xmlDoc.DocumentElement.NamespaceURI);
+                unitElement.InnerText = eltUnit;
+                createdElement.AppendChild(unitElement);
+                // value
+                XmlElement valueElement = xmlDoc.CreateElement("value", xmlDoc.DocumentElement.NamespaceURI);
+                valueElement.InnerText = string.Format("{0:F}", optValue.Value);
+                createdElement.AppendChild(valueElement);
+            }
         }
         private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, string eltUnit, double eltValue)
         {

@@ -36,15 +36,15 @@
             this.uCtrlOuterDimensions = new TreeDim.StackBuilder.Basics.UCtrlOptTriDouble();
             this.uCtrlLayout = new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbColor = new OfficePickers.ColorPicker.ComboBoxColorPicker();
-            this.lbWrapperColor = new System.Windows.Forms.Label();
-            this.uCtrlThickness = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.uCtrlWeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.lbType = new System.Windows.Forms.Label();
-            this.chkbTransparent = new System.Windows.Forms.CheckBox();
-            this.uCtrlWalls = new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt();
             this.uCtrlHeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlWalls = new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt();
+            this.chkbTransparent = new System.Windows.Forms.CheckBox();
+            this.lbType = new System.Windows.Forms.Label();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.uCtrlWeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlThickness = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.lbWrapperColor = new System.Windows.Forms.Label();
+            this.cbColor = new OfficePickers.ColorPicker.ComboBoxColorPicker();
             ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -149,63 +149,54 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wrapper";
             // 
-            // cbColor
+            // uCtrlHeight
             // 
-            this.cbColor.Color = System.Drawing.Color.Tan;
-            this.cbColor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbColor.DropDownHeight = 1;
-            this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbColor.DropDownWidth = 1;
-            this.cbColor.FormattingEnabled = true;
-            this.cbColor.IntegralHeight = false;
-            this.cbColor.ItemHeight = 16;
-            this.cbColor.Items.AddRange(new object[] {
-            "Color"});
-            this.cbColor.Location = new System.Drawing.Point(88, 38);
-            this.cbColor.Name = "cbColor";
-            this.cbColor.Size = new System.Drawing.Size(61, 22);
-            this.cbColor.TabIndex = 0;
-            // 
-            // lbWrapperColor
-            // 
-            this.lbWrapperColor.AutoSize = true;
-            this.lbWrapperColor.Location = new System.Drawing.Point(6, 41);
-            this.lbWrapperColor.Name = "lbWrapperColor";
-            this.lbWrapperColor.Size = new System.Drawing.Size(31, 13);
-            this.lbWrapperColor.TabIndex = 1;
-            this.lbWrapperColor.Text = "Color";
-            // 
-            // uCtrlThickness
-            // 
-            this.uCtrlThickness.Location = new System.Drawing.Point(6, 64);
-            this.uCtrlThickness.Minimum = new decimal(new int[] {
-            0,
+            this.uCtrlHeight.Location = new System.Drawing.Point(6, 162);
+            this.uCtrlHeight.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.uCtrlThickness.MinimumSize = new System.Drawing.Size(100, 20);
-            this.uCtrlThickness.Name = "uCtrlThickness";
-            this.uCtrlThickness.Size = new System.Drawing.Size(180, 20);
-            this.uCtrlThickness.TabIndex = 4;
-            this.uCtrlThickness.Text = "Thickness";
-            this.uCtrlThickness.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlThickness.Value = 0D;
+            this.uCtrlHeight.MinimumSize = new System.Drawing.Size(100, 20);
+            this.uCtrlHeight.Name = "uCtrlHeight";
+            this.uCtrlHeight.Size = new System.Drawing.Size(180, 20);
+            this.uCtrlHeight.TabIndex = 10;
+            this.uCtrlHeight.Text = "Height";
+            this.uCtrlHeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlHeight.Value = 40D;
+            this.uCtrlHeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
             // 
-            // uCtrlWeight
+            // uCtrlWalls
             // 
-            this.uCtrlWeight.Location = new System.Drawing.Point(6, 89);
-            this.uCtrlWeight.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            -2147483648});
-            this.uCtrlWeight.MinimumSize = new System.Drawing.Size(100, 20);
-            this.uCtrlWeight.Name = "uCtrlWeight";
-            this.uCtrlWeight.Size = new System.Drawing.Size(180, 20);
-            this.uCtrlWeight.TabIndex = 5;
-            this.uCtrlWeight.Text = "Weight";
-            this.uCtrlWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
-            this.uCtrlWeight.Value = 0D;
+            this.uCtrlWalls.Location = new System.Drawing.Point(6, 135);
+            this.uCtrlWalls.Name = "uCtrlWalls";
+            this.uCtrlWalls.NoX = 1;
+            this.uCtrlWalls.NoY = 1;
+            this.uCtrlWalls.NoZ = 1;
+            this.uCtrlWalls.Size = new System.Drawing.Size(264, 20);
+            this.uCtrlWalls.TabIndex = 9;
+            this.uCtrlWalls.Text = "Numer of walls";
+            this.uCtrlWalls.ValueChanged += new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt.onValueChanged(this.onPackChanged);
+            // 
+            // chkbTransparent
+            // 
+            this.chkbTransparent.AutoSize = true;
+            this.chkbTransparent.Location = new System.Drawing.Point(6, 113);
+            this.chkbTransparent.Name = "chkbTransparent";
+            this.chkbTransparent.Size = new System.Drawing.Size(83, 17);
+            this.chkbTransparent.TabIndex = 8;
+            this.chkbTransparent.Text = "Transparent";
+            this.chkbTransparent.UseVisualStyleBackColor = true;
+            this.chkbTransparent.CheckedChanged += new System.EventHandler(this.onPackChanged);
+            // 
+            // lbType
+            // 
+            this.lbType.AutoSize = true;
+            this.lbType.Location = new System.Drawing.Point(6, 16);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(31, 13);
+            this.lbType.TabIndex = 7;
+            this.lbType.Text = "Type";
             // 
             // cbType
             // 
@@ -222,51 +213,68 @@
             this.cbType.TabIndex = 6;
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.onWrapperTypeChanged);
             // 
-            // lbType
+            // uCtrlWeight
             // 
-            this.lbType.AutoSize = true;
-            this.lbType.Location = new System.Drawing.Point(6, 16);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(31, 13);
-            this.lbType.TabIndex = 7;
-            this.lbType.Text = "Type";
+            this.uCtrlWeight.Location = new System.Drawing.Point(6, 89);
+            this.uCtrlWeight.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.uCtrlWeight.MinimumSize = new System.Drawing.Size(100, 20);
+            this.uCtrlWeight.Name = "uCtrlWeight";
+            this.uCtrlWeight.Size = new System.Drawing.Size(180, 20);
+            this.uCtrlWeight.TabIndex = 5;
+            this.uCtrlWeight.Text = "Weight";
+            this.uCtrlWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.uCtrlWeight.Value = 0D;
+            this.uCtrlWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
             // 
-            // chkbTransparent
+            // uCtrlThickness
             // 
-            this.chkbTransparent.AutoSize = true;
-            this.chkbTransparent.Location = new System.Drawing.Point(6, 113);
-            this.chkbTransparent.Name = "chkbTransparent";
-            this.chkbTransparent.Size = new System.Drawing.Size(83, 17);
-            this.chkbTransparent.TabIndex = 8;
-            this.chkbTransparent.Text = "Transparent";
-            this.chkbTransparent.UseVisualStyleBackColor = true;
-            // 
-            // uCtrlWalls
-            // 
-            this.uCtrlWalls.Location = new System.Drawing.Point(6, 135);
-            this.uCtrlWalls.Name = "uCtrlWalls";
-            this.uCtrlWalls.NoX = 1;
-            this.uCtrlWalls.NoY = 1;
-            this.uCtrlWalls.NoZ = 1;
-            this.uCtrlWalls.Size = new System.Drawing.Size(264, 20);
-            this.uCtrlWalls.TabIndex = 9;
-            this.uCtrlWalls.Text = "Numer of walls";
-            // 
-            // uCtrlHeight
-            // 
-            this.uCtrlHeight.Location = new System.Drawing.Point(6, 162);
-            this.uCtrlHeight.Minimum = new decimal(new int[] {
+            this.uCtrlThickness.Location = new System.Drawing.Point(6, 64);
+            this.uCtrlThickness.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.uCtrlHeight.MinimumSize = new System.Drawing.Size(100, 20);
-            this.uCtrlHeight.Name = "uCtrlHeight";
-            this.uCtrlHeight.Size = new System.Drawing.Size(180, 20);
-            this.uCtrlHeight.TabIndex = 10;
-            this.uCtrlHeight.Text = "Height";
-            this.uCtrlHeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlHeight.Value = 0D;
+            this.uCtrlThickness.MinimumSize = new System.Drawing.Size(100, 20);
+            this.uCtrlThickness.Name = "uCtrlThickness";
+            this.uCtrlThickness.Size = new System.Drawing.Size(180, 20);
+            this.uCtrlThickness.TabIndex = 4;
+            this.uCtrlThickness.Text = "Thickness";
+            this.uCtrlThickness.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlThickness.Value = 0D;
+            this.uCtrlThickness.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
+            // 
+            // lbWrapperColor
+            // 
+            this.lbWrapperColor.AutoSize = true;
+            this.lbWrapperColor.Location = new System.Drawing.Point(6, 41);
+            this.lbWrapperColor.Name = "lbWrapperColor";
+            this.lbWrapperColor.Size = new System.Drawing.Size(31, 13);
+            this.lbWrapperColor.TabIndex = 1;
+            this.lbWrapperColor.Text = "Color";
+            // 
+            // cbColor
+            // 
+            this.cbColor.Color = System.Drawing.Color.LightGray;
+            this.cbColor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbColor.DropDownHeight = 1;
+            this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbColor.DropDownWidth = 1;
+            this.cbColor.FormattingEnabled = true;
+            this.cbColor.IntegralHeight = false;
+            this.cbColor.ItemHeight = 16;
+            this.cbColor.Items.AddRange(new object[] {
+            "Color",
+            "Color",
+            "Color"});
+            this.cbColor.Location = new System.Drawing.Point(88, 38);
+            this.cbColor.Name = "cbColor";
+            this.cbColor.Size = new System.Drawing.Size(61, 22);
+            this.cbColor.TabIndex = 0;
+            this.cbColor.SelectedColorChanged += new System.EventHandler(this.onPackChanged);
             // 
             // FormNewPack
             // 

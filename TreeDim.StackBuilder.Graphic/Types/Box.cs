@@ -19,11 +19,11 @@ namespace TreeDim.StackBuilder.Graphics
     public class Box : Drawable
     {
         #region Data members
-        private uint _pickId = 0;
-        private double[] _dim = new double[3];
-        private Vector3D _position = Vector3D.Zero;
-        private Vector3D _lengthAxis = Vector3D.XAxis;
-        private Vector3D _widthAxis = Vector3D.YAxis;
+        protected uint _pickId = 0;
+        protected double[] _dim = new double[3];
+        protected Vector3D _position = Vector3D.Zero;
+        protected Vector3D _lengthAxis = Vector3D.XAxis;
+        protected Vector3D _widthAxis = Vector3D.YAxis;
         private Color[] _colors;
         private List<Texture>[] _textureLists = new List<Texture>[6];
         /// <summary>
@@ -179,7 +179,7 @@ namespace TreeDim.StackBuilder.Graphics
 
             _colors = new Color[]
             {
-                Color.Brown, Color.Brown, Color.Brown, Color.Brown, Color.Brown, Color.Brown
+                Color.Chocolate, Color.Chocolate, Color.Chocolate, Color.Chocolate, Color.Chocolate, Color.Chocolate
             };
             // set position
             Position = bPosition.Position;

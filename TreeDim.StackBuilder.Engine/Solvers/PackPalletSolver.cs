@@ -122,7 +122,7 @@ namespace TreeDim.StackBuilder.Engine
                             ++iCountInterlayer;
                             if (iCountInterlayer >= _constraintSet.InterlayerPeriod) iCountInterlayer = 0;
                              ++iCountSwap;
-                             if (iCountSwap >= _constraintSet.LayerSwapPeriod) iCountSwap = 0;
+                             if (iCountSwap > _constraintSet.LayerSwapPeriod) iCountSwap = 0;
                             // update maxHeightReached & maxWeightReached
                             maxHeightReached = _constraintSet.MaximumPalletHeight.Activated
                                 && (_packProperties.Height
@@ -139,6 +139,7 @@ namespace TreeDim.StackBuilder.Engine
                     } // invIndex
                 } // axis
             } // pattern
+            solutions.Sort();
             return solutions;
         }
 

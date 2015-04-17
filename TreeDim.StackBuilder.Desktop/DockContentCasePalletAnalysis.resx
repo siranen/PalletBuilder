@@ -135,7 +135,7 @@
     <value>0, 0</value>
   </data>
   <data name="graphCtrlSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 478</value>
+    <value>604, 416</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="graphCtrlSolution.TabIndex" type="System.Int32, mscorlib">
@@ -145,7 +145,7 @@
     <value>graphCtrlSolution</value>
   </data>
   <data name="&gt;&gt;graphCtrlSolution.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.9.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.10.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrlSolution.Parent" xml:space="preserve">
     <value>splitContainerHoriz.Panel1</value>
@@ -157,10 +157,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btSelectSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 488</value>
+    <value>499, 422</value>
   </data>
   <data name="btSelectSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 30</value>
+    <value>100, 23</value>
   </data>
   <data name="btSelectSolution.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -202,7 +202,7 @@
     <value>0, 0</value>
   </data>
   <data name="gridSolutions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 120</value>
+    <value>604, 198</value>
   </data>
   <data name="gridSolutions.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -235,7 +235,7 @@
     <value>604, 652</value>
   </data>
   <data name="splitContainerHoriz.SplitterDistance" type="System.Int32, mscorlib">
-    <value>528</value>
+    <value>450</value>
   </data>
   <data name="splitContainerHoriz.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

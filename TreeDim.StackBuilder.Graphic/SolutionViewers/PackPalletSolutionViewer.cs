@@ -29,7 +29,23 @@ namespace TreeDim.StackBuilder.Graphics
 
         #region Public methods
         public void Draw(Graphics2D graphics)
-        { 
+        {
+            if (null == _solution || _solution.LayerCount == 0)
+                return;
+
+            BoxLayer blayer = _solution.Layer;
+            if (blayer != null)
+            {
+                // initialize Graphics2D object
+                graphics.NumberOfViews = 1;
+                BBox3D bbox = blayer.BoundingBox(_analysis.PackProperties);
+                graphics.SetViewport(0.0f, 0.0f, (float)bbox.Length, (float)bbox.Width);
+                graphics.SetCurrentView(0);
+                graphics.DrawRectangle(Vector2D.Zero, new Vector2D(_analysis.PalletProperties.Length, _analysis.PalletProperties.Width), Color.Black);
+                uint pickId = 0;
+                foreach (BoxPosition bPosition in blayer)
+                    graphics.DrawBox(new Box(pickId++, _analysis.PackProperties, bPosition));
+            }
         }
         public void Draw(Graphics3D graphics)
         {
@@ -59,9 +75,8 @@ namespace TreeDim.StackBuilder.Graphics
                     // draw
                     graphics.AddBox(box);
                 }
-
                 foreach (BoxPosition bPosition in blayer)
-                    graphics.AddBox(new Box(pickid++, _analysis.PackProperties, bPosition));
+                    graphics.AddBox(new Pack(pickid++, _analysis.PackProperties, bPosition));
 
                 if (_showDimensions)
                 {
@@ -85,6 +100,14 @@ namespace TreeDim.StackBuilder.Graphics
                 case 3: return new BBox3D(0.0, 0.0, 0.0, _analysis.PalletProperties.Length, _analysis.PalletProperties.Width, 0.0);
                 default: return _solution.BoundingBox;
             }
+        }
+        #endregion
+
+        #region Public properties
+        public bool ShowDimensions
+        {
+            get { return _showDimensions; }
+            set { _showDimensions = value; }
         }
         #endregion
 

@@ -64,6 +64,7 @@
             this.nudValue.Name = "nudValue";
             this.nudValue.Size = new System.Drawing.Size(60, 20);
             this.nudValue.TabIndex = 3;
+            this.nudValue.ValueChanged += new System.EventHandler(this.nudValue_ValueChanged);
             // 
             // lbName
             // 
@@ -74,7 +75,7 @@
             this.lbName.TabIndex = 5;
             this.lbName.Text = "Name";
             // 
-            // ValueControl
+            // UCtrlDouble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +83,7 @@
             this.Controls.Add(this.lbUnit);
             this.Controls.Add(this.nudValue);
             this.MinimumSize = new System.Drawing.Size(100, 20);
-            this.Name = "ValueControl";
+            this.Name = "UCtrlDouble";
             this.Size = new System.Drawing.Size(300, 20);
             this.SizeChanged += new System.EventHandler(this.ValueControl_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();

@@ -117,7 +117,6 @@ namespace TreeDim.StackBuilder.Basics
                 foreach (Vector3D pt in pts)
                     bbox.Extend(pt);
             }
-
             return bbox;
         }
 
@@ -563,20 +562,8 @@ namespace TreeDim.StackBuilder.Basics
             }
         }
 
-        public double PalletLength
-        {
-            get
-            {
-                return BoundingBox.Length;
-            }
-        }
-        public double PalletWidth
-        {
-            get
-            {
-                return BoundingBox.Width;
-            }
-        }
+        public double PalletLength { get { return BoundingBox.Length; } }
+        public double PalletWidth  { get { return BoundingBox.Width; } }
         public double PalletHeight
         {
             get

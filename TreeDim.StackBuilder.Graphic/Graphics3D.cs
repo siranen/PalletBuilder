@@ -650,6 +650,40 @@ namespace TreeDim.StackBuilder.Graphics
             g.DrawLine(new Pen(brush0, 1.5f), pt[ptCount - 1], pt[0]);
         }
 
+        internal void Draw(Face face, FaceDir dir, Color colorApply, bool transparent)
+        {
+            System.Drawing.Graphics g = Graphics;
+
+            // test if face can actuallt be seen
+            if ((Vector3D.DotProduct(face.Normal, _vCameraPos - _vTarget) > 0.0 && dir == FaceDir.BACK)
+                || (Vector3D.DotProduct(face.Normal, _vCameraPos - _vTarget) < 0.0 && dir == FaceDir.FRONT))
+                return;
+
+            // compute face color
+            double cosA = System.Math.Abs(Vector3D.DotProduct(face.Normal, VLight));
+            Color color = Color.FromArgb(
+                transparent ? 64 : 255
+                , (int)(colorApply.R * cosA)
+                , (int)(colorApply.G * cosA)
+                , (int)(colorApply.B * cosA));
+            Point[] pt = TransformPoint(GetCurrentTransformation(), face.Points);
+
+            Brush brush = new SolidBrush(color);
+            g.FillPolygon(brush, pt);
+            // draw path
+            float fThickness = transparent ? 2.0f : 1.0f;
+            Brush brush0 = new SolidBrush(face.ColorPath);
+            int ptCount = pt.Length;
+            for (int i = 1; i < ptCount; ++i)
+            {
+                // there is a bug here!
+                // -> a polygon that result from first split will lose all edges
+                // when split a second time
+                g.DrawLine(new Pen(brush0, fThickness), pt[i - 1], pt[i]);
+            }
+            g.DrawLine(new Pen(brush0, fThickness), pt[ptCount - 1], pt[0]);
+        }
+
         internal void Draw(Box box)
         {
             System.Drawing.Graphics g = Graphics;
@@ -657,17 +691,7 @@ namespace TreeDim.StackBuilder.Graphics
             if (box is Pack)
             {
                 Pack pack = box as Pack;
-                // draw back faces
-
-                // draw content
-                List<Box> innerBoxes = pack.InnerBoxes;
-                innerBoxes.Sort(new BoxComparerSimplifiedPainterAlgo(GetWorldToEyeTransformation()));
-                foreach (Box b in innerBoxes)
-                    Draw(b);
-
-
-                // draw front faces
-
+                pack.Draw(this);
             }
             else
             {

@@ -29,6 +29,9 @@
       </FaceColors>
       <Textures />
     </BoxProperties>
+    <PackProperties Id="c96de612-0737-4f3b-b146-11125d01e0ed" Name="Fardeau0" Description="Fardeau0" BoxProperties="10b560d0-df19-442b-a485-0a9fc53abf73" Orientation="XP" Arrangement="3 2 1">
+      <Wrapper Type="WT_POLYETHILENE" Color="-2968436" Weight="0" UnitThickness="0" Transparent="True" />
+    </PackProperties>
   </ItemProperties>
   <Analyses>
     <AnalysisPallet Name="Pallet analysis 440x280x290" Description="Case 440x280x290 on pallet EUR2" BoxId="02d47d58-086d-4725-ae12-84e258880e5d" PalletId="e037f3b3-3c6a-4d73-ad14-5e81a0615f4f">
@@ -3161,5 +3164,914 @@
         </Solution>
       </Solutions>
     </AnalysisPallet>
+    <PackPalletAnalysis Name="Analyse0" Description="Analyse0" PackId="c96de612-0737-4f3b-b146-11125d01e0ed" PalletId="e037f3b3-3c6a-4d73-ad14-5e81a0615f4f">
+      <ConstraintSet OverhangX="0" OverhangY="0" MinOverhangX="0, 0" MinOverhangY="0, 0" MinimumSpace="0, 0" MaximumSpaceAllowed="0, 0" MaximumPalletHeight="1, 1200" MaximumPalletWeight="0, 0" MaximumLayerWeight="0, 0" LayerSwapPeriod="1" InterlayerPeriod="1" />
+      <Solutions>
+        <Solution Title="Interlocked-AXIS_Z_N-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(960, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 785, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 395, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 785, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 395, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(540, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Interlocked-AXIS_Z_N">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(240, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 215, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 605, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 215, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 605, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Interlocked-AXIS_Z_P-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(1200, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1200, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1200, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1200, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1020, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1020, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1020, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1020, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(840, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(840, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(840, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(840, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(660, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(660, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(660, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(660, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(240, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 785, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 395, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 785, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 395, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Interlocked-AXIS_Z_P">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(960, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 215, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 605, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 215, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 605, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Trilock-AXIS_Z_P">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(240, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(204, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(408, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(612, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(816, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Trilock-AXIS_Z_P-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(960, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(996, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(792, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(588, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(384, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(720, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(720, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(720, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Trilock-AXIS_Z_N">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(192, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(384, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(576, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(768, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 260, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 260, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 260, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 260, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 260, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Trilock-AXIS_Z_N-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(1020, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(828, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(636, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(444, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(252, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(960, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 740, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 740, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 740, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 740, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 740, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Diagonale-AXIS_Z_N-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(990, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(750, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(510, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(270, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(30, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(930, 740, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(930, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(930, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(930, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(750, 560, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(510, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(270, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(30, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(690, 560, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(690, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(690, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(510, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(270, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(30, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(450, 380, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(450, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(270, 200, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(210, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(30, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Column-AXIS_Z_N">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(240, 50, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 230, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 590, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 770, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 50, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 230, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 590, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 770, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 50, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 230, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 590, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 770, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 50, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 230, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 590, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 770, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 50, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 230, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 410, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 590, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1200, 770, 0)" AxisLength="YP" AxisWidth="XN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Column-AXIS_Z_N-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(960, 950, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 770, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 410, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 230, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 950, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 770, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 410, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 230, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 950, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 770, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 410, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 230, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 950, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 770, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 410, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 230, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 950, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 770, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 590, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 410, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(0, 230, 0)" AxisLength="YN" AxisWidth="XP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Diagonale-AXIS_Z_N">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(30, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(450, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(690, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(930, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1170, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(270, 260, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(270, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(270, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(270, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(270, 200, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(690, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(930, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1170, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(510, 440, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(510, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(510, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(510, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(930, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(1170, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(750, 620, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(750, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(750, 560, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1170, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(990, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(990, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Spirale-AXIS_Z_P">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1200, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1200, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Enlarged spiral-AXIS_Z_P">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1200, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(720, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1200, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 320, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(480, 500, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 320, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 500, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 320, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 500, 0)" AxisLength="YP" AxisWidth="XN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Enlarged spiral-AXIS_Z_N">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(270, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(930, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(270, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(930, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(510, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(690, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(510, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(690, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(750, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(450, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(750, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(450, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(990, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(210, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(990, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(210, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(990, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(990, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(420, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(600, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(780, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Spirale-AXIS_Z_P-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(1200, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(240, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(960, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Enlarged spiral-AXIS_Z_N-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(930, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(270, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(930, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(270, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(690, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(510, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(690, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(510, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(450, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(750, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(450, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(750, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(210, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(990, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(210, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(990, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(30, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(990, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(990, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(780, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(600, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(420, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 380, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Spirale-AXIS_Z_N-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(960, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Column-AXIS_Z_P">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(60, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(60, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(60, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(60, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(240, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(420, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(420, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(420, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(420, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(600, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(600, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(600, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(600, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(780, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(780, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(780, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(780, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(960, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(960, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(960, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(960, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Column-AXIS_Z_P-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(1140, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1140, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1140, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1140, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(960, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(960, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(960, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(960, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(780, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(780, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(780, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(780, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(600, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(600, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(600, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(600, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(420, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(420, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(420, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(420, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(240, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(240, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(240, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(240, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Spirale-AXIS_Z_N">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(240, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(960, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1020, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(180, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(360, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(540, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Enlarged spiral-AXIS_Z_P-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(1200, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(0, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(1020, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(180, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(840, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(360, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(660, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(540, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(480, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(720, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(0, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 800, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 200, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 620, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 380, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(0, 440, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(1200, 560, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(720, 680, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(720, 500, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 680, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(480, 500, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 680, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(240, 500, 0)" AxisLength="YN" AxisWidth="XP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Diagonale-AXIS_Z_P-inv">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(930, 980, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(930, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(750, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(570, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(390, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(210, 980, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1170, 780, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1170, 520, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(1170, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(750, 720, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(750, 720, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(570, 720, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(390, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(210, 740, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(990, 520, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(990, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(570, 460, 0)" AxisLength="YN" AxisWidth="XP" />
+              <BoxPosition Position="(570, 460, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(390, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(210, 500, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(810, 260, 0)" AxisLength="XN" AxisWidth="YN" />
+              <BoxPosition Position="(390, 200, 0)" AxisLength="YN" AxisWidth="XP" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+        <Solution Title="Diagonale-AXIS_Z_P">
+          <BoxLayers>
+            <BoxLayer ZLow="0">
+              <BoxPosition Position="(270, 20, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(270, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(450, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(630, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(810, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(990, 20, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 220, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 480, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(30, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(450, 280, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(450, 280, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(630, 280, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(810, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(990, 260, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(210, 480, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(210, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(630, 540, 0)" AxisLength="YP" AxisWidth="XN" />
+              <BoxPosition Position="(630, 540, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(810, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(990, 500, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(390, 740, 0)" AxisLength="XP" AxisWidth="YP" />
+              <BoxPosition Position="(810, 800, 0)" AxisLength="YP" AxisWidth="XN" />
+            </BoxLayer>
+          </BoxLayers>
+          <LayerRefs>
+            <LayerRef Swapped="True" HasInterlayer="False" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+            <LayerRef Swapped="False" HasInterlayer="True" />
+            <LayerRef Swapped="True" HasInterlayer="True" />
+          </LayerRefs>
+        </Solution>
+      </Solutions>
+    </PackPalletAnalysis>
   </Analyses>
 </Document>

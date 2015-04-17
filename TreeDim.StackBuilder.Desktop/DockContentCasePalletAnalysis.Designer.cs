@@ -37,6 +37,7 @@
             this.splitContainerHoriz.Panel1.SuspendLayout();
             this.splitContainerHoriz.Panel2.SuspendLayout();
             this.splitContainerHoriz.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlSolution)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerHoriz
@@ -93,6 +94,7 @@
             this.splitContainerHoriz.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).EndInit();
             this.splitContainerHoriz.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlSolution)).EndInit();
             this.ResumeLayout(false);
 
         }

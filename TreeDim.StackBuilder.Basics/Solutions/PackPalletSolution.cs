@@ -82,10 +82,29 @@ namespace TreeDim.StackBuilder.Basics
             zInterlayer = zLow;
             hasInterlayer = _listLayers[iLayerIndex].HasInterlayer;
             zLow += hasInterlayer ? interlayerThickness : 0.0;
+
+            Transform3D swapTransform = Transform3D.Identity;
+            if (_listLayers[iLayerIndex].Swapped)
+            {
+                Matrix4D matRot = new Matrix4D(
+                    -1.0, 0.0, 0.0, _parentAnalysis.PalletProperties.Length
+                    , 0.0, -1.0, 0.0, _parentAnalysis.PalletProperties.Width
+                    , 0.0, 0.0, 1.0, 0.0
+                    , 0.0, 0.0, 0.0, 1.0);
+                swapTransform = new Transform3D(matRot);
+            }
+
             // build BoxLayer
             BoxLayer layer = new BoxLayer(zLow + (hasInterlayer ? interlayerThickness : 0.0), _layer.PatternName);
             foreach (BoxPosition b in _layer)
-                layer.Add(new BoxPosition(b.Position + zLow * Vector3D.ZAxis, b.DirectionLength, b.DirectionWidth));
+            {
+                layer.Add(
+                    new BoxPosition(
+                        swapTransform.transform(b.Position + zLow * Vector3D.ZAxis)
+                        , HalfAxis.Transform(b.DirectionLength, swapTransform)
+                        , HalfAxis.Transform(b.DirectionWidth, swapTransform) )
+                        );
+            }
             return layer;
         }
         #endregion
@@ -124,7 +143,6 @@ namespace TreeDim.StackBuilder.Basics
             bbox.Extend(layer0.BoundingBox(Analysis.PackProperties));
             BoxLayer layerN = GetBoxLayer(LayerCount - 1, ref hasInterlayer, ref zInterlayer);
             bbox.Extend(layerN.BoundingBox(Analysis.PackProperties));
-
             return bbox;
         }
         #endregion
@@ -151,6 +169,9 @@ namespace TreeDim.StackBuilder.Basics
         public double LayerWeight { get { return PackPerLayer * _parentAnalysis.PackProperties.Weight; } }
         public double PalletWeight { get { return LayerWeight * LayerCount + _parentAnalysis.PalletProperties.Weight; } }
         public double PalletNetWeight { get { return PackCount * _parentAnalysis.PackProperties.NetWeight.Value; } }
+
+        public double PalletLength { get { return BoundingBox.Length; } }
+        public double PalletWidth { get { return BoundingBox.Width; } }
         public double PalletHeight
         {
             get

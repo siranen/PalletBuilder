@@ -272,11 +272,11 @@ namespace TreeDim.StackBuilder.Desktop
             }
             else if (nodeTag.Type == NodeTag.NodeType.NT_PACKPALLETANALYSISSOLUTION)
             { 
-                string message = string.Format(Resources.ID_GENERATEREPORTHTML, nodeTag.SelSolution.Name);
+                string message = string.Format(Resources.ID_GENERATEREPORTHTML, nodeTag.SelPackPalletSolution.Name);
                 contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.HTML, new EventHandler(onAnalysisReportHTML)));
-                message = string.Format(Resources.ID_GENERATEREPORTMSWORD, nodeTag.SelSolution.Name);
+                message = string.Format(Resources.ID_GENERATEREPORTMSWORD, nodeTag.SelPackPalletSolution.Name);
                 contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.WORD, new EventHandler(onAnalysisReportMSWord)));
-                message = string.Format(Resources.ID_GENERATEREPORTPDF, nodeTag.SelSolution.Name);
+                message = string.Format(Resources.ID_GENERATEREPORTPDF, nodeTag.SelPackPalletSolution.Name);
             }
             else if (nodeTag.Type == NodeTag.NodeType.NT_CYLINDERPALLETANALYSISSOLUTION)
             {
@@ -2252,6 +2252,10 @@ namespace TreeDim.StackBuilder.Desktop
         /// </summary>
         public PackPalletAnalysis PackPalletAnalysis { get { return _packPalletAnalysis; } }
         /// <summary>
+        /// returns pack pallet solution
+        /// </summary>
+        public SelPackPalletSolution SelPackPalletSolution { get { return _selPackPalletSolution; } }
+        /// <summary>
         /// return cylinder/pallet analysis if any
         /// </summary>
         public CylinderPalletAnalysis CylinderPalletAnalysis { get { return _cylinderPalletAnalysis; } }
@@ -2350,6 +2354,10 @@ namespace TreeDim.StackBuilder.Desktop
         /// Selected solution
         /// </summary>
         public SelCasePalletSolution SelSolution { get { return _nodeTag.SelSolution; } }
+        /// <summary>
+        /// Selected pack/pallet solution
+        /// </summary>
+        public SelPackPalletSolution SelPackPalletSolution { get { return _nodeTag.SelPackPalletSolution; } }
         /// <summary>
         /// Selected cylinder/pallet solution
         /// </summary>

@@ -56,6 +56,7 @@ namespace TreeDim.StackBuilder.Desktop
             _instance = this;
             // set analysis solver
             CasePalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.CasePalletSolver();
+            PackPalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.PackPalletSolver();
             CylinderPalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.CylinderSolver();
             HCylinderPalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.HCylinderSolver();
             BoxCasePalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.BoxCasePalletSolver();
@@ -544,6 +545,7 @@ namespace TreeDim.StackBuilder.Desktop
                 // build analysis name
                 string analysisName = string.Empty;
                 if (null != eventArg.Analysis) analysisName = eventArg.Analysis.Name;
+                else if (null != eventArg.PackPalletAnalysis) analysisName = eventArg.PackPalletAnalysis.Name;
                 else if (null != eventArg.BoxCaseAnalysis) analysisName = eventArg.BoxCaseAnalysis.Name;
                 else if (null != eventArg.BoxCasePalletAnalysis) analysisName = eventArg.BoxCasePalletAnalysis.Name;
                 else if (null != eventArg.CylinderAnalysis) analysisName = eventArg.CylinderAnalysis.Name;
@@ -576,6 +578,7 @@ namespace TreeDim.StackBuilder.Desktop
                             , eventArg.HCylinderAnalysis, eventArg.SelHCylinderPalletSolution
                             , eventArg.BoxCaseAnalysis, eventArg.SelBoxCaseSolution
                             , eventArg.BoxCasePalletAnalysis, eventArg.SelBoxCasePalletSolution
+                            , eventArg.PackPalletAnalysis, eventArg.SelPackPalletSolution
                             );
                     Reporter.CompanyLogo = Properties.Settings.Default.CompanyLogoPath;
                     Reporter.ImageSizeSetting = (Reporter.eImageSize)Properties.Settings.Default.ReporterImageSize;
@@ -633,6 +636,7 @@ namespace TreeDim.StackBuilder.Desktop
                         , eventArg.HCylinderAnalysis, eventArg.SelHCylinderPalletSolution
                         , eventArg.BoxCaseAnalysis, eventArg.SelBoxCaseSolution
                         , eventArg.BoxCasePalletAnalysis, eventArg.SelBoxCasePalletSolution
+                        , eventArg.PackPalletAnalysis, eventArg.SelPackPalletSolution
                         );
                 Reporter.CompanyLogo = Properties.Settings.Default.CompanyLogoPath;
                 Reporter.ImageSizeSetting = (Reporter.eImageSize)Properties.Settings.Default.ReporterImageSize;

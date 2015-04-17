@@ -353,11 +353,12 @@ namespace TreeDim.StackBuilder.Basics
         #endregion
 
         #region Constructor
-        public SelPackPalletSolution(Document document, PackPalletAnalysis analysis, PackPalletSolution solution)
+        public SelPackPalletSolution(Document document, PackPalletAnalysis analysis, PackPalletSolution sol)
             : base(document)
         {
             _analysis = analysis;
-            _solution = solution;
+            _solution = sol;
+            Name = sol.Title;
         }
         #endregion
 
