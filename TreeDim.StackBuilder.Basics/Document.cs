@@ -1911,6 +1911,9 @@ namespace TreeDim.StackBuilder.Basics
                     , constraintSet
                     , solutions
                     );
+                // save selected solutions
+                foreach (int indexSol in selectedIndices)
+                    analysis.SelectSolutionByIndex(indexSol);
             }
             else if (string.Equals(eltAnalysis.Name, "CylinderPalletAnalysis", StringComparison.CurrentCultureIgnoreCase))
             {
@@ -4357,6 +4360,14 @@ namespace TreeDim.StackBuilder.Basics
                 XmlAttribute attributeHasInterlayer = xmlDoc.CreateAttribute("HasInterlayer");
                 attributeHasInterlayer.Value = layerDesc.HasInterlayer.ToString();
                 layerRefElt.Attributes.Append(attributeHasInterlayer);
+            }
+            // Is selected ?
+            if (null != selSolution)
+            {
+                // selected attribute
+                XmlAttribute selAttribute = xmlDoc.CreateAttribute("Selected");
+                selAttribute.Value = "true";
+                solutionElt.Attributes.Append(selAttribute);
             }
         }
 

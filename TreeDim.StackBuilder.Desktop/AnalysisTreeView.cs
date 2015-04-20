@@ -1213,7 +1213,7 @@ namespace TreeDim.StackBuilder.Desktop
             nodeAnalysis.Nodes.Add(subPalletNode);
             if (analysis.HasInterlayer)
             {
-                TreeNode subInterlayerNode = new TreeNode(analysis.InterlayerProperties.Name, 7, 7);
+                TreeNode subInterlayerNode = new TreeNode(analysis.InterlayerProperties.Name, 8, 8);
                 subInterlayerNode.Tag = new NodeTag(NodeTag.NodeType.NT_ANALYSISINTERLAYER, doc, analysis, analysis.InterlayerProperties);
                 nodeAnalysis.Nodes.Add(subInterlayerNode);
             }
