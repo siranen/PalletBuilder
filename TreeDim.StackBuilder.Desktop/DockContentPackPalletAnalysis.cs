@@ -166,7 +166,7 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 // build case count string
                 string sPackCount = string.Format("{0}\n({1} * {2})", sol.PackCount, sol.PackPerLayer, sol.LayerCount);
-                string sCSUCount = string.Format("{0}", sol.ConsumerSalesUnit);
+                string sCSUCount = string.Format("{0}", sol.CSUCount);
                 // insert row
                 gridSolutions.Rows.Insert(++iIndex);
 

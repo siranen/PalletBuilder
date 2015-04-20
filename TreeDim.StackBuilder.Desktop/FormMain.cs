@@ -300,6 +300,7 @@ namespace TreeDim.StackBuilder.Desktop
                         box.Width = form.BoxWidth;
                         box.Height = form.BoxHeight;
                         box.Weight = form.Weight;
+                        box.NetWeight = form.NetWeight;
                         box.InsideLength = form.InsideLength;
                         box.InsideWidth = form.InsideWidth;
                         box.InsideHeight = form.InsideHeight;

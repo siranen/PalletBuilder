@@ -283,7 +283,7 @@
                     <xs:element name="view_palletsolution_right" type="xs:string"/>
                     <xs:element name="view_palletsolution_back" type="xs:string"/>
                     <xs:element name="view_palletsolution_iso" type="xs:string"/>
-                    <xs:element name="layer" minOccurs="1" maxOccurs="1">
+                    <xs:element name="layer" minOccurs="1" maxOccurs="unbounded">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="layerId" type="xs:string"/>
@@ -311,35 +311,35 @@
               <xs:element name="packPalletSolution" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
+                    <xs:element name="title" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                    <xs:element name="efficiency" minOccurs="1" maxOccurs="1" type="xs:string"/>
                     <xs:element name="length" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="width" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="height" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="palletPackCount" minOccurs="1" maxOccurs="1" type="xs:string"/>
                     <xs:element name="palletCSUCount" minOccurs="1" maxOccurs="1" type="xs:string"/>
                     <xs:element name="palletWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="palletLoadWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="palletNetWeight" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="overhangX" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
+                    <xs:element name="overhangY" minOccurs="1" maxOccurs="1" type="rpt:valueWUnit"/>
                     <xs:element name="view_palletsolution_front" type="xs:string"/>
                     <xs:element name="view_palletsolution_left" type="xs:string"/>
                     <xs:element name="view_palletsolution_right" type="xs:string"/>
                     <xs:element name="view_palletsolution_back" type="xs:string"/>
                     <xs:element name="view_palletSolution_iso" type="xs:string"/>
-                    <xs:element name="layers" minOccurs="1" maxOccurs="1">
+                    <xs:element name="layerPack" minOccurs="1" maxOccurs="unbounded">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="layer">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="layerCaseCount" type="xs:string"/>
-                                <xs:element name="layerCSUCount" type="xs:string"/>
-                                <xs:element name="layerWeight" type="xs:string"/>
-                                <xs:element name="layerNetWeight" type="xs:string"/>
-                                <xs:element name="layerLength" type="xs:string"/>
-                                <xs:element name="layerWidth" type="xs:string"/>
-                                <xs:element name="layerHeight" type="xs:string"/>
-                                <xs:element name="layerImage" type="xs:string"/>
-                              </xs:sequence>
-                            </xs:complexType>
-                          </xs:element>
+                          <xs:element name="layerPackCount" type="xs:string"/>
+                          <xs:element name="layerCSUCount" type="xs:string"/>
+                          <xs:element name="layerWeight" type="rpt:valueWUnit"/>
+                          <xs:element name="layerNetWeight" type="rpt:valueWUnit"/>
+                          <xs:element name="layerLength" type="rpt:valueWUnit"/>
+                          <xs:element name="layerWidth" type="rpt:valueWUnit"/>
+                          <xs:element name="layerHeight" type="rpt:valueWUnit"/>
+                          <xs:element name="maximumSpace" type="rpt:valueWUnit"/>
+                          <xs:element name="layerIndexes" type="xs:string"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>                    

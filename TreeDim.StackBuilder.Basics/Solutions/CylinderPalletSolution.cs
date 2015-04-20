@@ -191,8 +191,8 @@ namespace TreeDim.StackBuilder.Basics
                 return 100.0 * CylinderCount * Analysis.CylinderProperties.Volume
                     /
                     (
-                        (Analysis.PalletProperties.Length - Analysis.ConstraintSet.OverhangX)
-                        * (Analysis.PalletProperties.Width - Analysis.ConstraintSet.OverhangY)
+                        (Analysis.PalletProperties.Length + Analysis.ConstraintSet.OverhangX)
+                        * (Analysis.PalletProperties.Width + Analysis.ConstraintSet.OverhangY)
                         * (Analysis.ConstraintSet.MaximumPalletHeight - Analysis.PalletProperties.Height)
                     );
             }

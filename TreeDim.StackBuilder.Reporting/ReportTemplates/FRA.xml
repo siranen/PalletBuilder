@@ -113,4 +113,16 @@
   <str name="Dimensions">Dimensions</str>
   <str name="Net weight">Poid net</str>
   <str name="Wrapper weight">Poid fardelage</str>
+  <str name="Number of packs">Nombre de fardeaux</str>
+  <str name="Number of CSU">Nombre d'UC</str>
+  <str name="Dimensions">Dimensions</str>
+  <str name="Overall dimensions">Dimensions hors tout</str>
+  <str name="Load weight">Masse chargement</str>
+  <str name="Overhang length">Débord (longueur)</str>
+  <str name="Overhang width">Débord (largeur)</str>
+  <str name="Pack/CSU count"># Fardeaux/UC</str>
+  <str name="Weight/Netweight">Poid/Poid net</str>
+  <str name="Max space">Espace max.</str>
+  <str name="Layer indexes">Indices</str>
+  <str name="Image">Image</str>
 </strings>

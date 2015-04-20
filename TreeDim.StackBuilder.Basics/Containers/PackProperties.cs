@@ -196,6 +196,8 @@ namespace TreeDim.StackBuilder.Basics
                     return InnerHeight + 2.0 * _wrapper.Thickness(2);
             }
         }
+
+        public double Volume { get { return Length * Width * Height; } }
         #endregion
         #region Inner dimensions
         public double InnerLength { get { return _arrangement._iLength * _boxProperties.Dim(Dim0); } }
@@ -205,7 +207,13 @@ namespace TreeDim.StackBuilder.Basics
         #region Weight
         public double Weight { get { return InnerWeight + _wrapper.Weight; } }
         public double InnerWeight { get { return _arrangement.Number * _boxProperties.Weight; } }
-        public OptDouble NetWeight { get { return _arrangement.Number * _boxProperties.NetWeight; } }
+        public OptDouble NetWeight
+        {
+            get
+            {
+                return _arrangement.Number * _boxProperties.NetWeight; 
+            }
+        }
         #endregion
         #region Helpers
         public int Dim0 { get { return PackProperties.DimIndex0(_orientation); } }

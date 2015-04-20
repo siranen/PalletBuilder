@@ -165,11 +165,31 @@ namespace TreeDim.StackBuilder.Basics
         public int LayerCount { get { return _listLayers.Count; } }
         public int PackPerLayer { get { return _layer.Count; } }
         public int PackCount { get { return PackPerLayer * LayerCount; } }
-        public int ConsumerSalesUnit { get { return PackCount * _parentAnalysis.PackProperties.Arrangement.Number; } }
+        public int CSUCount { get { return PackCount * _parentAnalysis.PackProperties.Arrangement.Number; } }
+        public int InterlayerCount
+        {
+            get
+            {
+                int iCount = 0;
+                foreach (LayerDescriptor desc in _listLayers)
+                    iCount += desc.HasInterlayer ? 1 : 0;
+                return iCount;
+            } 
+        }
         public double LayerWeight { get { return PackPerLayer * _parentAnalysis.PackProperties.Weight; } }
-        public double PalletWeight { get { return LayerWeight * LayerCount + _parentAnalysis.PalletProperties.Weight; } }
+        public double PalletWeight
+        {
+            get
+            {
+                double weight = _parentAnalysis.PalletProperties.Weight;
+                double interlayerWeight = null != _parentAnalysis.InterlayerProperties ? _parentAnalysis.InterlayerProperties.Weight : 0.0;
+                foreach (LayerDescriptor desc in _listLayers)
+                    weight += LayerWeight + (desc.HasInterlayer ? 1 : 0) * interlayerWeight;
+                return weight; 
+            }
+        }
+        public double PalletLoadWeight { get { return PackCount * _parentAnalysis.PackProperties.Weight; } }
         public double PalletNetWeight { get { return PackCount * _parentAnalysis.PackProperties.NetWeight.Value; } }
-
         public double PalletLength { get { return BoundingBox.Length; } }
         public double PalletWidth { get { return BoundingBox.Width; } }
         public double PalletHeight
@@ -186,10 +206,27 @@ namespace TreeDim.StackBuilder.Basics
                 return height;
             }
         }
-        public double MaximumSpace
+        public double VolumeEfficiency
         {
-            get { return _layer.MaximumSpace; }
+            get
+            {
+                if (_parentAnalysis.ConstraintSet.MaximumPalletHeight.Activated)
+                {
+                    double loadMaxVolume = (_parentAnalysis.ConstraintSet.MaximumPalletHeight.Value - _parentAnalysis.PalletProperties.Height)
+                        * (_parentAnalysis.PalletProperties.Length + _parentAnalysis.ConstraintSet.OverhangX)
+                        * (_parentAnalysis.PalletProperties.Width + _parentAnalysis.ConstraintSet.OverhangY);
+                    return 100.0 * PackCount * _parentAnalysis.PackProperties.Volume / loadMaxVolume;
+                }
+                else
+                    return 0.0;
+            }
         }
+        public double OverhangX
+        { get { return 0.5 * (LoadBoundingBox.Length - _parentAnalysis.PalletProperties.Length); } }
+        public double OverhangY
+        { get { return 0.5 * (LoadBoundingBox.Width - _parentAnalysis.PalletProperties.Width); } }
+        public double MaximumSpace
+        { get { return _layer.MaximumSpace; } }
         #endregion
     }
 }

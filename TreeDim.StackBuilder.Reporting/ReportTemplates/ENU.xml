@@ -112,4 +112,16 @@
   <str name="Dimensions">Dimensions</str>
   <str name="Net weight">Net weight</str>
   <str name="Wrapper weight">Wrapper weight</str>
+  <str name="Number of packs">Number of packs</str>
+  <str name="Number of CSU">Number of CSU</str>
+  <str name="Dimensions">Dimensions</str>
+  <str name="Overall dimensions">Dimensions hors tout</str>
+  <str name="Load weight">Load weight</str>
+  <str name="Overhang length">Overhang (length)</str>
+  <str name="Overhang width">Overhang (width)</str>
+  <str name="Pack/CSU count"># Pack/CSU</str>
+  <str name="Weight/Netweight">Weight/Net weight</str>
+  <str name="Max space">Max. space</str>
+  <str name="Layer indexes">Indexes</str>
+  <str name="Image">Image</str>
 </strings>

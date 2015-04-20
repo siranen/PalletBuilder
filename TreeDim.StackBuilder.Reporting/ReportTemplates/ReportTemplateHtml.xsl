@@ -232,7 +232,7 @@
     <xsl:apply-templates select="bct_static"></xsl:apply-templates>
     <xsl:apply-templates select="bct_dynamic"></xsl:apply-templates>
   </xsl:template>
-  <!-- #### CASE ####-->
+  <!--#### CASE ####-->
   <xsl:template match="case">
     <h3>Case</h3>
     <table class="style1" cellpadding="3">
@@ -540,7 +540,7 @@
       </tr>
     </table>
   </xsl:template>
-  <!-- #### PALLET ####-->
+  <!--#### PALLET ####-->
   <xsl:template match="pallet">
     <h3>
       <xsl:value-of select="$loc/str[@name='Pallet']"/>
@@ -1068,7 +1068,7 @@
       </tr>
     </table>
   </xsl:template>
-  <!-- #### CASE OF BOXES #### -->
+  <!--#### CASE OF BOXES #### -->
   <xsl:template match="caseOfBoxes">
     <h3>
       <xsl:value-of select="$loc/str[@name='Case of boxes']"/>
@@ -1290,7 +1290,7 @@
       </xsl:apply-templates>
     </table>
   </xsl:template>
-  <!-- #### CYLINDER PALLET CONSTRAINT SET #### -->
+  <!--#### CYLINDER PALLET CONSTRAINT SET #### -->
   <xsl:template match="cylinderPalletConstraintSet">
     <h3>
       <xsl:value-of select="$loc/str[@name='Constraint set']"/>
@@ -1316,7 +1316,7 @@
       </xsl:apply-templates>
     </table>
   </xsl:template>
-  <!-- #### HCYLINDER PALLET CONSTRAINT SET #### -->
+  <!--#### HCYLINDER PALLET CONSTRAINT SET #### -->
   <xsl:template match="hCylinderPalletConstraintSet">
     <h3>
       <xsl:value-of select="$loc/str[@name='Constraint set']"/>
@@ -1553,7 +1553,7 @@
     </h3>
     <table class="style1">
       <tr>
-        <td class="style2">
+        <td class="style2" colspan="1">
           <b>
             <xsl:value-of select="$loc/str[@name='Title']"/>
           </b>
@@ -1562,6 +1562,153 @@
           <xsl:value-of select="title"></xsl:value-of>
         </td>
       </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Efficiency']"/> (%)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="efficiency"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Overall dimensions']"/> (<xsl:value-of select="length/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="length/value"/>*<xsl:value-of select="width/value"/>*<xsl:value-of select="height/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Number of packs']"/>
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="palletPackCount"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Number of CSU']"/>
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="palletCSUCount"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Pallet weight']"/>(<xsl:value-of select="palletWeight/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="palletWeight/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Load weight']"/> (<xsl:value-of select="palletLoadWeight/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="palletLoadWeight/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+           <xsl:value-of select="$loc/str[@name='Net weight']"/> (<xsl:value-of select="palletNetWeight/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="palletNetWeight/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Overhang length']"/> (<xsl:value-of select="overhangX/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="overhangX/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Overhang width']"/> (<xsl:value-of select="overhangY/unit"/>)
+          </b>
+        </td>
+        <td class="style3" colspan="3">
+          <xsl:value-of select="overhangY/value"/>
+        </td>
+      </tr>
+      <tr>
+        <td align="middle">
+          <xsl:apply-templates select="view_palletsolution_front"></xsl:apply-templates>
+        </td>
+        <td align="middle">
+          <xsl:apply-templates select="view_palletsolution_left"></xsl:apply-templates>
+        </td>
+        <td align="middle">
+          <xsl:apply-templates select="view_palletsolution_right"></xsl:apply-templates>
+        </td>
+        <td align="middle">
+          <xsl:apply-templates select="view_palletsolution_back"></xsl:apply-templates>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" align="middle">
+          <xsl:apply-templates select="view_palletsolution_iso"></xsl:apply-templates>
+        </td>
+      </tr>
+    </table>
+    <h4>
+      <xsl:value-of select="$loc/str[@name='Layers']"/>
+    </h4>
+    <table class="style1">
+      <tr>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Pack/CSU count']"/>
+          </b>
+        </td>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Weight/Netweight']"/>
+          </b>
+        </td>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Dimensions']"/>
+          </b>
+        </td>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Max space']"/>
+          </b>
+        </td>
+        <td class="style2" colspan="1">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Layer indexes']"/>
+          </b>
+        </td>
+        <td class="style2" colspan="4">
+          <b>
+            <xsl:value-of select="$loc/str[@name='Image']"/>
+          </b>
+        </td>
+      </tr>
+      <xsl:apply-templates select="layerPack"/>
     </table>
   </xsl:template>
   <!-- #### CYLINDER PALLET SOLUTION #### -->
@@ -1870,6 +2017,7 @@
   <xsl:template match="view_case_iso">
     <img src="images\view_case_iso.png" width="150" height="150" align="middle"></img>
   </xsl:template>
+  <!--PACK-->
   <xsl:template match="view_pack_iso">
     <img src="images\view_pack_iso.png" width="150" height="150" align="middle"></img>
   </xsl:template>
@@ -2027,6 +2175,29 @@
         <xsl:if test="layerId='2'">
           <img src="images\layerImage2.png" width="150" height="150"/>
         </xsl:if>
+      </td>
+    </tr>
+  </xsl:template>
+  <!--LAYER PACK SOLUTION-->
+  <xsl:template match="layerPack">
+    <tr>
+      <td class="style3" colspan="1">
+        <xsl:value-of select="layerPackCount"/>/<xsl:value-of select="layerCSUCount"/>
+      </td>
+      <td class="style3" colspan="1">
+         <xsl:value-of select="layerWeight/value"/>/<xsl:value-of select="layerNetWeight/value"/>
+      </td>
+      <td class="style3" colspan="1">
+        <xsl:value-of select="layerLength/value"/>*<xsl:value-of select="LayerWidth/value"/>*<xsl:value-of select="LayerHeight/value"/>
+      </td>
+      <td class="style3" colspan="1">
+        <xsl:value-of select="maximumSpace/value"/>
+      </td>
+      <td class="style3" colspan="1">
+        <xsl:value-of select="layerIndexes"/>
+      </td>
+      <td class="style3" colspan="4">
+        <xsl:value-of select="layerImage"/>
       </td>
     </tr>
   </xsl:template>
