@@ -1286,6 +1286,7 @@ namespace TreeDim.StackBuilder.Basics
                 sInsideHeight = eltBoxProperties.Attributes["InsideHeight"].Value;
             }
             string sweight = eltBoxProperties.Attributes["Weight"].Value;
+            OptDouble optNetWeight = LoadOptDouble(eltBoxProperties, "NetWeight", UnitsManager.UnitType.UT_MASS);
 
             bool hasInsideDimensions = eltBoxProperties.HasAttribute("InsideLength");
             if (hasInsideDimensions)
@@ -1343,6 +1344,7 @@ namespace TreeDim.StackBuilder.Basics
             boxProperties.ShowTape = hasTape;
             boxProperties.TapeColor = tapeColor;
             boxProperties.TapeWidth = UnitsManager.ConvertLengthFrom(tapeWidth, _unitSystem);
+            boxProperties.NetWeight = optNetWeight;
         }
 
         private void LoadPackProperties(XmlElement eltPackProperties)
@@ -1364,6 +1366,11 @@ namespace TreeDim.StackBuilder.Basics
                 , HalfAxis.Parse(sOrientation)
                 , wrapper);
             packProperties.Guid = new Guid(sid);
+            if (eltPackProperties.HasAttribute("OuterDimensions"))
+            {
+                Vector3D outerDimensions = Vector3D.Parse(eltPackProperties.Attributes["OuterDimensions"].Value);
+                packProperties.ForceOuterDimensions(outerDimensions);
+            }
         }
 
         private PackWrapper LoadWrapper(XmlElement xmlWrapperElt)
@@ -1390,7 +1397,9 @@ namespace TreeDim.StackBuilder.Basics
             }
             else if (sType == "WT_CARDBOARD")
             {
-                string sWalls = xmlWrapperElt.Attributes["NumberOfWalls"].Value;
+                string sWalls = "1 1 1";
+                if (xmlWrapperElt.HasAttribute("NumberOfWalls"))
+                    sWalls = xmlWrapperElt.Attributes["NumberOfWalls"].Value;
                 int[] walls = sWalls.Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
                 WrapperCardboard wrapper = new WrapperCardboard(thickness, weight, wrapperColor);
                 wrapper.SetNoWalls(walls[0], walls[1], walls[2]);
@@ -1398,7 +1407,9 @@ namespace TreeDim.StackBuilder.Basics
             }
             else if (sType == "WT_TRAY")
             {
-                string sWalls = xmlWrapperElt.Attributes["NumberOfWalls"].Value;
+                string sWalls = "1 1 1";
+                if (xmlWrapperElt.HasAttribute("NumberOfWalls"))
+                    sWalls = xmlWrapperElt.Attributes["NumberOfWalls"].Value;
                 int[] walls = sWalls.Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
 
                 string sHeight = xmlWrapperElt.Attributes["Height"].Value;
@@ -2426,7 +2437,7 @@ namespace TreeDim.StackBuilder.Basics
             // create solution
             PackPalletSolution sol = new PackPalletSolution(null, stitle, layer as BoxLayer);
             foreach (LayerDescriptor desc in layerDescriptors)
-                sol.AddLayer(desc.HasInterlayer, desc.Swapped);
+                sol.AddLayer(desc.Swapped, desc.HasInterlayer);
             return sol;
         }
 
@@ -3019,6 +3030,8 @@ namespace TreeDim.StackBuilder.Basics
            // wall distribution
            XmlAttribute wallDistribAttrib = xmlDoc.CreateAttribute("NumberOfWalls");
            wallDistribAttrib.Value = string.Format("{0} {1} {2}", wrapper.Wall(0), wrapper.Wall(1), wrapper.Wall(2));
+           wrapperElt.Attributes.Append(wallDistribAttrib);
+           // tray specific
            WrapperTray wrapperTray = wrapper as WrapperTray;
            if (null != wrapperTray)
            {

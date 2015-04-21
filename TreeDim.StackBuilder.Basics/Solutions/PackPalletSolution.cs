@@ -60,6 +60,29 @@ namespace TreeDim.StackBuilder.Basics
         {
             get { return _layer; }
         }
+        public BoxLayer LayerSwapped
+        {
+            get
+            {
+                Matrix4D matRot = new Matrix4D(
+                    -1.0, 0.0, 0.0, _parentAnalysis.PalletProperties.Length
+                    , 0.0, -1.0, 0.0, _parentAnalysis.PalletProperties.Width
+                    , 0.0, 0.0, 1.0, 0.0
+                    , 0.0, 0.0, 0.0, 1.0);
+                Transform3D swapTransform = new Transform3D(matRot);
+                BoxLayer layer = new BoxLayer(_layer.ZLow, _layer.PatternName);
+                foreach (BoxPosition b in _layer)
+                {
+                    layer.Add(
+                        new BoxPosition(
+                            swapTransform.transform(b.Position)
+                            , HalfAxis.Transform(b.DirectionLength, swapTransform)
+                            , HalfAxis.Transform(b.DirectionWidth, swapTransform))
+                            );
+                }
+                return layer;
+            }
+        }
         public List<LayerDescriptor> Layers
         {
             get { return _listLayers; } 
@@ -227,6 +250,87 @@ namespace TreeDim.StackBuilder.Basics
         { get { return 0.5 * (LoadBoundingBox.Width - _parentAnalysis.PalletProperties.Width); } }
         public double MaximumSpace
         { get { return _layer.MaximumSpace; } }
+        #endregion
+
+        #region LayerType
+        public int NoLayerTypes
+        {
+            get
+            {
+                bool hasNonSwappedLayer = false, hasSwappedLayer = false;
+                foreach (LayerDescriptor desc in _listLayers)
+                { 
+                    if (!desc.Swapped)  hasNonSwappedLayer = true;
+                    if (desc.Swapped)   hasSwappedLayer = true;
+                }
+                return (hasNonSwappedLayer ? 1 : 0) + (hasSwappedLayer ? 1 : 0);
+            }
+        }
+        public LayerType GetLayerType(int i)
+        {
+            return new LayerType(this, i == 1);
+        }
+        #endregion        
+    }
+
+    public class LayerType
+    {
+        #region Data members
+        private PackPalletSolution _sol;
+        private bool _swapped;
+        #endregion
+
+        #region Constructor
+        public LayerType(PackPalletSolution sol, bool swapped)
+        { _sol = sol; _swapped = swapped; }
+        #endregion
+
+        #region Public methods
+        public int PackCount
+        {
+            get { return _sol.Layer.BoxCount; }
+        }
+        public int CSUCount
+        {
+            get { return PackCount * _sol.Analysis.PackProperties.Arrangement.Number; }
+        }
+        public double LayerWeight
+        {
+            get { return PackCount * _sol.Analysis.PackProperties.Weight; }
+        }
+        public OptDouble LayerNetWeight
+        {
+            get { return PackCount * _sol.Analysis.PackProperties.NetWeight; }
+        }
+        public double Length
+        { get { return _sol.Layer.BoundingBox(_sol.Analysis.PackProperties).Length; } }
+        public double Width
+        { get { return _sol.Layer.BoundingBox(_sol.Analysis.PackProperties).Width; } }
+        public double Height
+        { get { return _sol.Layer.BoundingBox(_sol.Analysis.PackProperties).Height; } }
+        public double MaximumSpace
+        { get { return _sol.Layer.MaximumSpace; } }
+        public string LayerIndexes
+        {
+            get
+            {
+                bool layerAdded = false;
+                int iLayer = 1;
+                string indexes = string.Empty;
+                foreach (LayerDescriptor desc in _sol.Layers)
+                {
+                    if (desc.Swapped == _swapped)
+                    {
+                        if (layerAdded)
+                            indexes += ",";
+                        indexes += string.Format("{0}", iLayer);
+                        layerAdded = true;
+                    }
+                    ++iLayer;
+                }
+                return indexes;
+            }
+        }
         #endregion
     }
 }

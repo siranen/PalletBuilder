@@ -1550,6 +1550,40 @@ namespace TreeDim.StackBuilder.Reporting
                 elemImage.Attributes.Append(styleAttribute);
                 elemSolution.AppendChild(elemImage);
             }
+
+            // --- layers
+            for (int i=0; i<sol.NoLayerTypes; ++i)
+            {
+                XmlElement elemLayerPack = xmlDoc.CreateElement("layerPack", ns);
+                elemSolution.AppendChild(elemLayerPack);
+
+                LayerType layerType = sol.GetLayerType(i);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerPackCount", layerType.PackCount);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerCSUCount", layerType.CSUCount);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerWeight", UnitsManager.MassUnitString, layerType.LayerWeight);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerNetWeight", UnitsManager.MassUnitString, layerType.LayerNetWeight);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerLength", UnitsManager.LengthUnitString, layerType.Length);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerWidth", UnitsManager.LengthUnitString, layerType.Width);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerHeight", UnitsManager.LengthUnitString, layerType.Height);
+                AppendElementValue(xmlDoc, elemLayerPack, "maximumSpace", UnitsManager.LengthUnitString, layerType.MaximumSpace);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerIndexes", layerType.LayerIndexes);
+
+                // instantiate graphics
+                Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
+                // set camera position 
+                graphics.CameraPosition = Graphics3D.Corner_180;
+                // instantiate solution viewer
+                PackPalletSolutionViewer sv = new PackPalletSolutionViewer(sol);
+                sv.ShowDimensions = true;
+                sv.DrawLayer(graphics, i);
+                graphics.Flush();
+                string viewName = string.Format("view_layer_iso{0}", i);
+                SaveImageAs(graphics.Bitmap, viewName + ".png");
+                // ---
+                XmlElement elemImage = xmlDoc.CreateElement("imagePackLayer", ns);
+                elemImage.InnerText = "images\\" + viewName + ".png";
+                elemLayerPack.AppendChild(elemImage);
+            }
         }
 
         private void AppendCylinderPalletSolutionElement(ReportData inputData, XmlElement elemPalletAnalysis, XmlDocument xmlDoc)
@@ -2476,7 +2510,7 @@ namespace TreeDim.StackBuilder.Reporting
                 createdElement.AppendChild(unitElement);
                 // value
                 XmlElement valueElement = xmlDoc.CreateElement("value", xmlDoc.DocumentElement.NamespaceURI);
-                valueElement.InnerText = string.Format("{0:F}", optValue.Value);
+                valueElement.InnerText = string.Format("{0:0.#}", optValue.Value);
                 createdElement.AppendChild(valueElement);
             }
         }
@@ -2491,13 +2525,13 @@ namespace TreeDim.StackBuilder.Reporting
             createdElement.AppendChild(unitElement);
             // value
             XmlElement valueElement = xmlDoc.CreateElement("value", xmlDoc.DocumentElement.NamespaceURI);
-            valueElement.InnerText = string.Format("{0:F}", eltValue);
+            valueElement.InnerText = string.Format("{0:0.#}", eltValue);
             createdElement.AppendChild(valueElement);
         }
         private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, double eltValue)
         {
             XmlElement createdElement = xmlDoc.CreateElement(eltName, xmlDoc.DocumentElement.NamespaceURI);
-            createdElement.InnerText = string.Format("{0}", eltValue);
+            createdElement.InnerText = string.Format("{0:0.#}", eltValue);
             parent.AppendChild(createdElement);
         }
         private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, int eltValue)

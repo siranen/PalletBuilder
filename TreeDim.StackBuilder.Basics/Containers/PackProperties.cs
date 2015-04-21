@@ -259,6 +259,14 @@ namespace TreeDim.StackBuilder.Basics
             height = arrangement._iHeight * boxProperties.Dim(3 - PackProperties.DimIndex0(boxOrientation) - PackProperties.DimIndex1(boxOrientation));
         }
         #endregion
+
+        #region Dependancies
+        protected override void RemoveItselfFromDependancies()
+        {
+            _boxProperties.RemoveDependancy(this);
+            base.RemoveItselfFromDependancies();
+        }
+        #endregion
     }
     #endregion
 }

@@ -860,6 +860,9 @@
       <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisPackPallet.fr-FR.resx">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNewBase.fr-FR.resx">
       <DependentUpon>FormNewBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -1052,6 +1055,9 @@
     <EmbeddedResource Include="FormNewInterlayer.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FormNewInterlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPack.fr-FR.resx">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewPack.resx">
       <DependentUpon>FormNewPack.cs</DependentUpon>

@@ -340,6 +340,8 @@
                           <xs:element name="layerHeight" type="rpt:valueWUnit"/>
                           <xs:element name="maximumSpace" type="rpt:valueWUnit"/>
                           <xs:element name="layerIndexes" type="xs:string"/>
+                          <xs:element name="view_layer_iso0" type="xs:string"/>
+                          <xs:element name="view_layer_iso1" type="xs:string"/>                          
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>                    

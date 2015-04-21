@@ -104,8 +104,8 @@
             // 
             // nudLength
             // 
-            this.nudLength.DecimalPlaces = 3;
             resources.ApplyResources(this.nudLength, "nudLength");
+            this.nudLength.DecimalPlaces = 3;
             this.nudLength.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -126,8 +126,8 @@
             // 
             // nudThickness
             // 
-            this.nudThickness.DecimalPlaces = 3;
             resources.ApplyResources(this.nudThickness, "nudThickness");
+            this.nudThickness.DecimalPlaces = 3;
             this.nudThickness.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -143,6 +143,7 @@
             // 
             // gbDimensions
             // 
+            resources.ApplyResources(this.gbDimensions, "gbDimensions");
             this.gbDimensions.Controls.Add(this.uLengthThickness);
             this.gbDimensions.Controls.Add(this.uLengthWidth);
             this.gbDimensions.Controls.Add(this.uLengthLength);
@@ -152,7 +153,6 @@
             this.gbDimensions.Controls.Add(this.lbThickness);
             this.gbDimensions.Controls.Add(this.lbWidth);
             this.gbDimensions.Controls.Add(this.lbLength);
-            resources.ApplyResources(this.gbDimensions, "gbDimensions");
             this.gbDimensions.Name = "gbDimensions";
             this.gbDimensions.TabStop = false;
             // 
@@ -173,8 +173,8 @@
             // 
             // nudWidth
             // 
-            this.nudWidth.DecimalPlaces = 3;
             resources.ApplyResources(this.nudWidth, "nudWidth");
+            this.nudWidth.DecimalPlaces = 3;
             this.nudWidth.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -215,12 +215,12 @@
             // 
             // cbColor
             // 
+            resources.ApplyResources(this.cbColor, "cbColor");
             this.cbColor.Color = System.Drawing.Color.Beige;
             this.cbColor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbColor.DropDownHeight = 1;
             this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColor.DropDownWidth = 1;
-            resources.ApplyResources(this.cbColor, "cbColor");
             this.cbColor.Items.AddRange(new object[] {
             resources.GetString("cbColor.Items"),
             resources.GetString("cbColor.Items1"),
@@ -254,19 +254,21 @@
             resources.GetString("cbColor.Items29"),
             resources.GetString("cbColor.Items30"),
             resources.GetString("cbColor.Items31"),
-            resources.GetString("cbColor.Items32")});
+            resources.GetString("cbColor.Items32"),
+            resources.GetString("cbColor.Items33"),
+            resources.GetString("cbColor.Items34")});
             this.cbColor.Name = "cbColor";
             this.cbColor.SelectedColorChanged += new System.EventHandler(this.onInterlayerPropertyChanged);
             // 
             // nudWeight
             // 
+            resources.ApplyResources(this.nudWeight, "nudWeight");
             this.nudWeight.DecimalPlaces = 3;
             this.nudWeight.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            resources.ApplyResources(this.nudWeight, "nudWeight");
             this.nudWeight.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -282,10 +284,10 @@
             // 
             // gbWeight
             // 
+            resources.ApplyResources(this.gbWeight, "gbWeight");
             this.gbWeight.Controls.Add(this.uMassWeight);
             this.gbWeight.Controls.Add(this.nudWeight);
             this.gbWeight.Controls.Add(this.lbWeight);
-            resources.ApplyResources(this.gbWeight, "gbWeight");
             this.gbWeight.Name = "gbWeight";
             this.gbWeight.TabStop = false;
             // 
@@ -296,9 +298,9 @@
             // 
             // gbColor
             // 
+            resources.ApplyResources(this.gbColor, "gbColor");
             this.gbColor.Controls.Add(this.cbColor);
             this.gbColor.Controls.Add(this.lbColor);
-            resources.ApplyResources(this.gbColor, "gbColor");
             this.gbColor.Name = "gbColor";
             this.gbColor.TabStop = false;
             // 
@@ -310,17 +312,17 @@
             // 
             // statusStripDef
             // 
+            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelDef});
-            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Name = "statusStripDef";
             this.statusStripDef.SizingGrip = false;
             // 
             // toolStripStatusLabelDef
             // 
+            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
             this.toolStripStatusLabelDef.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
-            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
             // 
             // FormNewInterlayer
             // 

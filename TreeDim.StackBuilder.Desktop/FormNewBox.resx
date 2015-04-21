@@ -1008,6 +1008,15 @@
   <data name="cbColor.Items87" xml:space="preserve">
     <value>Color</value>
   </data>
+  <data name="cbColor.Items88" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="cbColor.Items89" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="cbColor.Items90" xml:space="preserve">
+    <value>Color</value>
+  </data>
   <data name="cbColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>177, 37</value>
   </data>
@@ -1107,6 +1116,9 @@
   <data name="vcWeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
+  <data name="vcWeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
   <data name="vcWeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 20</value>
   </data>
@@ -1120,7 +1132,7 @@
     <value>vcWeight</value>
   </data>
   <data name="&gt;&gt;vcWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.ValueControl, TreeDim.StackBuilder.Basics, Version=2.0.10.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;vcWeight.Parent" xml:space="preserve">
     <value>gbWeight</value>
@@ -1143,11 +1155,19 @@
   <data name="ovcNetWeight.Text" xml:space="preserve">
     <value>Net weight</value>
   </data>
+  <data name="ovcNetWeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
   <data name="&gt;&gt;ovcNetWeight.Name" xml:space="preserve">
     <value>ovcNetWeight</value>
   </data>
   <data name="&gt;&gt;ovcNetWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.10.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ovcNetWeight.Parent" xml:space="preserve">
     <value>gbWeight</value>
@@ -1294,7 +1314,7 @@
     <value>graphCtrl</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.10.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1633,6 +1653,15 @@
     <value>Color</value>
   </data>
   <data name="cbTapeColor.Items88" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="cbTapeColor.Items89" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="cbTapeColor.Items90" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="cbTapeColor.Items91" xml:space="preserve">
     <value>Color</value>
   </data>
   <data name="cbTapeColor.Location" type="System.Drawing.Point, System.Drawing">

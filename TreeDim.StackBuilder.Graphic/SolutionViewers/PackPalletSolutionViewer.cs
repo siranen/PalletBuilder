@@ -90,6 +90,23 @@ namespace TreeDim.StackBuilder.Graphics
             }
         }
 
+        public void DrawLayer(Graphics3D graphics, int layerIndex)
+        {
+            // sanity check
+            if (null == _solution) return;
+
+            if (_showDimensions)
+            {
+                BoxLayer layer = layerIndex %2 == 0 ? _solution.Layer : _solution.LayerSwapped;
+                uint pickId = 0;
+                foreach (BoxPosition bPosition in layer)
+                    graphics.AddBox(new Pack(pickId++, _solution.Analysis.PackProperties, bPosition));
+                graphics.AddDimensions(
+                    new DimensionCube(layer.BoundingBox(_solution.Analysis.PackProperties)
+                        , Color.Black, false));
+            }
+        }
+
         private BBox3D BoundingBoxDim(int index)
         {
             switch (index)

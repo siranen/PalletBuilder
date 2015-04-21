@@ -61,83 +61,59 @@
             // 
             // lbPack
             // 
-            this.lbPack.AutoSize = true;
-            this.lbPack.Location = new System.Drawing.Point(13, 79);
+            resources.ApplyResources(this.lbPack, "lbPack");
             this.lbPack.Name = "lbPack";
-            this.lbPack.Size = new System.Drawing.Size(32, 13);
-            this.lbPack.TabIndex = 7;
-            this.lbPack.Text = "Pack";
             // 
             // lbPallet
             // 
-            this.lbPallet.AutoSize = true;
-            this.lbPallet.Location = new System.Drawing.Point(327, 79);
+            resources.ApplyResources(this.lbPallet, "lbPallet");
             this.lbPallet.Name = "lbPallet";
-            this.lbPallet.Size = new System.Drawing.Size(33, 13);
-            this.lbPallet.TabIndex = 8;
-            this.lbPallet.Text = "Pallet";
             // 
             // cbPack
             // 
+            resources.ApplyResources(this.cbPack, "cbPack");
             this.cbPack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPack.FormattingEnabled = true;
-            this.cbPack.Location = new System.Drawing.Point(111, 76);
             this.cbPack.Name = "cbPack";
-            this.cbPack.Size = new System.Drawing.Size(164, 21);
-            this.cbPack.TabIndex = 9;
             this.cbPack.SelectedIndexChanged += new System.EventHandler(this.onConstraintSetModified);
             // 
             // cbPallet
             // 
+            resources.ApplyResources(this.cbPallet, "cbPallet");
             this.cbPallet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPallet.FormattingEnabled = true;
-            this.cbPallet.Location = new System.Drawing.Point(407, 76);
             this.cbPallet.Name = "cbPallet";
-            this.cbPallet.Size = new System.Drawing.Size(165, 21);
-            this.cbPallet.TabIndex = 10;
             this.cbPallet.SelectedIndexChanged += new System.EventHandler(this.onConstraintSetModified);
             // 
             // chkbInterlayer
             // 
-            this.chkbInterlayer.AutoSize = true;
-            this.chkbInterlayer.Location = new System.Drawing.Point(13, 111);
+            resources.ApplyResources(this.chkbInterlayer, "chkbInterlayer");
             this.chkbInterlayer.Name = "chkbInterlayer";
-            this.chkbInterlayer.Size = new System.Drawing.Size(69, 17);
-            this.chkbInterlayer.TabIndex = 11;
-            this.chkbInterlayer.Text = "Interlayer";
             this.chkbInterlayer.UseVisualStyleBackColor = true;
             this.chkbInterlayer.CheckedChanged += new System.EventHandler(this.onInterlayerChecked);
             // 
             // cbInterlayer
             // 
+            resources.ApplyResources(this.cbInterlayer, "cbInterlayer");
             this.cbInterlayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInterlayer.FormattingEnabled = true;
-            this.cbInterlayer.Location = new System.Drawing.Point(111, 109);
             this.cbInterlayer.Name = "cbInterlayer";
-            this.cbInterlayer.Size = new System.Drawing.Size(164, 21);
-            this.cbInterlayer.TabIndex = 12;
             this.cbInterlayer.SelectedIndexChanged += new System.EventHandler(this.onConstraintSetModified);
             // 
             // lbInterlayerPeriod
             // 
-            this.lbInterlayerPeriod.AutoSize = true;
-            this.lbInterlayerPeriod.Location = new System.Drawing.Point(327, 136);
+            resources.ApplyResources(this.lbInterlayerPeriod, "lbInterlayerPeriod");
             this.lbInterlayerPeriod.Name = "lbInterlayerPeriod";
-            this.lbInterlayerPeriod.Size = new System.Drawing.Size(82, 13);
-            this.lbInterlayerPeriod.TabIndex = 13;
-            this.lbInterlayerPeriod.Text = "Interlayer period";
             // 
             // nudInterlayerPeriod
             // 
-            this.nudInterlayerPeriod.Location = new System.Drawing.Point(469, 134);
+            resources.ApplyResources(this.nudInterlayerPeriod, "nudInterlayerPeriod");
             this.nudInterlayerPeriod.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudInterlayerPeriod.Name = "nudInterlayerPeriod";
-            this.nudInterlayerPeriod.Size = new System.Drawing.Size(60, 20);
-            this.nudInterlayerPeriod.TabIndex = 14;
             this.nudInterlayerPeriod.Value = new decimal(new int[] {
             1,
             0,
@@ -146,34 +122,24 @@
             // 
             // chkbInterlayerFirstLayer
             // 
-            this.chkbInterlayerFirstLayer.AutoSize = true;
-            this.chkbInterlayerFirstLayer.Location = new System.Drawing.Point(327, 111);
+            resources.ApplyResources(this.chkbInterlayerFirstLayer, "chkbInterlayerFirstLayer");
             this.chkbInterlayerFirstLayer.Name = "chkbInterlayerFirstLayer";
-            this.chkbInterlayerFirstLayer.Size = new System.Drawing.Size(129, 17);
-            this.chkbInterlayerFirstLayer.TabIndex = 15;
-            this.chkbInterlayerFirstLayer.Text = "Insert before first layer";
             this.chkbInterlayerFirstLayer.UseVisualStyleBackColor = true;
             // 
             // lbLayerSwapPeriod
             // 
-            this.lbLayerSwapPeriod.AutoSize = true;
-            this.lbLayerSwapPeriod.Location = new System.Drawing.Point(13, 168);
+            resources.ApplyResources(this.lbLayerSwapPeriod, "lbLayerSwapPeriod");
             this.lbLayerSwapPeriod.Name = "lbLayerSwapPeriod";
-            this.lbLayerSwapPeriod.Size = new System.Drawing.Size(93, 13);
-            this.lbLayerSwapPeriod.TabIndex = 16;
-            this.lbLayerSwapPeriod.Text = "Layer swap period";
             // 
             // nudSwapPeriod
             // 
-            this.nudSwapPeriod.Location = new System.Drawing.Point(111, 164);
+            resources.ApplyResources(this.nudSwapPeriod, "nudSwapPeriod");
             this.nudSwapPeriod.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudSwapPeriod.Name = "nudSwapPeriod";
-            this.nudSwapPeriod.Size = new System.Drawing.Size(60, 20);
-            this.nudSwapPeriod.TabIndex = 17;
             this.nudSwapPeriod.Value = new decimal(new int[] {
             1,
             0,
@@ -183,197 +149,151 @@
             // 
             // gbOverhang
             // 
+            resources.ApplyResources(this.gbOverhang, "gbOverhang");
             this.gbOverhang.Controls.Add(this.uCtrlOptOverhangYMin);
             this.gbOverhang.Controls.Add(this.uCtrlOptOverhangXMin);
             this.gbOverhang.Controls.Add(this.uCtrlOverhangY);
             this.gbOverhang.Controls.Add(this.uCtrlOverhangX);
-            this.gbOverhang.Location = new System.Drawing.Point(0, 194);
             this.gbOverhang.Name = "gbOverhang";
-            this.gbOverhang.Size = new System.Drawing.Size(584, 62);
-            this.gbOverhang.TabIndex = 18;
             this.gbOverhang.TabStop = false;
-            this.gbOverhang.Text = "Overhang";
             // 
             // uCtrlOptOverhangYMin
             // 
-            this.uCtrlOptOverhangYMin.Location = new System.Drawing.Point(296, 39);
+            resources.ApplyResources(this.uCtrlOptOverhangYMin, "uCtrlOptOverhangYMin");
             this.uCtrlOptOverhangYMin.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.uCtrlOptOverhangYMin.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptOverhangYMin.Name = "uCtrlOptOverhangYMin";
-            this.uCtrlOptOverhangYMin.Size = new System.Drawing.Size(272, 20);
-            this.uCtrlOptOverhangYMin.TabIndex = 2;
-            this.uCtrlOptOverhangYMin.Text = "Width (Min.)";
             this.uCtrlOptOverhangYMin.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOptOverhangYMin.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptOverhangYMin.Value")));
             this.uCtrlOptOverhangYMin.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptOverhangXMin
             // 
-            this.uCtrlOptOverhangXMin.Location = new System.Drawing.Point(296, 14);
+            resources.ApplyResources(this.uCtrlOptOverhangXMin, "uCtrlOptOverhangXMin");
             this.uCtrlOptOverhangXMin.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.uCtrlOptOverhangXMin.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptOverhangXMin.Name = "uCtrlOptOverhangXMin";
-            this.uCtrlOptOverhangXMin.Size = new System.Drawing.Size(272, 20);
-            this.uCtrlOptOverhangXMin.TabIndex = 0;
-            this.uCtrlOptOverhangXMin.Text = "Length (Min.)";
             this.uCtrlOptOverhangXMin.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOptOverhangXMin.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptOverhangXMin.Value")));
             this.uCtrlOptOverhangXMin.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOverhangY
             // 
-            this.uCtrlOverhangY.Location = new System.Drawing.Point(6, 39);
+            resources.ApplyResources(this.uCtrlOverhangY, "uCtrlOverhangY");
             this.uCtrlOverhangY.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.uCtrlOverhangY.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOverhangY.Name = "uCtrlOverhangY";
-            this.uCtrlOverhangY.Size = new System.Drawing.Size(269, 20);
-            this.uCtrlOverhangY.TabIndex = 1;
-            this.uCtrlOverhangY.Text = "Width (Max.)";
             this.uCtrlOverhangY.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangY.Value = 0D;
             this.uCtrlOverhangY.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOverhangX
             // 
-            this.uCtrlOverhangX.Location = new System.Drawing.Point(6, 14);
+            resources.ApplyResources(this.uCtrlOverhangX, "uCtrlOverhangX");
             this.uCtrlOverhangX.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.uCtrlOverhangX.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOverhangX.Name = "uCtrlOverhangX";
-            this.uCtrlOverhangX.Size = new System.Drawing.Size(269, 20);
-            this.uCtrlOverhangX.TabIndex = 0;
-            this.uCtrlOverhangX.Text = "Length (Max.)";
             this.uCtrlOverhangX.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangX.Value = 0D;
             this.uCtrlOverhangX.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMinimumSpace
             // 
-            this.uCtrlOptMinimumSpace.Location = new System.Drawing.Point(6, 262);
+            resources.ApplyResources(this.uCtrlOptMinimumSpace, "uCtrlOptMinimumSpace");
             this.uCtrlOptMinimumSpace.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             65536});
-            this.uCtrlOptMinimumSpace.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptMinimumSpace.Name = "uCtrlOptMinimumSpace";
-            this.uCtrlOptMinimumSpace.Size = new System.Drawing.Size(269, 20);
-            this.uCtrlOptMinimumSpace.TabIndex = 19;
-            this.uCtrlOptMinimumSpace.Text = "Minimum space";
             this.uCtrlOptMinimumSpace.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOptMinimumSpace.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMinimumSpace.Value")));
             this.uCtrlOptMinimumSpace.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.uCtrlOptMaximumWeight);
             this.groupBox1.Controls.Add(this.uCtrlOptMaximumHeight);
-            this.groupBox1.Location = new System.Drawing.Point(0, 296);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(283, 70);
-            this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Stop stacking when:";
             // 
             // uCtrlOptMaximumWeight
             // 
-            this.uCtrlOptMaximumWeight.Location = new System.Drawing.Point(7, 44);
+            resources.ApplyResources(this.uCtrlOptMaximumWeight, "uCtrlOptMaximumWeight");
             this.uCtrlOptMaximumWeight.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.uCtrlOptMaximumWeight.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptMaximumWeight.Name = "uCtrlOptMaximumWeight";
-            this.uCtrlOptMaximumWeight.Size = new System.Drawing.Size(268, 20);
-            this.uCtrlOptMaximumWeight.TabIndex = 1;
-            this.uCtrlOptMaximumWeight.Text = "Pallet weight reaches";
             this.uCtrlOptMaximumWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
             this.uCtrlOptMaximumWeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumWeight.Value")));
             this.uCtrlOptMaximumWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMaximumHeight
             // 
-            this.uCtrlOptMaximumHeight.Location = new System.Drawing.Point(7, 19);
+            resources.ApplyResources(this.uCtrlOptMaximumHeight, "uCtrlOptMaximumHeight");
             this.uCtrlOptMaximumHeight.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             65536});
-            this.uCtrlOptMaximumHeight.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptMaximumHeight.Name = "uCtrlOptMaximumHeight";
-            this.uCtrlOptMaximumHeight.Size = new System.Drawing.Size(268, 20);
-            this.uCtrlOptMaximumHeight.TabIndex = 0;
-            this.uCtrlOptMaximumHeight.Text = "Pallet height reaches";
             this.uCtrlOptMaximumHeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOptMaximumHeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumHeight.Value")));
             this.uCtrlOptMaximumHeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMaximumLayerWeight
             // 
-            this.uCtrlOptMaximumLayerWeight.Location = new System.Drawing.Point(7, 19);
+            resources.ApplyResources(this.uCtrlOptMaximumLayerWeight, "uCtrlOptMaximumLayerWeight");
             this.uCtrlOptMaximumLayerWeight.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.uCtrlOptMaximumLayerWeight.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptMaximumLayerWeight.Name = "uCtrlOptMaximumLayerWeight";
-            this.uCtrlOptMaximumLayerWeight.Size = new System.Drawing.Size(276, 20);
-            this.uCtrlOptMaximumLayerWeight.TabIndex = 21;
-            this.uCtrlOptMaximumLayerWeight.Text = "Maximum layer weight";
             this.uCtrlOptMaximumLayerWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
             this.uCtrlOptMaximumLayerWeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumLayerWeight.Value")));
             this.uCtrlOptMaximumLayerWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMaximumSpace
             // 
-            this.uCtrlOptMaximumSpace.Location = new System.Drawing.Point(7, 44);
+            resources.ApplyResources(this.uCtrlOptMaximumSpace, "uCtrlOptMaximumSpace");
             this.uCtrlOptMaximumSpace.Minimum = new decimal(new int[] {
             0,
             0,
             0,
             65536});
-            this.uCtrlOptMaximumSpace.MinimumSize = new System.Drawing.Size(100, 20);
             this.uCtrlOptMaximumSpace.Name = "uCtrlOptMaximumSpace";
-            this.uCtrlOptMaximumSpace.Size = new System.Drawing.Size(276, 20);
-            this.uCtrlOptMaximumSpace.TabIndex = 22;
-            this.uCtrlOptMaximumSpace.Text = "Maximum space allowed";
             this.uCtrlOptMaximumSpace.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOptMaximumSpace.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumSpace.Value")));
             this.uCtrlOptMaximumSpace.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // gbAdditionnalFiltering
             // 
+            resources.ApplyResources(this.gbAdditionnalFiltering, "gbAdditionnalFiltering");
             this.gbAdditionnalFiltering.Controls.Add(this.uCtrlOptMaximumSpace);
             this.gbAdditionnalFiltering.Controls.Add(this.uCtrlOptMaximumLayerWeight);
-            this.gbAdditionnalFiltering.Location = new System.Drawing.Point(289, 296);
             this.gbAdditionnalFiltering.Name = "gbAdditionnalFiltering";
-            this.gbAdditionnalFiltering.Size = new System.Drawing.Size(295, 70);
-            this.gbAdditionnalFiltering.TabIndex = 23;
             this.gbAdditionnalFiltering.TabStop = false;
-            this.gbAdditionnalFiltering.Text = "Solution filtering";
             // 
-            // FormNewPackPalletAnalysis
+            // FormNewAnalysisPackPallet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 412);
             this.Controls.Add(this.gbAdditionnalFiltering);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.uCtrlOptMinimumSpace);
@@ -389,10 +309,7 @@
             this.Controls.Add(this.cbPack);
             this.Controls.Add(this.lbPallet);
             this.Controls.Add(this.lbPack);
-            this.MaximumSize = new System.Drawing.Size(600, 450);
-            this.MinimumSize = new System.Drawing.Size(600, 450);
-            this.Name = "FormNewPackPalletAnalysis";
-            this.Text = "Create new Pack/Pallet analysis...";
+            this.Name = "FormNewAnalysisPackPallet";
             this.Controls.SetChildIndex(this.lbPack, 0);
             this.Controls.SetChildIndex(this.lbPallet, 0);
             this.Controls.SetChildIndex(this.cbPack, 0);

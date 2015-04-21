@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
+using Sharp3D.Math.Core;
 #endregion
 
 namespace TreeDim.StackBuilder.Basics
@@ -38,6 +40,11 @@ namespace TreeDim.StackBuilder.Basics
         {
             get { return chkbOpt.Text; }
             set { chkbOpt.Text = value; }
+        }
+        public Vector3D Value
+        {
+            get {return new Vector3D(X, Y, Z);}
+            set { X = value.X; Y = value.Y; Z = value.Z; }
         }
         [Browsable(true)]
         public double X
@@ -91,7 +98,6 @@ namespace TreeDim.StackBuilder.Basics
             nudX.Location = new Point(Width - 3 * UCtrlDouble.stNudLength - UCtrlDouble.stLbUnitLength, 0);
             nudY.Location = new Point(Width - 2 * UCtrlDouble.stNudLength - UCtrlDouble.stLbUnitLength, 0);
             nudZ.Location = new Point(Width - 1 * UCtrlDouble.stNudLength - UCtrlDouble.stLbUnitLength, 0);
-
             // set unit location
             lbUnit.Location = new Point(Width - UCtrlDouble.stLbUnitLength + 1, 4);
         }

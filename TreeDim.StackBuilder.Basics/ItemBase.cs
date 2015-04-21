@@ -148,7 +148,7 @@ namespace TreeDim.StackBuilder.Basics
                         _parentDocument.RemoveItem(_dependancies[0]);
                         if (_dependancies.Count == iCount)
                         {
-                            _log.Warn(string.Format("Failed to remove correcly dependancy {0} ", _dependancies[0].Name));
+                            _log.Warn(string.Format("Failed to remove correctly dependancy {0} ", _dependancies[0].Name));
                             _dependancies.Remove(_dependancies[0]);
                             break;
                         }

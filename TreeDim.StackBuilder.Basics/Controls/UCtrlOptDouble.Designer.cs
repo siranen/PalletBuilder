@@ -39,7 +39,7 @@
             this.nudValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudValue.DecimalPlaces = 2;
-            this.nudValue.Location = new System.Drawing.Point(200, 0);
+            this.nudValue.Location = new System.Drawing.Point(201, 0);
             this.nudValue.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -60,7 +60,7 @@
             this.lbUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbUnit.AutoSize = true;
-            this.lbUnit.Location = new System.Drawing.Point(267, 4);
+            this.lbUnit.Location = new System.Drawing.Point(268, 4);
             this.lbUnit.Name = "lbUnit";
             this.lbUnit.Size = new System.Drawing.Size(24, 13);
             this.lbUnit.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.chkbOpt.UseVisualStyleBackColor = true;
             this.chkbOpt.CheckedChanged += new System.EventHandler(this.chkbOpt_CheckedChanged);
             // 
-            // OptValueControl
+            // UCtrlOptDouble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,8 +87,8 @@
             this.Controls.Add(this.lbUnit);
             this.Controls.Add(this.nudValue);
             this.MinimumSize = new System.Drawing.Size(100, 20);
-            this.Name = "OptValueControl";
-            this.Size = new System.Drawing.Size(300, 20);
+            this.Name = "UCtrlOptDouble";
+            this.Size = new System.Drawing.Size(301, 20);
             this.SizeChanged += new System.EventHandler(this.OptValueControl_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();
             this.ResumeLayout(false);

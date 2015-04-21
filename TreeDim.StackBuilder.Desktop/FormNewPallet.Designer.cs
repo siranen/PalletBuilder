@@ -58,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).BeginInit();
             this.statusStripDef.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,7 +229,9 @@
             resources.GetString("cbColor.Items13"),
             resources.GetString("cbColor.Items14"),
             resources.GetString("cbColor.Items15"),
-            resources.GetString("cbColor.Items16")});
+            resources.GetString("cbColor.Items16"),
+            resources.GetString("cbColor.Items17"),
+            resources.GetString("cbColor.Items18")});
             this.cbColor.Name = "cbColor";
             this.cbColor.SelectedColorChanged += new System.EventHandler(this.onPalletPropertyChanged);
             // 
@@ -240,16 +243,16 @@
             // 
             // statusStripDef
             // 
+            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelDef});
-            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Name = "statusStripDef";
             // 
             // toolStripStatusLabelDef
             // 
+            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
             this.toolStripStatusLabelDef.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
-            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
             // 
             // FormNewPallet
             // 
@@ -291,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).EndInit();
             this.statusStripDef.ResumeLayout(false);
             this.statusStripDef.PerformLayout();
             this.ResumeLayout(false);

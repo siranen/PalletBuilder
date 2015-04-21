@@ -2065,6 +2065,12 @@
   <xsl:template match="view_palletsolution_iso">
     <img src="images\view_palletsolution_iso.png" width="450" height="450" align="middle"></img>
   </xsl:template>
+  <xsl:template match="view_layer_iso0">
+    <img src="images\view_layer_iso0.png" width="150" height="150" align="middle"></img>
+  </xsl:template>
+  <xsl:template match="view_layer_iso1">
+    <img src="images\view_layer_iso1.png" width="150" height="150" align="middle"></img>
+  </xsl:template>
   <!--CASE OF BOXES-->
   <xsl:template match="view_caseOfBoxes_iso1">
     <img src="images\view_caseOfBoxes_iso1.png" width="150" height="150" align="middle"></img>
@@ -2185,10 +2191,10 @@
         <xsl:value-of select="layerPackCount"/>/<xsl:value-of select="layerCSUCount"/>
       </td>
       <td class="style3" colspan="1">
-         <xsl:value-of select="layerWeight/value"/>/<xsl:value-of select="layerNetWeight/value"/>
+         <xsl:value-of select="layerWeight/value"/> / <xsl:value-of select="layerNetWeight/value"/>
       </td>
       <td class="style3" colspan="1">
-        <xsl:value-of select="layerLength/value"/>*<xsl:value-of select="LayerWidth/value"/>*<xsl:value-of select="LayerHeight/value"/>
+        <xsl:value-of select="layerLength/value"/>*<xsl:value-of select="layerWidth/value"/>*<xsl:value-of select="layerHeight/value"/>
       </td>
       <td class="style3" colspan="1">
         <xsl:value-of select="maximumSpace/value"/>
@@ -2197,7 +2203,9 @@
         <xsl:value-of select="layerIndexes"/>
       </td>
       <td class="style3" colspan="4">
-        <xsl:value-of select="layerImage"/>
+        <xsl:element name="img">
+          <xsl:attribute name="src"><xsl:value-of select="imagePackLayer"/></xsl:attribute>
+        </xsl:element>
       </td>
     </tr>
   </xsl:template>

@@ -50,6 +50,8 @@ namespace TreeDim.StackBuilder.Desktop
                 cbDir.SelectedIndex = (int)(_packProperties.BoxOrientation);
                 Arrangement = _packProperties.Arrangement;
                 Wrapper = _packProperties.Wrap;
+                uCtrlOuterDimensions.Checked = _packProperties.HasForcedOuterDimensions;
+                OuterDimensions = _packProperties.OuterDimensions;
             }
             else
             { 
@@ -219,6 +221,12 @@ namespace TreeDim.StackBuilder.Desktop
                     uCtrlOuterDimensions.X,
                     uCtrlOuterDimensions.Y,
                     uCtrlOuterDimensions.Z); 
+            }
+            set
+            {
+                uCtrlOuterDimensions.X = value.X;
+                uCtrlOuterDimensions.Y = value.Y;
+                uCtrlOuterDimensions.Z = value.Z;
             }
         }
         #endregion

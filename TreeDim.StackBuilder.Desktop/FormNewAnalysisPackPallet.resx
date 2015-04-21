@@ -117,60 +117,668 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="uCtrlOptOverhangYMin.Value" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
-</value>
+  <data name="&gt;&gt;cbInterlayer.Name" xml:space="preserve">
+    <value>cbInterlayer</value>
   </data>
-  <data name="uCtrlOptOverhangXMin.Value" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
-</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="uCtrlOverhangX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 14</value>
+  </data>
+  <data name="uCtrlOptMaximumSpace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 20</value>
+  </data>
+  <data name="&gt;&gt;lbPallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbPack.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nudInterlayerPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="cbPack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 21</value>
+  </data>
+  <data name="&gt;&gt;nudInterlayerPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cbInterlayer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 109</value>
+  </data>
+  <data name="lbInterlayerPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="chkbInterlayerFirstLayer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uCtrlOptMaximumWeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="gbOverhang.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;gbAdditionnalFiltering.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbAdditionnalFiltering.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbLayerSwapPeriod.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangY.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumWeight.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="uCtrlOptMaximumSpace.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="uCtrlOptMaximumHeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="&gt;&gt;nudInterlayerPeriod.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbPack.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="chkbInterlayerFirstLayer.Text" xml:space="preserve">
+    <value>Insert before first layer</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangX.Name" xml:space="preserve">
+    <value>uCtrlOverhangX</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumLayerWeight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangXMin.Name" xml:space="preserve">
+    <value>uCtrlOptOverhangXMin</value>
+  </data>
+  <data name="&gt;&gt;lbPack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cbPack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 76</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumLayerWeight.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangXMin.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="nudInterlayerPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 134</value>
+  </data>
+  <data name="&gt;&gt;lbPack.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Create new Pack/Pallet analysis...</value>
+  </data>
+  <data name="uCtrlOverhangX.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="uCtrlOptMinimumSpace.Value" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
 </value>
   </data>
-  <data name="uCtrlOptMaximumWeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
-</value>
+  <data name="&gt;&gt;chkbInterlayer.Name" xml:space="preserve">
+    <value>chkbInterlayer</value>
   </data>
-  <data name="uCtrlOptMaximumHeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
-</value>
+  <data name="gbAdditionnalFiltering.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 296</value>
   </data>
-  <data name="uCtrlOptMaximumLayerWeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
-</value>
+  <data name="&gt;&gt;cbInterlayer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
   </data>
   <data name="uCtrlOptMaximumSpace.Value" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFJUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjkuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAlVHJlZURpbS5T
-        dGFja0J1aWxkZXIuQmFzaWNzLk9wdERvdWJsZQIAAAAKX2FjdGl2YXRlZARfdmFsAAABBgIAAAAAAAAA
-        AAAAAAAL
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
 </value>
   </data>
+  <data name="&gt;&gt;uCtrlOverhangY.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="gbOverhang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 194</value>
+  </data>
+  <data name="uCtrlOverhangY.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="lbLayerSwapPeriod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="uCtrlOptMinimumSpace.Text" xml:space="preserve">
+    <value>Minimum space</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumHeight.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="uCtrlOptMaximumLayerWeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumWeight.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lbPack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumSpace.Parent" xml:space="preserve">
+    <value>gbAdditionnalFiltering</value>
+  </data>
+  <data name="&gt;&gt;nudSwapPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uCtrlOptMaximumLayerWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="uCtrlOptOverhangYMin.Text" xml:space="preserve">
+    <value>Width (Min.)</value>
+  </data>
+  <data name="&gt;&gt;cbPack.Name" xml:space="preserve">
+    <value>cbPack</value>
+  </data>
+  <data name="nudSwapPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 164</value>
+  </data>
+  <data name="uCtrlOptMaximumHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 19</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangY.Name" xml:space="preserve">
+    <value>uCtrlOverhangY</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayerFirstLayer.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="chkbInterlayer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMinimumSpace.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangXMin.Parent" xml:space="preserve">
+    <value>gbOverhang</value>
+  </data>
+  <data name="uCtrlOptOverhangXMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 20</value>
+  </data>
+  <data name="uCtrlOptMinimumSpace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 20</value>
+  </data>
+  <data name="lbInterlayerPeriod.Text" xml:space="preserve">
+    <value>Interlayer period</value>
+  </data>
+  <data name="&gt;&gt;nudSwapPeriod.Name" xml:space="preserve">
+    <value>nudSwapPeriod</value>
+  </data>
+  <data name="cbPallet.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="uCtrlOverhangX.Text" xml:space="preserve">
+    <value>Length (Max.)</value>
+  </data>
+  <data name="uCtrlOptMinimumSpace.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="gbAdditionnalFiltering.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 70</value>
+  </data>
+  <data name="uCtrlOptOverhangXMin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 14</value>
+  </data>
+  <data name="cbInterlayer.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="gbOverhang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 62</value>
+  </data>
+  <data name="uCtrlOptOverhangXMin.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormNewAnalysisPackPallet</value>
+  </data>
+  <data name="&gt;&gt;gbOverhang.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumSpace.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayerFirstLayer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uCtrlOptMaximumWeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
+  <data name="&gt;&gt;lbInterlayerPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uCtrlOptMaximumWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 20</value>
+  </data>
+  <data name="uCtrlOverhangY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="gbAdditionnalFiltering.Text" xml:space="preserve">
+    <value>Solution filtering</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMinimumSpace.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="uCtrlOptOverhangYMin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 39</value>
+  </data>
+  <data name="uCtrlOptOverhangXMin.Text" xml:space="preserve">
+    <value>Length (Min.)</value>
+  </data>
+  <data name="&gt;&gt;lbInterlayerPeriod.Name" xml:space="preserve">
+    <value>lbInterlayerPeriod</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbLayerSwapPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 168</value>
+  </data>
+  <data name="uCtrlOptMaximumSpace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 44</value>
+  </data>
+  <data name="&gt;&gt;gbAdditionnalFiltering.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uCtrlOptMaximumWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbPallet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="nudSwapPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;cbPallet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>600, 450</value>
+  </data>
+  <data name="uCtrlOptMinimumSpace.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="uCtrlOptMaximumLayerWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 20</value>
+  </data>
+  <data name="lbLayerSwapPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMinimumSpace.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbInterlayer.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbInterlayer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 21</value>
+  </data>
+  <data name="uCtrlOptMaximumWeight.Text" xml:space="preserve">
+    <value>Pallet weight reaches</value>
+  </data>
+  <data name="&gt;&gt;lbInterlayerPeriod.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;nudSwapPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>600, 450</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 296</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumLayerWeight.Name" xml:space="preserve">
+    <value>uCtrlOptMaximumLayerWeight</value>
+  </data>
+  <data name="&gt;&gt;lbPack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangX.Parent" xml:space="preserve">
+    <value>gbOverhang</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumSpace.Name" xml:space="preserve">
+    <value>uCtrlOptMaximumSpace</value>
+  </data>
+  <data name="uCtrlOverhangX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 20</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangYMin.Parent" xml:space="preserve">
+    <value>gbOverhang</value>
+  </data>
+  <data name="lbPallet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;nudSwapPeriod.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="uCtrlOptOverhangXMin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbPack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudInterlayerPeriod.Name" xml:space="preserve">
+    <value>nudInterlayerPeriod</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangYMin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbPallet.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="uCtrlOptOverhangYMin.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="uCtrlOptOverhangYMin.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
+  <data name="lbInterlayerPeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 136</value>
+  </data>
+  <data name="chkbInterlayer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 111</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="uCtrlOptMaximumLayerWeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
+  <data name="&gt;&gt;lbPallet.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="uCtrlOptMaximumLayerWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 19</value>
+  </data>
+  <data name="uCtrlOptMinimumSpace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 262</value>
+  </data>
+  <data name="lbInterlayerPeriod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbInterlayerPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="chkbInterlayer.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="uCtrlOptOverhangYMin.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayerFirstLayer.Name" xml:space="preserve">
+    <value>chkbInterlayerFirstLayer</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumHeight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="gbAdditionnalFiltering.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;cbPallet.Name" xml:space="preserve">
+    <value>cbPallet</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangYMin.Name" xml:space="preserve">
+    <value>uCtrlOptOverhangYMin</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumSpace.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gbOverhang.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="uCtrlOverhangX.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="uCtrlOptOverhangYMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 20</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumHeight.Name" xml:space="preserve">
+    <value>uCtrlOptMaximumHeight</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangY.Parent" xml:space="preserve">
+    <value>gbOverhang</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumWeight.Name" xml:space="preserve">
+    <value>uCtrlOptMaximumWeight</value>
+  </data>
+  <data name="&gt;&gt;nudInterlayerPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbLayerSwapPeriod.Name" xml:space="preserve">
+    <value>lbLayerSwapPeriod</value>
+  </data>
+  <data name="lbPallet.Text" xml:space="preserve">
+    <value>Pallet</value>
+  </data>
+  <data name="chkbInterlayerFirstLayer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumHeight.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="lbLayerSwapPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 13</value>
+  </data>
+  <data name="uCtrlOptOverhangXMin.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
+  <data name="chkbInterlayer.Text" xml:space="preserve">
+    <value>Interlayer</value>
+  </data>
+  <data name="&gt;&gt;cbPallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="uCtrlOptMaximumSpace.Text" xml:space="preserve">
+    <value>Maximum space allowed</value>
+  </data>
+  <data name="uCtrlOverhangY.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="uCtrlOptMaximumHeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
+        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
+        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
+  <data name="&gt;&gt;cbPack.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="uCtrlOverhangY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 20</value>
+  </data>
+  <data name="lbPack.Text" xml:space="preserve">
+    <value>Pack</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayerFirstLayer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="uCtrlOptMaximumWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 44</value>
+  </data>
+  <data name="&gt;&gt;gbOverhang.Name" xml:space="preserve">
+    <value>gbOverhang</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMinimumSpace.Name" xml:space="preserve">
+    <value>uCtrlOptMinimumSpace</value>
+  </data>
+  <data name="uCtrlOverhangY.Text" xml:space="preserve">
+    <value>Width (Max.)</value>
+  </data>
+  <data name="gbOverhang.Text" xml:space="preserve">
+    <value>Overhang</value>
+  </data>
+  <data name="uCtrlOptMaximumHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 412</value>
+  </data>
+  <data name="cbPallet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>407, 76</value>
+  </data>
+  <data name="lbPack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 79</value>
+  </data>
+  <data name="lbLayerSwapPeriod.Text" xml:space="preserve">
+    <value>Layer swap period</value>
+  </data>
+  <data name="lbPallet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 79</value>
+  </data>
+  <data name="&gt;&gt;gbAdditionnalFiltering.Name" xml:space="preserve">
+    <value>gbAdditionnalFiltering</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangYMin.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 70</value>
+  </data>
+  <data name="uCtrlOptMaximumSpace.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="uCtrlOptMaximumLayerWeight.Text" xml:space="preserve">
+    <value>Maximum layer weight</value>
+  </data>
+  <data name="&gt;&gt;lbLayerSwapPeriod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbLayerSwapPeriod.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbOverhang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nudInterlayerPeriod.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 21</value>
+  </data>
+  <data name="&gt;&gt;lbPack.Name" xml:space="preserve">
+    <value>lbPack</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumLayerWeight.Parent" xml:space="preserve">
+    <value>gbAdditionnalFiltering</value>
+  </data>
+  <data name="chkbInterlayer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uCtrlOptMaximumHeight.Text" xml:space="preserve">
+    <value>Pallet height reaches</value>
+  </data>
+  <data name="&gt;&gt;lbPallet.Name" xml:space="preserve">
+    <value>lbPallet</value>
+  </data>
+  <data name="&gt;&gt;cbInterlayer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbInterlayerPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangX.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="chkbInterlayerFirstLayer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 111</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptMaximumWeight.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbPack.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="uCtrlOptMaximumHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 20</value>
+  </data>
+  <data name="chkbInterlayerFirstLayer.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOverhangX.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Stop stacking when:</value>
+  </data>
+  <data name="&gt;&gt;cbPallet.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;chkbInterlayer.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;uCtrlOptOverhangXMin.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudSwapPeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
