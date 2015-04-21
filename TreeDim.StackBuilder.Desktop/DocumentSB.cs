@@ -453,12 +453,15 @@ namespace TreeDim.StackBuilder.Desktop
                 constraintSet.InterlayerPeriod = form.InterlayerPeriod;
                 constraintSet.LayerSwapPeriod = form.LayerSwapPeriod;
 
-                return CreateNewPackPalletAnalysis(
+                PackPalletAnalysis analysis = CreateNewPackPalletAnalysis(
                     form.ItemName, form.ItemDescription,
                     form.PackProperties, form.PalletProperties,
                     form.InterlayerProperties,
                     constraintSet,
                     new PackPalletSolver());
+                if (null == analysis)
+                    MessageBox.Show(Properties.Resources.ID_ANALYSISHASNOSOLUTION, Application.ProductName, MessageBoxButtons.OK);
+                return analysis;
             }
             return null;
         }

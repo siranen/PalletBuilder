@@ -490,4 +490,7 @@ Souhaitez-vous continuer?</value>
   <data name="ID_NODE_PACKS" xml:space="preserve">
     <value>Fardeaux</value>
   </data>
+  <data name="ID_ANALYSISHASNOSOLUTION" xml:space="preserve">
+    <value>L'analyse n'a pas de solution.  Filtrage débord ou espace trop contraignant?</value>
+  </data>
 </root>

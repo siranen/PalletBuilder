@@ -139,8 +139,6 @@ namespace TreeDim.StackBuilder.Basics
             // remove from list
             _selectedSolutions.Remove(selSolution);
             ParentDocument.RemoveItem(selSolution);
-            // insert in list
-            _selectedSolutions.Add(selSolution);
             // fire event
             if (null != SolutionSelectionRemoved)
                 SolutionSelectionRemoved(this, selSolution);

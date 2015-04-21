@@ -132,7 +132,7 @@
     <value>graphCtrl</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Parent" xml:space="preserve">
     <value>$this</value>
@@ -269,7 +269,7 @@
   <data name="uCtrlOuterDimensions.Text" xml:space="preserve">
     <value>Outer dimensions</value>
   </data>
-  <assembly alias="Sharp3D.Math" name="Sharp3D.Math, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null" />
+  <assembly alias="Sharp3D.Math" name="Sharp3D.Math, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null" />
   <data name="uCtrlOuterDimensions.Value" type="Sharp3D.Math.Core.Vector3D, Sharp3D.Math">
     <value>(0, 0, 0)</value>
   </data>
@@ -277,7 +277,7 @@
     <value>uCtrlOuterDimensions</value>
   </data>
   <data name="&gt;&gt;uCtrlOuterDimensions.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptTriDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptTriDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlOuterDimensions.Parent" xml:space="preserve">
     <value>$this</value>
@@ -301,7 +301,7 @@
     <value>uCtrlLayout</value>
   </data>
   <data name="&gt;&gt;uCtrlLayout.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlLayout.Parent" xml:space="preserve">
     <value>$this</value>
@@ -328,7 +328,7 @@
     <value>uCtrlHeight</value>
   </data>
   <data name="&gt;&gt;uCtrlHeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlHeight.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -352,7 +352,7 @@
     <value>uCtrlWalls</value>
   </data>
   <data name="&gt;&gt;uCtrlWalls.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlWalls.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -466,7 +466,7 @@
     <value>uCtrlWeight</value>
   </data>
   <data name="&gt;&gt;uCtrlWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlWeight.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -493,7 +493,7 @@
     <value>uCtrlThickness</value>
   </data>
   <data name="&gt;&gt;uCtrlThickness.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlThickness.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -643,6 +643,6 @@
     <value>FormNewPack</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

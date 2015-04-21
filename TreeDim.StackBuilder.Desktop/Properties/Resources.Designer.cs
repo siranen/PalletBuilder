@@ -457,6 +457,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Analysis has no solutions?\nTo many contraints?.
+        /// </summary>
+        internal static string ID_ANALYSISHASNOSOLUTION {
+            get {
+                return ResourceManager.GetString("ID_ANALYSISHASNOSOLUTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Analysis {0} has no valid solution..
         /// </summary>
         internal static string ID_ANALYSISHASNOVALIDSOLUTION {

@@ -207,10 +207,10 @@
     <value>111, 76</value>
   </data>
   <data name="&gt;&gt;uCtrlOptMaximumLayerWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlOptOverhangXMin.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="nudInterlayerPeriod.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 134</value>
@@ -253,7 +253,7 @@
 </value>
   </data>
   <data name="&gt;&gt;uCtrlOverhangY.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="gbOverhang.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 194</value>
@@ -271,13 +271,13 @@
     <value>Minimum space</value>
   </data>
   <data name="&gt;&gt;uCtrlOptMaximumHeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="uCtrlOptMaximumLayerWeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
   <data name="&gt;&gt;uCtrlOptMaximumWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="lbPack.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -316,7 +316,7 @@
     <value>69, 17</value>
   </data>
   <data name="&gt;&gt;uCtrlOptMinimumSpace.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uCtrlOptOverhangXMin.Parent" xml:space="preserve">
     <value>gbOverhang</value>
@@ -364,7 +364,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;uCtrlOptMaximumSpace.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;chkbInterlayerFirstLayer.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -565,7 +565,7 @@
     <value>1</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="gbAdditionnalFiltering.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -695,7 +695,7 @@
     <value>gbAdditionnalFiltering</value>
   </data>
   <data name="&gt;&gt;uCtrlOptOverhangYMin.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>283, 70</value>
@@ -743,7 +743,7 @@
     <value>82, 13</value>
   </data>
   <data name="&gt;&gt;uCtrlOverhangX.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.11.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.12.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="chkbInterlayerFirstLayer.Location" type="System.Drawing.Point, System.Drawing">
     <value>327, 111</value>

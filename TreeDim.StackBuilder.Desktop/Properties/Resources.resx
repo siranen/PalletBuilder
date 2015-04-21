@@ -628,4 +628,7 @@ Closing form...</value>
   <data name="ID_ADDNEWPACKANALYSIS" xml:space="preserve">
     <value>Add new Pack/Pallet analysis...</value>
   </data>
+  <data name="ID_ANALYSISHASNOSOLUTION" xml:space="preserve">
+    <value>Analysis has no solutions?\nTo many contraints?</value>
+  </data>
 </root>

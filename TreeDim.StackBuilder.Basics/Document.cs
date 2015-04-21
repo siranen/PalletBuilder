@@ -122,6 +122,8 @@ namespace TreeDim.StackBuilder.Basics
             string name = string.Empty;
             while (!IsValidNewTypeName(name = string.Format("{0}{1}", prefix, index), null))
                 ++index;
+            while (!IsValidNewAnalysisName(name = string.Format("{0}{1}", prefix, index), null))
+                ++index;
             return name;
         }
         public bool IsValidNewAnalysisName(string name, ItemBase analysisToRename)
@@ -157,6 +159,13 @@ namespace TreeDim.StackBuilder.Basics
                 ))
                 && (null == _boxCasePalletOptimizations.Find(
                 delegate(BoxCasePalletAnalysis analysis)
+                {
+                    return analysis != analysisToRename
+                        && string.Equals(analysis.Name, trimmedName, StringComparison.InvariantCultureIgnoreCase);
+                }
+                ))
+                && (null == _packPalletAnalyses.Find(
+                delegate(PackPalletAnalysis analysis)
                 {
                     return analysis != analysisToRename
                         && string.Equals(analysis.Name, trimmedName, StringComparison.InvariantCultureIgnoreCase);

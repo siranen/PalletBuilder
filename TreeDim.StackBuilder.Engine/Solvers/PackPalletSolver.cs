@@ -90,6 +90,15 @@ namespace TreeDim.StackBuilder.Engine
                                 );
                             boxLayer.Add(boxPos);                            
                         }
+                        BBox3D layerBBox = boxLayer.BoundingBox(_packProperties);
+                        // filter by overhangX
+                        if (_constraintSet.MinOverhangX.Activated
+                            && (0.5 * (layerBBox.Length - _palletProperties.Length) < _constraintSet.MinOverhangX.Value))
+                            continue;
+                        // filter by overhangY
+                        if (_constraintSet.MinOverhangY.Activated
+                            && (0.5 * (layerBBox.Width - _palletProperties.Width) < _constraintSet.MinOverhangY.Value))
+                            continue;
 
                         double interlayerThickness = null != _interlayerProperties ? _interlayerProperties.Thickness : 0;
                         double interlayerWeight = null != _interlayerProperties ? _interlayerProperties.Weight : 0;

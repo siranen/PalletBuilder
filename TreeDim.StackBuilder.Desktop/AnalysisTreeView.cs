@@ -2215,9 +2215,22 @@ namespace TreeDim.StackBuilder.Desktop
             return _type == nodeTag._type
                 && _document == nodeTag._document
                 && _itemProperties == nodeTag._itemProperties
+                // analyses
                 && _casePalletAnalysis == nodeTag._casePalletAnalysis
+                && _packPalletAnalysis == nodeTag._packPalletAnalysis
+                && _cylinderPalletAnalysis == nodeTag._cylinderPalletAnalysis
+                && _hCylinderPalletAnalysis == nodeTag._hCylinderPalletAnalysis
+                && _boxCasePalletAnalysis == nodeTag._boxCasePalletAnalysis
+                && _boxCaseAnalysis == nodeTag._boxCaseAnalysis
+                && _truckAnalysis == nodeTag._truckAnalysis
+                // solutions
                 && _selSolution == nodeTag._selSolution
-                && _truckAnalysis == nodeTag._truckAnalysis;
+                && _selPackPalletSolution == nodeTag._selPackPalletSolution
+                && _selCylinderPalletSolution == nodeTag._selCylinderPalletSolution
+                && _selHCylinderPalletSolution == nodeTag._selHCylinderPalletSolution
+                && _selBoxCasePalletSolution == nodeTag._selBoxCasePalletSolution
+                && _selBoxCaseSolution == nodeTag._selBoxCaseSolution;
+                
         }
         public override int GetHashCode()
         {
