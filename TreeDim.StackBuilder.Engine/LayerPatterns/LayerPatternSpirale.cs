@@ -73,6 +73,9 @@ namespace TreeDim.StackBuilder.Engine
                         , new Vector2D(palletLength - offsetX - i * boxLength, palletWidth - offsetY - j * boxWidth)
                         , HalfAxis.HAxis.AXIS_X_N, HalfAxis.HAxis.AXIS_Y_N);
                 }
+            double spaceX_Area1 = actualLength - 2.0 * sizeX_area1 * boxLength;
+            double spaceY_Area1 = actualWidth - 2.0 * sizeY_area1 * boxWidth;
+
             // area2
             for (int i=0; i<sizeX_area2; ++i)
                 for (int j = 0; j<sizeY_area2; ++j)
@@ -84,6 +87,13 @@ namespace TreeDim.StackBuilder.Engine
                         , new Vector2D(offsetX + i * boxWidth, palletWidth - offsetY - j * boxLength)
                         , HalfAxis.HAxis.AXIS_Y_N, HalfAxis.HAxis.AXIS_X_P);
                 }
+
+            double spaceX_Area2 = actualLength - 2.0 * sizeX_area2 * boxWidth;
+            double spaceY_Area2 = actualWidth - 2.0 * sizeY_area2 * boxLength;
+            double spaceX = spaceX_Area1 > 0 ? spaceX_Area1 : spaceX_Area2;
+            double spaceY = spaceY_Area1 > 0 ? spaceY_Area1 : spaceY_Area2;
+
+            layer.UpdateMaxSpace( Math.Min(spaceX, spaceY) );
         }
 
         public override int GetNumberOfVariants(Layer layer) { return 1; }

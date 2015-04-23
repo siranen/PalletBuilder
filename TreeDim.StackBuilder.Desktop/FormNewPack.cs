@@ -74,7 +74,7 @@ namespace TreeDim.StackBuilder.Desktop
             if (!this.DesignMode)
             {
                 double length = 0.0, width = 0.0, height = 0.0;
-                PackProperties.GetOuterDimensions(
+                PackProperties.GetDimensions(
                     SelectedBox,
                     BoxOrientation,
                     Arrangement,
@@ -242,7 +242,7 @@ namespace TreeDim.StackBuilder.Desktop
             if (sender != uCtrlOuterDimensions && !this.DesignMode)
             {
                 double length = 0.0, width = 0.0, height = 0.0;
-                PackProperties.GetOuterDimensions(SelectedBox, BoxOrientation, Arrangement, ref length, ref width, ref height);
+                PackProperties.GetDimensions(SelectedBox, BoxOrientation, Arrangement, ref length, ref width, ref height);
                 uCtrlOuterDimensions.X = length;
                 uCtrlOuterDimensions.Y = width;
                 uCtrlOuterDimensions.Z = height;

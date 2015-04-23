@@ -486,10 +486,10 @@
     <value>Poids</value>
   </data>
   <data name="vcWeight.Text" xml:space="preserve">
-    <value>Poid</value>
+    <value>Poids</value>
   </data>
   <data name="ovcNetWeight.Text" xml:space="preserve">
-    <value>Poid net</value>
+    <value>Poids net</value>
   </data>
   <data name="lblName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

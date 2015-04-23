@@ -213,7 +213,7 @@
 		<value>28, 13</value>
 	</data>
 	<data name="lbWeight.Text" xml:space="preserve">
-    <value>Poid</value>
+    <value>Poids</value>
   </data>
 	<data name="gbFaceColor.Text" xml:space="preserve">
     <value>Couleur des faces</value>
@@ -225,7 +225,7 @@
 		<value>112, 23</value>
 	</data>
 	<data name="gbWeight.Text" xml:space="preserve">
-    <value>Poid</value>
+    <value>Poids</value>
   </data>
 	<data name="lbThickness.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
 		<value>NoControl</value>

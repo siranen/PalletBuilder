@@ -59,8 +59,6 @@ namespace TreeDim.StackBuilder.Engine
                 double spaceY = maxSizeYLength + maxSizeYWidth > 1
                     ? (actualWidth - maxSizeYWidth * boxWidth - maxSizeYLength * boxLength) / (maxSizeYLength + maxSizeYWidth - 1)
                     : 0.0;
-                //System.Diagnostics.Debug.Assert(spaceX >= 0.0);
-                //System.Diagnostics.Debug.Assert(spaceY >= 0.0);
 
                 double xBase = offsetX + i * (boxLength + spaceX);
                 double yBase = offsetY + i * (boxWidth + spaceY);
@@ -107,6 +105,8 @@ namespace TreeDim.StackBuilder.Engine
                         , yBase + boxLength + spaceY + iy * (boxWidth + spaceY))
                         , HalfAxis.HAxis.AXIS_X_P, HalfAxis.HAxis.AXIS_Y_P);
                 }
+                // set spacing
+                layer.UpdateMaxSpace(Math.Abs(boxLength - boxWidth));
             }
         }
 

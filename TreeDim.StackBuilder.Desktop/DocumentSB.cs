@@ -800,7 +800,7 @@ namespace TreeDim.StackBuilder.Desktop
             form.Pallets = Pallets.ToArray();
             form.Interlayers = ListByType(typeof(InterlayerProperties)).ToArray();
 
-            if (DialogResult.OK == form.ShowDialog())
+            if (recomputeRequired = (DialogResult.OK == form.ShowDialog()))
             {
                 // analysis name / description
                 analysis.Name = form.ItemName;
@@ -810,18 +810,16 @@ namespace TreeDim.StackBuilder.Desktop
                 analysis.PalletProperties = form.PalletProperties;
                 analysis.InterlayerProperties = form.InterlayerProperties;
                 // constraint set
-                PackPalletConstraintSet constraintSet = new PackPalletConstraintSet();
+                PackPalletConstraintSet constraintSet = analysis.ConstraintSet;
                 constraintSet.OverhangX = form.OverhangX;
                 constraintSet.OverhangY = form.OverhangY;
                 constraintSet.MinOverhangX = form.MinimumOverhangX;
                 constraintSet.MinOverhangY = form.MinimumOverhangY;
                 constraintSet.MinimumSpace = form.MinimumSpace;
                 constraintSet.MaximumSpaceAllowed = form.MaximumSpace;
-
                 constraintSet.LayerSwapPeriod = form.LayerSwapPeriod;
                 constraintSet.InterlayerPeriod = form.InterlayerPeriod;
                 constraintSet.HasFirstInterlayer = form.HasFirstInterlayer;
-
                 // stop criterions
                 constraintSet.MaximumPalletHeight = form.MaximumPalletHeight;
                 constraintSet.MaximumPalletWeight = form.MaximumLayerWeight;

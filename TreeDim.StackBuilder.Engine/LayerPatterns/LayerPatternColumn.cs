@@ -53,6 +53,8 @@ namespace TreeDim.StackBuilder.Engine
                             , offsetY + j * (boxWidth + spaceY)
                             )
                         , HalfAxis.HAxis.AXIS_X_P, HalfAxis.HAxis.AXIS_Y_P);
+            // set spacing to ZERO i.e. no spacing with column layout
+            layer.MaximumSpace = 0.0;
         }
 
         public override int GetNumberOfVariants(Layer layer)

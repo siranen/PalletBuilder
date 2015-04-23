@@ -238,7 +238,7 @@ Souhaitez-vous continuer?</value>
     <value>Nombre de pallettes</value>
   </data>
   <data name="ID_PALLETWEIGHT" xml:space="preserve">
-    <value>Poid de la palette</value>
+    <value>Poids de la palette</value>
   </data>
   <data name="ID_READY" xml:space="preserve">
     <value>Prêt</value>
@@ -377,7 +377,7 @@ Souhaitez-vous continuer?</value>
     <value>Générer un rapport pour {0}</value>
   </data>
   <data name="ID_PALLETMAXWEIGHT" xml:space="preserve">
-    <value>Poid</value>
+    <value>Poids</value>
   </data>
   <data name="ID_PALLETMAXNUMBER" xml:space="preserve">
     <value>Nombre</value>

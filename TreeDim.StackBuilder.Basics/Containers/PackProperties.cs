@@ -58,13 +58,31 @@ namespace TreeDim.StackBuilder.Basics
         /// constructor
         /// </summary>
         /// <param name="thickness">Cardboard thickness</param>
-        public WrapperCardboard(double thickness, double weight, Color color)  : base(thickness, weight, color) { }
+        public WrapperCardboard(double thickness, double weight, Color color)  : base(thickness, weight, color)
+        { for (int i=0; i<3; ++i)   walls[i] = 2;}
         public void SetNoWalls(int noWallX, int noWallY, int noWallZ)
         { walls[0] = noWallX; walls[1] = noWallY; walls[2] = noWallZ; }
         public int Wall(int index) { return walls[index]; }
         // implement abstract methods
         public override PackWrapper.WType Type { get { return PackWrapper.WType.WT_CARDBOARD; } }
         public override double Thickness(int dir) { return walls[dir] * _thickness; }
+        // static methods
+        static public double EstimateWeight(
+            BoxProperties boxProperties, PackArrangement arrangement, HalfAxis.HAxis orientation
+            , int[] noWalls, double thickness, double surfacicMass)
+        {
+            double length = 0.0, width = 0.0, height = 0.0;
+            PackProperties.GetDimensions(boxProperties, orientation, arrangement, ref length, ref width, ref height);
+            Vector3D vDimensions = new Vector3D(
+                length + noWalls[0] * thickness
+                , width + noWalls[1] * thickness
+                , height + noWalls[2] * thickness);
+
+            double area = (noWalls[0] * vDimensions.Y * vDimensions.Z
+                + noWalls[1] * vDimensions.X * vDimensions.Z
+                + noWalls[2] * vDimensions.X * vDimensions.Y) * UnitsManager.FactorSquareLengthToArea;
+            return area * surfacicMass;
+        }
         // data members
         private int[] walls = new int[3];
     }
@@ -208,12 +226,7 @@ namespace TreeDim.StackBuilder.Basics
         public double Weight { get { return InnerWeight + _wrapper.Weight; } }
         public double InnerWeight { get { return _arrangement.Number * _boxProperties.Weight; } }
         public OptDouble NetWeight
-        {
-            get
-            {
-                return _arrangement.Number * _boxProperties.NetWeight; 
-            }
-        }
+        { get { return _arrangement.Number * _boxProperties.NetWeight; } }
         #endregion
         #region Helpers
         public int Dim0 { get { return PackProperties.DimIndex0(_orientation); } }
@@ -245,9 +258,28 @@ namespace TreeDim.StackBuilder.Basics
                 default: return 1;
             }
         }
+        public static HalfAxis.HAxis Orientation(int dim0, int dim1)
+        {
+            if (0 == dim0)
+            {
+                if (1 == dim1) return HalfAxis.HAxis.AXIS_Z_P;
+                else if (2 == dim1) return HalfAxis.HAxis.AXIS_Y_N;
+            }
+            else if (1 == dim0)
+            {
+                if (0 == dim1) return HalfAxis.HAxis.AXIS_Z_N;
+                else if (2 == dim1) return HalfAxis.HAxis.AXIS_X_N;
+            }
+            else if (2 == dim0)
+            {
+                if (0 == dim1) return HalfAxis.HAxis.AXIS_Y_P;
+                else if (1 == dim1) return HalfAxis.HAxis.AXIS_X_P;
+            }
+            return HalfAxis.HAxis.AXIS_Z_P;        
+        }
         #endregion
         #region Static
-        public static void GetOuterDimensions(
+        public static void GetDimensions(
             BoxProperties boxProperties
             , HalfAxis.HAxis boxOrientation
             , PackArrangement arrangement

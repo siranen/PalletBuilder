@@ -49,103 +49,101 @@ namespace TreeDim.StackBuilder.Engine
         {
             List<PackPalletSolution> solutions = new List<PackPalletSolution>();
 
-            HalfAxis.HAxis[] axes = {HalfAxis.HAxis.AXIS_Z_N, HalfAxis.HAxis.AXIS_Z_P};
+            HalfAxis.HAxis[] axes = { HalfAxis.HAxis.AXIS_Z_N, HalfAxis.HAxis.AXIS_Z_P };
             // loop throught all patterns
             foreach (LayerPattern pattern in _patterns)
             {
                 // loop throught all axes
                 foreach (HalfAxis.HAxis axis in axes) // axis
                 {
-                    for (int invIndex = 0; invIndex < 2; ++invIndex)
+                    // loop through
+                    Layer layer = new Layer(_packProperties, _palletProperties, _constraintSet, axis, false);
+                    double actualLength = 0.0, actualWidth = 0.0;
+                    pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth);
+                    pattern.GenerateLayer(layer, actualLength, actualWidth);
+
+                    // filter by layer weight
+                    if (_constraintSet.MaximumLayerWeight.Activated
+                        && (layer.Count * _packProperties.Weight > _constraintSet.MaximumLayerWeight.Value))
+                        continue;
+                    // filter by maximum space
+                    if (_constraintSet.MaximumSpaceAllowed.Activated
+                        && layer.MaximumSpace > _constraintSet.MaximumSpaceAllowed.Value)
+                        continue;
+                    double layerHeight = layer.BoxHeight;
+
+                    string title = string.Format("{0}-{1}", pattern.Name, axis.ToString());
+                    double zLayer = 0.0;
+                    BoxLayer boxLayer = new BoxLayer(zLayer, "");
+                    foreach (LayerPosition layerPos in layer)
                     {
-                        // loop through
-                        Layer layer = new Layer(_packProperties, _palletProperties, _constraintSet, axis, invIndex == 1);
-                        double actualLength = 0.0, actualWidth = 0.0;
-                        pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth);
-                        pattern.GenerateLayer(layer, actualLength, actualWidth);
+                        LayerPosition layerPosTemp = AdjustLayerPosition(layerPos);
+                        BoxPosition boxPos = new BoxPosition(
+                            layerPosTemp.Position
+                                - (0.5 * _constraintSet.OverhangX) * Vector3D.XAxis
+                                - (0.5 * _constraintSet.OverhangY) * Vector3D.YAxis
+                                + zLayer * Vector3D.ZAxis
+                            , layerPosTemp.LengthAxis
+                            , layerPosTemp.WidthAxis
+                            );
+                        boxLayer.Add(boxPos);
+                    }
+                    boxLayer.MaximumSpace = layer.MaximumSpace;
+                    BBox3D layerBBox = boxLayer.BoundingBox(_packProperties);
+                    // filter by overhangX
+                    if (_constraintSet.MinOverhangX.Activated
+                        && (0.5 * (layerBBox.Length - _palletProperties.Length) < _constraintSet.MinOverhangX.Value))
+                        continue;
+                    // filter by overhangY
+                    if (_constraintSet.MinOverhangY.Activated
+                        && (0.5 * (layerBBox.Width - _palletProperties.Width) < _constraintSet.MinOverhangY.Value))
+                        continue;
 
-                        // filter by layer weight
-                        if (_constraintSet.MaximumLayerWeight.Activated
-                            && (layer.Count * _packProperties.Weight > _constraintSet.MaximumLayerWeight.Value))
-                            continue;
-                        // filter by maximum space
-                        if (_constraintSet.MaximumSpaceAllowed.Activated
-                            && layer.MaximumSpace > _constraintSet.MaximumSpaceAllowed.Value)
-                            continue;
-                        double layerHeight = layer.BoxHeight;
+                    double interlayerThickness = null != _interlayerProperties ? _interlayerProperties.Thickness : 0;
+                    double interlayerWeight = null != _interlayerProperties ? _interlayerProperties.Weight : 0;
 
-                        string title = string.Format("{0}-{1}{2}", pattern.Name, axis.ToString(), invIndex == 1 ? "-inv" : "");
-                        double zLayer = 0.0;
-                        BoxLayer boxLayer = new BoxLayer(zLayer, "");
-                        foreach (LayerPosition layerPos in layer)
-                        {
-                            LayerPosition layerPosTemp = AdjustLayerPosition(layerPos);
-                            BoxPosition boxPos = new BoxPosition(
-                                layerPosTemp.Position
-                                    - (0.5 *_constraintSet.OverhangX) * Vector3D.XAxis 
-                                    - (0.5 * _constraintSet.OverhangY)* Vector3D.YAxis
-                                    + zLayer * Vector3D.ZAxis
-                                , layerPosTemp.LengthAxis
-                                , layerPosTemp.WidthAxis
-                                );
-                            boxLayer.Add(boxPos);                            
-                        }
-                        BBox3D layerBBox = boxLayer.BoundingBox(_packProperties);
-                        // filter by overhangX
-                        if (_constraintSet.MinOverhangX.Activated
-                            && (0.5 * (layerBBox.Length - _palletProperties.Length) < _constraintSet.MinOverhangX.Value))
-                            continue;
-                        // filter by overhangY
-                        if (_constraintSet.MinOverhangY.Activated
-                            && (0.5 * (layerBBox.Width - _palletProperties.Width) < _constraintSet.MinOverhangY.Value))
-                            continue;
+                    PackPalletSolution sol = new PackPalletSolution(null, title, boxLayer);
+                    int noLayer = 1,
+                        noInterlayer = (null != _interlayerProperties && _constraintSet.HasFirstInterlayer) ? 1 : 0;
 
-                        double interlayerThickness = null != _interlayerProperties ? _interlayerProperties.Thickness : 0;
-                        double interlayerWeight = null != _interlayerProperties ? _interlayerProperties.Weight : 0;
+                    bool maxHeightReached = _constraintSet.MaximumPalletHeight.Activated
+                        && (_packProperties.Height
+                        + noInterlayer * interlayerThickness
+                        + noLayer * layer.BoxHeight) > _constraintSet.MaximumPalletHeight.Value;
+                    bool maxWeightReached = _constraintSet.MaximumPalletWeight.Activated
+                        && (_packProperties.Height
+                        + noInterlayer * interlayerWeight
+                        + noLayer * boxLayer.Count * _packProperties.Weight > _constraintSet.MaximumPalletWeight.Value);
 
-                        PackPalletSolution sol = new PackPalletSolution(null, title, boxLayer);
-                        int noLayer = 1,
-                            noInterlayer = (null != _interlayerProperties && _constraintSet.HasFirstInterlayer) ? 1 : 0;
+                    noLayer = 0; noInterlayer = 0;
+                    int iCountInterlayer = 0, iCountSwap = 1;
+                    bool bSwap = false;
+                    while (!maxHeightReached && !maxWeightReached)
+                    {
+                        bool bInterlayer = (0 == iCountInterlayer) && ((noLayer != 0) || _constraintSet.HasFirstInterlayer);
+                        // actually insert new layer
+                        sol.AddLayer(bSwap, bInterlayer);
+                        // increment number of layers
+                        noLayer++;
+                        noInterlayer += (bInterlayer ? 1 : 0);
+                        // update iCountInterlayer && iCountSwap
+                        ++iCountInterlayer;
+                        if (iCountInterlayer >= _constraintSet.InterlayerPeriod) iCountInterlayer = 0;
+                        ++iCountSwap;
+                        if (iCountSwap > _constraintSet.LayerSwapPeriod) { iCountSwap = 1; bSwap = !bSwap; }
+                        // update maxHeightReached & maxWeightReached
+                        maxHeightReached = _constraintSet.MaximumPalletHeight.Activated
+                            && (_palletProperties.Height
+                            + (noInterlayer + (iCountInterlayer == 0 ? 1 : 0)) * interlayerThickness
+                            + (noLayer + 1) * layer.BoxHeight) > _constraintSet.MaximumPalletHeight.Value;
+                        maxWeightReached = _constraintSet.MaximumPalletWeight.Activated
+                            && (_palletProperties.Weight
+                            + (noInterlayer + (iCountInterlayer == 0 ? 1 : 0)) * interlayerWeight
+                            + (noLayer + 1) * boxLayer.Count * _packProperties.Weight > _constraintSet.MaximumPalletWeight.Value);
+                    }
 
-                        bool maxHeightReached = _constraintSet.MaximumPalletHeight.Activated
-                            && ( _packProperties.Height
-                            + noInterlayer * interlayerThickness
-                            + noLayer * layer.BoxHeight) > _constraintSet.MaximumPalletHeight.Value;
-                        bool maxWeightReached = _constraintSet.MaximumPalletWeight.Activated 
-                            && ( _packProperties.Height
-                            + noInterlayer * interlayerWeight
-                            + noLayer * boxLayer.Count * _packProperties.Weight > _constraintSet.MaximumPalletWeight.Value);
-
-                        noLayer = 0; noInterlayer = 0; 
-                        int iCountInterlayer = 0, iCountSwap = 0;
-                        while ( !maxHeightReached &&  !maxWeightReached)
-                        {
-                            bool bInterlayer = (0 == iCountInterlayer) && ((noLayer != 0) || _constraintSet.HasFirstInterlayer);
-                            bool bSwap = (0 == iCountSwap);
-                            // actually insert new layer
-                            sol.AddLayer(bSwap, bInterlayer);
-                            // increment number of layers
-                            noLayer++;
-                            noInterlayer += (bInterlayer ? 1 : 0);
-                            // update iCountInterlayer && iCountSwap
-                            ++iCountInterlayer;
-                            if (iCountInterlayer >= _constraintSet.InterlayerPeriod) iCountInterlayer = 0;
-                             ++iCountSwap;
-                             if (iCountSwap > _constraintSet.LayerSwapPeriod) iCountSwap = 0;
-                            // update maxHeightReached & maxWeightReached
-                            maxHeightReached = _constraintSet.MaximumPalletHeight.Activated
-                                && (_packProperties.Height
-                                + (noInterlayer + (iCountInterlayer == 0 ? 1 : 0)) * interlayerThickness
-                                + (noLayer+1) * layer.BoxHeight) > _constraintSet.MaximumPalletHeight.Value;
-                            maxWeightReached = _constraintSet.MaximumPalletWeight.Activated
-                                && (_packProperties.Height
-                                + (noInterlayer + (iCountInterlayer == 0 ? 1 : 0)) * interlayerWeight
-                                + (noLayer + 1) * boxLayer.Count * _packProperties.Weight > _constraintSet.MaximumPalletWeight.Value);
-                        }
-
-                        if (sol.PackCount > 0)
-                            solutions.Add(sol);
-                    } // invIndex
+                    if (sol.PackCount > 0)
+                        solutions.Add(sol);
                 } // axis
             } // pattern
             solutions.Sort();

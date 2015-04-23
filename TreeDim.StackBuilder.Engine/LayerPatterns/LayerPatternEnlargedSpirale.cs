@@ -84,6 +84,8 @@ namespace TreeDim.StackBuilder.Engine
                         , new Vector2D(palletLength - offsetX - i * boxLength, palletWidth - offsetY - j * boxWidth)
                         , HalfAxis.HAxis.AXIS_X_N, HalfAxis.HAxis.AXIS_Y_N);
                 }
+            double spaceX_area1 = actualLength - 2 * sizeX_area1 * boxLength;
+            double spaceY_area1 = actualWidth - 2 * sizeY_area1 * boxWidth;
             // area2
             for (int i = 0; i < sizeX_area2; ++i)
                 for (int j = 0; j < sizeY_area2; ++j)
@@ -95,6 +97,8 @@ namespace TreeDim.StackBuilder.Engine
                         , new Vector2D(offsetX + i * boxWidth, palletWidth - offsetY - j * boxLength)
                         , HalfAxis.HAxis.AXIS_Y_N, HalfAxis.HAxis.AXIS_X_P);
                 }
+            double spaceX_area2 = actualLength - 2 * sizeX_area2 * boxWidth;
+            double spaceY_area2 = actualWidth - 2 * sizeY_area2 * boxLength;
             // area3
             for (int i = 0; i < sizeX_area3; ++i)
                 for (int j = 0; j < sizeY_area3; ++j)
@@ -114,6 +118,21 @@ namespace TreeDim.StackBuilder.Engine
                             )
                             , HalfAxis.HAxis.AXIS_Y_P, HalfAxis.HAxis.AXIS_X_N);
                 }
+
+            double spaceX_area3 = 0.0, spaceY_area3 = 0.0;
+            if (dir_area3 == 0)
+            {
+                spaceX_area3 = 0.5 * (actualLength - sizeX_area3 * boxLength - 2.0 * (spaceX_area1 > 0 ? sizeX_area1 * boxLength : sizeX_area2 * boxWidth));
+                spaceY_area3 = 0.5 * (actualWidth - sizeY_area3 * boxWidth - 2.0 * (spaceY_area1 > 0 ? sizeY_area1 * boxWidth : sizeY_area2 * boxLength));
+            }
+            else
+            {
+                spaceX_area3 = 0.5 * (actualLength - sizeX_area3 * boxWidth - 2.0 * (spaceX_area1 > 0 ? sizeX_area1 * boxLength : sizeX_area2 * boxWidth));
+                spaceY_area3 = 0.5 * (actualWidth - sizeY_area3 * boxLength - 2.0 * (spaceY_area1 > 0 ? sizeY_area1 * boxWidth : sizeY_area2 * boxLength));
+            }
+            // set spacing
+            layer.UpdateMaxSpace(spaceX_area3);
+            layer.UpdateMaxSpace(spaceY_area3);
         }
         public override int GetNumberOfVariants(Layer layer) { return 1; }
         public override bool CanBeSwapped { get { return true; } }

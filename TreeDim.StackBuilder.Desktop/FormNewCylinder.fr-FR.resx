@@ -137,10 +137,10 @@
 		<value>28, 13</value>
 	</data>
 	<data name="lbWeight.Text" xml:space="preserve">
-    <value>Poid</value>
+    <value>Poids</value>
   </data>
 	<data name="gbWeight.Text" xml:space="preserve">
-    <value>Poid</value>
+    <value>Poids</value>
   </data>
 	<data name="cbColorWall.Items63" xml:space="preserve">
     <value>Color</value>

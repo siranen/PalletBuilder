@@ -70,6 +70,11 @@ namespace TreeDim.StackBuilder.Engine
                             offsetX + maxSizeXLength * (boxLength + spaceX) + i * (boxWidth + spaceX) + boxWidth
                             , offsetY + j * (boxLength + spaceYWidth))
                         , HalfAxis.HAxis.AXIS_Y_P, HalfAxis.HAxis.AXIS_X_N);
+
+            // maximum space
+            layer.UpdateMaxSpace( spaceYLength);
+            layer.UpdateMaxSpace( spaceYWidth );
+            layer.UpdateMaxSpace( spaceX );
         }
 
         private void GetSizeXY(double boxLength, double boxWidth, double palletLength, double palletWidth,

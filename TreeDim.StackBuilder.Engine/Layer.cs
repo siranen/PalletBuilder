@@ -346,6 +346,11 @@ namespace TreeDim.StackBuilder.Engine
             // add position
             this.Add(layerPos);
         }
+
+        public void UpdateMaxSpace(double space)
+        {
+            _maximumSpace = Math.Max(space, _maximumSpace);
+        }
         #endregion
 
         #region Public properties
@@ -380,6 +385,7 @@ namespace TreeDim.StackBuilder.Engine
         public double MaximumSpace
         {
             get { return _maximumSpace; }
+            set { _maximumSpace = value; }
         }
         #endregion
     }
