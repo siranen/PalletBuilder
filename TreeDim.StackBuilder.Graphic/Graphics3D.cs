@@ -198,6 +198,21 @@ namespace TreeDim.StackBuilder.Graphics
         #endregion
 
         #region Helpers
+        public Ray GetPickingRay(int x, int y)
+        { 
+            // normalised_x = 2 * mouse_x / win_width - 1
+            // normalised_y = 1 - 2 * mouse_y / win_height
+            // note the y pos is inverted, so +y is at the top of the screen
+            // unviewMat = (projectionMat * modelViewMat).inverse()
+            // near_point = unviewMat * Vec(normalised_x, normalised_y, 0, 1)
+            // camera_pos = ray_origin = modelViewMat.inverse().col(4)
+            // ray_dir = near_point - camera_pos
+            Transform3D eye2worldTransf = GetWorldToEyeTransformation().Inverse();
+            Vector3D vNear = eye2worldTransf.transform(new Vector3D((double)x, (double)y, 0.0));
+            Vector3D vFar = eye2worldTransf.transform(new Vector3D((double)x, (double)y, 1.0));
+            return new Ray(vNear, vFar);
+        }
+
         private Point[] TransformPoint(Transform3D transform, Vector3D[] points3d)
         {
             Point[] points = new Point[points3d.Length];

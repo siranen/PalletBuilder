@@ -82,6 +82,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Graphics3DControl.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ray.cs" />
     <Compile Include="SolutionViewers\PackPalletSolutionViewer.cs" />
     <Compile Include="Types\Pack.cs" />
     <Compile Include="Properties\Resource.Designer.cs">

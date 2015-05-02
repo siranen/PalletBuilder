@@ -267,6 +267,63 @@ namespace TreeDim.StackBuilder.Graphics
             const double eps = 0.0001;
             return (Vector3D.DotProduct(pt - Center, Normal) * Vector3D.DotProduct(viewDir, Normal)) < eps;
         }
+
+        public bool RayIntersect(Ray ray, out Vector3D ptInter)
+        {
+            ptInter = Vector3D.Zero;
+            double u = 0.0, v = 0.0;
+            if (IntersectTriangle(ray, _points[0], _points[1], _points[2], out u, out v))
+            {
+                Vector3D vecU = _points[1] - _points[0];
+                Vector3D vecV = _points[2] - _points[0];
+                ptInter = _points[0] + u * vecU + v * vecV;
+                return true;
+            }
+            else if (IntersectTriangle(ray, _points[1], _points[2], _points[3], out u, out v))
+            {
+                Vector3D vecU = _points[2] - _points[1];
+                Vector3D vecV = _points[3] - _points[1];
+                ptInter = _points[0] + u * vecU + v * vecV;
+                return true;
+            }
+            return false;
+        }
+
+        public bool IntersectTriangle(Ray ray, Vector3D pt0, Vector3D pt1, Vector3D pt2, out double u, out double v)
+        {
+            u = 0.0; v = 0.0;
+            Vector3D edge1 = pt1 - pt0;
+            Vector3D edge2 = pt2 - pt0;
+
+            // begin calculating determinant - also used to calculate U parameter
+            Vector3D pvec = Vector3D.CrossProduct(ray.Direction, edge2);
+            double det = Vector3D.DotProduct(edge1, pvec);
+            // if determinant is near zero, ray lies in plane of triangle
+            double EPSILON = 0.00001;
+            if (det > -EPSILON && det < EPSILON)
+                return false;
+            double invdet = 1.0 / det;
+
+	    	// calculate distance from vert0 to ray origin
+            Vector3D tvec = pt0 - ray.Origin;
+
+		// calculate U parameter and test bounds
+		u = Vector3D.DotProduct(tvec, pvec) * invdet;
+		if (u < 0.0 || u > 1.0)
+			return false;
+
+        // prepare to test V parameter
+        Vector3D qvec = Vector3D.CrossProduct(tvec, edge1);
+
+        // calculate vparameter
+        v = Vector3D.DotProduct(ray.Direction, qvec) * invdet;
+        if (v < 0.0 || u + v > 1.0)
+            return false;
+
+        // calculate t, ray intersects triangle
+        double t = Vector3D.DotProduct(edge2, qvec) * invdet;
+            return true;
+        }
         #endregion
 
         #region Object override
