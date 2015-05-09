@@ -35,11 +35,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Graphics3DControl";
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.onMouseDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.onMouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.onMouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.onMouseUp);
             this.Resize += new System.EventHandler(this.onResize);
             this.ResumeLayout(false);
+
         }
         #endregion
     }

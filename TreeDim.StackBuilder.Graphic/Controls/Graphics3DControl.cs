@@ -279,6 +279,13 @@ namespace TreeDim.StackBuilder.Graphics
         {
             Invalidate();
         }
+        private void onMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // build ray
+            // compute intersection with all boxes and collect indexes
+            // sort intersections and keep the nearest
+            // send event
+        }
         #endregion
     }
     #endregion

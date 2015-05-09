@@ -682,6 +682,28 @@ namespace TreeDim.StackBuilder.Graphics
             _position.Y -= 0.5 * d;
             _position.Z -= 0.5 * d;
         }
+
+        public bool RayIntersect(Ray ray, out Vector3D ptInter)
+        {
+            List<Vector3D> listIntersections = new List<Vector3D>();
+            foreach (Face f in Faces)
+            {
+                Vector3D pt;
+                if (f.RayIntersect(ray, out pt))
+                    listIntersections.Add(pt);
+            }
+            // instantiate intersection comparer
+            RayIntersectionComparer comp = new RayIntersectionComparer(ray);
+            // sort intersections
+            listIntersections.Sort(comp);
+            // save intersection point
+            if (listIntersections.Count > 0)
+                ptInter = listIntersections[0];
+            else
+                ptInter = Vector3D.Zero;
+            // return true if an intersection was found
+            return listIntersections.Count > 0;
+        }
         #endregion
     }
     #endregion
