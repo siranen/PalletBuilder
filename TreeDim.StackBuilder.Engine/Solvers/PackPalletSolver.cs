@@ -111,7 +111,7 @@ namespace TreeDim.StackBuilder.Engine
                         + noInterlayer * interlayerThickness
                         + noLayer * layer.BoxHeight) > _constraintSet.MaximumPalletHeight.Value;
                     bool maxWeightReached = _constraintSet.MaximumPalletWeight.Activated
-                        && (_packProperties.Height
+                        && (_palletProperties.Weight
                         + noInterlayer * interlayerWeight
                         + noLayer * boxLayer.Count * _packProperties.Weight > _constraintSet.MaximumPalletWeight.Value);
 

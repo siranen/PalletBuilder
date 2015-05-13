@@ -65,4 +65,5 @@ namespace TreeDim.StackBuilder.Graphics
         // Data members
         private Ray _ray;
     }
+    #endregion
 }

@@ -822,7 +822,7 @@ namespace TreeDim.StackBuilder.Desktop
                 constraintSet.HasFirstInterlayer = form.HasFirstInterlayer;
                 // stop criterions
                 constraintSet.MaximumPalletHeight = form.MaximumPalletHeight;
-                constraintSet.MaximumPalletWeight = form.MaximumLayerWeight;
+                constraintSet.MaximumPalletWeight = form.MaximumPalletWeight;
             }
             if (recomputeRequired)
                 analysis.OnEndUpdate(null);
