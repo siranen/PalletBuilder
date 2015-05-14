@@ -100,61 +100,64 @@ namespace TreeDim.StackBuilder.Desktop
             viewColumnHeader.ForeColor = Color.White;
             viewColumnHeader.Font = new Font("Arial", 10, FontStyle.Bold);
             viewColumnHeader.ElementSort.SortStyle = DevAge.Drawing.HeaderSortStyle.None;
+         
+
 
             // create the grid
             gridSolutions.BorderStyle = BorderStyle.FixedSingle;
 
-            gridSolutions.ColumnsCount = 9;
+            gridSolutions.ColumnsCount = 8;
             gridSolutions.FixedRows = 1;
             gridSolutions.Rows.Insert(0);
 
             // header
             SourceGrid.Cells.ColumnHeader columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_INDEX);
+            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LAYERPATTERN);
             columnHeader.AutomaticSortEnabled = false;
             columnHeader.View = viewColumnHeader;
             gridSolutions[0, 0] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LAYERPATTERN);
+            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_PACKCOUNT);
             columnHeader.AutomaticSortEnabled = false;
             columnHeader.View = viewColumnHeader;
             gridSolutions[0, 1] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_PACKCOUNT);
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CONSUMERSALESUNITS);
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 2] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CONSUMERSALESUNITS);
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_LAYERWEIGHT, UnitsManager.MassUnitString));
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 3] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_LAYERWEIGHT, UnitsManager.MassUnitString));
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETWEIGHT, UnitsManager.MassUnitString));
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 4] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETWEIGHT, UnitsManager.MassUnitString));
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETHEIGHT, UnitsManager.LengthUnitString));
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 5] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETHEIGHT, UnitsManager.LengthUnitString));
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_MAXIMUMSPACE, UnitsManager.LengthUnitString));
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 6] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_MAXIMUMSPACE, UnitsManager.LengthUnitString));
-            columnHeader.AutomaticSortEnabled = false;
-            columnHeader.View = viewColumnHeader;
-            gridSolutions[0, 7] = columnHeader;
-
             columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_SELECTED);
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            gridSolutions[0, 8] = columnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
+            gridSolutions[0, 7] = columnHeader;
 
             // handling check box click
             SourceGrid.Cells.Controllers.CustomEvents solCheckboxClickEvent = new SourceGrid.Cells.Controllers.CustomEvents();
@@ -169,22 +172,22 @@ namespace TreeDim.StackBuilder.Desktop
                 string sCSUCount = string.Format("{0}", sol.CSUCount);
                 // insert row
                 gridSolutions.Rows.Insert(++iIndex);
+                gridSolutions.Rows[iIndex].Tag = sol;
 
                 // filling columns
-                gridSolutions[iIndex, 0] = new SourceGrid.Cells.Cell(string.Format("{0}", iIndex));
                 {
                     Graphics2DImage graphics = new Graphics2DImage(new Size(100, 50));
                     PackPalletSolutionViewer sv = new PackPalletSolutionViewer(sol);
                     sv.Draw(graphics);
-                    gridSolutions[iIndex, 1] = new SourceGrid.Cells.Image(graphics.Bitmap);
+                    gridSolutions[iIndex, 0] = new SourceGrid.Cells.Image(graphics.Bitmap);
                 }
-                gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(sPackCount);
-                gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(sCSUCount);
-                gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(string.Format("{0:F}", sol.LayerWeight));
-                gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(string.Format("{0:F}", sol.PalletWeight));
-                gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(string.Format("{0:F}", sol.PalletHeight));
-                gridSolutions[iIndex, 7] = new SourceGrid.Cells.Cell(string.Format("{0:F}", sol.MaximumSpace));
-                gridSolutions[iIndex, 8] = new SourceGrid.Cells.CheckBox(null, _analysis.HasSolutionSelected(iIndex - 1));
+                gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(sPackCount);
+                gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(sCSUCount);
+                gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(Math.Round(sol.LayerWeight, 3));
+                gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletWeight, 3));
+                gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletHeight, 1));
+                gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(Math.Round(sol.MaximumSpace, 1));
+                gridSolutions[iIndex, 7] = new SourceGrid.Cells.CheckBox(null, _analysis.HasSolutionSelected(iIndex - 1));
 
                 gridSolutions[iIndex, 0].View = viewNormal;
                 gridSolutions[iIndex, 1].View = viewNormal;
@@ -193,10 +196,9 @@ namespace TreeDim.StackBuilder.Desktop
                 gridSolutions[iIndex, 4].View = viewNormal;
                 gridSolutions[iIndex, 5].View = viewNormal;
                 gridSolutions[iIndex, 6].View = viewNormal;
-                gridSolutions[iIndex, 7].View = viewNormal;
-                gridSolutions[iIndex, 8].View = viewNormalCheck;
+                gridSolutions[iIndex, 7].View = viewNormalCheck;
 
-                gridSolutions[iIndex, 8].AddController(solCheckboxClickEvent);
+                gridSolutions[iIndex, 7].AddController(solCheckboxClickEvent);
             }
             gridSolutions.AutoStretchColumnsToFitWidth = true;
             gridSolutions.AutoSizeCells();
@@ -229,7 +231,8 @@ namespace TreeDim.StackBuilder.Desktop
             // no selection -> exit
             if (indexes.Length == 0) return;
             // get selected solution
-            _sol = _analysis.Solutions[indexes[0] - 1];
+            _sol = gridSolutions.Rows[indexes[0]].Tag as PackPalletSolution;
+            //_sol = _analysis.Solutions[indexes[0]];
             // update select/unselect button text
             UpdateSelectButtonText();
             // redraw
@@ -288,9 +291,11 @@ namespace TreeDim.StackBuilder.Desktop
         }
         private PackPalletSolution GetCurrentSolution()
         {
-            int iIndexSol = GetCurrentSolutionIndex();
-            if (-1 == iIndexSol) return null;
-            else return _analysis.Solutions[iIndexSol];
+            SourceGrid.RangeRegion region = gridSolutions.Selection.GetSelectionRegion();
+            int[] indexes = region.GetRowsIndex();
+            // no selection -> exit
+            if (indexes.Length == 0) return null;
+            else return gridSolutions.Rows[indexes[0]].Tag as PackPalletSolution;
         }
         #endregion
 

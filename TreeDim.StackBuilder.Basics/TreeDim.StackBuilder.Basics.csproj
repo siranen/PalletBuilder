@@ -108,6 +108,12 @@
     <Compile Include="PalletDecoration\PalletCornerProperties.cs" />
     <Compile Include="PalletDecoration\PalletCapProperties.cs" />
     <Compile Include="PalletDecoration\PalletFilmProperties.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Solutions\BaseSolution.cs" />
     <Compile Include="Solutions\BoxCaseSolution.cs" />
     <Compile Include="Analyses\CaseOptimAnalysis.cs" />
     <Compile Include="Analyses\ECTAnalysis.cs" />
@@ -205,6 +211,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCtrlTriDouble.resx">
       <DependentUpon>UCtrlTriDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 
 using Sharp3D.Math.Core;
+using TreeDim.StackBuilder.Basics.Properties;
 #endregion
 
 namespace TreeDim.StackBuilder.Basics
 {
-    public class PackPalletSolution : IComparable
+    public class PackPalletSolution : IBaseSolution, IComparable
     {
         #region Data members
         /// <summary>
@@ -180,6 +181,37 @@ namespace TreeDim.StackBuilder.Basics
             if (this.PackCount > sol.PackCount) return -1;
             else if (this.PackCount < sol.PackCount) return 1;
             else return 0;
+        }
+        #endregion
+
+        #region ISolution
+        public DataDef[] Columns
+        {
+            get
+            {
+                List<DataDef> dataDefs = new List<DataDef>();
+                dataDefs.Add(new DataDef(Resource.ID_PACKCOUNT, typeof(string), UnitsManager.UnitType.UT_NONE, false));
+                dataDefs.Add(new DataDef(Resource.ID_CONSUMERSALESUNITS, typeof(int), UnitsManager.UnitType.UT_NONE, true));
+                dataDefs.Add(new DataDef(Resource.ID_LAYERWEIGHT, typeof(double), UnitsManager.UnitType.UT_MASS, true));
+                dataDefs.Add(new DataDef(Resource.ID_PALLETWEIGHT, typeof(double), UnitsManager.UnitType.UT_MASS, true));
+                dataDefs.Add(new DataDef(Resource.ID_PALLETHEIGHT, typeof(double), UnitsManager.UnitType.UT_LENGTH, true));
+                dataDefs.Add(new DataDef(Resource.ID_MAXIMUMSPACE, typeof(double), UnitsManager.UnitType.UT_LENGTH, true ));
+                return dataDefs.ToArray();
+            }
+        }
+        public List<object> Values
+        {
+            get
+            {
+                List<object> values = new List<object>();
+                values.Add(string.Format("{0}\n({1} * {2})", PackCount, PackPerLayer, LayerCount));
+                values.Add(CSUCount);
+                values.Add(LayerWeight);
+                values.Add(PalletWeight);
+                values.Add(PalletHeight);
+                values.Add(MaximumSpace);
+                return values;
+            }
         }
         #endregion
 

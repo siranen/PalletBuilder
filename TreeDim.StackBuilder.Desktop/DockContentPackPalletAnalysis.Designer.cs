@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DockContentPackPalletAnalysis));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
-            this.gridSolutions = new SourceGrid.Grid();
             this.btSelectSolution = new System.Windows.Forms.Button();
+            this.gridSolutions = new SourceGrid.Grid();
+            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).BeginInit();
             this.splitContainerHoriz.Panel1.SuspendLayout();
             this.splitContainerHoriz.Panel2.SuspendLayout();
@@ -59,21 +59,21 @@
             this.splitContainerHoriz.SplitterDistance = 450;
             this.splitContainerHoriz.TabIndex = 0;
             // 
-            // graphCtrlSolution
+            // btSelectSolution
             // 
-            this.graphCtrlSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.graphCtrlSolution.Location = new System.Drawing.Point(0, 0);
-            this.graphCtrlSolution.Name = "graphCtrlSolution";
-            this.graphCtrlSolution.Size = new System.Drawing.Size(604, 416);
-            this.graphCtrlSolution.TabIndex = 0;
+            this.btSelectSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSelectSolution.Location = new System.Drawing.Point(501, 422);
+            this.btSelectSolution.Name = "btSelectSolution";
+            this.btSelectSolution.Size = new System.Drawing.Size(100, 23);
+            this.btSelectSolution.TabIndex = 0;
+            this.btSelectSolution.Text = "Select";
+            this.btSelectSolution.UseVisualStyleBackColor = true;
             // 
             // gridSolutions
             // 
             this.gridSolutions.AcceptsInputChar = false;
             this.gridSolutions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridSolutions.EnableSort = false;
+            this.gridSolutions.EnableSort = true;
             this.gridSolutions.Location = new System.Drawing.Point(0, 0);
             this.gridSolutions.Name = "gridSolutions";
             this.gridSolutions.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
@@ -84,15 +84,15 @@
             this.gridSolutions.TabStop = true;
             this.gridSolutions.ToolTipText = "";
             // 
-            // btSelectSolution
+            // graphCtrlSolution
             // 
-            this.btSelectSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSelectSolution.Location = new System.Drawing.Point(501, 422);
-            this.btSelectSolution.Name = "btSelectSolution";
-            this.btSelectSolution.Size = new System.Drawing.Size(100, 23);
-            this.btSelectSolution.TabIndex = 0;
-            this.btSelectSolution.Text = "Select";
-            this.btSelectSolution.UseVisualStyleBackColor = true;
+            this.graphCtrlSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.graphCtrlSolution.Location = new System.Drawing.Point(0, 0);
+            this.graphCtrlSolution.Name = "graphCtrlSolution";
+            this.graphCtrlSolution.Size = new System.Drawing.Size(604, 416);
+            this.graphCtrlSolution.TabIndex = 0;
             // 
             // DockContentPackPalletAnalysis
             // 

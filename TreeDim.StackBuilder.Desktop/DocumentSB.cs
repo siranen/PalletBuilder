@@ -825,9 +825,13 @@ namespace TreeDim.StackBuilder.Desktop
                 constraintSet.MaximumPalletWeight = form.MaximumPalletWeight;
             }
             if (recomputeRequired)
+            {
                 analysis.OnEndUpdate(null);
+                if (analysis.Solutions.Count < 1)
+                    MessageBox.Show(Properties.Resources.ID_ANALYSISHASNOSOLUTION, Application.ProductName, MessageBoxButtons.OK);
+            }
         }
-
+        
         public void EditCylinderPalletAnalysis(CylinderPalletAnalysis analysis)
         {
             bool recomputeRequired = false;
