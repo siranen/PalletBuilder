@@ -244,6 +244,7 @@ namespace TreeDim.StackBuilder.Engine
                                     double cornerThickness = null != _cornerProperties ? _cornerProperties.Thickness : 0.0;
                                     Layer currentLayer = iLayerIndex % 2 == 0 ? layer1T : layer2T;
                                     BoxLayer layer = sol.CreateNewLayer(zLayer, pattern.Name);
+                                    layer.MaximumSpace = currentLayer.MaximumSpace;
 
                                     foreach (LayerPosition layerPos in currentLayer)
                                     {

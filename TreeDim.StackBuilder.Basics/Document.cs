@@ -1766,12 +1766,18 @@ namespace TreeDim.StackBuilder.Basics
         #region Load case optimisation
         private void LoadOptimConstraintSet(XmlElement eltConstraintSet, out CaseOptimConstraintSet constraintSet)
         {
+            double overhangX =  0.0;
+            if (eltConstraintSet.HasAttribute("OverhangX"))
+                overhangX = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["OverhangX"].Value), _unitSystem);
+            double overhangY = 0.0;
+            if (eltConstraintSet.HasAttribute("OverhangY"))
+                overhangX = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["OverhangY"].Value), _unitSystem);
             string sNoWalls = eltConstraintSet.Attributes["NumberOfWalls"].Value;
             int[] iNoWalls = ParseInt3(sNoWalls);
             double wallThickness = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["WallThickness"].Value), _unitSystem);
             double wallSurfaceMass = 0.0;
             wallSurfaceMass = UnitsManager.ConvertSurfaceMassFrom(Convert.ToDouble(eltConstraintSet.Attributes["WallSurfaceMass"].Value), _unitSystem);
-            constraintSet = new CaseOptimConstraintSet(iNoWalls, wallThickness, wallSurfaceMass, Vector3D.Zero, Vector3D.Zero, false); 
+            constraintSet = new CaseOptimConstraintSet(overhangX, overhangY, iNoWalls, wallThickness, wallSurfaceMass, Vector3D.Zero, Vector3D.Zero, false); 
         }
         #endregion
 
@@ -2536,13 +2542,21 @@ namespace TreeDim.StackBuilder.Basics
         private ILayer LoadLayer(XmlElement eltLayer)
         {
             ILayer layer = null;
-            double zLow = System.Convert.ToDouble(eltLayer.Attributes["ZLow"].Value);
+            double zLow = UnitsManager.ConvertLengthFrom(
+                Convert.ToDouble(eltLayer.Attributes["ZLow"].Value, System.Globalization.CultureInfo.InvariantCulture)
+                , _unitSystem);
+            double maxSpace = 0.0;
+            if (eltLayer.HasAttribute("MaximumSpace"))
+                maxSpace = UnitsManager.ConvertLengthFrom(
+                    Convert.ToDouble(eltLayer.Attributes["MaximumSpace"].Value, System.Globalization.CultureInfo.InvariantCulture)
+                    , _unitSystem);
             string patternName = string.Empty;
             if (eltLayer.HasAttribute("PatternName"))
                 patternName = eltLayer.Attributes["PatternName"].Value;
             if (string.Equals(eltLayer.Name, "BoxLayer", StringComparison.CurrentCultureIgnoreCase))
             {
                 BoxLayer boxLayer = new BoxLayer(UnitsManager.ConvertLengthFrom(zLow, _unitSystem), patternName);
+                boxLayer.MaximumSpace = maxSpace;
                 foreach (XmlNode nodeBoxPosition in eltLayer.ChildNodes)
                 {
                     XmlElement eltBoxPosition = nodeBoxPosition as XmlElement;
@@ -4322,7 +4336,7 @@ namespace TreeDim.StackBuilder.Basics
                     layersElt.AppendChild(interlayerElt);
                     // ZLow
                     XmlAttribute zlowAttribute = xmlDoc.CreateAttribute("ZLow");
-                    zlowAttribute.Value = string.Format("{0}", interlayerPos.ZLow);
+                    zlowAttribute.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", interlayerPos.ZLow);
                     interlayerElt.Attributes.Append(zlowAttribute);
                 }
             }
@@ -4429,7 +4443,7 @@ namespace TreeDim.StackBuilder.Basics
                     layersElt.AppendChild(interlayerElt);
                     // ZLow
                     XmlAttribute zlowAttribute = xmlDoc.CreateAttribute("ZLow");
-                    zlowAttribute.Value = string.Format("{0}", interlayerPos.ZLow);
+                    zlowAttribute.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", interlayerPos.ZLow);
                     interlayerElt.Attributes.Append(zlowAttribute);
                 }
             }
@@ -4613,8 +4627,13 @@ namespace TreeDim.StackBuilder.Basics
             layersElt.AppendChild(boxlayerElt);
             // ZLow
             XmlAttribute zlowAttribute = xmlDoc.CreateAttribute("ZLow");
-            zlowAttribute.Value = string.Format("{0}", boxLayer.ZLow);
+            zlowAttribute.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", boxLayer.ZLow);
             boxlayerElt.Attributes.Append(zlowAttribute);
+            // maximum space
+            XmlAttribute attributeMaxSpace = xmlDoc.CreateAttribute("MaximumSpace");
+            attributeMaxSpace.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", boxLayer.MaximumSpace);
+            boxlayerElt.Attributes.Append(attributeMaxSpace);
+
             foreach (BoxPosition boxPosition in boxLayer)
             {
                 // BoxPosition
@@ -4642,7 +4661,7 @@ namespace TreeDim.StackBuilder.Basics
             layersElt.AppendChild(cylLayerElt);
             // ZLow
             XmlAttribute zlowAttribute = xmlDoc.CreateAttribute("ZLow");
-            zlowAttribute.Value = string.Format("{0}", cylLayer.ZLow);
+            zlowAttribute.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", cylLayer.ZLow);
             cylLayerElt.Attributes.Append(zlowAttribute);
             foreach (Vector3D boxPosition in cylLayer)
             {

@@ -375,30 +375,6 @@ namespace TreeDim.StackBuilder.Desktop
                     , null
                     , constraintSet
                     , new PackPalletSolver());
-
-                /*
-                // add new case
-                CaseOfBoxesProperties caseProperties = _document.CreateNewCaseOfBoxes(
-                    name, description
-                    , boxProperties
-                    , sol.CaseDefinition
-                    , BuildCaseOptimConstraintSet());
-                // set color
-                caseProperties.SetColor(Color.Chocolate);
-                // add new pallet analysis
-
-                List<CasePalletSolution> palletSolutionList = new List<CasePalletSolution>();
-                palletSolutionList.Add(sol.PalletSolution);
-                CasePalletAnalysis analysis = _document.CreateNewCasePalletAnalysis(
-                    analysisName
-                    , analysisDescription
-                    , caseProperties
-                    , palletProperties
-                    , null, null
-                    , null, null, null
-                    , BuildPalletConstraintSet()
-                    , palletSolutionList);
-                 */ 
             }
             catch (Exception ex)
             {
@@ -417,10 +393,6 @@ namespace TreeDim.StackBuilder.Desktop
         }
         void Selection_SelectionChanged(object sender, SourceGrid.RangeRegionChangedEventArgs e)
         {
-            SourceGrid.RangeRegion region = gridSolutions.Selection.GetSelectionRegion();
-            int[] indexes = region.GetRowsIndex();
-            // no selection -> exit
-            if (indexes.Length == 0) return;
             // redraw
             graphCtrlBoxesLayout.Invalidate();
             graphCtrlPallet.Invalidate();
@@ -435,12 +407,11 @@ namespace TreeDim.StackBuilder.Desktop
             _solutions.Clear();
             FillGrid();
         }
-        private void splitContainerCasePallet_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-        }
         #endregion
 
         #region Private properties
+        private double OverhangX { get { return uCtrlOverhangLength.Value; } }
+        private double OverhangY { get { return uCtrlOverhangWidth.Value; } }
         private double MaxLength { get { return (double)nudMaxCaseLength.Value; } }
         private double MaxWidth { get { return (double)nudMaxCaseWidth.Value; } }
         private double MaxHeight { get { return (double)nudMaxCaseHeight.Value; } }
@@ -524,63 +495,63 @@ namespace TreeDim.StackBuilder.Desktop
                 // header
                 SourceGrid.Cells.ColumnHeader columnHeader;
                 // 0
-                columnHeader = new SourceGrid.Cells.ColumnHeader("#");
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_A1);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 0] = columnHeader;
                 // 1
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_A1);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_A2);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 1] = columnHeader;
                 // 2
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_A2);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_A3);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 2] = columnHeader;
                 // 3
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_A3);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LENGTH);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 3] = columnHeader;
                 // 4
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LENGTH);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_WIDTH);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 4] = columnHeader;
                 // 5
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_WIDTH);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_HEIGHT);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 5] = columnHeader;
                 // 6
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_HEIGHT);
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_AREA + "/" + Resources.ID_WEIGHT);
                 columnHeader.AutomaticSortEnabled = false;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 6] = columnHeader;
                 // 7
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_AREA + "/" + Resources.ID_WEIGHT);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CASESLAYER);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 7] = columnHeader;
                 // 8
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CASESLAYER);
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LAYERS);
                 columnHeader.AutomaticSortEnabled = false;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 8] = columnHeader;
                 // 9
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LAYERS);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CASESPALLET);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 9] = columnHeader;
                 // 10
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CASESPALLET);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_VOLUMEEFFICIENCY);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 10] = columnHeader;
                 // 11
-                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_VOLUMEEFFICIENCY);
-                columnHeader.AutomaticSortEnabled = false;
+                columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_MAXIMUMSPACE);
+                columnHeader.AutomaticSortEnabled = true;
                 columnHeader.View = viewColumnHeader;
                 gridSolutions[0, 11] = columnHeader;
 
@@ -588,15 +559,15 @@ namespace TreeDim.StackBuilder.Desktop
                 gridSolutions.Columns[0].Width = 30;
                 gridSolutions.Columns[1].Width = 30;
                 gridSolutions.Columns[2].Width = 30;
-                gridSolutions.Columns[3].Width = 30;
+                gridSolutions.Columns[3].Width = 50;
                 gridSolutions.Columns[4].Width = 50;
                 gridSolutions.Columns[5].Width = 50;
-                gridSolutions.Columns[6].Width = 50;
+                gridSolutions.Columns[6].Width = 80;
                 gridSolutions.Columns[7].Width = 80;
-                gridSolutions.Columns[8].Width = 80;
-                gridSolutions.Columns[9].Width = 50;
-                gridSolutions.Columns[10].Width = 80;
-                gridSolutions.Columns[11].Width = 100;
+                gridSolutions.Columns[8].Width = 50;
+                gridSolutions.Columns[9].Width = 80;
+                gridSolutions.Columns[10].Width = 100;
+                gridSolutions.Columns[11].Width = 80;
 
                 // get BoxProperties
                 BoxProperties boxProperties = SelectedBox;
@@ -610,40 +581,41 @@ namespace TreeDim.StackBuilder.Desktop
                 {
                     // insert new row
                     gridSolutions.Rows.Insert(++iIndex);
-                    // # (index)
-                    gridSolutions[iIndex, 0] = new SourceGrid.Cells.Cell(string.Format("{0}", iIndex));
+                    gridSolutions.Rows[iIndex].Tag = sol;
                     // A1
-                    gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(string.Format("{0}", sol.CaseDefinition.Arrangement._iLength));
+                    gridSolutions[iIndex, 0] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iLength);
                     // A2
-                    gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(string.Format("{0}", sol.CaseDefinition.Arrangement._iWidth));
+                    gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iWidth);
                     // A3
-                    gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(string.Format("{0}", sol.CaseDefinition.Arrangement._iHeight));
+                    gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iHeight);
                     // Case inner dimensions
                     Vector3D innerDim = sol.CaseDefinition.InnerDimensions(boxProperties);
                     // LENGTH
-                    gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(string.Format("{0:0.#}", innerDim.X));
+                    gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(Math.Round(innerDim.X, 1));
                     // WIDTH
-                    gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(string.Format("{0:0.#}", innerDim.Y));
+                    gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(innerDim.Y, 1));
                     // HEIGHT
-                    gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(string.Format("{0:0.#}", innerDim.Z));
+                    gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(innerDim.Z, 1));
                     // AREA
-                    gridSolutions[iIndex, 7] = new SourceGrid.Cells.Cell(string.Format("{0:0.00} / {1:0.000}"
+                    gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(string.Format("{0:0.00} / {1:0.000}"
                         , sol.CaseDefinition.Area(boxProperties, caseOptimConstraintSet)
                         , sol.CaseDefinition.EmptyWeight(boxProperties, caseOptimConstraintSet) 
                         ));
                     // CASES PER LAYER
-                    gridSolutions[iIndex, 8] = new SourceGrid.Cells.Cell(string.Format("{0}", sol.PalletSolution[0].BoxCount));
+                    gridSolutions[iIndex, 7] = new SourceGrid.Cells.Cell(sol.PalletSolution[0].BoxCount);
                     // LAYERS
-                    gridSolutions[iIndex, 9] = new SourceGrid.Cells.Cell(string.Format("{0}", sol.PalletSolution.Count));
+                    gridSolutions[iIndex, 8] = new SourceGrid.Cells.Cell(sol.PalletSolution.Count);
                     // CASES PER PALLET
-                    gridSolutions[iIndex, 10] = new SourceGrid.Cells.Cell(string.Format("{0}", sol.CaseCount));
+                    gridSolutions[iIndex, 9] = new SourceGrid.Cells.Cell(sol.CaseCount);
                     // EFFICIENCY
-                    double efficiency = sol.CaseCount * sol.CaseDefinition.InnerVolume(boxProperties) /
+                    double efficiency = 100.0 * sol.CaseCount * sol.CaseDefinition.InnerVolume(boxProperties) /
                         ((palletProperties.Length - palletConstraintSet.OverhangX)
                         * (palletProperties.Width - palletConstraintSet.OverhangY)
                         * (palletConstraintSet.MaximumHeight - palletProperties.Height)
                         );
-                    gridSolutions[iIndex, 11] = new SourceGrid.Cells.Cell(string.Format("{0:0.00}", efficiency));
+                    gridSolutions[iIndex, 10] = new SourceGrid.Cells.Cell(Math.Round(efficiency, 1));
+                    // MAXIMUM SPACE
+                    gridSolutions[iIndex, 11] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletSolution.MaximumSpace, 1));
                 }
                 // select first solution
                 if (_solutions.Count > 0)
@@ -731,21 +703,22 @@ namespace TreeDim.StackBuilder.Desktop
         {
             get
             {
-                SourceGrid.RangeRegion region = gridSolutions.Selection.GetSelectionRegion();
-                int[] indexes = region.GetRowsIndex();
-                // no selection -> exit
-                if (indexes.Length == 0) return -1;
-                // return index
-                return indexes[0] - 1;
+                CaseOptimSolution sol = SelectedSolution;
+                if (null == sol) return -1;
+                // find and return index of sol
+                return _solutions.IndexOf(sol, 0);
             }
         }
         private CaseOptimSolution SelectedSolution
         {
             get
             {
-                int iIndexSol = SelectedSolutionIndex;
-                if (-1 == iIndexSol) return null;
-                else return _solutions[iIndexSol];
+                SourceGrid.RangeRegion region = gridSolutions.Selection.GetSelectionRegion();
+                int[] indexes = region.GetRowsIndex();
+                // no selection -> exit
+                if (indexes.Length == 0) return null;
+                CaseOptimSolution sol = gridSolutions.Rows[indexes[0]].Tag as CaseOptimSolution;
+                return sol;
             }
         }
         /// <summary>
@@ -782,7 +755,9 @@ namespace TreeDim.StackBuilder.Desktop
         private CaseOptimConstraintSet BuildCaseOptimConstraintSet()
         {
             return new CaseOptimConstraintSet(
-                    NoWalls
+                    OverhangX
+                    , OverhangY
+                    , NoWalls
                     , WallThickness, WallSurfaceMass
                     , new Vector3D(MinLength, MinWidth, MinHeight)
                     , new Vector3D(MaxLength, MaxWidth, MaxHeight)
@@ -815,6 +790,10 @@ namespace TreeDim.StackBuilder.Desktop
             palletConstraintSet.UseMaximumPalletWeight = false;
             palletConstraintSet.UseMaximumNumberOfCases = false;
             palletConstraintSet.UseMaximumWeightOnBox = false;
+
+            // overhang
+            palletConstraintSet.OverhangX = OverhangX;
+            palletConstraintSet.OverhangY = OverhangY;
 
             return palletConstraintSet;
         }

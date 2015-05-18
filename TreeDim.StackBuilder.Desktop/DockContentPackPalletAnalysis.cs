@@ -132,31 +132,26 @@ namespace TreeDim.StackBuilder.Desktop
             columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_LAYERWEIGHT, UnitsManager.MassUnitString));
             columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 3] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETWEIGHT, UnitsManager.MassUnitString));
             columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 4] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETHEIGHT, UnitsManager.LengthUnitString));
             columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 5] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_MAXIMUMSPACE, UnitsManager.LengthUnitString));
             columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 6] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_SELECTED);
             columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 7] = columnHeader;
 
             // handling check box click
@@ -282,12 +277,10 @@ namespace TreeDim.StackBuilder.Desktop
         }
         private int GetCurrentSolutionIndex()
         {
-            SourceGrid.RangeRegion region = gridSolutions.Selection.GetSelectionRegion();
-            int[] indexes = region.GetRowsIndex();
-            // no selection -> exit
-            if (indexes.Length == 0) return -1;
-            // return index
-            return indexes[0] - 1;
+            PackPalletSolution sol = GetCurrentSolution();
+            if (null == sol) return -1;
+            // find and return index of sol
+            return _analysis.Solutions.IndexOf(sol, 0);
         }
         private PackPalletSolution GetCurrentSolution()
         {

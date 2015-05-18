@@ -56,22 +56,22 @@ namespace TreeDim.StackBuilder.Engine
             double offsetY = 0.5 * (palletWidth - actualWidth);
 
             // compute spaces
-            double spaceX_area1 = sizeX_area1 + sizeX_area3 > 1 ? (actualLength - (boxWidth * sizeX_area1 + boxLength * sizeX_area3)) / (sizeX_area1 + sizeX_area3 - 1) : 0.0;
-            double spaceX_area2 = sizeX_area2 > 1 ? (actualLength - sizeX_area2 * boxLength) / (sizeX_area2 - 1) : 0.0;
+            double spaceX_area1 = (actualLength - (boxWidth * sizeX_area1 + boxLength * sizeX_area3)) / (sizeX_area1 + sizeX_area3 > 1 ? (sizeX_area1 + sizeX_area3 - 1) : 1.0);
+            double spaceX_area2 = (actualLength - sizeX_area2 * boxLength) / (sizeX_area2 > 1 ?(sizeX_area2 - 1) : 1.0);
             double spaceX_area3 = spaceX_area1;
 
             double spaceY_area1 = 0.0, spaceY_area2 = 0.0, spaceY_area3 = 0.0;
             if (sizeY_area1 * boxLength > sizeY_area3 * boxWidth)
             {
-                spaceY_area1 = sizeY_area1 + sizeY_area2 > 1 ? (actualWidth - sizeY_area1 * boxLength - sizeY_area2 * boxWidth) / (sizeY_area1 + sizeY_area2 - 1) : 0.0;
+                spaceY_area1 =  (actualWidth - sizeY_area1 * boxLength - sizeY_area2 * boxWidth) / (sizeY_area1 + sizeY_area2 > 1 ?(sizeY_area1 + sizeY_area2 - 1) : 1.0);
                 spaceY_area2 = spaceY_area1;
-                spaceY_area3 = (sizeY_area1 * (boxLength + spaceY_area1) - sizeY_area3 * boxWidth) / sizeY_area3;
+                spaceY_area3 =  (sizeY_area1 * (boxLength + spaceY_area1) - sizeY_area3 * boxWidth) / (0 != sizeY_area3 ? sizeY_area3 : 1.0);
             }
             else
             {
-                spaceY_area3 = sizeY_area2 + sizeY_area3 > 1 ? (actualWidth - (sizeY_area2 + sizeY_area3) * boxWidth) / (sizeY_area2 + sizeY_area3 - 1) : 0.0;
+                spaceY_area3 =  (actualWidth - (sizeY_area2 + sizeY_area3) * boxWidth) / (sizeY_area2 + sizeY_area3 > 1 ? (sizeY_area2 + sizeY_area3 - 1) : 1.0);
                 spaceY_area2 = spaceY_area3;
-                spaceY_area1 = (sizeY_area3 * (boxWidth + spaceY_area3) - sizeY_area1 * boxLength) / sizeY_area1;
+                spaceY_area1 =  (sizeY_area3 * (boxWidth + spaceY_area3) - sizeY_area1 * boxLength) /(sizeY_area1 > 0 ? sizeY_area1 : 1.0);
             }
             // area1
             for (int i = 0; i < sizeX_area1; ++i)

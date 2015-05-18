@@ -2176,6 +2176,7 @@ namespace TreeDim.StackBuilder.Reporting
             graphics.CameraPosition = Graphics3D.Corner_0;
             graphics.Target = Vector3D.Zero;
             Pack pack = new Pack(0, packProperties);
+            pack.ForceTransparency = true;
             graphics.AddBox(pack);
             DimensionCube dc = new DimensionCube(pack.Length, pack.Width, pack.Height); dc.FontSize = 6.0f;
             graphics.AddDimensions(dc);

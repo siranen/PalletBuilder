@@ -29,6 +29,15 @@ namespace TreeDim.StackBuilder.Graphics
             _innerBox = new Box(0, packProperties.Box);
         }
         #endregion
+
+        #region Public properties
+        public bool ForceTransparency
+        {
+            get { return _forceTransparency; }
+            set { _forceTransparency = true; }
+        }
+        #endregion
+
         #region Drawable implementation
         public override void Draw(Graphics3D graphics)
         {
@@ -37,7 +46,8 @@ namespace TreeDim.StackBuilder.Graphics
             {}
             // draw inner boxes
             if (_packProperties.Wrap.Type == PackWrapper.WType.WT_POLYETHILENE
-                || _packProperties.Wrap.Type == PackWrapper.WType.WT_TRAY)
+                || _packProperties.Wrap.Type == PackWrapper.WType.WT_TRAY
+                || _forceTransparency)
             {
                 List<Box> boxes = InnerBoxes;
                 boxes.Sort( new BoxComparerSimplifiedPainterAlgo(graphics.GetWorldToEyeTransformation()) );
@@ -53,7 +63,7 @@ namespace TreeDim.StackBuilder.Graphics
                         f
                         , Graphics3D.FaceDir.FRONT
                         , _packProperties.Wrap.Color
-                        , _packProperties.Wrap.Transparent);
+                        , _packProperties.Wrap.Transparent || _forceTransparency);
                 }
             }
             else
@@ -196,6 +206,7 @@ namespace TreeDim.StackBuilder.Graphics
         private Box _innerBox;
         private PackArrangement _arrangement;
         private PackProperties _packProperties;
+        private bool _forceTransparency = false;
         #endregion
     }
 }

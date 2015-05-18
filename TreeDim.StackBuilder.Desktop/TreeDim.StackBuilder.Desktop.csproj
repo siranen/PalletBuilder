@@ -1163,6 +1163,9 @@
     <EmbeddedResource Include="FormOptimizeCase.de-DE.resx">
       <DependentUpon>FormOptimizeCase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOptimizeCase.en-US.resx">
+      <DependentUpon>FormOptimizeCase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOptimizeCase.es-ES.resx">
       <DependentUpon>FormOptimizeCase.cs</DependentUpon>
       <SubType>Designer</SubType>

@@ -75,6 +75,9 @@
             this.btAddPackPalletAnalysis = new System.Windows.Forms.Button();
             this.statusStripDef = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDef = new System.Windows.Forms.ToolStripStatusLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.uCtrlOverhangLength = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlOverhangWidth = new TreeDim.StackBuilder.Basics.UCtrlDouble();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCasePallet)).BeginInit();
             this.splitContainerCasePallet.Panel1.SuspendLayout();
             this.splitContainerCasePallet.Panel2.SuspendLayout();
@@ -97,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinCaseLength)).BeginInit();
             this.gbPallet.SuspendLayout();
             this.statusStripDef.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerCasePallet
@@ -106,14 +110,11 @@
             // 
             // splitContainerCasePallet.Panel1
             // 
-            resources.ApplyResources(this.splitContainerCasePallet.Panel1, "splitContainerCasePallet.Panel1");
             this.splitContainerCasePallet.Panel1.Controls.Add(this.graphCtrlBoxesLayout);
             // 
             // splitContainerCasePallet.Panel2
             // 
-            resources.ApplyResources(this.splitContainerCasePallet.Panel2, "splitContainerCasePallet.Panel2");
             this.splitContainerCasePallet.Panel2.Controls.Add(this.graphCtrlPallet);
-            this.splitContainerCasePallet.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainerCasePallet_SplitterMoved);
             // 
             // graphCtrlBoxesLayout
             // 
@@ -185,9 +186,9 @@
             // 
             // cbBoxes
             // 
-            resources.ApplyResources(this.cbBoxes, "cbBoxes");
             this.cbBoxes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxes.FormattingEnabled = true;
+            resources.ApplyResources(this.cbBoxes, "cbBoxes");
             this.cbBoxes.Name = "cbBoxes";
             this.cbBoxes.SelectedIndexChanged += new System.EventHandler(this.cbBoxes_SelectedIndexChanged);
             // 
@@ -232,13 +233,13 @@
             // 
             // nudWallSurfaceMass
             // 
-            resources.ApplyResources(this.nudWallSurfaceMass, "nudWallSurfaceMass");
             this.nudWallSurfaceMass.DecimalPlaces = 3;
             this.nudWallSurfaceMass.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
+            resources.ApplyResources(this.nudWallSurfaceMass, "nudWallSurfaceMass");
             this.nudWallSurfaceMass.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -272,13 +273,13 @@
             // 
             // nudWallThickness
             // 
-            resources.ApplyResources(this.nudWallThickness, "nudWallThickness");
             this.nudWallThickness.DecimalPlaces = 2;
             this.nudWallThickness.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
+            resources.ApplyResources(this.nudWallThickness, "nudWallThickness");
             this.nudWallThickness.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -342,8 +343,8 @@
             // 
             // nudMaxCaseHeight
             // 
-            resources.ApplyResources(this.nudMaxCaseHeight, "nudMaxCaseHeight");
             this.nudMaxCaseHeight.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudMaxCaseHeight, "nudMaxCaseHeight");
             this.nudMaxCaseHeight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -354,8 +355,8 @@
             // 
             // nudMaxCaseWidth
             // 
-            resources.ApplyResources(this.nudMaxCaseWidth, "nudMaxCaseWidth");
             this.nudMaxCaseWidth.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudMaxCaseWidth, "nudMaxCaseWidth");
             this.nudMaxCaseWidth.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -366,8 +367,8 @@
             // 
             // nudMaxCaseLength
             // 
-            resources.ApplyResources(this.nudMaxCaseLength, "nudMaxCaseLength");
             this.nudMaxCaseLength.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudMaxCaseLength, "nudMaxCaseLength");
             this.nudMaxCaseLength.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -378,8 +379,8 @@
             // 
             // nudMinCaseHeight
             // 
-            resources.ApplyResources(this.nudMinCaseHeight, "nudMinCaseHeight");
             this.nudMinCaseHeight.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudMinCaseHeight, "nudMinCaseHeight");
             this.nudMinCaseHeight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -390,8 +391,8 @@
             // 
             // nudMinCaseWidth
             // 
-            resources.ApplyResources(this.nudMinCaseWidth, "nudMinCaseWidth");
             this.nudMinCaseWidth.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudMinCaseWidth, "nudMinCaseWidth");
             this.nudMinCaseWidth.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -402,8 +403,8 @@
             // 
             // nudMinCaseLength
             // 
-            resources.ApplyResources(this.nudMinCaseLength, "nudMinCaseLength");
             this.nudMinCaseLength.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudMinCaseLength, "nudMinCaseLength");
             this.nudMinCaseLength.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -471,9 +472,9 @@
             // 
             // cbPallet
             // 
-            resources.ApplyResources(this.cbPallet, "cbPallet");
             this.cbPallet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPallet.FormattingEnabled = true;
+            resources.ApplyResources(this.cbPallet, "cbPallet");
             this.cbPallet.Name = "cbPallet";
             this.cbPallet.SelectedIndexChanged += new System.EventHandler(this.cbPallet_SelectedIndexChanged);
             // 
@@ -493,26 +494,12 @@
             // 
             this.gridSolutions.AcceptsInputChar = false;
             resources.ApplyResources(this.gridSolutions, "gridSolutions");
-            this.gridSolutions.EnableSort = false;
+            this.gridSolutions.EnableSort = true;
             this.gridSolutions.Name = "gridSolutions";
             this.gridSolutions.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
             this.gridSolutions.SelectionMode = SourceGrid.GridSelectionMode.Row;
             this.gridSolutions.TabStop = true;
             this.gridSolutions.ToolTipText = "";
-
-            // 
-            // statusStripDef
-            // 
-            resources.ApplyResources(this.statusStripDef, "statusStripDef");
-            this.statusStripDef.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelDef});
-            this.statusStripDef.Name = "statusStripDef";
-            // 
-            // toolStripStatusLabelDef
-            // 
-            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
-            this.toolStripStatusLabelDef.ForeColor = System.Drawing.Color.Red;
-            this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
             // 
             // btAddCasePalletAnalysis
             // 
@@ -528,10 +515,56 @@
             this.btAddPackPalletAnalysis.UseVisualStyleBackColor = true;
             this.btAddPackPalletAnalysis.Click += new System.EventHandler(this.btAddPackPalletAnalysis_Click);
             // 
+            // statusStripDef
+            // 
+            this.statusStripDef.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelDef});
+            resources.ApplyResources(this.statusStripDef, "statusStripDef");
+            this.statusStripDef.Name = "statusStripDef";
+            // 
+            // toolStripStatusLabelDef
+            // 
+            this.toolStripStatusLabelDef.ForeColor = System.Drawing.Color.Red;
+            this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
+            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.uCtrlOverhangWidth);
+            this.groupBox1.Controls.Add(this.uCtrlOverhangLength);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // uCtrlOverhangLength
+            // 
+            resources.ApplyResources(this.uCtrlOverhangLength, "uCtrlOverhangLength");
+            this.uCtrlOverhangLength.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.uCtrlOverhangLength.Name = "uCtrlOverhangLength";
+            this.uCtrlOverhangLength.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangLength.Value = 0D;
+            // 
+            // uCtrlOverhangWidth
+            // 
+            resources.ApplyResources(this.uCtrlOverhangWidth, "uCtrlOverhangWidth");
+            this.uCtrlOverhangWidth.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.uCtrlOverhangWidth.Name = "uCtrlOverhangWidth";
+            this.uCtrlOverhangWidth.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangWidth.Value = 0D;
+            // 
             // FormOptimizeCase
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.splitContainerCasePallet);
             this.Controls.Add(this.statusStripDef);
             this.Controls.Add(this.btAddCasePalletAnalysis);
@@ -575,8 +608,10 @@
             this.gbPallet.PerformLayout();
             this.statusStripDef.ResumeLayout(false);
             this.statusStripDef.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
@@ -626,5 +661,8 @@
         private Basics.UCtrlDouble uCtrlPalletHeight;
         private System.Windows.Forms.Button btAddCasePalletAnalysis;
         private System.Windows.Forms.Button btAddPackPalletAnalysis;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private Basics.UCtrlDouble uCtrlOverhangWidth;
+        private Basics.UCtrlDouble uCtrlOverhangLength;
     }
 }

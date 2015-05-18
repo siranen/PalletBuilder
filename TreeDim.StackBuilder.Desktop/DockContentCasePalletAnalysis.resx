@@ -211,7 +211,7 @@
     <value>gridSolutions</value>
   </data>
   <data name="&gt;&gt;gridSolutions.Type" xml:space="preserve">
-    <value>SourceGrid.Grid, SourceGrid, Version=4.30.3918.24227, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
+    <value>SourceGrid.Grid, SourceGrid, Version=4.30.5611.24765, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
   </data>
   <data name="&gt;&gt;gridSolutions.Parent" xml:space="preserve">
     <value>splitContainerHoriz.Panel2</value>

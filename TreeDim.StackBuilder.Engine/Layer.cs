@@ -349,6 +349,8 @@ namespace TreeDim.StackBuilder.Engine
 
         public void UpdateMaxSpace(double space)
         {
+            if (double.IsInfinity(space) || double.IsNaN(space))
+                return;
             _maximumSpace = Math.Max(space, _maximumSpace);
         }
         #endregion
@@ -384,7 +386,11 @@ namespace TreeDim.StackBuilder.Engine
         }
         public double MaximumSpace
         {
-            get { return _maximumSpace; }
+            get
+            {
+                System.Diagnostics.Debug.Assert(!double.IsNaN(_maximumSpace) && !double.IsInfinity(_maximumSpace));
+                return _maximumSpace; 
+            }
             set { _maximumSpace = value; }
         }
         #endregion

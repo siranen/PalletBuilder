@@ -405,6 +405,25 @@ namespace TreeDim.StackBuilder.Basics
                 return false;
             }
         }
+        /// <summary>
+        /// Maximum space
+        /// </summary>
+        public double MaximumSpace
+        {
+            get
+            {
+                double maximumSpace = 0.0;
+                foreach (ILayer layer in this)
+                {
+                    if (layer is BoxLayer)
+                    {
+                        BoxLayer bLayer = layer as BoxLayer;
+                        maximumSpace = Math.Max(maximumSpace, bLayer.MaximumSpace);
+                    }
+                }
+                return maximumSpace;
+            }
+        }
 
         /// <summary>
         /// Efficiency percentage

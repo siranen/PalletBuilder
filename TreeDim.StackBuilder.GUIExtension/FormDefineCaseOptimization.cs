@@ -108,6 +108,8 @@ namespace TreeDim.StackBuilder.GUIExtension
             set { nudMinCaseHeight.Value = (decimal)value; }
         }
         private int BoxPerCase { get { return (int)nudNumber.Value; } }
+        private double OverhangX { get { return 0.0; } }
+        private double OverhangY { get { return 0.0; } }
         private int[] NoWalls
         {
             get
@@ -486,7 +488,9 @@ namespace TreeDim.StackBuilder.GUIExtension
         private CaseOptimConstraintSet BuildCaseOptimConstraintSet()
         {
             return new CaseOptimConstraintSet(
-                    NoWalls
+                    OverhangX
+                    , OverhangY
+                    , NoWalls
                     , WallThickness
                     , WallSurfaceMass
                     , new Vector3D(MinLength, MinWidth, MinHeight)

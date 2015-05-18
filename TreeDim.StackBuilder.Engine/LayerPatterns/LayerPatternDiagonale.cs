@@ -106,6 +106,8 @@ namespace TreeDim.StackBuilder.Engine
                         , HalfAxis.HAxis.AXIS_X_P, HalfAxis.HAxis.AXIS_Y_P);
                 }
                 // set spacing
+                layer.UpdateMaxSpace(spaceX);
+                layer.UpdateMaxSpace(spaceY);
                 layer.UpdateMaxSpace(Math.Abs(boxLength - boxWidth));
             }
         }

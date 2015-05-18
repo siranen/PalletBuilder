@@ -12,11 +12,16 @@ namespace TreeDim.StackBuilder.Basics
     public class CaseOptimConstraintSet
     {
         #region Constructor
-        public CaseOptimConstraintSet(int[] noWalls
+        public CaseOptimConstraintSet(
+            double overhangX
+            , double overhangY
+            , int[] noWalls
             , double wallThickness, double wallSurfaceMass
             , Vector3D caseLimitMin, Vector3D caseLimitMax
             , bool forceVerticalCaseOrientation)
         {
+            OverhangX = overhangX;
+            OverhangY = overhangY;
             NoWalls = noWalls;
             _wallThickness = wallThickness;
             _wallSurfaceMass = wallSurfaceMass;
@@ -27,6 +32,8 @@ namespace TreeDim.StackBuilder.Basics
         #endregion
         
         #region Public properties
+        public double OverhangX { get; set; }
+        public double OverhangY { get; set; }
         public double WallThickness
         {
             get { return _wallThickness; }

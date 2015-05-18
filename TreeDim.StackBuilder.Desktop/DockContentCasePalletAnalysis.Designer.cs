@@ -72,7 +72,7 @@
             // 
             this.gridSolutions.AcceptsInputChar = false;
             resources.ApplyResources(this.gridSolutions, "gridSolutions");
-            this.gridSolutions.EnableSort = false;
+            this.gridSolutions.EnableSort = true;
             this.gridSolutions.Name = "gridSolutions";
             this.gridSolutions.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
             this.gridSolutions.SelectionMode = SourceGrid.GridSelectionMode.Row;
