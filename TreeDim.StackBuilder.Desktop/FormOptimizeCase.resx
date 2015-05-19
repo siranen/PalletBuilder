@@ -1243,13 +1243,16 @@
     <value>5</value>
   </data>
   <data name="btAddCasePalletAnalysis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 661</value>
+    <value>392, 745</value>
   </data>
   <data name="btAddCasePalletAnalysis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 23</value>
+    <value>187, 23</value>
   </data>
   <data name="btAddCasePalletAnalysis.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="btAddCasePalletAnalysis.Text" xml:space="preserve">
+    <value>Add case/pallet analysis</value>
   </data>
   <data name="&gt;&gt;btAddCasePalletAnalysis.Name" xml:space="preserve">
     <value>btAddCasePalletAnalysis</value>
@@ -1264,13 +1267,16 @@
     <value>3</value>
   </data>
   <data name="btAddPackPalletAnalysis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 661</value>
+    <value>202, 745</value>
   </data>
   <data name="btAddPackPalletAnalysis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 23</value>
+    <value>187, 23</value>
   </data>
   <data name="btAddPackPalletAnalysis.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
+  </data>
+  <data name="btAddPackPalletAnalysis.Text" xml:space="preserve">
+    <value>Add pack/pallet analysis</value>
   </data>
   <data name="&gt;&gt;btAddPackPalletAnalysis.Name" xml:space="preserve">
     <value>btAddPackPalletAnalysis</value>

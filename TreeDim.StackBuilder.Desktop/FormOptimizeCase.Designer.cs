@@ -76,8 +76,8 @@
             this.statusStripDef = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDef = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.uCtrlOverhangLength = new TreeDim.StackBuilder.Basics.UCtrlDouble();
             this.uCtrlOverhangWidth = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlOverhangLength = new TreeDim.StackBuilder.Basics.UCtrlDouble();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCasePallet)).BeginInit();
             this.splitContainerCasePallet.Panel1.SuspendLayout();
             this.splitContainerCasePallet.Panel2.SuspendLayout();
@@ -536,18 +536,6 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // uCtrlOverhangLength
-            // 
-            resources.ApplyResources(this.uCtrlOverhangLength, "uCtrlOverhangLength");
-            this.uCtrlOverhangLength.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            -2147483648});
-            this.uCtrlOverhangLength.Name = "uCtrlOverhangLength";
-            this.uCtrlOverhangLength.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlOverhangLength.Value = 0D;
-            // 
             // uCtrlOverhangWidth
             // 
             resources.ApplyResources(this.uCtrlOverhangWidth, "uCtrlOverhangWidth");
@@ -559,6 +547,18 @@
             this.uCtrlOverhangWidth.Name = "uCtrlOverhangWidth";
             this.uCtrlOverhangWidth.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangWidth.Value = 0D;
+            // 
+            // uCtrlOverhangLength
+            // 
+            resources.ApplyResources(this.uCtrlOverhangLength, "uCtrlOverhangLength");
+            this.uCtrlOverhangLength.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.uCtrlOverhangLength.Name = "uCtrlOverhangLength";
+            this.uCtrlOverhangLength.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangLength.Value = 0D;
             // 
             // FormOptimizeCase
             // 

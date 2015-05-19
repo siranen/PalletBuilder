@@ -441,7 +441,7 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 PackPalletConstraintSet constraintSet = new PackPalletConstraintSet();
                 constraintSet.MaximumPalletHeight = form.MaximumPalletHeight;
-                constraintSet.MaximumLayerWeight = form.MaximumPalletWeight;
+                constraintSet.MaximumPalletWeight = form.MaximumPalletWeight;
                 constraintSet.MaximumLayerWeight = form.MaximumLayerWeight;
                 constraintSet.OverhangX = form.OverhangX;
                 constraintSet.OverhangY = form.OverhangY;
