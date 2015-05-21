@@ -365,6 +365,8 @@ namespace TreeDim.StackBuilder.Desktop
                     , wrapper);
                 // constraint set
                 PackPalletConstraintSet constraintSet = new PackPalletConstraintSet();
+                constraintSet.OverhangX = OverhangX;
+                constraintSet.OverhangY = OverhangY;
                 constraintSet.MaximumPalletHeight = new OptDouble(true, MaximumPalletHeight);
                 // create analysis
                 _document.CreateNewPackPalletAnalysis(
@@ -588,6 +590,7 @@ namespace TreeDim.StackBuilder.Desktop
                     gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iWidth);
                     // A3
                     gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iHeight);
+                    /*
                     // Case inner dimensions
                     Vector3D innerDim = sol.CaseDefinition.InnerDimensions(boxProperties);
                     // LENGTH
@@ -596,6 +599,16 @@ namespace TreeDim.StackBuilder.Desktop
                     gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(innerDim.Y, 1));
                     // HEIGHT
                     gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(innerDim.Z, 1));
+                    */
+                    // Case outer dimensions
+                    Vector3D outerDim = sol.CaseDefinition.OuterDimensions(boxProperties, caseOptimConstraintSet);
+                    // LENGTH
+                    gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(Math.Round(outerDim.X, 1));
+                    // WIDTH
+                    gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(outerDim.Y, 1));
+                    // HEIGHT
+                    gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(outerDim.Z, 1));
+
                     // AREA
                     gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(string.Format("{0:0.00} / {1:0.000}"
                         , sol.CaseDefinition.Area(boxProperties, caseOptimConstraintSet)
@@ -716,7 +729,8 @@ namespace TreeDim.StackBuilder.Desktop
                 SourceGrid.RangeRegion region = gridSolutions.Selection.GetSelectionRegion();
                 int[] indexes = region.GetRowsIndex();
                 // no selection -> exit
-                if (indexes.Length == 0) return null;
+                if (indexes.Length == 0)
+                    return null;
                 CaseOptimSolution sol = gridSolutions.Rows[indexes[0]].Tag as CaseOptimSolution;
                 return sol;
             }

@@ -706,7 +706,6 @@ namespace TreeDim.StackBuilder.Graphics
             if (box is Pack)
             {
                 Pack pack = box as Pack;
-                pack.ForceTransparency = true;
                 pack.Draw(this);
             }
             else

@@ -504,7 +504,7 @@
     <value>70, 20</value>
   </data>
   <data name="&gt;&gt;graphCtrlSolution.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;nudFlatLength.ZOrder" xml:space="preserve">
     <value>6</value>

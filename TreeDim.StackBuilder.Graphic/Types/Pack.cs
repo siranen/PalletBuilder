@@ -27,6 +27,7 @@ namespace TreeDim.StackBuilder.Graphics
             _packProperties = packProperties;
             _arrangement = _packProperties.Arrangement;
             _innerBox = new Box(0, packProperties.Box);
+            _forceTransparency = false;
         }
         #endregion
 
@@ -34,7 +35,7 @@ namespace TreeDim.StackBuilder.Graphics
         public bool ForceTransparency
         {
             get { return _forceTransparency; }
-            set { _forceTransparency = true; }
+            set { _forceTransparency = value; }
         }
         #endregion
 

@@ -167,7 +167,8 @@ namespace TreeDim.StackBuilder.Basics
         public Vector3D InnerOffset
         {
             get
-            { return new Vector3D(
+            {
+                return new Vector3D(
                 0.5*(Length-InnerLength),
                 0.5*(Width-InnerWidth),
                 0.5*(Height-InnerHeight)
@@ -191,7 +192,7 @@ namespace TreeDim.StackBuilder.Basics
                 if (_forceOuterDimensions)
                     return _outerDimensions.X;
                 else
-                    return InnerLength + 2.0 * _wrapper.Thickness(0); 
+                    return InnerLength + _wrapper.Thickness(0); 
             }
         }
         public double Width
@@ -201,7 +202,7 @@ namespace TreeDim.StackBuilder.Basics
                 if (_forceOuterDimensions)
                     return _outerDimensions.Y;
                 else
-                    return InnerWidth + 2.0 * _wrapper.Thickness(1);
+                    return InnerWidth + _wrapper.Thickness(1);
             }
         }
         public double Height
@@ -211,7 +212,7 @@ namespace TreeDim.StackBuilder.Basics
                 if (_forceOuterDimensions)
                     return _outerDimensions.Z;
                 else
-                    return InnerHeight + 2.0 * _wrapper.Thickness(2);
+                    return InnerHeight + _wrapper.Thickness(2);
             }
         }
 
@@ -291,7 +292,6 @@ namespace TreeDim.StackBuilder.Basics
             height = arrangement._iHeight * boxProperties.Dim(3 - PackProperties.DimIndex0(boxOrientation) - PackProperties.DimIndex1(boxOrientation));
         }
         #endregion
-
         #region Dependancies
         protected override void RemoveItselfFromDependancies()
         {

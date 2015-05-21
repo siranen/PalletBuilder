@@ -451,7 +451,7 @@
     <value>146, 71</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbPallet.Parent" xml:space="preserve">
     <value>gbPallet</value>
@@ -495,7 +495,7 @@
     <value>69, 20</value>
   </data>
   <data name="&gt;&gt;graphCtrlSolution.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lbPalletDescription.ZOrder" xml:space="preserve">
     <value>2</value>

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Sharp3D.Math.Core;
-
 #endregion
 
 namespace TreeDim.StackBuilder.Basics

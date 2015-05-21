@@ -275,14 +275,20 @@ namespace TreeDim.StackBuilder.Desktop
         public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
             // build pack
-            PackProperties pack = new PackProperties(null, SelectedBox, Arrangement, BoxOrientation, Wrapper);
+            PackProperties packProperties = new PackProperties(null, SelectedBox, Arrangement, BoxOrientation, Wrapper);
             if (uCtrlOuterDimensions.Checked)
-                pack.ForceOuterDimensions(
+                packProperties.ForceOuterDimensions(
                     new Vector3D(uCtrlOuterDimensions.X, uCtrlOuterDimensions.Y, uCtrlOuterDimensions.Z) );
-            graphics.AddBox(new Pack(0, pack));
+            Pack pack = new Pack(0, packProperties);
+            pack.ForceTransparency = true;
+            graphics.AddBox(pack);
             graphics.AddDimensions(new DimensionCube(Vector3D.Zero, pack.Length, pack.Width, pack.Height, Color.Black, true));
-            if (pack.Wrap.Transparent)
-                graphics.AddDimensions(new DimensionCube(pack.InnerOffset, pack.InnerLength, pack.InnerWidth, pack.InnerHeight, Color.Red, false));
+            if (packProperties.Wrap.Transparent)
+                graphics.AddDimensions(
+                    new DimensionCube(
+                        packProperties.InnerOffset
+                        , packProperties.InnerLength, packProperties.InnerWidth, packProperties.InnerHeight
+                        , Color.Red, false));
         }
         #endregion
     }
