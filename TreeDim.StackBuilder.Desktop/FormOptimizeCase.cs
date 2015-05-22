@@ -222,7 +222,7 @@ namespace TreeDim.StackBuilder.Desktop
                 CaseOptimizer caseOptimizer = new CaseOptimizer(
                     SelectedBox                     // BoxProperties
                     , SelectedPallet                // PalletProperties
-                    , BuildPalletConstraintSet()    // ConstraintSet
+                    , BuildCasePalletConstraintSet()    // ConstraintSet
                     , BuildCaseOptimConstraintSet() // CaseOptimConstraintSet
                     );
                 _solutions = caseOptimizer.CaseOptimSolutions(BoxPerCase);
@@ -303,7 +303,7 @@ namespace TreeDim.StackBuilder.Desktop
                     , palletProperties
                     , null, null
                     , null, null, null
-                    , BuildPalletConstraintSet()
+                    , BuildCasePalletConstraintSet()
                     , palletSolutionList);
             }
             catch (Exception ex)
@@ -590,25 +590,16 @@ namespace TreeDim.StackBuilder.Desktop
                     gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iWidth);
                     // A3
                     gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(sol.CaseDefinition.Arrangement._iHeight);
-                    /*
-                    // Case inner dimensions
-                    Vector3D innerDim = sol.CaseDefinition.InnerDimensions(boxProperties);
-                    // LENGTH
-                    gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(Math.Round(innerDim.X, 1));
-                    // WIDTH
-                    gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(innerDim.Y, 1));
-                    // HEIGHT
-                    gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(innerDim.Z, 1));
-                    */
                     // Case outer dimensions
+                    Vector3D innerDim = sol.CaseDefinition.InnerDimensions(boxProperties);
                     Vector3D outerDim = sol.CaseDefinition.OuterDimensions(boxProperties, caseOptimConstraintSet);
+                    bool showOuterDimensions = true;
                     // LENGTH
-                    gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(Math.Round(outerDim.X, 1));
+                    gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(showOuterDimensions ? Math.Round(outerDim.X, 1) : Math.Round(innerDim.X, 1));
                     // WIDTH
-                    gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(outerDim.Y, 1));
+                    gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(showOuterDimensions ? Math.Round(outerDim.Y, 1) : Math.Round(innerDim.Y, 1));
                     // HEIGHT
-                    gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(outerDim.Z, 1));
-
+                    gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(showOuterDimensions ? Math.Round(outerDim.Z, 1) : Math.Round(innerDim.Z, 1));
                     // AREA
                     gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(string.Format("{0:0.00} / {1:0.000}"
                         , sol.CaseDefinition.Area(boxProperties, caseOptimConstraintSet)
@@ -778,7 +769,7 @@ namespace TreeDim.StackBuilder.Desktop
                     , ForceVerticalBoxOrientation
                     );
         }
-        private PalletConstraintSet BuildPalletConstraintSet()
+        private PalletConstraintSet BuildCasePalletConstraintSet()
         {
             // build pallet constraint set
             CasePalletConstraintSet palletConstraintSet = new CasePalletConstraintSet();

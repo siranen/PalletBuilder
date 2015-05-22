@@ -103,13 +103,13 @@ namespace TreeDim.StackBuilder.Desktop
             backHeader.Border = DevAge.Drawing.RectangleBorder.NoBorder;
             viewColumnHeader.Background = backHeader;
             viewColumnHeader.ForeColor = Color.White;
-            viewColumnHeader.Font = new Font("Arial", 10, FontStyle.Bold);
+            viewColumnHeader.Font = new Font("Arial", 8, FontStyle.Regular);
             viewColumnHeader.ElementSort.SortStyle = DevAge.Drawing.HeaderSortStyle.None;
  
             // create the grid
             gridSolutions.BorderStyle = BorderStyle.FixedSingle;
 
-            gridSolutions.ColumnsCount = 7;
+            gridSolutions.ColumnsCount = 9;
             gridSolutions.FixedRows = 1;
             gridSolutions.Rows.Insert(0);
 
@@ -119,38 +119,53 @@ namespace TreeDim.StackBuilder.Desktop
             columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LAYERPATTERN);
             columnHeader.AutomaticSortEnabled = false;
             columnHeader.View = viewColumnHeader;
-            gridSolutions[0, 1] = columnHeader;
+            gridSolutions[0, 0] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CASECOUNT);
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
-            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer(2);
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 1] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_VOLUMEEFFICIENCY);
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_CASEPERLAYERCOUNT);
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 2] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETWEIGHT, UnitsManager.MassUnitString));
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_LAYERCOUNT);
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 3] = columnHeader;
 
-            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETHEIGHT, UnitsManager.LengthUnitString));
-            columnHeader.AutomaticSortEnabled = false;
+            columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_VOLUMEEFFICIENCY);
+            columnHeader.AutomaticSortEnabled = true;
             columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
             gridSolutions[0, 4] = columnHeader;
+
+            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETWEIGHT, UnitsManager.MassUnitString));
+            columnHeader.AutomaticSortEnabled = true;
+            columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
+            gridSolutions[0, 5] = columnHeader;
+
+            columnHeader = new SourceGrid.Cells.ColumnHeader(string.Format(Resources.ID_PALLETHEIGHT, UnitsManager.LengthUnitString));
+            columnHeader.AutomaticSortEnabled = true;
+            columnHeader.View = viewColumnHeader;
+            columnHeader.SortComparer = new SourceGrid.MultiColumnsComparer();
+            gridSolutions[0, 6] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_PALLETLIMIT);
             columnHeader.AutomaticSortEnabled = false;
             columnHeader.View = viewColumnHeader;
-            gridSolutions[0, 5] = columnHeader;
+            gridSolutions[0, 7] = columnHeader;
 
             columnHeader = new SourceGrid.Cells.ColumnHeader(Resources.ID_SELECTED);
             columnHeader.AutomaticSortEnabled = false;
             columnHeader.View = viewColumnHeader;
-            gridSolutions[0, 6] = columnHeader;
+            gridSolutions[0, 8] = columnHeader;
 
             // handling check box click
             SourceGrid.Cells.Controllers.CustomEvents solCheckboxClickEvent = new SourceGrid.Cells.Controllers.CustomEvents();
@@ -178,12 +193,14 @@ namespace TreeDim.StackBuilder.Desktop
                     sv.Draw(graphics);
                     gridSolutions[iIndex, 0] = new SourceGrid.Cells.Image(graphics.Bitmap);
                 }
-                gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(sCaseCount);
-                gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(Math.Round(sol.VolumeEfficiencyCases, 1));
-                gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletWeight, 3));
-                gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletHeight, 3));
-                gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(PalletSolutionLimitToString(sol.LimitReached));
-                gridSolutions[iIndex, 6] = new SourceGrid.Cells.CheckBox(null, _analysis.HasSolutionSelected(iIndex-1));
+                gridSolutions[iIndex, 1] = new SourceGrid.Cells.Cell(sol.CaseCount);
+                gridSolutions[iIndex, 2] = new SourceGrid.Cells.Cell(sol.CasePerLayerCount);
+                gridSolutions[iIndex, 3] = new SourceGrid.Cells.Cell(sol.CaseLayersCount);
+                gridSolutions[iIndex, 4] = new SourceGrid.Cells.Cell(Math.Round(sol.VolumeEfficiencyCases, 1));
+                gridSolutions[iIndex, 5] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletWeight, 3));
+                gridSolutions[iIndex, 6] = new SourceGrid.Cells.Cell(Math.Round(sol.PalletHeight, 1));
+                gridSolutions[iIndex, 7] = new SourceGrid.Cells.Cell(PalletSolutionLimitToString(sol.LimitReached));
+                gridSolutions[iIndex, 8] = new SourceGrid.Cells.CheckBox(null, _analysis.HasSolutionSelected(iIndex-1));
 
                 gridSolutions[iIndex, 0].View = viewNormal;
                 gridSolutions[iIndex, 1].View = viewNormal;
@@ -191,9 +208,11 @@ namespace TreeDim.StackBuilder.Desktop
                 gridSolutions[iIndex, 3].View = viewNormal;
                 gridSolutions[iIndex, 4].View = viewNormal;
                 gridSolutions[iIndex, 5].View = viewNormal;
-                gridSolutions[iIndex, 6].View = viewNormalCheck;
+                gridSolutions[iIndex, 6].View = viewNormal;
+                gridSolutions[iIndex, 7].View = viewNormal;
+                gridSolutions[iIndex, 8].View = viewNormalCheck;
 
-                gridSolutions[iIndex, 6].AddController(solCheckboxClickEvent);
+                gridSolutions[iIndex, 8].AddController(solCheckboxClickEvent);
              }
             gridSolutions.AutoStretchColumnsToFitWidth = true;
             gridSolutions.AutoSizeCells();

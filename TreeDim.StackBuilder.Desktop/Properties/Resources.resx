@@ -218,7 +218,7 @@
     <value>Add new ECT analysis...</value>
   </data>
   <data name="ID_CASECOUNT" xml:space="preserve">
-    <value>Case count</value>
+    <value># Cases</value>
   </data>
   <data name="ID_DEPENDINGANALYSES" xml:space="preserve">
     <value>{0} has some depending analyses.
@@ -630,5 +630,11 @@ Closing form...</value>
   </data>
   <data name="ID_ANALYSISHASNOSOLUTION" xml:space="preserve">
     <value>Analysis has no solutions?\nTo many contraints?</value>
+  </data>
+  <data name="ID_CASEPERLAYERCOUNT" xml:space="preserve">
+    <value># Cases/Layer</value>
+  </data>
+  <data name="ID_LAYERCOUNT" xml:space="preserve">
+    <value># Layers</value>
   </data>
 </root>

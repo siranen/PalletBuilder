@@ -556,7 +556,7 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Case count.
+        ///   Looks up a localized string similar to # Cases.
         /// </summary>
         internal static string ID_CASECOUNT {
             get {
@@ -597,6 +597,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         internal static string ID_CASEOFBOXES {
             get {
                 return ResourceManager.GetString("ID_CASEOFBOXES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Cases/Layer.
+        /// </summary>
+        internal static string ID_CASEPERLAYERCOUNT {
+            get {
+                return ResourceManager.GetString("ID_CASEPERLAYERCOUNT", resourceCulture);
             }
         }
         
@@ -987,6 +996,15 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
         internal static string ID_INVALIDTHICKNESSWIDTHPAIR {
             get {
                 return ResourceManager.GetString("ID_INVALIDTHICKNESSWIDTHPAIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Layers.
+        /// </summary>
+        internal static string ID_LAYERCOUNT {
+            get {
+                return ResourceManager.GetString("ID_LAYERCOUNT", resourceCulture);
             }
         }
         

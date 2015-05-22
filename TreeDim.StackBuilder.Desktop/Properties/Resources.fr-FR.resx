@@ -151,7 +151,7 @@
     <value>Créer une nouvelle analyse camion...</value>
   </data>
   <data name="ID_CASECOUNT" xml:space="preserve">
-    <value>Nombre de caisses</value>
+    <value># caisses</value>
   </data>
   <data name="ID_CLOSE" xml:space="preserve">
     <value>Fermer</value>
@@ -492,5 +492,11 @@ Souhaitez-vous continuer?</value>
   </data>
   <data name="ID_ANALYSISHASNOSOLUTION" xml:space="preserve">
     <value>L'analyse n'a pas de solution.  Filtrage débord ou espace trop contraignant?</value>
+  </data>
+  <data name="ID_CASEPERLAYERCOUNT" xml:space="preserve">
+    <value># caisses/couche</value>
+  </data>
+  <data name="ID_LAYERCOUNT" xml:space="preserve">
+    <value># couches</value>
   </data>
 </root>
