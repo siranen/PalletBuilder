@@ -913,7 +913,7 @@ namespace TreeDim.StackBuilder.ColladaExporter
             using (System.Diagnostics.Process proc = new System.Diagnostics.Process())
             {
                 proc.StartInfo.FileName = GoogleChromePath;
-                proc.StartInfo.Arguments = "/allow-file-access-from-files \"" + filePathHTML + "\"";
+                proc.StartInfo.Arguments = "--allow-file-access-from-files \"" + filePathHTML + "\"";
                 proc.Start();
             }
         }
@@ -930,12 +930,7 @@ namespace TreeDim.StackBuilder.ColladaExporter
 
         private static string GoogleChromePath
         {
-            get
-            {
-                return Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                    @"Google\Chrome\Application\chrome.exe");
-            }
+            get { return @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"; }
         }
         #endregion
 

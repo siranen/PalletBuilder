@@ -264,7 +264,7 @@ namespace TreeDim.StackBuilder.Desktop
                 message = string.Format(Resources.ID_GENERATEREPORTMSWORD, nodeTag.SelSolution.Name);
                 contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.WORD, new EventHandler(onAnalysisReportMSWord)));
                 message = string.Format(Resources.ID_GENERATEREPORTPDF, nodeTag.SelSolution.Name);
-                if (nodeTag.CasePalletAnalysis.IsBoxAnalysis)
+                if (nodeTag.CasePalletAnalysis.IsBoxAnalysis && Settings.Default.ShowLogConsole)
                 {
                     message = string.Format(Resources.ID_GENERATECOLLADA, nodeTag.SelSolution.Name);
                     contextMenuStrip.Items.Add(new ToolStripMenuItem(message, AnalysisTreeView.COLLADAWEBGL, new EventHandler(onAnalysisExportCollada)));

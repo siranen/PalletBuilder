@@ -1768,9 +1768,12 @@ namespace TreeDim.StackBuilder.Basics
         {
             string sNoWalls = eltConstraintSet.Attributes["NumberOfWalls"].Value;
             int[] iNoWalls = ParseInt3(sNoWalls);
-            double wallThickness = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["WallThickness"].Value), _unitSystem);
-            double wallSurfaceMass = 0.0;
-            wallSurfaceMass = UnitsManager.ConvertSurfaceMassFrom(Convert.ToDouble(eltConstraintSet.Attributes["WallSurfaceMass"].Value), _unitSystem);
+            double wallThickness = UnitsManager.ConvertLengthFrom(
+                Convert.ToDouble(eltConstraintSet.Attributes["WallThickness"].Value, System.Globalization.CultureInfo.InvariantCulture)
+                , _unitSystem);
+            double wallSurfaceMass = UnitsManager.ConvertSurfaceMassFrom(
+                Convert.ToDouble(eltConstraintSet.Attributes["WallSurfaceMass"].Value, System.Globalization.CultureInfo.InvariantCulture)
+                , _unitSystem);
             constraintSet = new CaseOptimConstraintSet(iNoWalls, wallThickness, wallSurfaceMass, Vector3D.Zero, Vector3D.Zero, false); 
         }
         #endregion
@@ -3019,11 +3022,11 @@ namespace TreeDim.StackBuilder.Basics
             wrapperElt.Attributes.Append(colorAttrib);
             // weight
             XmlAttribute weightAttrib = xmlDoc.CreateAttribute("Weight");
-            weightAttrib.Value = string.Format("{0}", wrapper.Weight);
+            weightAttrib.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", wrapper.Weight);
             wrapperElt.Attributes.Append(weightAttrib);
             // thickness
             XmlAttribute thicknessAttrib = xmlDoc.CreateAttribute("UnitThickness");
-            thicknessAttrib.Value = string.Format("{0}", wrapper.UnitThickness);
+            thicknessAttrib.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", wrapper.UnitThickness);
             wrapperElt.Attributes.Append(thicknessAttrib);
         }
         private void SaveWrapper(WrapperPolyethilene wrapper, XmlElement wrapperElt, XmlDocument xmlDoc)
@@ -3053,7 +3056,7 @@ namespace TreeDim.StackBuilder.Basics
            if (null != wrapperTray)
            {
                XmlAttribute heightAttrib = xmlDoc.CreateAttribute("Height");
-               heightAttrib.Value = string.Format("{0}", wrapperTray.Height);
+               heightAttrib.Value = string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}", wrapperTray.Height);
                wrapperElt.Attributes.Append(heightAttrib);
            }
         }
