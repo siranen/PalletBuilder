@@ -135,6 +135,8 @@ namespace TreeDim.StackBuilder.GUIExtension
         {
             base.OnLoad(e);
             graphCtrlPallet.DrawingContainer = this;
+            graphCtrlBoxesLayout.DrawingContainer = this;
+            graphCtrlPalletLayout.DrawingContainer = this;
             // load pallets
             LoadPallets();
             // set default pallet height
@@ -219,7 +221,8 @@ namespace TreeDim.StackBuilder.GUIExtension
                 // no selection -> exit
                 if (indexes.Length == 0) return;
                 // redraw
-                Draw();
+                graphCtrlBoxesLayout.Invalidate();
+                graphCtrlPalletLayout.Invalidate();
                 // update "Add solution" button status
                 UpdateToolbarButtons();
             }
@@ -420,18 +423,6 @@ namespace TreeDim.StackBuilder.GUIExtension
             }           
             cbPallet.SelectedIndex = selectedIndex;
         }
-
-        public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
-        {
-            if (graphCtrlPallet == ctrl)
-            {
-                PalletProperties pp = SelectedPallet;
-                Pallet pallet = new Pallet(pp);
-                pallet.Draw(graphics, Transform3D.Identity);
-                DimensionCube dc = new DimensionCube(pp.Length, pp.Width, pp.Height) { FontSize = 6.0f };
-                graphics.AddDimensions(dc);
-            }
-        }
  
         private int SelectedSolutionIndex
         {
@@ -488,9 +479,7 @@ namespace TreeDim.StackBuilder.GUIExtension
         private CaseOptimConstraintSet BuildCaseOptimConstraintSet()
         {
             return new CaseOptimConstraintSet(
-                    OverhangX
-                    , OverhangY
-                    , NoWalls
+                    NoWalls
                     , WallThickness
                     , WallSurfaceMass
                     , new Vector3D(MinLength, MinWidth, MinHeight)
@@ -524,6 +513,10 @@ namespace TreeDim.StackBuilder.GUIExtension
             palletConstraintSet.UseMaximumPalletWeight = false;
             palletConstraintSet.UseMaximumNumberOfCases = false;
             palletConstraintSet.UseMaximumWeightOnBox = false;
+
+            // overhang
+            palletConstraintSet.OverhangX = OverhangX;
+            palletConstraintSet.OverhangY = OverhangY;
 
             return palletConstraintSet;
         }
@@ -694,79 +687,67 @@ namespace TreeDim.StackBuilder.GUIExtension
             }
             catch (Exception ex)
             {   _log.Error(ex.ToString()); }
-            Draw();
+
+            graphCtrlBoxesLayout.Invalidate();
+            graphCtrlPalletLayout.Invalidate();
             UpdateToolbarButtons();
         }
         #endregion
 
         #region Drawing
-        private void Draw()
+        public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
-            // ### draw case definition
-            try
+            // ### draw pallet
+            if (graphCtrlPallet == ctrl)
             {
-                // sanity check
-                if (pbBoxesLayout.Size.Width < 1 || pbBoxesLayout.Size.Height < 1)
-                    return;
-                // instantiate graphics
-                Graphics3DImage graphics = new Graphics3DImage(pbBoxesLayout.Size);
-                // set camera position
-                graphics.CameraPosition = Graphics3D.Corner_0;
-                // set camera target
-                graphics.Target = new Vector3D(0.0, 0.0, 0.0);
-                // set viewport (not actually needed)
-                graphics.SetViewport(-500.0f, -500.0f, 500.0f, 500.0f);
-                // show images
-                graphics.ShowTextures = true;
-                // get selected solution
-                CaseOptimSolution solution = SelectedSolution;
-                if (null == solution) return;
-                // instantiate case definition viewer
-                CaseDefinitionViewer cdv = new CaseDefinitionViewer(SelectedSolution.CaseDefinition, SelectedBox, BuildCaseOptimConstraintSet());
-                cdv.Orientation = SelectedSolution.PalletSolution.FirstCaseOrientation;
-                cdv.Draw(graphics);
-                // show generated bitmap on picture box control
-                pbBoxesLayout.Image = graphics.Bitmap;
+                PalletProperties pp = SelectedPallet;
+                Pallet pallet = new Pallet(pp);
+                pallet.Draw(graphics, Transform3D.Identity);
+                DimensionCube dc = new DimensionCube(pp.Length, pp.Width, pp.Height) { FontSize = 6.0f };
+                graphics.AddDimensions(dc);
             }
-            catch (Exception ex)
+            // ### draw case definition
+            else if (ctrl == graphCtrlBoxesLayout)
             {
-                _log.Error(ex.ToString());
+                // ### draw case definition
+                try
+                {
+                    // get selected solution
+                    CaseOptimSolution solution = SelectedSolution;
+                    if (null == solution) return;
+                    // instantiate case definition viewer
+                    CaseDefinitionViewer cdv = new CaseDefinitionViewer(SelectedSolution.CaseDefinition, SelectedBox, BuildCaseOptimConstraintSet());
+                    cdv.Orientation = SelectedSolution.PalletSolution.FirstCaseOrientation;
+                    cdv.Draw(graphics);
+                }
+                catch (Exception ex)
+                {
+                    _log.Error(ex.ToString());
+                }
             }
             // ### draw associated pallet solution
-            try
+            else if (ctrl == graphCtrlPalletLayout)
             {
-                // sanity check
-                if (pbPalletSolution.Size.Width < 1 || pbPalletSolution.Size.Height < 1)
-                    return;
-                // instantiate graphics
-                Graphics3DImage graphics = new Graphics3DImage(pbPalletSolution.Size);
-                // set camera position
-                graphics.CameraPosition = Graphics3D.Corner_0;
-                // set camera target
-                graphics.Target = new Vector3D(0.0, 0.0, 0.0);
-                // set viewport (not actually needed)
-                graphics.SetViewport(-500.0f, -500.0f, 500.0f, 500.0f);
-                // show images
-                graphics.ShowTextures = true;
-                // get selected solution
-                CaseOptimSolution solution = SelectedSolution;
-                // get selected box
-                BoxProperties boxProperties = SelectedBox;
-                // get selected pallet
-                PalletProperties palletProperties = SelectedPallet;
-                if (null != solution && null != boxProperties && null != palletProperties)
+                try
                 {
-                    Vector3D outerDim = solution.CaseDefinition.OuterDimensions(boxProperties, BuildCaseOptimConstraintSet());
-                    BoxProperties caseProperties = new BoxProperties(null, outerDim.X, outerDim.Y, outerDim.Z);
-                    caseProperties.SetColor(Color.Chocolate);
-                    CasePalletSolutionViewer.Draw(graphics, solution.PalletSolution, caseProperties, null, palletProperties);
+                    // get selected solution
+                    CaseOptimSolution solution = SelectedSolution;
+                    // get selected box
+                    BoxProperties boxProperties = SelectedBox;
+                    // get selected pallet
+                    PalletProperties palletProperties = SelectedPallet;
+                    if (null != solution && null != boxProperties && null != palletProperties)
+                    {
+                        Vector3D outerDim = solution.CaseDefinition.OuterDimensions(boxProperties, BuildCaseOptimConstraintSet());
+                        BoxProperties caseProperties = new BoxProperties(null, outerDim.X, outerDim.Y, outerDim.Z);
+                        caseProperties.SetColor(Color.Chocolate);
+                        CasePalletSolutionViewer.Draw(graphics, solution.PalletSolution, caseProperties, null, palletProperties);
+                    }
                 }
-                // show generated bitmap or picture box control
-                pbPalletSolution.Image = graphics.Bitmap;
-            }
-            catch (Exception ex)
-            {
-                _log.Error(ex.ToString());
+                catch (Exception ex)
+                {
+                    _log.Error(ex.ToString());
+                }
             }
         }
         #endregion

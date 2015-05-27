@@ -591,7 +591,7 @@ namespace TreeDim.StackBuilder.Reporting
         #region Analyses
         private void AppendCasePalletAnalysisElement(ReportData inputData, XmlElement elemDocument, XmlDocument xmlDoc)
         {
-            if (!inputData.IsCasePalletAnalysis)
+            if (!inputData.IsCasePalletAnalysis && !inputData.IsBoxCasePalletAnalysis)
                 return;
             string ns = xmlDoc.DocumentElement.NamespaceURI;
 
@@ -744,11 +744,11 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = palletProp.Description;
             elemPallet.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemPallet, "length", UnitsManager.LengthUnitString, palletProp.Length);
-            AppendElementValue(xmlDoc, elemPallet, "width", UnitsManager.LengthUnitString, palletProp.Width);
-            AppendElementValue(xmlDoc, elemPallet, "height", UnitsManager.LengthUnitString, palletProp.Height);
-            AppendElementValue(xmlDoc, elemPallet, "weight", UnitsManager.MassUnitString, palletProp.Weight);
-            AppendElementValue(xmlDoc, elemPallet, "admissibleLoad", UnitsManager.MassUnitString, palletProp.AdmissibleLoadWeight);
+            AppendElementValue(xmlDoc, elemPallet, "length", UnitsManager.UnitType.UT_LENGTH, palletProp.Length);
+            AppendElementValue(xmlDoc, elemPallet, "width", UnitsManager.UnitType.UT_LENGTH, palletProp.Width);
+            AppendElementValue(xmlDoc, elemPallet, "height", UnitsManager.UnitType.UT_LENGTH, palletProp.Height);
+            AppendElementValue(xmlDoc, elemPallet, "weight", UnitsManager.UnitType.UT_MASS, palletProp.Weight);
+            AppendElementValue(xmlDoc, elemPallet, "admissibleLoad", UnitsManager.UnitType.UT_MASS, palletProp.AdmissibleLoadWeight);
 
             // type
             XmlElement elemType = xmlDoc.CreateElement("type", ns);
@@ -792,11 +792,11 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = boxProp.Description;
             elemCase.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemCase, "length", UnitsManager.LengthUnitString, boxProp.Length);
-            AppendElementValue(xmlDoc, elemCase, "width", UnitsManager.LengthUnitString, boxProp.Width);
-            AppendElementValue(xmlDoc, elemCase, "height", UnitsManager.LengthUnitString, boxProp.Height);
-            AppendElementValue(xmlDoc, elemCase, "weight", UnitsManager.MassUnitString, boxProp.Weight);
-            AppendElementValue(xmlDoc, elemCase, "admissibleLoadOnTop", UnitsManager.MassUnitString, 0.0);
+            AppendElementValue(xmlDoc, elemCase, "length", UnitsManager.UnitType.UT_LENGTH, boxProp.Length);
+            AppendElementValue(xmlDoc, elemCase, "width", UnitsManager.UnitType.UT_LENGTH, boxProp.Width);
+            AppendElementValue(xmlDoc, elemCase, "height", UnitsManager.UnitType.UT_LENGTH, boxProp.Height);
+            AppendElementValue(xmlDoc, elemCase, "weight", UnitsManager.UnitType.UT_MASS, boxProp.Weight);
+            AppendElementValue(xmlDoc, elemCase, "admissibleLoadOnTop", UnitsManager.UnitType.UT_MASS, 0.0);
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
             graphics.CameraPosition = Graphics3D.Corner_0;
@@ -834,9 +834,9 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = cylProperties.Description;
             elemCylinder.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemCylinder, "radius", UnitsManager.LengthUnitString, cylProperties.RadiusOuter);
-            AppendElementValue(xmlDoc, elemCylinder, "width", UnitsManager.LengthUnitString, cylProperties.Height);
-            AppendElementValue(xmlDoc, elemCylinder, "height", UnitsManager.MassUnitString, cylProperties.Weight);
+            AppendElementValue(xmlDoc, elemCylinder, "radius", UnitsManager.UnitType.UT_LENGTH, cylProperties.RadiusOuter);
+            AppendElementValue(xmlDoc, elemCylinder, "width", UnitsManager.UnitType.UT_LENGTH, cylProperties.Height);
+            AppendElementValue(xmlDoc, elemCylinder, "height", UnitsManager.UnitType.UT_MASS, cylProperties.Weight);
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
             graphics.CameraPosition = Graphics3D.Corner_0;
@@ -875,13 +875,13 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = bundleProp.Description;
             elemBundle.AppendChild(elemDescription);
             // length / width / number of flats / unit thickness / unit weight / total thickness / total weight
-            AppendElementValue(xmlDoc, elemBundle, "length", UnitsManager.LengthUnitString, bundleProp.Length);
-            AppendElementValue(xmlDoc, elemBundle, "width", UnitsManager.LengthUnitString, bundleProp.Width);
+            AppendElementValue(xmlDoc, elemBundle, "length", UnitsManager.UnitType.UT_LENGTH, bundleProp.Length);
+            AppendElementValue(xmlDoc, elemBundle, "width", UnitsManager.UnitType.UT_LENGTH, bundleProp.Width);
             AppendElementValue(xmlDoc, elemBundle, "numberOfFlats", bundleProp.NoFlats);
-            AppendElementValue(xmlDoc, elemBundle, "unitThickness", UnitsManager.LengthUnitString, bundleProp.UnitThickness);
-            AppendElementValue(xmlDoc, elemBundle, "unitWeight", UnitsManager.MassUnitString, bundleProp.UnitWeight);
-            AppendElementValue(xmlDoc, elemBundle, "totalThickness", UnitsManager.LengthUnitString, bundleProp.UnitThickness * bundleProp.NoFlats);
-            AppendElementValue(xmlDoc, elemBundle, "totalWeight", UnitsManager.MassUnitString, bundleProp.UnitWeight * bundleProp.NoFlats);
+            AppendElementValue(xmlDoc, elemBundle, "unitThickness", UnitsManager.UnitType.UT_LENGTH, bundleProp.UnitThickness);
+            AppendElementValue(xmlDoc, elemBundle, "unitWeight", UnitsManager.UnitType.UT_MASS, bundleProp.UnitWeight);
+            AppendElementValue(xmlDoc, elemBundle, "totalThickness", UnitsManager.UnitType.UT_LENGTH, bundleProp.UnitThickness * bundleProp.NoFlats);
+            AppendElementValue(xmlDoc, elemBundle, "totalWeight", UnitsManager.UnitType.UT_MASS, bundleProp.UnitWeight * bundleProp.NoFlats);
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
             graphics.CameraPosition = Graphics3D.Corner_0;
@@ -911,8 +911,8 @@ namespace TreeDim.StackBuilder.Reporting
             XmlElement elemConstraintSet = xmlDoc.CreateElement("constraintSet", ns);
             elemPalletAnalysis.AppendChild(elemConstraintSet);
             // overhangX, overhangY
-            AppendElementValue(xmlDoc, elemConstraintSet, "overhangX", UnitsManager.LengthUnitString, cs.OverhangX);
-            AppendElementValue(xmlDoc, elemConstraintSet, "overhangY", UnitsManager.LengthUnitString, cs.OverhangY);
+            AppendElementValue(xmlDoc, elemConstraintSet, "overhangX", UnitsManager.UnitType.UT_LENGTH, cs.OverhangX);
+            AppendElementValue(xmlDoc, elemConstraintSet, "overhangY", UnitsManager.UnitType.UT_LENGTH, cs.OverhangY);
             // allowedPatterns
             XmlElement elemAllowedPatterns = xmlDoc.CreateElement("allowedPatterns", ns);
             elemAllowedPatterns.InnerText = cs.AllowedPatternString;
@@ -944,7 +944,7 @@ namespace TreeDim.StackBuilder.Reporting
                 XmlElement maximumPalletHeightGroup = xmlDoc.CreateElement("maximumPalletHeightGroup", ns);
                 elemConstraintSet.AppendChild(maximumPalletHeightGroup);
                 // maximum pallet height
-                AppendElementValue(xmlDoc, maximumPalletHeightGroup, "maximumPalletHeight", UnitsManager.LengthUnitString, cs.MaximumHeight);
+                AppendElementValue(xmlDoc, maximumPalletHeightGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_LENGTH, cs.MaximumHeight);
             }
             if (cs.UseMaximumNumberOfCases)
             {
@@ -959,14 +959,14 @@ namespace TreeDim.StackBuilder.Reporting
                 XmlElement maximumPalletWeightGroup = xmlDoc.CreateElement("maximumPalletWeightGroup", ns);
                 elemConstraintSet.AppendChild(maximumPalletWeightGroup);
                 // pallet weight
-                AppendElementValue(xmlDoc, maximumPalletWeightGroup, "maximumPalletHeight", UnitsManager.MassUnitString, cs.MaximumPalletWeight);
+                AppendElementValue(xmlDoc, maximumPalletWeightGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_MASS, cs.MaximumPalletWeight);
             }
             if (cs.UseMaximumWeightOnBox)
             {
                 XmlElement maximumWeightOnBoxGroup = xmlDoc.CreateElement("maximumWeightOnBoxGroup", ns);
                 elemConstraintSet.AppendChild(maximumWeightOnBoxGroup);
                 // admissible load on top
-                AppendElementValue(xmlDoc, maximumWeightOnBoxGroup, "admissibleLoadOnTop", UnitsManager.MassUnitString, cs.MaximumWeightOnBox);
+                AppendElementValue(xmlDoc, maximumWeightOnBoxGroup, "admissibleLoadOnTop", UnitsManager.UnitType.UT_MASS, cs.MaximumWeightOnBox);
             }
         }
         private void AppendCylinderPalletConstraintSet(CylinderPalletConstraintSet cs, XmlElement elemPalletAnalysis, XmlDocument xmlDoc)
@@ -975,15 +975,15 @@ namespace TreeDim.StackBuilder.Reporting
             // solution
             XmlElement elemConstraintSet = xmlDoc.CreateElement("constraintSet", ns);
             elemPalletAnalysis.AppendChild(elemConstraintSet);
-            AppendElementValue(xmlDoc, elemConstraintSet, "overhangX", UnitsManager.LengthUnitString, cs.OverhangX);
-            AppendElementValue(xmlDoc, elemConstraintSet, "overhangY", UnitsManager.LengthUnitString, cs.OverhangY);
+            AppendElementValue(xmlDoc, elemConstraintSet, "overhangX", UnitsManager.UnitType.UT_LENGTH, cs.OverhangX);
+            AppendElementValue(xmlDoc, elemConstraintSet, "overhangY", UnitsManager.UnitType.UT_LENGTH, cs.OverhangY);
             // stopCriterion
             if (cs.UseMaximumPalletHeight)
             {
                 XmlElement maximumPalletHeightGroup = xmlDoc.CreateElement("maximumPalletHeightGroup", ns);
                 elemConstraintSet.AppendChild(maximumPalletHeightGroup);
                 // max pallet height
-                AppendElementValue(xmlDoc, maximumPalletHeightGroup, "maximumPalletHeight", UnitsManager.LengthUnitString, cs.MaximumPalletHeight);
+                AppendElementValue(xmlDoc, maximumPalletHeightGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_LENGTH, cs.MaximumPalletHeight);
             }
             if (cs.UseMaximumNumberOfItems)
             {
@@ -998,14 +998,14 @@ namespace TreeDim.StackBuilder.Reporting
                 XmlElement maximumPalletWeightGroup = xmlDoc.CreateElement("maximumPalletWeightGroup", ns);
                 elemConstraintSet.AppendChild(maximumPalletWeightGroup);
                 // max pallet weight
-                AppendElementValue(xmlDoc, maximumPalletWeightGroup, "maximumPalletHeight", UnitsManager.MassUnitString, cs.MaximumPalletWeight);
+                AppendElementValue(xmlDoc, maximumPalletWeightGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_MASS, cs.MaximumPalletWeight);
             }
             if (cs.UseMaximumLoadOnLowerCylinder)
             {
                 XmlElement maximumWeightOnBoxGroup = xmlDoc.CreateElement("maximumWeightOnCylinderGroup", ns);
                 elemConstraintSet.AppendChild(maximumWeightOnBoxGroup);
                 // admissible load on top
-                AppendElementValue(xmlDoc, maximumWeightOnBoxGroup, "maximumPalletHeight", UnitsManager.MassUnitString, cs.MaximumLoadOnLowerCylinder);
+                AppendElementValue(xmlDoc, maximumWeightOnBoxGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_MASS, cs.MaximumLoadOnLowerCylinder);
             }
         }
 
@@ -1015,15 +1015,15 @@ namespace TreeDim.StackBuilder.Reporting
             // solution
             XmlElement elemConstraintSet = xmlDoc.CreateElement("constraintSet", ns);
             elemPalletAnalysis.AppendChild(elemConstraintSet);
-            AppendElementValue(xmlDoc, elemConstraintSet, "overhangX", UnitsManager.LengthUnitString, cs.OverhangX);
-            AppendElementValue(xmlDoc, elemConstraintSet, "overhangY", UnitsManager.LengthUnitString, cs.OverhangY);
+            AppendElementValue(xmlDoc, elemConstraintSet, "overhangX", UnitsManager.UnitType.UT_LENGTH, cs.OverhangX);
+            AppendElementValue(xmlDoc, elemConstraintSet, "overhangY", UnitsManager.UnitType.UT_LENGTH, cs.OverhangY);
             // stopCriterion
             if (cs.UseMaximumPalletHeight)
             {
                 XmlElement maximumPalletHeightGroup = xmlDoc.CreateElement("maximumPalletHeightGroup", ns);
                 elemConstraintSet.AppendChild(maximumPalletHeightGroup);
                 // max pallet height
-                AppendElementValue(xmlDoc, maximumPalletHeightGroup, "maximumPalletHeight", UnitsManager.LengthUnitString, cs.MaximumPalletHeight);
+                AppendElementValue(xmlDoc, maximumPalletHeightGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_LENGTH, cs.MaximumPalletHeight);
             }
             if (cs.UseMaximumNumberOfItems)
             {
@@ -1038,7 +1038,7 @@ namespace TreeDim.StackBuilder.Reporting
                 XmlElement maximumPalletWeightGroup = xmlDoc.CreateElement("maximumPalletWeightGroup", ns);
                 elemConstraintSet.AppendChild(maximumPalletWeightGroup);
                 // max pallet weight
-                AppendElementValue(xmlDoc, maximumPalletWeightGroup, "maximumPalletHeight", UnitsManager.MassUnitString, cs.MaximumPalletWeight);
+                AppendElementValue(xmlDoc, maximumPalletWeightGroup, "maximumPalletHeight", UnitsManager.UnitType.UT_MASS, cs.MaximumPalletWeight);
             }
         }
         #endregion
@@ -1063,10 +1063,10 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = boxProperties.Description;
             elemBox.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemBox, "length", UnitsManager.LengthUnitString, boxProperties.Length);
-            AppendElementValue(xmlDoc, elemBox, "width", UnitsManager.LengthUnitString, boxProperties.Width);
-            AppendElementValue(xmlDoc, elemBox, "height", UnitsManager.LengthUnitString, boxProperties.Height);
-            AppendElementValue(xmlDoc, elemBox, "weight", UnitsManager.MassUnitString, boxProperties.Weight);
+            AppendElementValue(xmlDoc, elemBox, "length", UnitsManager.UnitType.UT_LENGTH, boxProperties.Length);
+            AppendElementValue(xmlDoc, elemBox, "width", UnitsManager.UnitType.UT_LENGTH, boxProperties.Width);
+            AppendElementValue(xmlDoc, elemBox, "height", UnitsManager.UnitType.UT_LENGTH, boxProperties.Height);
+            AppendElementValue(xmlDoc, elemBox, "weight", UnitsManager.UnitType.UT_MASS, boxProperties.Weight);
 
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
@@ -1131,16 +1131,16 @@ namespace TreeDim.StackBuilder.Reporting
             eltDim1.InnerText = string.Format("{0}", caseOfBoxes.CaseDefinition.Dim1);
             elemCaseOfBoxes.AppendChild(eltDim1);
 
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerLength", UnitsManager.LengthUnitString, caseOfBoxes.InsideLength);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerWidth", UnitsManager.LengthUnitString, caseOfBoxes.InsideWidth);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerHeight", UnitsManager.LengthUnitString, caseOfBoxes.InsideHeight);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerVolume", UnitsManager.VolumeUnitString, caseOfBoxes.InsideVolume * UnitsManager.FactorCubeLengthToVolume);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerLength", UnitsManager.LengthUnitString, caseOfBoxes.Length);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerWidth", UnitsManager.LengthUnitString, caseOfBoxes.Width);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerHeight", UnitsManager.LengthUnitString, caseOfBoxes.Height);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerVolume", UnitsManager.LengthUnitString, caseOfBoxes.Volume * UnitsManager.FactorCubeLengthToVolume);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "emptyWeight", UnitsManager.MassUnitString, caseOfBoxes.Weight);
-            AppendElementValue(xmlDoc, elemCaseOfBoxes, "weight", UnitsManager.MassUnitString, caseOfBoxes.Weight);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerLength", UnitsManager.UnitType.UT_LENGTH, caseOfBoxes.InsideLength);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerWidth", UnitsManager.UnitType.UT_LENGTH, caseOfBoxes.InsideWidth);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerHeight", UnitsManager.UnitType.UT_LENGTH, caseOfBoxes.InsideHeight);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "innerVolume", UnitsManager.UnitType.UT_VOLUME, caseOfBoxes.InsideVolume * UnitsManager.FactorCubeLengthToVolume);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerLength", UnitsManager.UnitType.UT_LENGTH, caseOfBoxes.Length);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerWidth", UnitsManager.UnitType.UT_LENGTH, caseOfBoxes.Width);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerHeight", UnitsManager.UnitType.UT_LENGTH, caseOfBoxes.Height);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "outerVolume", UnitsManager.UnitType.UT_VOLUME, caseOfBoxes.Volume * UnitsManager.FactorCubeLengthToVolume);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "emptyWeight", UnitsManager.UnitType.UT_MASS, caseOfBoxes.WeightEmpty);
+            AppendElementValue(xmlDoc, elemCaseOfBoxes, "weight", UnitsManager.UnitType.UT_MASS, caseOfBoxes.Weight);
 
             // type converter
             TypeConverter converter = TypeDescriptor.GetConverter(typeof(Bitmap));
@@ -1197,10 +1197,10 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = interlayerProp.Description;
             elemInterlayer.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemInterlayer, "length", UnitsManager.LengthUnitString, interlayerProp.Length);
-            AppendElementValue(xmlDoc, elemInterlayer, "width", UnitsManager.LengthUnitString, interlayerProp.Width);
-            AppendElementValue(xmlDoc, elemInterlayer, "thickness", UnitsManager.LengthUnitString, interlayerProp.Thickness);
-            AppendElementValue(xmlDoc, elemInterlayer, "weight", UnitsManager.MassUnitString, interlayerProp.Weight);
+            AppendElementValue(xmlDoc, elemInterlayer, "length", UnitsManager.UnitType.UT_LENGTH, interlayerProp.Length);
+            AppendElementValue(xmlDoc, elemInterlayer, "width", UnitsManager.UnitType.UT_LENGTH, interlayerProp.Width);
+            AppendElementValue(xmlDoc, elemInterlayer, "thickness", UnitsManager.UnitType.UT_LENGTH, interlayerProp.Thickness);
+            AppendElementValue(xmlDoc, elemInterlayer, "weight", UnitsManager.UnitType.UT_MASS, interlayerProp.Weight);
 
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
@@ -1239,10 +1239,10 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = palletCornerProp.Description;
             elemPalletCorner.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemPalletCorner, "length", UnitsManager.LengthUnitString, palletCornerProp.Length);
-            AppendElementValue(xmlDoc, elemPalletCorner, "width", UnitsManager.LengthUnitString, palletCornerProp.Width);
-            AppendElementValue(xmlDoc, elemPalletCorner, "thickness", UnitsManager.LengthUnitString, palletCornerProp.Thickness);
-            AppendElementValue(xmlDoc, elemPalletCorner, "weight", UnitsManager.LengthUnitString, palletCornerProp.Weight);
+            AppendElementValue(xmlDoc, elemPalletCorner, "length", UnitsManager.UnitType.UT_LENGTH, palletCornerProp.Length);
+            AppendElementValue(xmlDoc, elemPalletCorner, "width", UnitsManager.UnitType.UT_LENGTH, palletCornerProp.Width);
+            AppendElementValue(xmlDoc, elemPalletCorner, "thickness", UnitsManager.UnitType.UT_LENGTH, palletCornerProp.Thickness);
+            AppendElementValue(xmlDoc, elemPalletCorner, "weight", UnitsManager.UnitType.UT_LENGTH, palletCornerProp.Weight);
             // ---
             // view_palletCorner_iso
             // build image
@@ -1282,13 +1282,13 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = palletCapProp.Description;
             elemPalletCap.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemPalletCap, "length", UnitsManager.LengthUnitString, palletCapProp.Length);
-            AppendElementValue(xmlDoc, elemPalletCap, "width", UnitsManager.LengthUnitString, palletCapProp.Width);
-            AppendElementValue(xmlDoc, elemPalletCap, "height", UnitsManager.LengthUnitString, palletCapProp.Height);
-            AppendElementValue(xmlDoc, elemPalletCap, "innerLength", UnitsManager.LengthUnitString, palletCapProp.InsideLength);
-            AppendElementValue(xmlDoc, elemPalletCap, "innerWidth", UnitsManager.LengthUnitString, palletCapProp.InsideWidth);
-            AppendElementValue(xmlDoc, elemPalletCap, "innerHeight", UnitsManager.LengthUnitString, palletCapProp.InsideHeight);
-            AppendElementValue(xmlDoc, elemPalletCap, "weight", UnitsManager.MassUnitString, palletCapProp.Weight);
+            AppendElementValue(xmlDoc, elemPalletCap, "length", UnitsManager.UnitType.UT_LENGTH, palletCapProp.Length);
+            AppendElementValue(xmlDoc, elemPalletCap, "width", UnitsManager.UnitType.UT_LENGTH, palletCapProp.Width);
+            AppendElementValue(xmlDoc, elemPalletCap, "height", UnitsManager.UnitType.UT_LENGTH, palletCapProp.Height);
+            AppendElementValue(xmlDoc, elemPalletCap, "innerLength", UnitsManager.UnitType.UT_LENGTH, palletCapProp.InsideLength);
+            AppendElementValue(xmlDoc, elemPalletCap, "innerWidth", UnitsManager.UnitType.UT_LENGTH, palletCapProp.InsideWidth);
+            AppendElementValue(xmlDoc, elemPalletCap, "innerHeight", UnitsManager.UnitType.UT_LENGTH, palletCapProp.InsideHeight);
+            AppendElementValue(xmlDoc, elemPalletCap, "weight", UnitsManager.UnitType.UT_MASS, palletCapProp.Weight);
             // ---
             // view_palletCap_iso
             // build image
@@ -1357,10 +1357,10 @@ namespace TreeDim.StackBuilder.Reporting
             elemEfficiency.InnerText = string.Format("{0:F}", sol.VolumeEfficiencyCases);
             elemSolution.AppendChild(elemEfficiency);
 
-            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.MassUnitString, inputData.ActualPalletWeight);
-            AppendElementValue(xmlDoc, elemSolution, "palletLength", UnitsManager.LengthUnitString, sol.PalletLength);
-            AppendElementValue(xmlDoc, elemSolution, "palletWidth", UnitsManager.LengthUnitString, sol.PalletWidth);
-            AppendElementValue(xmlDoc, elemSolution, "palletHeight", UnitsManager.LengthUnitString, sol.PalletHeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.UnitType.UT_MASS, inputData.ActualPalletWeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletLength", UnitsManager.UnitType.UT_LENGTH, sol.PalletLength);
+            AppendElementValue(xmlDoc, elemSolution, "palletWidth", UnitsManager.UnitType.UT_LENGTH, sol.PalletWidth);
+            AppendElementValue(xmlDoc, elemSolution, "palletHeight", UnitsManager.UnitType.UT_LENGTH, sol.PalletHeight);
 
             // caseCount
             XmlElement elemCaseCount = xmlDoc.CreateElement("caseCount", ns);
@@ -1501,19 +1501,19 @@ namespace TreeDim.StackBuilder.Reporting
             elemEfficiency.InnerText = string.Format( "{0:F}", sol.VolumeEfficiency );
             elemSolution.AppendChild(elemEfficiency);
             // length / width / height
-            AppendElementValue(xmlDoc, elemSolution, "length", UnitsManager.LengthUnitString, sol.PalletLength);
-            AppendElementValue(xmlDoc, elemSolution, "width", UnitsManager.LengthUnitString, sol.PalletWidth);
-            AppendElementValue(xmlDoc, elemSolution, "height", UnitsManager.LengthUnitString, sol.PalletHeight);
+            AppendElementValue(xmlDoc, elemSolution, "length", UnitsManager.UnitType.UT_LENGTH, sol.PalletLength);
+            AppendElementValue(xmlDoc, elemSolution, "width", UnitsManager.UnitType.UT_LENGTH, sol.PalletWidth);
+            AppendElementValue(xmlDoc, elemSolution, "height", UnitsManager.UnitType.UT_LENGTH, sol.PalletHeight);
             // counts
             AppendElementValue(xmlDoc, elemSolution, "palletPackCount", sol.PackCount);
             AppendElementValue(xmlDoc, elemSolution, "palletCSUCount", sol.CSUCount);
             AppendElementValue(xmlDoc, elemSolution, "palletInterlayerCount", sol.InterlayerCount);
             // 
-            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.MassUnitString, sol.PalletWeight);
-            AppendElementValue(xmlDoc, elemSolution, "palletLoadWeight", UnitsManager.MassUnitString, sol.PalletLoadWeight);
-            AppendElementValue(xmlDoc, elemSolution, "palletNetWeight", UnitsManager.MassUnitString, sol.PalletNetWeight);
-            AppendElementValue(xmlDoc, elemSolution, "overhangX", UnitsManager.LengthUnitString, sol.OverhangX);
-            AppendElementValue(xmlDoc, elemSolution, "overhangY", UnitsManager.LengthUnitString, sol.OverhangY);
+            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.UnitType.UT_MASS, sol.PalletWeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletLoadWeight", UnitsManager.UnitType.UT_MASS, sol.PalletLoadWeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletNetWeight", UnitsManager.UnitType.UT_MASS, sol.PalletNetWeight);
+            AppendElementValue(xmlDoc, elemSolution, "overhangX", UnitsManager.UnitType.UT_LENGTH, sol.OverhangX);
+            AppendElementValue(xmlDoc, elemSolution, "overhangY", UnitsManager.UnitType.UT_LENGTH, sol.OverhangY);
             // --- pallet images
             for (int i = 0; i < 5; ++i)
             {
@@ -1560,12 +1560,12 @@ namespace TreeDim.StackBuilder.Reporting
                 LayerType layerType = sol.GetLayerType(i);
                 AppendElementValue(xmlDoc, elemLayerPack, "layerPackCount", layerType.PackCount);
                 AppendElementValue(xmlDoc, elemLayerPack, "layerCSUCount", layerType.CSUCount);
-                AppendElementValue(xmlDoc, elemLayerPack, "layerWeight", UnitsManager.MassUnitString, layerType.LayerWeight);
-                AppendElementValue(xmlDoc, elemLayerPack, "layerNetWeight", UnitsManager.MassUnitString, layerType.LayerNetWeight);
-                AppendElementValue(xmlDoc, elemLayerPack, "layerLength", UnitsManager.LengthUnitString, layerType.Length);
-                AppendElementValue(xmlDoc, elemLayerPack, "layerWidth", UnitsManager.LengthUnitString, layerType.Width);
-                AppendElementValue(xmlDoc, elemLayerPack, "layerHeight", UnitsManager.LengthUnitString, layerType.Height);
-                AppendElementValue(xmlDoc, elemLayerPack, "maximumSpace", UnitsManager.LengthUnitString, layerType.MaximumSpace);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerWeight", UnitsManager.UnitType.UT_MASS, layerType.LayerWeight);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerNetWeight", UnitsManager.UnitType.UT_MASS, layerType.LayerNetWeight);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerLength", UnitsManager.UnitType.UT_LENGTH, layerType.Length);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerWidth", UnitsManager.UnitType.UT_LENGTH, layerType.Width);
+                AppendElementValue(xmlDoc, elemLayerPack, "layerHeight", UnitsManager.UnitType.UT_LENGTH, layerType.Height);
+                AppendElementValue(xmlDoc, elemLayerPack, "maximumSpace", UnitsManager.UnitType.UT_LENGTH, layerType.MaximumSpace);
                 AppendElementValue(xmlDoc, elemLayerPack, "layerIndexes", layerType.LayerIndexes);
 
                 // instantiate graphics
@@ -1607,8 +1607,8 @@ namespace TreeDim.StackBuilder.Reporting
             elemEfficiency.InnerText = string.Format("{0:F}", sol.VolumeEfficiency);
             elemSolution.AppendChild(elemEfficiency);
 
-            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.MassUnitString, inputData.ActualPalletWeight);
-            AppendElementValue(xmlDoc, elemSolution, "palletHeight", UnitsManager.LengthUnitString, sol.PalletHeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.UnitType.UT_MASS, inputData.ActualPalletWeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletHeight", UnitsManager.UnitType.UT_LENGTH, sol.PalletHeight);
 
             // cylinderCount
             XmlElement elemCaseCount = xmlDoc.CreateElement("cylinderCount", ns);
@@ -1724,8 +1724,8 @@ namespace TreeDim.StackBuilder.Reporting
             elemTitle.InnerText = sol.Title;
             elemSolution.AppendChild(elemTitle);
 
-            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.MassUnitString, inputData.ActualPalletWeight);
-            AppendElementValue(xmlDoc, elemSolution, "palletHeight", UnitsManager.LengthUnitString, sol.PalletHeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletWeight", UnitsManager.UnitType.UT_MASS, inputData.ActualPalletWeight);
+            AppendElementValue(xmlDoc, elemSolution, "palletHeight", UnitsManager.UnitType.UT_LENGTH, sol.PalletHeight);
 
             // cylinderCount
             XmlElement elemCaseCount = xmlDoc.CreateElement("cylinderCount", ns);
@@ -1840,7 +1840,7 @@ namespace TreeDim.StackBuilder.Reporting
             elemCardboardName.InnerText = ectAnalysis.Cardboard.Name;
             elemCardboard.AppendChild(elemCardboardName);
 
-            AppendElementValue(xmlDoc, elemCardboard, "thickness", UnitsManager.LengthUnitString, ectAnalysis.Cardboard.Thickness);
+            AppendElementValue(xmlDoc, elemCardboard, "thickness", UnitsManager.UnitType.UT_LENGTH, ectAnalysis.Cardboard.Thickness);
 
             XmlElement elemCardboadECT = xmlDoc.CreateElement("ect", ns);
             elemCardboadECT.InnerText = string.Format("{0:0.00}", ectAnalysis.Cardboard.ECT);
@@ -1926,10 +1926,10 @@ namespace TreeDim.StackBuilder.Reporting
             elemDescription.InnerText = truckProp.Description;
             elemTruck.AppendChild(elemDescription);
 
-            AppendElementValue(xmlDoc, elemTruck, "length", UnitsManager.LengthUnitString, truckProp.Length);
-            AppendElementValue(xmlDoc, elemTruck, "width", UnitsManager.LengthUnitString, truckProp.Width);
-            AppendElementValue(xmlDoc, elemTruck, "height", UnitsManager.LengthUnitString, truckProp.Height);
-            AppendElementValue(xmlDoc, elemTruck, "admissibleLoad", UnitsManager.MassUnitString, truckProp.AdmissibleLoadWeight);
+            AppendElementValue(xmlDoc, elemTruck, "length", UnitsManager.UnitType.UT_LENGTH, truckProp.Length);
+            AppendElementValue(xmlDoc, elemTruck, "width", UnitsManager.UnitType.UT_LENGTH, truckProp.Width);
+            AppendElementValue(xmlDoc, elemTruck, "height", UnitsManager.UnitType.UT_LENGTH, truckProp.Height);
+            AppendElementValue(xmlDoc, elemTruck, "admissibleLoad", UnitsManager.UnitType.UT_MASS, truckProp.AdmissibleLoadWeight);
 
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
@@ -1982,7 +1982,7 @@ namespace TreeDim.StackBuilder.Reporting
             elemTruckSolution.AppendChild(elemBoxCount);
 
             double loadWeight = truckSolution.PalletCount * inputData.ActualPalletWeight;
-            AppendElementValue(xmlDoc, elemTruckSolution, "loadWeight", UnitsManager.MassUnitString, loadWeight);
+            AppendElementValue(xmlDoc, elemTruckSolution, "loadWeight", UnitsManager.UnitType.UT_MASS, loadWeight);
 
             // loadEfficiency
             XmlElement elemLoadEfficiency = xmlDoc.CreateElement("loadEfficiency", ns);
@@ -2118,15 +2118,15 @@ namespace TreeDim.StackBuilder.Reporting
             CreateElement("description", caseProperties.Description, elemCase, xmlDoc, ns);
             // unit width
             // length / width /height
-            AppendElementValue(xmlDoc, elemCase, "length", UnitsManager.LengthUnitString, caseProperties.Length);
-            AppendElementValue(xmlDoc, elemCase, "width", UnitsManager.LengthUnitString, caseProperties.Width);
-            AppendElementValue(xmlDoc, elemCase, "height", UnitsManager.LengthUnitString, caseProperties.Height);
+            AppendElementValue(xmlDoc, elemCase, "length", UnitsManager.UnitType.UT_LENGTH, caseProperties.Length);
+            AppendElementValue(xmlDoc, elemCase, "width", UnitsManager.UnitType.UT_LENGTH, caseProperties.Width);
+            AppendElementValue(xmlDoc, elemCase, "height", UnitsManager.UnitType.UT_LENGTH, caseProperties.Height);
             // innerLength / innerWidth / innerHeight
-            AppendElementValue(xmlDoc, elemCase, "innerLength", UnitsManager.LengthUnitString, caseProperties.InsideLength);
-            AppendElementValue(xmlDoc, elemCase, "innerWidth", UnitsManager.LengthUnitString, caseProperties.InsideWidth);
-            AppendElementValue(xmlDoc, elemCase, "innerHeight", UnitsManager.LengthUnitString, caseProperties.InsideHeight);
+            AppendElementValue(xmlDoc, elemCase, "innerLength", UnitsManager.UnitType.UT_LENGTH, caseProperties.InsideLength);
+            AppendElementValue(xmlDoc, elemCase, "innerWidth", UnitsManager.UnitType.UT_LENGTH, caseProperties.InsideWidth);
+            AppendElementValue(xmlDoc, elemCase, "innerHeight", UnitsManager.UnitType.UT_LENGTH, caseProperties.InsideHeight);
             // weight
-            AppendElementValue(xmlDoc, elemCase, "weight", UnitsManager.MassUnitString, caseProperties.Weight);
+            AppendElementValue(xmlDoc, elemCase, "weight", UnitsManager.UnitType.UT_MASS, caseProperties.Weight);
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
             graphics.CameraPosition = Graphics3D.Corner_0;
@@ -2164,13 +2164,13 @@ namespace TreeDim.StackBuilder.Reporting
                 , string.Format("{0} * {1} * {2}", arrangement.Length, arrangement.Width, arrangement.Height)
                 , elemPack, xmlDoc, ns);
             // length / width /height
-            AppendElementValue(xmlDoc, elemPack, "length", UnitsManager.LengthUnitString, packProperties.Length);
-            AppendElementValue(xmlDoc, elemPack, "width", UnitsManager.LengthUnitString, packProperties.Width);
-            AppendElementValue(xmlDoc, elemPack, "height", UnitsManager.LengthUnitString, packProperties.Height);
+            AppendElementValue(xmlDoc, elemPack, "length", UnitsManager.UnitType.UT_LENGTH, packProperties.Length);
+            AppendElementValue(xmlDoc, elemPack, "width", UnitsManager.UnitType.UT_LENGTH, packProperties.Width);
+            AppendElementValue(xmlDoc, elemPack, "height", UnitsManager.UnitType.UT_LENGTH, packProperties.Height);
             // weight
-            AppendElementValue(xmlDoc, elemPack, "netWeight", UnitsManager.MassUnitString, packProperties.NetWeight);
-            AppendElementValue(xmlDoc, elemPack, "wrapperWeight", UnitsManager.MassUnitString, packProperties.Wrap.Weight);
-            AppendElementValue(xmlDoc, elemPack, "weight", UnitsManager.MassUnitString, packProperties.Weight);
+            AppendElementValue(xmlDoc, elemPack, "netWeight", UnitsManager.UnitType.UT_MASS, packProperties.NetWeight);
+            AppendElementValue(xmlDoc, elemPack, "wrapperWeight", UnitsManager.UnitType.UT_MASS, packProperties.Wrap.Weight);
+            AppendElementValue(xmlDoc, elemPack, "weight", UnitsManager.UnitType.UT_MASS, packProperties.Weight);
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
             graphics.CameraPosition = Graphics3D.Corner_0;
@@ -2203,10 +2203,10 @@ namespace TreeDim.StackBuilder.Reporting
             // description
             CreateElement("description", boxProperties.Description, elemBox, xmlDoc, ns);
 
-            AppendElementValue(xmlDoc, elemBox, "length", UnitsManager.LengthUnitString, boxProperties.Length);
-            AppendElementValue(xmlDoc, elemBox, "width", UnitsManager.LengthUnitString, boxProperties.Width);
-            AppendElementValue(xmlDoc, elemBox, "height", UnitsManager.LengthUnitString, boxProperties.Height);
-            AppendElementValue(xmlDoc, elemBox, "weight", UnitsManager.MassUnitString, boxProperties.Weight);
+            AppendElementValue(xmlDoc, elemBox, "length", UnitsManager.UnitType.UT_LENGTH, boxProperties.Length);
+            AppendElementValue(xmlDoc, elemBox, "width", UnitsManager.UnitType.UT_LENGTH, boxProperties.Width);
+            AppendElementValue(xmlDoc, elemBox, "height", UnitsManager.UnitType.UT_LENGTH, boxProperties.Height);
+            AppendElementValue(xmlDoc, elemBox, "weight", UnitsManager.UnitType.UT_MASS, boxProperties.Weight);
             // view_box_iso
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
@@ -2240,13 +2240,13 @@ namespace TreeDim.StackBuilder.Reporting
             // description
             CreateElement("description", boxProp.Description, elemCase, xmlDoc, ns);
 
-            AppendElementValue(xmlDoc, elemCase, "length", UnitsManager.LengthUnitString, boxProp.Length);
-            AppendElementValue(xmlDoc, elemCase, "width", UnitsManager.LengthUnitString, boxProp.Width);
-            AppendElementValue(xmlDoc, elemCase, "height", UnitsManager.LengthUnitString, boxProp.Height);
-            AppendElementValue(xmlDoc, elemCase, "innerLength", UnitsManager.LengthUnitString, boxProp.InsideLength);
-            AppendElementValue(xmlDoc, elemCase, "innerWidth", UnitsManager.LengthUnitString, boxProp.InsideWidth);
-            AppendElementValue(xmlDoc, elemCase, "innerHeight", UnitsManager.LengthUnitString, boxProp.InsideHeight);
-            AppendElementValue(xmlDoc, elemCase, "weight", UnitsManager.MassUnitString, boxProp.Height);
+            AppendElementValue(xmlDoc, elemCase, "length", UnitsManager.UnitType.UT_LENGTH, boxProp.Length);
+            AppendElementValue(xmlDoc, elemCase, "width", UnitsManager.UnitType.UT_LENGTH, boxProp.Width);
+            AppendElementValue(xmlDoc, elemCase, "height", UnitsManager.UnitType.UT_LENGTH, boxProp.Height);
+            AppendElementValue(xmlDoc, elemCase, "innerLength", UnitsManager.UnitType.UT_LENGTH, boxProp.InsideLength);
+            AppendElementValue(xmlDoc, elemCase, "innerWidth", UnitsManager.UnitType.UT_LENGTH, boxProp.InsideWidth);
+            AppendElementValue(xmlDoc, elemCase, "innerHeight", UnitsManager.UnitType.UT_LENGTH, boxProp.InsideHeight);
+            AppendElementValue(xmlDoc, elemCase, "weight", UnitsManager.UnitType.UT_MASS, boxProp.Height);
  
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(ImageSizeDetail, ImageSizeDetail));
@@ -2292,7 +2292,7 @@ namespace TreeDim.StackBuilder.Reporting
             if (bCaseConstraintSet.UseMaximumCaseWeight)
             {
                 XmlElement maximumCaseWeightGroup = CreateElement("maximumCaseWeightGroup", null, elemCaseConstraintSet, xmlDoc, ns);
-                AppendElementValue(xmlDoc, maximumCaseWeightGroup, "maximumCaseWeight", UnitsManager.MassUnitString, bCaseConstraintSet.MaximumCaseWeight);
+                AppendElementValue(xmlDoc, maximumCaseWeightGroup, "maximumCaseWeight", UnitsManager.UnitType.UT_MASS, bCaseConstraintSet.MaximumCaseWeight);
             }
             // minimumBoxPerCaseGroup
             if (bCaseConstraintSet.UseMaximumNumberOfBoxes)
@@ -2327,9 +2327,9 @@ namespace TreeDim.StackBuilder.Reporting
             elemSolution.AppendChild(elemBoxLayersCount);
             // criterions
             // load weight
-            AppendElementValue(xmlDoc, elemSolution, "LoadWeight", UnitsManager.MassUnitString, solution.BoxPerCaseCount * analysis.BProperties.Weight);
+            AppendElementValue(xmlDoc, elemSolution, "LoadWeight", UnitsManager.UnitType.UT_MASS, solution.BoxPerCaseCount * analysis.BProperties.Weight);
             // case weight
-            AppendElementValue(xmlDoc, elemSolution, "CaseWeight", UnitsManager.MassUnitString, solution.CaseWeight);
+            AppendElementValue(xmlDoc, elemSolution, "CaseWeight", UnitsManager.UnitType.UT_MASS, solution.CaseWeight);
             // EfficiencyWeight
             XmlElement elemEfficiencyWeight = xmlDoc.CreateElement("EfficiencyWeight", ns);
             if (solution.CaseWeight > 0)
@@ -2412,7 +2412,7 @@ namespace TreeDim.StackBuilder.Reporting
             if (cs.UseMaximumCaseWeight)
             {
                 XmlElement maximumCaseWeightGroup = CreateElement("maximumCaseWeightGroup", null, elemCaseConstraintSet, xmlDoc, ns);
-                AppendElementValue(xmlDoc, maximumCaseWeightGroup, "maximumCaseWeight", UnitsManager.MassUnitString, cs.MaximumCaseWeight);
+                AppendElementValue(xmlDoc, maximumCaseWeightGroup, "maximumCaseWeight", UnitsManager.UnitType.UT_MASS, cs.MaximumCaseWeight);
             }
             // minimumBoxPerCaseGroup
             if (cs.UseMinimumNumberOfItems)
@@ -2451,8 +2451,8 @@ namespace TreeDim.StackBuilder.Reporting
             // palletEfficiency
             CreateElement("palletEfficiency", caseSolution.PalletEfficiency, elemCaseSolution, xmlDoc, ns);
 
-            AppendElementValue(xmlDoc, elemCaseSolution, "caseWeight", UnitsManager.MassUnitString, caseSolution.CaseWeight);
-            AppendElementValue(xmlDoc, elemCaseSolution, "palletWeight", UnitsManager.MassUnitString, caseSolution.PalletWeight);
+            AppendElementValue(xmlDoc, elemCaseSolution, "caseWeight", UnitsManager.UnitType.UT_MASS, caseSolution.CaseWeight);
+            AppendElementValue(xmlDoc, elemCaseSolution, "palletWeight", UnitsManager.UnitType.UT_MASS, caseSolution.PalletWeight);
 
             // --- build image
             Graphics3DImage graphics = new Graphics3DImage(new Size(512, 512));
@@ -2498,7 +2498,7 @@ namespace TreeDim.StackBuilder.Reporting
             parentElt.AppendChild(elt);
             return elt;
         }
-        private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, string eltUnit, OptDouble optValue)
+        private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, UnitsManager.UnitType unitType, OptDouble optValue)
         {
             if (optValue.Activated)
             {
@@ -2507,26 +2507,26 @@ namespace TreeDim.StackBuilder.Reporting
                 parent.AppendChild(createdElement);
                 // unit
                 XmlElement unitElement = xmlDoc.CreateElement("unit", xmlDoc.DocumentElement.NamespaceURI);
-                unitElement.InnerText = eltUnit;
+                unitElement.InnerText = UnitsManager.UnitString(unitType);
                 createdElement.AppendChild(unitElement);
                 // value
                 XmlElement valueElement = xmlDoc.CreateElement("value", xmlDoc.DocumentElement.NamespaceURI);
-                valueElement.InnerText = string.Format("{0:0.#}", optValue.Value);
+                valueElement.InnerText = string.Format(UnitsManager.UnitFormat(unitType), optValue.Value);
                 createdElement.AppendChild(valueElement);
             }
         }
-        private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, string eltUnit, double eltValue)
+        private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, UnitsManager.UnitType unitType, double eltValue)
         {
             // eltName
             XmlElement createdElement = xmlDoc.CreateElement(eltName, xmlDoc.DocumentElement.NamespaceURI);
             parent.AppendChild(createdElement);
             // unit
             XmlElement unitElement = xmlDoc.CreateElement("unit", xmlDoc.DocumentElement.NamespaceURI);
-            unitElement.InnerText = eltUnit;
+            unitElement.InnerText = UnitsManager.UnitString(unitType);
             createdElement.AppendChild(unitElement);
             // value
             XmlElement valueElement = xmlDoc.CreateElement("value", xmlDoc.DocumentElement.NamespaceURI);
-            valueElement.InnerText = string.Format("{0:0.#}", eltValue);
+            valueElement.InnerText = string.Format(UnitsManager.UnitFormat(unitType), eltValue);
             createdElement.AppendChild(valueElement);
         }
         private static void AppendElementValue(XmlDocument xmlDoc, XmlElement parent, string eltName, double eltValue)

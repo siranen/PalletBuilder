@@ -442,7 +442,7 @@
     <value>nudWallSurfaceMass</value>
   </data>
   <data name="&gt;&gt;graphCtrlBoxesLayout.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btAddPackPalletAnalysis.Parent" xml:space="preserve">
     <value>$this</value>
@@ -901,7 +901,7 @@
     <value>gbCase</value>
   </data>
   <data name="&gt;&gt;uCtrlOverhangWidth.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lbSurfaceMass.Name" xml:space="preserve">
     <value>lbSurfaceMass</value>
@@ -994,7 +994,7 @@
     <value>62, 20</value>
   </data>
   <data name="&gt;&gt;uCtrlPalletHeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="uCtrlPalletHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 62</value>
@@ -1051,7 +1051,7 @@
     <value>gbCase</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;nudMinCaseHeight.Parent" xml:space="preserve">
     <value>gbCase</value>
@@ -1195,7 +1195,7 @@
     <value>graphCtrlPallet</value>
   </data>
   <data name="&gt;&gt;uCtrlOverhangLength.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.16.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="lbMinCaseDimensions.Text" xml:space="preserve">
     <value>Min. case dimensions</value>

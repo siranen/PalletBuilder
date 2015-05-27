@@ -1766,18 +1766,12 @@ namespace TreeDim.StackBuilder.Basics
         #region Load case optimisation
         private void LoadOptimConstraintSet(XmlElement eltConstraintSet, out CaseOptimConstraintSet constraintSet)
         {
-            double overhangX =  0.0;
-            if (eltConstraintSet.HasAttribute("OverhangX"))
-                overhangX = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["OverhangX"].Value), _unitSystem);
-            double overhangY = 0.0;
-            if (eltConstraintSet.HasAttribute("OverhangY"))
-                overhangX = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["OverhangY"].Value), _unitSystem);
             string sNoWalls = eltConstraintSet.Attributes["NumberOfWalls"].Value;
             int[] iNoWalls = ParseInt3(sNoWalls);
             double wallThickness = UnitsManager.ConvertLengthFrom(Convert.ToDouble(eltConstraintSet.Attributes["WallThickness"].Value), _unitSystem);
             double wallSurfaceMass = 0.0;
             wallSurfaceMass = UnitsManager.ConvertSurfaceMassFrom(Convert.ToDouble(eltConstraintSet.Attributes["WallSurfaceMass"].Value), _unitSystem);
-            constraintSet = new CaseOptimConstraintSet(overhangX, overhangY, iNoWalls, wallThickness, wallSurfaceMass, Vector3D.Zero, Vector3D.Zero, false); 
+            constraintSet = new CaseOptimConstraintSet(iNoWalls, wallThickness, wallSurfaceMass, Vector3D.Zero, Vector3D.Zero, false); 
         }
         #endregion
 

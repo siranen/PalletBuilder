@@ -145,11 +145,17 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bnClose.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <metadata name="statusStripDef.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="toolStripStatusLabelDef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 17</value>
+  </data>
+  <data name="toolStripStatusLabelDef.Text" xml:space="preserve">
+    <value>toolStripStatusLabelDef</value>
+  </data>
   <data name="statusStripDef.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 717</value>
   </data>
@@ -172,148 +178,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStripDef.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="toolStripStatusLabelDef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
-  </data>
-  <data name="toolStripStatusLabelDef.Text" xml:space="preserve">
-    <value>toolStripStatusLabelDef</value>
+    <value>7</value>
   </data>
   <data name="groupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;nudBoxHeight.Name" xml:space="preserve">
-    <value>nudBoxHeight</value>
-  </data>
-  <data name="&gt;&gt;nudBoxHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudBoxHeight.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;nudBoxHeight.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;nudBoxWidth.Name" xml:space="preserve">
-    <value>nudBoxWidth</value>
-  </data>
-  <data name="&gt;&gt;nudBoxWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudBoxWidth.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;nudBoxWidth.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;nudBoxLength.Name" xml:space="preserve">
-    <value>nudBoxLength</value>
-  </data>
-  <data name="&gt;&gt;nudBoxLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudBoxLength.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;nudBoxLength.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lbBoxHeight.Name" xml:space="preserve">
-    <value>lbBoxHeight</value>
-  </data>
-  <data name="&gt;&gt;lbBoxHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbBoxHeight.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;lbBoxHeight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbBoxWidth.Name" xml:space="preserve">
-    <value>lbBoxWidth</value>
-  </data>
-  <data name="&gt;&gt;lbBoxWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbBoxWidth.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;lbBoxWidth.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lbBoxLength.Name" xml:space="preserve">
-    <value>lbBoxLength</value>
-  </data>
-  <data name="&gt;&gt;lbBoxLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbBoxLength.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;lbBoxLength.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;chkVerticalOrientationOnly.Name" xml:space="preserve">
-    <value>chkVerticalOrientationOnly</value>
-  </data>
-  <data name="&gt;&gt;chkVerticalOrientationOnly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkVerticalOrientationOnly.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;chkVerticalOrientationOnly.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;nudNumber.Name" xml:space="preserve">
-    <value>nudNumber</value>
-  </data>
-  <data name="&gt;&gt;nudNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudNumber.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;nudNumber.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lbNumber.Name" xml:space="preserve">
-    <value>lbNumber</value>
-  </data>
-  <data name="&gt;&gt;lbNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbNumber.Parent" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;lbNumber.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="groupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 54</value>
-  </data>
-  <data name="groupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 155</value>
-  </data>
-  <data name="groupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox.Text" xml:space="preserve">
-    <value>Box (inner product)</value>
-  </data>
-  <data name="&gt;&gt;groupBox.Name" xml:space="preserve">
-    <value>groupBox</value>
-  </data>
-  <data name="&gt;&gt;groupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="nudBoxHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>201, 70</value>
@@ -540,6 +408,30 @@
   <data name="&gt;&gt;lbNumber.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="groupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 54</value>
+  </data>
+  <data name="groupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 155</value>
+  </data>
+  <data name="groupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox.Text" xml:space="preserve">
+    <value>Box (inner product)</value>
+  </data>
+  <data name="&gt;&gt;groupBox.Name" xml:space="preserve">
+    <value>groupBox</value>
+  </data>
+  <data name="&gt;&gt;groupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="nudPalletHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 122</value>
   </data>
@@ -594,85 +486,25 @@
   <data name="gbPallet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;pbPallet.Name" xml:space="preserve">
-    <value>pbPallet</value>
-  </data>
-  <data name="&gt;&gt;pbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPallet.Parent" xml:space="preserve">
-    <value>gbPallet</value>
-  </data>
-  <data name="&gt;&gt;pbPallet.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbPallet.Name" xml:space="preserve">
-    <value>cbPallet</value>
-  </data>
-  <data name="&gt;&gt;cbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbPallet.Parent" xml:space="preserve">
-    <value>gbPallet</value>
-  </data>
-  <data name="&gt;&gt;cbPallet.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbPallet.Name" xml:space="preserve">
-    <value>lbPallet</value>
-  </data>
-  <data name="&gt;&gt;lbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbPallet.Parent" xml:space="preserve">
-    <value>gbPallet</value>
-  </data>
-  <data name="&gt;&gt;lbPallet.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbPallet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 54</value>
-  </data>
-  <data name="gbPallet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 155</value>
-  </data>
-  <data name="gbPallet.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="gbPallet.Text" xml:space="preserve">
-    <value>Pallet</value>
-  </data>
-  <data name="&gt;&gt;gbPallet.Name" xml:space="preserve">
-    <value>gbPallet</value>
-  </data>
-  <data name="&gt;&gt;gbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbPallet.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbPallet.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="pbPallet.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="graphCtrlPallet.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 37</value>
   </data>
-  <data name="pbPallet.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="graphCtrlPallet.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 83</value>
   </data>
-  <data name="pbPallet.TabIndex" type="System.Int32, mscorlib">
+  <data name="graphCtrlPallet.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;pbPallet.Name" xml:space="preserve">
-    <value>pbPallet</value>
+  <data name="&gt;&gt;graphCtrlPallet.Name" xml:space="preserve">
+    <value>graphCtrlPallet</value>
   </data>
-  <data name="&gt;&gt;pbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;graphCtrlPallet.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;pbPallet.Parent" xml:space="preserve">
+  <data name="&gt;&gt;graphCtrlPallet.Parent" xml:space="preserve">
     <value>gbPallet</value>
   </data>
-  <data name="&gt;&gt;pbPallet.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;graphCtrlPallet.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbPallet.Location" type="System.Drawing.Point, System.Drawing">
@@ -725,6 +557,30 @@
   </data>
   <data name="&gt;&gt;lbPallet.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="gbPallet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 54</value>
+  </data>
+  <data name="gbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 155</value>
+  </data>
+  <data name="gbPallet.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="gbPallet.Text" xml:space="preserve">
+    <value>Pallet</value>
+  </data>
+  <data name="&gt;&gt;gbPallet.Name" xml:space="preserve">
+    <value>gbPallet</value>
+  </data>
+  <data name="&gt;&gt;gbPallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbPallet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbPallet.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="btSetMaximum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1143,54 +999,6 @@
   <data name="gbCase.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;lbMaxCaseDimensions.Name" xml:space="preserve">
-    <value>lbMaxCaseDimensions</value>
-  </data>
-  <data name="&gt;&gt;lbMaxCaseDimensions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbMaxCaseDimensions.Parent" xml:space="preserve">
-    <value>gbCase</value>
-  </data>
-  <data name="&gt;&gt;lbMaxCaseDimensions.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;lbMinCaseDimensions.Name" xml:space="preserve">
-    <value>lbMinCaseDimensions</value>
-  </data>
-  <data name="&gt;&gt;lbMinCaseDimensions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbMinCaseDimensions.Parent" xml:space="preserve">
-    <value>gbCase</value>
-  </data>
-  <data name="&gt;&gt;lbMinCaseDimensions.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="gbCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 212</value>
-  </data>
-  <data name="gbCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 133</value>
-  </data>
-  <data name="gbCase.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="gbCase.Text" xml:space="preserve">
-    <value>Case constraints</value>
-  </data>
-  <data name="&gt;&gt;gbCase.Name" xml:space="preserve">
-    <value>gbCase</value>
-  </data>
-  <data name="&gt;&gt;gbCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbCase.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbCase.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="lbMaxCaseDimensions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1251,6 +1059,30 @@
   <data name="&gt;&gt;lbMinCaseDimensions.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="gbCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 212</value>
+  </data>
+  <data name="gbCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 133</value>
+  </data>
+  <data name="gbCase.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="gbCase.Text" xml:space="preserve">
+    <value>Case constraints</value>
+  </data>
+  <data name="&gt;&gt;gbCase.Name" xml:space="preserve">
+    <value>gbCase</value>
+  </data>
+  <data name="&gt;&gt;gbCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbCase.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbCase.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="btOptimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -1279,7 +1111,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btOptimize.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="gridSolutions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1300,92 +1132,17 @@
     <value>gridSolutions</value>
   </data>
   <data name="&gt;&gt;gridSolutions.Type" xml:space="preserve">
-    <value>SourceGrid.Grid, SourceGrid, Version=4.30.3918.24227, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
+    <value>SourceGrid.Grid, SourceGrid, Version=4.30.5611.24765, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
   </data>
   <data name="&gt;&gt;gridSolutions.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gridSolutions.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pbBoxesLayout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="pbBoxesLayout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbBoxesLayout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 547</value>
-  </data>
-  <data name="pbBoxesLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 159</value>
-  </data>
-  <data name="pbBoxesLayout.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;pbBoxesLayout.Name" xml:space="preserve">
-    <value>pbBoxesLayout</value>
-  </data>
-  <data name="&gt;&gt;pbBoxesLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBoxesLayout.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbBoxesLayout.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="pbPalletSolution.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="pbPalletSolution.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbPalletSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 547</value>
-  </data>
-  <data name="pbPalletSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 159</value>
-  </data>
-  <data name="pbPalletSolution.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;pbPalletSolution.Name" xml:space="preserve">
-    <value>pbPalletSolution</value>
-  </data>
-  <data name="&gt;&gt;pbPalletSolution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPalletSolution.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbPalletSolution.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="toolStripTools.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>145, 17</value>
   </metadata>
-  <data name="toolStripTools.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="toolStripTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 25</value>
-  </data>
-  <data name="toolStripTools.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;toolStripTools.Name" xml:space="preserve">
-    <value>toolStripTools</value>
-  </data>
-  <data name="&gt;&gt;toolStripTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripTools.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripTools.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="toolStripButtonReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1420,6 +1177,27 @@
   <data name="toolStripButtonStackBuilder.Text" xml:space="preserve">
     <value>Generate StackBuilder project...</value>
   </data>
+  <data name="toolStripTools.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="toolStripTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 25</value>
+  </data>
+  <data name="toolStripTools.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;toolStripTools.Name" xml:space="preserve">
+    <value>toolStripTools</value>
+  </data>
+  <data name="&gt;&gt;toolStripTools.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripTools.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripTools.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="saveFileDialogAsStb.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>273, 17</value>
   </metadata>
@@ -1428,6 +1206,105 @@
   </data>
   <data name="saveFileDialogAsStb.Title" xml:space="preserve">
     <value>Save as StackBuilder project...</value>
+  </data>
+  <data name="splitContainerCasePallet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="splitContainerCasePallet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 549</value>
+  </data>
+  <data name="graphCtrlBoxesLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="graphCtrlBoxesLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="graphCtrlBoxesLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 165</value>
+  </data>
+  <data name="graphCtrlBoxesLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlBoxesLayout.Name" xml:space="preserve">
+    <value>graphCtrlBoxesLayout</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlBoxesLayout.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlBoxesLayout.Parent" xml:space="preserve">
+    <value>splitContainerCasePallet.Panel1</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlBoxesLayout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel1.Name" xml:space="preserve">
+    <value>splitContainerCasePallet.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerCasePallet</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="graphCtrlPalletLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="graphCtrlPalletLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="graphCtrlPalletLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 165</value>
+  </data>
+  <data name="graphCtrlPalletLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlPalletLayout.Name" xml:space="preserve">
+    <value>graphCtrlPalletLayout</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlPalletLayout.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlPalletLayout.Parent" xml:space="preserve">
+    <value>splitContainerCasePallet.Panel2</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlPalletLayout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel2.Name" xml:space="preserve">
+    <value>splitContainerCasePallet.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel2.Parent" xml:space="preserve">
+    <value>splitContainerCasePallet</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainerCasePallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 165</value>
+  </data>
+  <data name="splitContainerCasePallet.SplitterDistance" type="System.Int32, mscorlib">
+    <value>292</value>
+  </data>
+  <data name="splitContainerCasePallet.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Name" xml:space="preserve">
+    <value>splitContainerCasePallet</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

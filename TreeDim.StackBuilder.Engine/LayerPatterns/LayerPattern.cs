@@ -17,7 +17,7 @@ namespace TreeDim.StackBuilder.Engine
     {
         #region Abstract methods
         abstract public string Name { get; }
-        abstract public void GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth);
+        abstract public bool GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth);
         abstract public void GenerateLayer(Layer layer, double actualLength, double actualWidth);
         abstract public int GetNumberOfVariants(Layer layer);
         abstract public bool CanBeSwapped { get; }
@@ -59,15 +59,16 @@ namespace TreeDim.StackBuilder.Engine
                 return layer.PalletLength;        
         }
 
-        public void GetLayerDimensionsChecked(Layer layer, out double actualLength, out double actualWidth)
+        public bool GetLayerDimensionsChecked(Layer layer, out double actualLength, out double actualWidth)
         {
-            GetLayerDimensions(layer, out actualLength, out actualWidth);
+            bool result = GetLayerDimensions(layer, out actualLength, out actualWidth);
             if (actualLength > GetPalletLength(layer))
                 throw new EngineException(string.Format("Pattern name={0} : actualLength={1} > palletLength={2} ?"
                     , this.Name, actualLength, GetPalletLength(layer)));
             if (actualWidth > GetPalletWidth(layer))
                 throw new EngineException(string.Format("Pattern name={0} : actualWidth={1} > palletWidth={2} ?"
                     , this.Name, actualWidth, GetPalletWidth(layer)));
+            return result;
         }
 
         public void AddPosition(Layer layer, Vector2D vPosition, HalfAxis.HAxis lengthAxis, HalfAxis.HAxis widthAxis)

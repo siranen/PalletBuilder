@@ -59,7 +59,8 @@ namespace TreeDim.StackBuilder.Engine
                     // loop through
                     Layer layer = new Layer(_packProperties, _palletProperties, _constraintSet, axis, false);
                     double actualLength = 0.0, actualWidth = 0.0;
-                    pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth);
+                    if (!pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth))
+                        continue;
                     pattern.GenerateLayer(layer, actualLength, actualWidth);
 
                     // filter by layer weight

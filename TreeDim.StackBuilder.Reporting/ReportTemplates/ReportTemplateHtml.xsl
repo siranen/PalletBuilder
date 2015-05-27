@@ -145,6 +145,7 @@
     <xsl:apply-templates select="bundle"/>
     <xsl:apply-templates select="caseWithInnerDims"/>
     <xsl:apply-templates select="boxCasePalletSolution"/>
+    <xsl:apply-templates select="palletSolution"/>
   </xsl:template>
   <!--#### CASE/PALLET ANALYSIS ####-->
   <xsl:template match="casePalletAnalysis">
@@ -1096,17 +1097,13 @@
       </tr>
       <tr>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Length']"/> (<xsl:value-of select="outerlength/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Length']"/> (<xsl:value-of select="outerLength/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
-          <xsl:value-of select="outerlength/value"></xsl:value-of>
+          <xsl:value-of select="outerLength/value"></xsl:value-of>
         </td>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Inner length']"/> (<xsl:value-of select="innerlength/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Inner length']"/> (<xsl:value-of select="innerLength/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
           <xsl:value-of select="innerLength/value"></xsl:value-of>
@@ -1114,17 +1111,13 @@
       </tr>
       <tr>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Width']"/> (<xsl:value-of select="outerWidth/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Width']"/> (<xsl:value-of select="outerWidth/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
           <xsl:value-of select="outerWidth/value"></xsl:value-of>
         </td>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Inner width']"/> (<xsl:value-of select="outerWidth/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Inner width']"/> (<xsl:value-of select="innerWidth/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
           <xsl:value-of select="innerWidth/value"></xsl:value-of>
@@ -1132,17 +1125,13 @@
       </tr>
       <tr>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Height']"/> (<xsl:value-of select="outerHeight/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Height']"/> (<xsl:value-of select="outerHeight/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
           <xsl:value-of select="outerHeight/value"></xsl:value-of>
         </td>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Inner height']"/> (<xsl:value-of select="innerHeight/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Inner height']"/> (<xsl:value-of select="innerHeight/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
           <xsl:value-of select="innerHeight/value"></xsl:value-of>
@@ -1150,17 +1139,13 @@
       </tr>
       <tr>
         <td class="style2" width="25%">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Volume']"/> (<xsl:value-of select="outerVolume/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Volume']"/> (<xsl:value-of select="outerVolume/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3" width="25%">
           <xsl:value-of select="outerVolume/value"></xsl:value-of>
         </td>
         <td class="style2">
-          <b>
-            <xsl:value-of select="$loc/str[@name='Inner volume']"/> (<xsl:value-of select="innerVolume/unit"></xsl:value-of>)
-          </b>
+          <b><xsl:value-of select="$loc/str[@name='Inner volume']"/> (<xsl:value-of select="innerVolume/unit"></xsl:value-of>)</b>
         </td>
         <td class="style3">
           <xsl:value-of select="innerVolume/value"></xsl:value-of>

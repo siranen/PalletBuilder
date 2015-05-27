@@ -14,7 +14,7 @@ namespace TreeDim.StackBuilder.Engine
         #region Implementation of LayerPattern abstract properties and methods
         public override string Name   { get { return "Spirale"; } }
 
-        public override void GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
+        public override bool GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
         {
             double boxLength = layer.BoxLength;
             double boxWidth = layer.BoxWidth;
@@ -41,6 +41,8 @@ namespace TreeDim.StackBuilder.Engine
             else if (2.0 * sizeY_area2 * boxLength > palletWidth
                 && 2.0 * sizeX_area2 * boxWidth > actualLength)
                 actualLength = 2.0 * sizeX_area2 * boxWidth;
+
+            return sizeX_area1 > 0 && sizeX_area2 > 0 && sizeY_area1 > 0 && sizeY_area2 > 0;
         }
 
         public override void GenerateLayer(Layer layer, double actualLength, double actualWidth)

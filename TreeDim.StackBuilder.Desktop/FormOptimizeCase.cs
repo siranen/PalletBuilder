@@ -220,10 +220,10 @@ namespace TreeDim.StackBuilder.Desktop
             {
                 // build case optimizer and compute solutions
                 CaseOptimizer caseOptimizer = new CaseOptimizer(
-                    SelectedBox                     // BoxProperties
-                    , SelectedPallet                // PalletProperties
-                    , BuildCasePalletConstraintSet()    // ConstraintSet
-                    , BuildCaseOptimConstraintSet() // CaseOptimConstraintSet
+                    SelectedBox                             // BoxProperties
+                    , SelectedPallet                        // PalletProperties
+                    , BuildCasePalletConstraintSet()        // ConstraintSet
+                    , BuildCaseOptimConstraintSet()         // CaseOptimConstraintSet
                     );
                 _solutions = caseOptimizer.CaseOptimSolutions(BoxPerCase);
 
@@ -760,9 +760,7 @@ namespace TreeDim.StackBuilder.Desktop
         private CaseOptimConstraintSet BuildCaseOptimConstraintSet()
         {
             return new CaseOptimConstraintSet(
-                    OverhangX
-                    , OverhangY
-                    , NoWalls
+                    NoWalls
                     , WallThickness, WallSurfaceMass
                     , new Vector3D(MinLength, MinWidth, MinHeight)
                     , new Vector3D(MaxLength, MaxWidth, MaxHeight)
@@ -773,11 +771,11 @@ namespace TreeDim.StackBuilder.Desktop
         {
             // build pallet constraint set
             CasePalletConstraintSet palletConstraintSet = new CasePalletConstraintSet();
-            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_X_N, !ForceVerticalBoxOrientation);
-            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_X_P, !ForceVerticalBoxOrientation);
-            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Y_N, !ForceVerticalBoxOrientation);
-            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Y_P, !ForceVerticalBoxOrientation);
-            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Z_N, !ForceVerticalBoxOrientation);
+            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_X_N, false);
+            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_X_P, false);
+            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Y_N, false);
+            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Y_P, false);
+            palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Z_N, false);
             palletConstraintSet.SetAllowedOrthoAxis(HalfAxis.HAxis.AXIS_Z_P, true);
 
             // use all existing patterns

@@ -92,6 +92,7 @@
   <str name="Inner length">Inner length</str>
   <str name="Inner width">Inner width</str>
   <str name="Inner height">Inner height</str>
+  <str name="Volume">Volume</str>
   <str name="Inner volume">Inner volume</str>
   <str name="Empty weight">Empty weight</str>
   <str name="Layout">Layout</str>
@@ -124,4 +125,5 @@
   <str name="Max space">Max. space</str>
   <str name="Layer indexes">Indexes</str>
   <str name="Image">Image</str>
+  <str name="Admissible Load Weight">Admissible Load Weight</str>
 </strings>

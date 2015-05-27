@@ -68,7 +68,7 @@ namespace TreeDim.StackBuilder.Engine
                     {
                         if (j == i)
                             continue;
-
+                        
                         CaseDefinition caseDefinition = new CaseDefinition(arr, i, j);
                         if (caseDefinition.IsValid(_boxProperties, _caseOptimConstraintSet))
                             caseDefinitionList.Add(caseDefinition);

@@ -146,53 +146,52 @@ namespace TreeDim.StackBuilder.Engine
                             Layer layer2 = new Layer(_bProperties, _palletProperties, _cornerProperties, _constraintSet, axisOrtho2);
                             Layer layer2_inv = new Layer(_bProperties, _palletProperties, _cornerProperties, _constraintSet, axisOrtho2, true);
                             double actualLength1 = 0.0, actualLength2 = 0.0, actualWidth1 = 0.0, actualWidth2 = 0.0;
-                            pattern.GetLayerDimensionsChecked(layer1, out actualLength1, out actualWidth1);
-                            pattern.GetLayerDimensionsChecked(layer2, out actualLength2, out actualWidth2);
+                            bool bResult1 = pattern.GetLayerDimensionsChecked(layer1, out actualLength1, out actualWidth1);
+                            bool bResult2 = pattern.GetLayerDimensionsChecked(layer2, out actualLength2, out actualWidth2);
 
                             string layerAlignment = string.Empty;
                             for (int j = 0; j < 6; ++j)
                             {
                                 Layer layer1T = null, layer2T = null;
-                                if (0 == j && _constraintSet.AllowAlignedLayers)
+                                if (0 == j && _constraintSet.AllowAlignedLayers && bResult1)
                                 {
                                     pattern.GenerateLayer(layer1, actualLength1, actualWidth1);
                                     layer1T = layer1; layer2T = layer1;
                                     layerAlignment = "aligned-1";
                                 }
-                                else if (1 == j && _constraintSet.AllowAlignedLayers)
+                                else if (1 == j && _constraintSet.AllowAlignedLayers && bResult2)
                                 {
                                     pattern.GenerateLayer(layer2, actualLength2, actualWidth2);
                                     layer1T = layer2; layer2T = layer2;
                                     layerAlignment = "aligned-2";
                                 }
-                                else if (2 == j && _constraintSet.AllowAlternateLayers)
+                                else if (2 == j && _constraintSet.AllowAlternateLayers && bResult1 && bResult2)
                                 {
                                     pattern.GenerateLayer(layer1, Math.Max(actualLength1, actualLength2), Math.Max(actualWidth1, actualWidth2));
                                     pattern.GenerateLayer(layer2, Math.Max(actualLength1, actualLength2), Math.Max(actualWidth1, actualWidth2));
                                     layer1T = layer1; layer2T = layer2;
                                     layerAlignment = "alternate-12";
                                 }
-                                else if (3 == j && _constraintSet.AllowAlternateLayers)
+                                else if (3 == j && _constraintSet.AllowAlternateLayers && bResult1 && bResult2)
                                 {
                                     pattern.GenerateLayer(layer1, Math.Max(actualLength1, actualLength2), Math.Max(actualWidth1, actualWidth2));
                                     pattern.GenerateLayer(layer2, Math.Max(actualLength1, actualLength2), Math.Max(actualWidth1, actualWidth2));
                                     layer1T = layer2; layer2T = layer1;
                                     layerAlignment = "alternate-21";
                                 }
-                                else if (4 == j && _constraintSet.AllowAlternateLayers && pattern.CanBeInverted)
+                                else if (4 == j && _constraintSet.AllowAlternateLayers && pattern.CanBeInverted && bResult1)
                                 {
                                     pattern.GenerateLayer(layer1, actualLength1, actualWidth1);
                                     pattern.GenerateLayer(layer1_inv, actualLength1, actualWidth1);
                                     layer1T = layer1; layer2T = layer1_inv;
                                     layerAlignment = "inv-1";
                                 }
-                                else if (5 == j && _constraintSet.AllowAlternateLayers && pattern.CanBeInverted)
+                                else if (5 == j && _constraintSet.AllowAlternateLayers && pattern.CanBeInverted && bResult2)
                                 {
                                     pattern.GenerateLayer(layer2, actualLength2, actualWidth2);
                                     pattern.GenerateLayer(layer2_inv, actualLength2, actualWidth2);
                                     layer1T = layer2; layer2T = layer2_inv;
                                     layerAlignment = "inv-2";
-
                                 }
 
                                 if (null == layer1T || null == layer2T || 0 == layer1T.Count || 0 == layer2T.Count)
@@ -562,6 +561,7 @@ namespace TreeDim.StackBuilder.Engine
             {
                 _patterns.Add(new LayerPatternColumn());
                 _patterns.Add(new LayerPatternInterlocked());
+                _patterns.Add(new LayerPatternInterlockedSymetric());
                 _patterns.Add(new LayerPatternDiagonale());
                 _patterns.Add(new LayerPatternTrilock());
                 _patterns.Add(new LayerPatternSpirale());

@@ -63,7 +63,8 @@ namespace TreeDim.StackBuilder.Engine
                         // build layer
                         Layer layer = new Layer(_bProperties, _caseProperties, axisOrtho);
                         double actualLength = 0.0, actualWidth = 0.0;
-                        pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth);
+                        if (!pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth))
+                            continue;
                         pattern.GenerateLayer(layer, actualLength, actualWidth);
 
                         string title = string.Empty;

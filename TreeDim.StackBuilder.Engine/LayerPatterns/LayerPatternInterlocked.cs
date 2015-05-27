@@ -17,7 +17,7 @@ namespace TreeDim.StackBuilder.Engine
             get { return "Interlocked"; }
         }
 
-        public override void GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
+        public override bool GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
         {
             double boxLength = layer.BoxLength;
             double boxWidth = layer.BoxWidth;
@@ -30,6 +30,8 @@ namespace TreeDim.StackBuilder.Engine
 
             actualLength = maxSizeXLength * boxLength + maxSizeXWidth * boxWidth;
             actualWidth = Math.Max(maxSizeYLength * boxWidth, maxSizeYWidth * boxLength);
+
+            return maxSizeXLength > 0 && maxSizeYLength > 0 && maxSizeXWidth > 0 && maxSizeYWidth > 0;
         }
 
         public override void GenerateLayer(Layer layer, double actualLength, double actualWidth)

@@ -50,8 +50,8 @@ namespace TreeDim.StackBuilder.Engine
                         {
                             Layer layer = new Layer(truckAnalysis.ParentSolution, truckAnalysis.TruckProperties, truckAnalysis.ConstraintSet, orientation);
                             double actualLength = 0.0, actualWidth = 0.0;
-                            pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth);
-
+                            if (!pattern.GetLayerDimensionsChecked(layer, out actualLength, out actualWidth))
+                                continue;
                             pattern.GenerateLayer(layer, actualLength, actualWidth);
 
                             TruckSolution sol = new TruckSolution("sol", truckAnalysis);

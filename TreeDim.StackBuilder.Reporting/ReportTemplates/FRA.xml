@@ -93,6 +93,7 @@
   <str name="Inner length">Longueur intérieure</str>
   <str name="Inner width">Largeur intérieure</str>
   <str name="Inner height">Hauteur intérieure</str>
+  <str name="Volume">Volume</str>
   <str name="Inner volume">Volume intérieur</str>
   <str name="Empty weight">Masse à vide</str>
   <str name="Layout">Disposition</str>
@@ -125,4 +126,5 @@
   <str name="Max space">Espace max.</str>
   <str name="Layer indexes">Indices</str>
   <str name="Image">Image</str>
+  <str name="Admissible Load Weight">Chargement admissible</str>
 </strings>

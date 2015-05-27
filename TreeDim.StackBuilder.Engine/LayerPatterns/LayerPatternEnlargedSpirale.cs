@@ -17,7 +17,7 @@ namespace TreeDim.StackBuilder.Engine
             get { return "Enlarged spiral"; }
         }
 
-        public override void GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
+        public override bool GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
         {
             double boxLength = layer.BoxLength;
             double boxWidth = layer.BoxWidth;
@@ -44,6 +44,9 @@ namespace TreeDim.StackBuilder.Engine
                 actualLength = 2.0 * sizeX_area2 * boxWidth + sizeX_area3 * ((dir_area3 == 0) ? boxLength : boxWidth);
             if (2.0 * sizeY_area1 * boxWidth + sizeY_area3 * ((dir_area3 == 0) ? boxWidth : boxLength) > actualWidth)
                 actualWidth = 2.0 * sizeY_area1 * boxWidth + sizeY_area3 * ((dir_area3 == 0) ? boxWidth : boxLength);
+
+            return sizeX_area1 > 0 && sizeY_area1 > 0
+                && sizeX_area2 > 0 && sizeY_area2 > 0;
         }
 
         public override void GenerateLayer(Layer layer, double actualLength, double actualWidth)

@@ -17,7 +17,7 @@ namespace TreeDim.StackBuilder.Engine
             get { return "Diagonale"; }
         }
 
-        public override void GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
+        public override bool GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
         {
             double boxLength = layer.BoxLength;
             double boxWidth = layer.BoxWidth;
@@ -34,6 +34,8 @@ namespace TreeDim.StackBuilder.Engine
             actualWidth = maxSizeYWidth * boxWidth + maxSizeYLength * boxLength;
             if (maxSizeXLength >= iStep && (iStep * boxWidth <= palletWidth))
                 actualWidth = Math.Max(actualWidth, iStep * boxWidth);
+
+            return maxSizeXLength > 0 && maxSizeXWidth > 0 && maxSizeYLength > 0 && maxSizeYWidth > 0;
         }
         public override void GenerateLayer(Layer layer, double actualLength, double actualWidth)
         {

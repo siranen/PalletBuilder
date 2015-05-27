@@ -70,12 +70,13 @@
             this.lbMinCaseDimensions = new System.Windows.Forms.Label();
             this.btOptimize = new System.Windows.Forms.Button();
             this.gridSolutions = new SourceGrid.Grid();
-            this.pbBoxesLayout = new System.Windows.Forms.PictureBox();
-            this.pbPalletSolution = new System.Windows.Forms.PictureBox();
             this.toolStripTools = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonReport = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonStackBuilder = new System.Windows.Forms.ToolStripButton();
             this.saveFileDialogAsStb = new System.Windows.Forms.SaveFileDialog();
+            this.splitContainerCasePallet = new System.Windows.Forms.SplitContainer();
+            this.graphCtrlBoxesLayout = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPalletLayout = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             this.statusStripDef.SuspendLayout();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBoxHeight)).BeginInit();
@@ -96,9 +97,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinCaseWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinCaseLength)).BeginInit();
             this.gbCase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBoxesLayout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPalletSolution)).BeginInit();
             this.toolStripTools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerCasePallet)).BeginInit();
+            this.splitContainerCasePallet.Panel1.SuspendLayout();
+            this.splitContainerCasePallet.Panel2.SuspendLayout();
+            this.splitContainerCasePallet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlBoxesLayout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlPalletLayout)).BeginInit();
             this.SuspendLayout();
             // 
             // bnClose
@@ -241,10 +246,10 @@
             this.gbPallet.Name = "gbPallet";
             this.gbPallet.TabStop = false;
             // 
-            // pbPallet
+            // graphCtrlPallet
             // 
-            resources.ApplyResources(this.graphCtrlPallet, "pbPallet");
-            this.graphCtrlPallet.Name = "pbPallet";
+            resources.ApplyResources(this.graphCtrlPallet, "graphCtrlPallet");
+            this.graphCtrlPallet.Name = "graphCtrlPallet";
             this.graphCtrlPallet.TabStop = false;
             // 
             // cbPallet
@@ -462,18 +467,6 @@
             this.gridSolutions.TabStop = true;
             this.gridSolutions.ToolTipText = "";
             // 
-            // pbBoxesLayout
-            // 
-            resources.ApplyResources(this.pbBoxesLayout, "pbBoxesLayout");
-            this.pbBoxesLayout.Name = "pbBoxesLayout";
-            this.pbBoxesLayout.TabStop = false;
-            // 
-            // pbPalletSolution
-            // 
-            resources.ApplyResources(this.pbPalletSolution, "pbPalletSolution");
-            this.pbPalletSolution.Name = "pbPalletSolution";
-            this.pbPalletSolution.TabStop = false;
-            // 
             // toolStripTools
             // 
             this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -501,14 +494,36 @@
             this.saveFileDialogAsStb.DefaultExt = "stb";
             resources.ApplyResources(this.saveFileDialogAsStb, "saveFileDialogAsStb");
             // 
+            // splitContainerCasePallet
+            // 
+            resources.ApplyResources(this.splitContainerCasePallet, "splitContainerCasePallet");
+            this.splitContainerCasePallet.Name = "splitContainerCasePallet";
+            // 
+            // splitContainerCasePallet.Panel1
+            // 
+            this.splitContainerCasePallet.Panel1.Controls.Add(this.graphCtrlBoxesLayout);
+            // 
+            // splitContainerCasePallet.Panel2
+            // 
+            this.splitContainerCasePallet.Panel2.Controls.Add(this.graphCtrlPalletLayout);
+            // 
+            // graphCtrlBoxesLayout
+            // 
+            resources.ApplyResources(this.graphCtrlBoxesLayout, "graphCtrlBoxesLayout");
+            this.graphCtrlBoxesLayout.Name = "graphCtrlBoxesLayout";
+            // 
+            // graphCtrlPalletLayout
+            // 
+            resources.ApplyResources(this.graphCtrlPalletLayout, "graphCtrlPalletLayout");
+            this.graphCtrlPalletLayout.Name = "graphCtrlPalletLayout";
+            // 
             // FormDefineCaseOptimization
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bnClose;
+            this.Controls.Add(this.splitContainerCasePallet);
             this.Controls.Add(this.toolStripTools);
-            this.Controls.Add(this.pbPalletSolution);
-            this.Controls.Add(this.pbBoxesLayout);
             this.Controls.Add(this.gridSolutions);
             this.Controls.Add(this.btOptimize);
             this.Controls.Add(this.gbCase);
@@ -545,10 +560,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinCaseLength)).EndInit();
             this.gbCase.ResumeLayout(false);
             this.gbCase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBoxesLayout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPalletSolution)).EndInit();
             this.toolStripTools.ResumeLayout(false);
             this.toolStripTools.PerformLayout();
+            this.splitContainerCasePallet.Panel1.ResumeLayout(false);
+            this.splitContainerCasePallet.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerCasePallet)).EndInit();
+            this.splitContainerCasePallet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlBoxesLayout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrlPalletLayout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,13 +614,14 @@
         private System.Windows.Forms.Label lbMaxCaseDimensions;
         private System.Windows.Forms.Label lbMinCaseDimensions;
         private System.Windows.Forms.Button btOptimize;
-        private System.Windows.Forms.PictureBox pbBoxesLayout;
-        private System.Windows.Forms.PictureBox pbPalletSolution;
         private System.Windows.Forms.ToolStrip toolStripTools;
         private System.Windows.Forms.ToolStripButton toolStripButtonReport;
         private System.Windows.Forms.ToolStripButton toolStripButtonStackBuilder;
         private System.Windows.Forms.SaveFileDialog saveFileDialogAsStb;
         private SourceGrid.Grid gridSolutions;
         private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
+        private System.Windows.Forms.SplitContainer splitContainerCasePallet;
+        private Graphics.Graphics3DControl graphCtrlBoxesLayout;
+        private Graphics.Graphics3DControl graphCtrlPalletLayout;
     }
 }

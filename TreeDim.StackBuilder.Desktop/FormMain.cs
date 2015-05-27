@@ -74,10 +74,13 @@ namespace TreeDim.StackBuilder.Desktop
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length >= 2)
             {
+                string joinedString = string.Empty;
+                for (int i = 1; i < args.Length; ++i)
+                    joinedString += (i > 1 ? " " : "") + args[i];
                 if (File.Exists(args[1]))
                     OpenDocument(args[1]);
-                else if (File.Exists(string.Join(" ", args)))
-                    OpenDocument(string.Join(" ", args));
+                else if (File.Exists(joinedString))
+                    OpenDocument(joinedString);
             }
             // or show splash sceen 
             else

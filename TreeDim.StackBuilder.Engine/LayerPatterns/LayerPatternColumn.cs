@@ -17,7 +17,7 @@ namespace TreeDim.StackBuilder.Engine
             get { return "Column"; }
         }
 
-        public override void GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
+        public override bool GetLayerDimensions(Layer layer, out double actualLength, out double actualWidth)
         {
             double palletLength = layer.PalletLength;
             double palletWidth = layer.PalletWidth;
@@ -25,6 +25,8 @@ namespace TreeDim.StackBuilder.Engine
             double boxWidth = layer.BoxWidth;
             actualLength = Math.Floor(palletLength / boxLength) * boxLength;
             actualWidth = Math.Floor(palletWidth / boxWidth) * boxWidth;
+
+            return (palletLength >= boxLength) && (palletWidth >= boxWidth);
         }
 
         public override void GenerateLayer(Layer layer, double actualLength, double actualWidth)

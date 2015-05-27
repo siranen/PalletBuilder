@@ -57,6 +57,9 @@ namespace TreeDim.StackBuilder.Basics
             get { return Instance._currentUnitSystem; }
             set { Instance._currentUnitSystem = value; }
         }
+        #endregion
+
+        #region Unit strings
         /// <summary>
         /// Length unit string
         /// </summary>
@@ -125,6 +128,65 @@ namespace TreeDim.StackBuilder.Basics
         }
         #endregion
 
+        #region Format strings
+        public static string LengthFormatString
+        {
+            get
+            {
+                switch (Instance._currentUnitSystem)
+                {
+                    case UnitSystem.UNIT_METRIC1: return "{0:0.#}";
+                    case UnitSystem.UNIT_METRIC2: return "{0:0.#}";
+                    case UnitSystem.UNIT_IMPERIAL: return "{0:0.###}";
+                    case UnitSystem.UNIT_US: return "{0:0.###}";
+                    default: throw new Exception("Invalid unit system!");
+                }
+            }
+        }
+        public static string MassFormatString
+        {
+            get
+            {
+                switch (Instance._currentUnitSystem)
+                {
+                    case UnitSystem.UNIT_METRIC1: return "{0:0.###}";
+                    case UnitSystem.UNIT_METRIC2: return "{0:0.###}";
+                    case UnitSystem.UNIT_IMPERIAL: return "{0:0.###}";
+                    case UnitSystem.UNIT_US: return "{0:0.###}";
+                    default: throw new Exception("Invalid unit system!");
+                }
+            }
+        }
+        public static string VolumeFormatString
+        {
+            get
+            {
+                switch (Instance._currentUnitSystem)
+                {
+                    case UnitSystem.UNIT_METRIC1: return "{0:0.###}";
+                    case UnitSystem.UNIT_METRIC2: return "{0:0.###}";
+                    case UnitSystem.UNIT_IMPERIAL: return "{0:0.###}";
+                    case UnitSystem.UNIT_US: return "{0:0.###}";
+                    default: throw new Exception("Invalid unit system!");
+                }
+            }
+        }
+        public static string SurfaceMassFormatString
+        {
+            get
+            {
+                switch (Instance._currentUnitSystem)
+                {
+                    case UnitSystem.UNIT_METRIC1: return "{0:0.###}";
+                    case UnitSystem.UNIT_METRIC2: return "{0:0.###}";
+                    case UnitSystem.UNIT_IMPERIAL: return "{0:0.###}";
+                    case UnitSystem.UNIT_US: return "{0:0.###}";
+                    default: throw new Exception("Invalid unit system!");
+                }
+            }
+        }
+        #endregion
+
         #region Number of decimals
         public static int LengthNoDecimals
         {
@@ -177,6 +239,17 @@ namespace TreeDim.StackBuilder.Basics
                 case UnitType.UT_VOLUME: return VolumeUnitString;
                 case UnitType.UT_SURFACEMASS: return SurfaceMassUnitString;
                 default: return string.Empty;
+            }
+        }
+        static public string UnitFormat(UnitType ut)
+        {
+            switch (ut)
+            { 
+                case UnitType.UT_LENGTH: return LengthFormatString;
+                case UnitType.UT_MASS: return MassFormatString;
+                case UnitType.UT_VOLUME: return VolumeFormatString;
+                case UnitType.UT_SURFACEMASS: return SurfaceMassFormatString;
+                default: return string.Empty;            
             }
         }
         static public int NoDecimals(UnitType ut)
