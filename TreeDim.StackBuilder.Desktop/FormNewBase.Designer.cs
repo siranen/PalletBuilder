@@ -78,15 +78,15 @@
             // 
             // statusStripDef
             // 
+            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelDef});
-            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Name = "statusStripDef";
             // 
             // toolStripStatusLabelDef
             // 
-            this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
             resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
+            this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
             // 
             // FormNewBase
             // 

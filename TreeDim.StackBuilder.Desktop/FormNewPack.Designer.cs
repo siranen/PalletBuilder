@@ -62,9 +62,9 @@
             // 
             // cbInnerBox
             // 
+            resources.ApplyResources(this.cbInnerBox, "cbInnerBox");
             this.cbInnerBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInnerBox.FormattingEnabled = true;
-            resources.ApplyResources(this.cbInnerBox, "cbInnerBox");
             this.cbInnerBox.Name = "cbInnerBox";
             // 
             // lbDir
@@ -74,6 +74,7 @@
             // 
             // cbDir
             // 
+            resources.ApplyResources(this.cbDir, "cbDir");
             this.cbDir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDir.FormattingEnabled = true;
             this.cbDir.Items.AddRange(new object[] {
@@ -83,7 +84,6 @@
             resources.GetString("cbDir.Items3"),
             resources.GetString("cbDir.Items4"),
             resources.GetString("cbDir.Items5")});
-            resources.ApplyResources(this.cbDir, "cbDir");
             this.cbDir.Name = "cbDir";
             this.cbDir.SelectedIndexChanged += new System.EventHandler(this.onPackChanged);
             // 
@@ -115,6 +115,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.uCtrlHeight);
             this.groupBox1.Controls.Add(this.uCtrlWalls);
             this.groupBox1.Controls.Add(this.chkbTransparent);
@@ -124,7 +125,6 @@
             this.groupBox1.Controls.Add(this.uCtrlThickness);
             this.groupBox1.Controls.Add(this.lbWrapperColor);
             this.groupBox1.Controls.Add(this.cbColor);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -164,6 +164,7 @@
             // 
             // cbType
             // 
+            resources.ApplyResources(this.cbType, "cbType");
             this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
@@ -171,7 +172,6 @@
             resources.GetString("cbType.Items1"),
             resources.GetString("cbType.Items2"),
             resources.GetString("cbType.Items3")});
-            resources.ApplyResources(this.cbType, "cbType");
             this.cbType.Name = "cbType";
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.onWrapperTypeChanged);
             // 
@@ -208,13 +208,13 @@
             // 
             // cbColor
             // 
+            resources.ApplyResources(this.cbColor, "cbColor");
             this.cbColor.Color = System.Drawing.Color.LightGray;
             this.cbColor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbColor.DropDownHeight = 1;
             this.cbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColor.DropDownWidth = 1;
             this.cbColor.FormattingEnabled = true;
-            resources.ApplyResources(this.cbColor, "cbColor");
             this.cbColor.Items.AddRange(new object[] {
             resources.GetString("cbColor.Items"),
             resources.GetString("cbColor.Items1"),
@@ -231,7 +231,17 @@
             resources.GetString("cbColor.Items12"),
             resources.GetString("cbColor.Items13"),
             resources.GetString("cbColor.Items14"),
-            resources.GetString("cbColor.Items15")});
+            resources.GetString("cbColor.Items15"),
+            resources.GetString("cbColor.Items16"),
+            resources.GetString("cbColor.Items17"),
+            resources.GetString("cbColor.Items18"),
+            resources.GetString("cbColor.Items19"),
+            resources.GetString("cbColor.Items20"),
+            resources.GetString("cbColor.Items21"),
+            resources.GetString("cbColor.Items22"),
+            resources.GetString("cbColor.Items23"),
+            resources.GetString("cbColor.Items24"),
+            resources.GetString("cbColor.Items25")});
             this.cbColor.Name = "cbColor";
             this.cbColor.SelectedColorChanged += new System.EventHandler(this.onPackChanged);
             // 

@@ -117,4 +117,307 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 67</value>
+  </data>
+  <data name="cbCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 21</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumNumberOfBoxes.Parent" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="checkBoxMaximumCaseWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 17</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbBundle.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbBundle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 21</value>
+  </data>
+  <data name="&gt;&gt;cbCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="uMassCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxMaximumCaseWeight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbBundle.Name" xml:space="preserve">
+    <value>lbBundle</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumNumberOfBoxes.Parent" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 362</value>
+  </data>
+  <data name="lbStopStacking.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormNewAnalysisBundleCase</value>
+  </data>
+  <data name="lbBundle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxMaximumCaseWeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;uMassCase.Parent" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="checkBoxMaximumNumberOfBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumNumberOfBoxes.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbCase.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBoxMaximumCaseWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 77</value>
+  </data>
+  <data name="checkBoxMaximumNumberOfBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 52</value>
+  </data>
+  <data name="lbBundle.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkBoxMaximumCaseWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="uMassCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCase.Text" xml:space="preserve">
+    <value>Case</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumNumberOfBoxes.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumCaseWeight.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbCase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbCase.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="gbStopStackingConditions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 99</value>
+  </data>
+  <data name="lbCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;gbStopStackingConditions.Name" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="&gt;&gt;gbStopStackingConditions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbStopStacking.Name" xml:space="preserve">
+    <value>lbStopStacking</value>
+  </data>
+  <data name="lbStopStacking.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="&gt;&gt;gbStopStackingConditions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudMaximumCaseWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="&gt;&gt;lbStopStacking.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbStopStacking.Parent" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="gbStopStackingConditions.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lbBundle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 67</value>
+  </data>
+  <data name="&gt;&gt;lbCase.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbBundle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nudMaximumNumberOfBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="cbBundle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 64</value>
+  </data>
+  <data name="&gt;&gt;uMassCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbBundle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbStopStacking.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbStopStacking.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumNumberOfBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumNumberOfBoxes.Name" xml:space="preserve">
+    <value>nudMaximumNumberOfBoxes</value>
+  </data>
+  <data name="checkBoxMaximumNumberOfBoxes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbBundle.Name" xml:space="preserve">
+    <value>cbBundle</value>
+  </data>
+  <data name="&gt;&gt;lbStopStacking.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="uMassCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="gbStopStackingConditions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>478, 103</value>
+  </data>
+  <data name="lbStopStacking.Text" xml:space="preserve">
+    <value>Stop stacking:</value>
+  </data>
+  <data name="gbStopStackingConditions.Text" xml:space="preserve">
+    <value>Additional stop stacking conditions</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumCaseWeight.Name" xml:space="preserve">
+    <value>checkBoxMaximumCaseWeight</value>
+  </data>
+  <data name="lbStopStacking.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="nudMaximumCaseWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 75</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumCaseWeight.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkBoxMaximumNumberOfBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 17</value>
+  </data>
+  <data name="lbBundle.Text" xml:space="preserve">
+    <value>Bundle</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumCaseWeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbBundle.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="uMassCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 79</value>
+  </data>
+  <data name="lbCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumCaseWeight.Parent" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="&gt;&gt;cbBundle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Create new bundle/case analysis...</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumCaseWeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumCaseWeight.Parent" xml:space="preserve">
+    <value>gbStopStackingConditions</value>
+  </data>
+  <data name="uMassCase.Text" xml:space="preserve">
+    <value>uMass</value>
+  </data>
+  <data name="lbBundle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumCaseWeight.Name" xml:space="preserve">
+    <value>nudMaximumCaseWeight</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMaximumNumberOfBoxes.Name" xml:space="preserve">
+    <value>checkBoxMaximumNumberOfBoxes</value>
+  </data>
+  <data name="&gt;&gt;cbCase.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbBundle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCase.Name" xml:space="preserve">
+    <value>cbCase</value>
+  </data>
+  <data name="&gt;&gt;uMassCase.Name" xml:space="preserve">
+    <value>uMassCase</value>
+  </data>
+  <data name="&gt;&gt;nudMaximumNumberOfBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxMaximumNumberOfBoxes.Text" xml:space="preserve">
+    <value>when number of bundles reaches</value>
+  </data>
+  <data name="cbCase.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="nudMaximumCaseWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;cbBundle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="uMassCase.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.17.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lbCase.Name" xml:space="preserve">
+    <value>lbCase</value>
+  </data>
+  <data name="checkBoxMaximumNumberOfBoxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="nudMaximumNumberOfBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 50</value>
+  </data>
+  <data name="nudMaximumNumberOfBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="checkBoxMaximumCaseWeight.Text" xml:space="preserve">
+    <value>when total case weight reaches</value>
+  </data>
+  <data name="cbCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 64</value>
+  </data>
+  <data name="&gt;&gt;gbStopStackingConditions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;uMassCase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

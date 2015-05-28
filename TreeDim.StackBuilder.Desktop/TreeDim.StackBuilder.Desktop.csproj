@@ -830,6 +830,21 @@
       <DependentUpon>FormNewAnalysisBundle.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisBundleCase.de-DE.resx">
+      <DependentUpon>FormNewAnalysisBundleCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisBundleCase.es-ES.resx">
+      <DependentUpon>FormNewAnalysisBundleCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisBundleCase.fr-FR.resx">
+      <DependentUpon>FormNewAnalysisBundleCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisBundleCase.it-IT.resx">
+      <DependentUpon>FormNewAnalysisBundleCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisBundleCase.ja-JP.resx">
+      <DependentUpon>FormNewAnalysisBundleCase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNewAnalysisBundleCase.resx">
       <DependentUpon>FormNewAnalysisBundleCase.cs</DependentUpon>
     </EmbeddedResource>
@@ -853,17 +868,53 @@
       <DependentUpon>FormNewAnalysisCylinder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisHCylinder.de-DE.resx">
+      <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisHCylinder.es-ES.resx">
+      <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisHCylinder.fr-FR.resx">
+      <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNewAnalysisHCylinder.it-IT.resx">
+      <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisHCylinder.ja-JP.resx">
       <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewAnalysisHCylinder.resx">
       <DependentUpon>FormNewAnalysisHCylinder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisPackPallet.de-DE.resx">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisPackPallet.es-ES.resx">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNewAnalysisPackPallet.fr-FR.resx">
       <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisPackPallet.it-IT.resx">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewAnalysisPackPallet.ja-JP.resx">
+      <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewBase.de-DE.resx">
+      <DependentUpon>FormNewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewBase.es-ES.resx">
+      <DependentUpon>FormNewBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNewBase.fr-FR.resx">
+      <DependentUpon>FormNewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewBase.it-IT.resx">
+      <DependentUpon>FormNewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewBase.ja-JP.resx">
       <DependentUpon>FormNewBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewBase.resx">
@@ -1056,7 +1107,19 @@
       <SubType>Designer</SubType>
       <DependentUpon>FormNewInterlayer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPack.de-DE.resx">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPack.es-ES.resx">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNewPack.fr-FR.resx">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPack.it-IT.resx">
+      <DependentUpon>FormNewPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPack.ja-JP.resx">
       <DependentUpon>FormNewPack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewPack.resx">
