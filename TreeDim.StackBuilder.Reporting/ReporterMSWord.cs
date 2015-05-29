@@ -43,6 +43,17 @@ namespace TreeDim.StackBuilder.Reporting
         public ReporterMSWord(ReportData inputData
             , string templatePath, string outputFilePath, Margins margins)
         {
+            // does output directory exists
+            string outDir = Path.GetDirectoryName(outputFilePath);
+            if (!Directory.Exists(outDir))
+            {
+                try { Directory.CreateDirectory(outDir); }
+                catch (System.UnauthorizedAccessException /*ex*/)
+                { throw new UnauthorizedAccessException(string.Format("User not allowed to write under {0}", Directory.GetParent(outDir).FullName)); }
+                catch (Exception ex)
+                { throw new Exception(string.Format("Directory {0} does not exist, and could not be created.", outDir), ex); }
+            }
+
             // html file path
             string htmlFilePath = Path.ChangeExtension(outputFilePath, "html");
             BuildAnalysisReport(inputData, templatePath, htmlFilePath);

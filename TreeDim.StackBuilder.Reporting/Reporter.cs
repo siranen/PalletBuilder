@@ -468,7 +468,7 @@ namespace TreeDim.StackBuilder.Reporting
                 Reporter.ValidateXmlDocument(xmlData, Path.Combine(Path.GetDirectoryName(reportTemplatePath), "ReportSchema.xsd"));
             // check availibility of files
             if (!File.Exists(reportTemplatePath))
-                throw new Exception(string.Format("Report template path ({0}) is invalid", reportTemplatePath));
+                throw new System.IO.FileNotFoundException(string.Format("Report template path ({0}) is invalid", reportTemplatePath));
             // load generated xslt
             XmlTextReader xsltReader = new XmlTextReader(new FileStream(reportTemplatePath, FileMode.Open, FileAccess.Read));
             string threeLetterLanguageAbbrev = System.Globalization.CultureInfo.CurrentCulture.ThreeLetterWindowsLanguageName;

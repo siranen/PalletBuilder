@@ -129,11 +129,14 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
             foreach (reportSolution rSolution in _root.output.reportSolution)
             {
                 try { ProcessReportSolution(rSolution); }
+                catch (FileNotFoundException ex) { _log.Error(ex.Message); }
+                catch (UnauthorizedAccessException ex) { _log.Error(ex.Message); }
                 catch (Exception ex) { _log.Error(ex.ToString()); }
             }
             foreach (genDocument doc in _root.output.genDocument)
             {
                 try { ProcessDocument(doc); }
+                catch (UnauthorizedAccessException ex) { _log.Error(ex.Message); }
                 catch (Exception ex) { _log.Error(ex.ToString()); }
             }
         }
@@ -277,6 +280,10 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
                 // load pallet analysis
             }
             // attempt to create directory
+            string outDir = Path.GetDirectoryName(genDoc.path); ;
+            try { Directory.CreateDirectory(outDir); }
+            catch (System.UnauthorizedAccessException /*ex*/)
+            { throw new UnauthorizedAccessException(string.Format("User not allowed to write under {0}", Directory.GetParent(outDir).FullName)); }
             // save document
             document.Write(genDoc.path);
             // open generated document using TreeDim.StackBuilder.Desktop

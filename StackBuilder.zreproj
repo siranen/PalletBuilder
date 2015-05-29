@@ -7,9 +7,9 @@
     <globalSetting name="CreateNewFilesForm.destinationLanguagesListBox">0;3;4;5;6;154</globalSetting>
     <globalSetting name="CreateNewFilesForm.copyTextsCheckBox.Checked">False</globalSetting>
     <globalSetting name="CreateNewFilesForm.automaticallyTranslateCheckBox.Checked">False</globalSetting>
-    <globalSetting name="sendFileToTranslator.destinationFilePathTextEdit.Text">K:\GitHub\StackBuilder\StackBuilder_es-es.xlsx</globalSetting>
+    <globalSetting name="sendFileToTranslator.destinationFilePathTextEdit.Text">K:\GitHub\StackBuilder\StackBuilder_jp-jp.xlsx</globalSetting>
     <globalSetting name="sendFileToTranslator.fileGroupsListBox">OfficePickers\ColorPicker\ToolStripColorPicker###{{{}}}###TreeDim.AutoUpdater\Properties\Resource###{{{}}}###TreeDim.EdgeCrushTest\Properties\Resource###{{{}}}###TreeDim.StackBuilder.Basics\Properties\Resource###{{{}}}###TreeDim.StackBuilder.Desktop\AboutBox###{{{}}}###TreeDim.StackBuilder.Desktop\AnalysisTreeView###{{{}}}###TreeDim.StackBuilder.Desktop\CheckedListBoxWithImage###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentAnalysisCaseOfBoxes###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentBoxCasePalletAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentCasePalletAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentCylinderPalletAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentDocumentExplorer###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentECTAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentHCylinderPalletAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentLogConsole###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentPackPalletAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\DockContentTruckAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\FormAppendSolutionToDB###{{{}}}###TreeDim.StackBuilder.Desktop\FormEditBitmaps###{{{}}}###TreeDim.StackBuilder.Desktop\FormEditPalletSolutionDB###{{{}}}###TreeDim.StackBuilder.Desktop\FormMain###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewAnalysisBundle###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewAnalysisPackPallet###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewBox###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewBundle###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewCaseAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewCylinder###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewDocument###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewInterlayer###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewPack###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewPallet###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewTruck###{{{}}}###TreeDim.StackBuilder.Desktop\FormNewTruckAnalysis###{{{}}}###TreeDim.StackBuilder.Desktop\FormOptimizeCase###{{{}}}###TreeDim.StackBuilder.Desktop\FormSplashScreen###{{{}}}###TreeDim.StackBuilder.Desktop\OptionPanelDebugging###{{{}}}###TreeDim.StackBuilder.Desktop\OptionPanelDimensions###{{{}}}###TreeDim.StackBuilder.Desktop\OptionPanelReporting###{{{}}}###TreeDim.StackBuilder.Desktop\OptionPanelUnits###{{{}}}###TreeDim.StackBuilder.Desktop\Properties\Resources###{{{}}}###TreeDim.StackBuilder.GUIExtension.Test\Properties\Resources###{{{}}}###TreeDim.StackBuilder.GUIExtension\Properties\Resources###{{{}}}###TreeDim.StackBuilder.Graphic\Properties\Resource###{{{}}}###TreeDim.Update\Properties\Resources###{{{}}}###treeDiM.StackBuilder.Plugin_INTEX\Properties\Resources</globalSetting>
-    <globalSetting name="sendFileToTranslator.languagesToExportCheckListBox">Espagnol (Espagne) (es-es)</globalSetting>
+    <globalSetting name="sendFileToTranslator.languagesToExportCheckListBox">Japonais (Japon) (ja-jp)</globalSetting>
     <globalSetting name="sendFileToTranslator.referenceLanguageComboBoxEdit.SelectedIndex">2</globalSetting>
     <globalSetting name="sendFileToTranslator.openFileAfterGeneratingCheckEdit.Checked">False</globalSetting>
     <globalSetting name="sendFileToTranslator.openAfterGeneratingCheckEdit.Checked">True</globalSetting>
@@ -66,7 +66,7 @@ Kind regards</globalSetting>
     <globalSetting name="CreateNewFileForm.newLanguageComboBox.SelectedIndex">5</globalSetting>
     <globalSetting name="CreateNewFileForm.copyTextsCheckBox.Checked">False</globalSetting>
     <globalSetting name="CreateNewFileForm.automaticallyTranslateCheckBox.Checked">False</globalSetting>
-    <globalSetting name="projectMruItems">&lt;?xml version='1.0' encoding='utf-8'?&gt;&lt;items&gt;&lt;item type="2" checksum="1233171482" /&gt;&lt;item type="2" checksum="659843906" /&gt;&lt;/items&gt;</globalSetting>
+    <globalSetting name="projectMruItems">&lt;?xml version='1.0' encoding='utf-8'?&gt;&lt;items /&gt;</globalSetting>
     <globalSetting name="receiveFileFromTranslator.sourceFilePathTextEdit.Text">K:\GitHub\StackBuilder\StackBuilder_es-ES.xlsx</globalSetting>
     <globalSetting name="receiveFileFromTranslator.fileGroupsListBox">
     </globalSetting>
@@ -74,7 +74,8 @@ Kind regards</globalSetting>
     <userSetting name="François@TREEDIM_PC2.filesInitialDir">K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop</userSetting>
     <userSetting name="François@TREEDIM_PC2.FindText">
     </userSetting>
-    <userSetting name="François@TREEDIM_PC2.RecentFiles">K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.it-IT.resx###***###K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewPack.resx;K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewPack.fr-FR.resx</userSetting>
+    <userSetting name="François@TREEDIM_PC2.RecentFiles">
+    </userSetting>
     <description>
     </description>
   </configuration>
@@ -319,13 +320,13 @@ Kind regards</globalSetting>
       <remarks>
       </remarks>
     </fileGroup>
-    <fileGroup name="" projectFolderUniqueID="01a5823b-8e11-44e3-a5b1-3acb46084abd" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="f029e0c8-2905-48e1-acf4-da2631b45cd9">
-      <file filePath="TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.it-IT.resx" absoluteFilePath="K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.it-IT.resx" uniqueID="ca286e1f-f1a2-4a4d-882d-f596d86572ae" />
+    <fileGroup name="" projectFolderUniqueID="01a5823b-8e11-44e3-a5b1-3acb46084abd" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="6c6e21bb-78b9-45e4-bf6f-810fd92287ca">
+      <file filePath="TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.resx" absoluteFilePath="K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.resx" uniqueID="79e2b14e-124b-4308-afb4-7357ea92d488" />
       <remarks>
       </remarks>
     </fileGroup>
-    <fileGroup name="" projectFolderUniqueID="01a5823b-8e11-44e3-a5b1-3acb46084abd" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="6c6e21bb-78b9-45e4-bf6f-810fd92287ca">
-      <file filePath="TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.resx" absoluteFilePath="K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.resx" uniqueID="79e2b14e-124b-4308-afb4-7357ea92d488" />
+    <fileGroup name="" projectFolderUniqueID="01a5823b-8e11-44e3-a5b1-3acb46084abd" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="f029e0c8-2905-48e1-acf4-da2631b45cd9">
+      <file filePath="TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.it-IT.resx" absoluteFilePath="K:\GitHub\StackBuilder\TreeDim.StackBuilder.Desktop\FormNewAnalysisHCylinder.it-IT.resx" uniqueID="ca286e1f-f1a2-4a4d-882d-f596d86572ae" />
       <remarks>
       </remarks>
     </fileGroup>
