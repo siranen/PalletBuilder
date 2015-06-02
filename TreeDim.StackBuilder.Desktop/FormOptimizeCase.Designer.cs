@@ -110,10 +110,12 @@
             // 
             // splitContainerCasePallet.Panel1
             // 
+            resources.ApplyResources(this.splitContainerCasePallet.Panel1, "splitContainerCasePallet.Panel1");
             this.splitContainerCasePallet.Panel1.Controls.Add(this.graphCtrlBoxesLayout);
             // 
             // splitContainerCasePallet.Panel2
             // 
+            resources.ApplyResources(this.splitContainerCasePallet.Panel2, "splitContainerCasePallet.Panel2");
             this.splitContainerCasePallet.Panel2.Controls.Add(this.graphCtrlPallet);
             // 
             // graphCtrlBoxesLayout
@@ -186,9 +188,9 @@
             // 
             // cbBoxes
             // 
+            resources.ApplyResources(this.cbBoxes, "cbBoxes");
             this.cbBoxes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxes.FormattingEnabled = true;
-            resources.ApplyResources(this.cbBoxes, "cbBoxes");
             this.cbBoxes.Name = "cbBoxes";
             this.cbBoxes.SelectedIndexChanged += new System.EventHandler(this.cbBoxes_SelectedIndexChanged);
             // 
@@ -233,13 +235,13 @@
             // 
             // nudWallSurfaceMass
             // 
+            resources.ApplyResources(this.nudWallSurfaceMass, "nudWallSurfaceMass");
             this.nudWallSurfaceMass.DecimalPlaces = 3;
             this.nudWallSurfaceMass.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            resources.ApplyResources(this.nudWallSurfaceMass, "nudWallSurfaceMass");
             this.nudWallSurfaceMass.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -273,13 +275,13 @@
             // 
             // nudWallThickness
             // 
+            resources.ApplyResources(this.nudWallThickness, "nudWallThickness");
             this.nudWallThickness.DecimalPlaces = 2;
             this.nudWallThickness.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            resources.ApplyResources(this.nudWallThickness, "nudWallThickness");
             this.nudWallThickness.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -343,8 +345,8 @@
             // 
             // nudMaxCaseHeight
             // 
-            this.nudMaxCaseHeight.DecimalPlaces = 2;
             resources.ApplyResources(this.nudMaxCaseHeight, "nudMaxCaseHeight");
+            this.nudMaxCaseHeight.DecimalPlaces = 2;
             this.nudMaxCaseHeight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -355,8 +357,8 @@
             // 
             // nudMaxCaseWidth
             // 
-            this.nudMaxCaseWidth.DecimalPlaces = 2;
             resources.ApplyResources(this.nudMaxCaseWidth, "nudMaxCaseWidth");
+            this.nudMaxCaseWidth.DecimalPlaces = 2;
             this.nudMaxCaseWidth.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -367,8 +369,8 @@
             // 
             // nudMaxCaseLength
             // 
-            this.nudMaxCaseLength.DecimalPlaces = 2;
             resources.ApplyResources(this.nudMaxCaseLength, "nudMaxCaseLength");
+            this.nudMaxCaseLength.DecimalPlaces = 2;
             this.nudMaxCaseLength.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -379,8 +381,8 @@
             // 
             // nudMinCaseHeight
             // 
-            this.nudMinCaseHeight.DecimalPlaces = 2;
             resources.ApplyResources(this.nudMinCaseHeight, "nudMinCaseHeight");
+            this.nudMinCaseHeight.DecimalPlaces = 2;
             this.nudMinCaseHeight.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -391,8 +393,8 @@
             // 
             // nudMinCaseWidth
             // 
-            this.nudMinCaseWidth.DecimalPlaces = 2;
             resources.ApplyResources(this.nudMinCaseWidth, "nudMinCaseWidth");
+            this.nudMinCaseWidth.DecimalPlaces = 2;
             this.nudMinCaseWidth.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -403,8 +405,8 @@
             // 
             // nudMinCaseLength
             // 
-            this.nudMinCaseLength.DecimalPlaces = 2;
             resources.ApplyResources(this.nudMinCaseLength, "nudMinCaseLength");
+            this.nudMinCaseLength.DecimalPlaces = 2;
             this.nudMinCaseLength.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -472,9 +474,9 @@
             // 
             // cbPallet
             // 
+            resources.ApplyResources(this.cbPallet, "cbPallet");
             this.cbPallet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPallet.FormattingEnabled = true;
-            resources.ApplyResources(this.cbPallet, "cbPallet");
             this.cbPallet.Name = "cbPallet";
             this.cbPallet.SelectedIndexChanged += new System.EventHandler(this.cbPallet_SelectedIndexChanged);
             // 
@@ -517,22 +519,22 @@
             // 
             // statusStripDef
             // 
+            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelDef});
-            resources.ApplyResources(this.statusStripDef, "statusStripDef");
             this.statusStripDef.Name = "statusStripDef";
             // 
             // toolStripStatusLabelDef
             // 
+            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
             this.toolStripStatusLabelDef.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabelDef.Name = "toolStripStatusLabelDef";
-            resources.ApplyResources(this.toolStripStatusLabelDef, "toolStripStatusLabelDef");
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.uCtrlOverhangWidth);
             this.groupBox1.Controls.Add(this.uCtrlOverhangLength);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 

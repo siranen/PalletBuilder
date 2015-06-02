@@ -43,8 +43,21 @@ namespace TreeDim.StackBuilder.Reporting
         public ReporterMSWord(ReportData inputData
             , string templatePath, string outputFilePath, Margins margins)
         {
+            // absolute output file path
+            string absOutputFilePath = string.Empty;
+            if (Path.IsPathRooted(outputFilePath))
+                absOutputFilePath = outputFilePath;
+            else
+                absOutputFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), outputFilePath));
+            // absolute template path
+            string absTemplatePath = string.Empty;
+            if (Path.IsPathRooted(templatePath))
+                absTemplatePath = templatePath;
+            else
+                absTemplatePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), templatePath));
+
             // does output directory exists
-            string outDir = Path.GetDirectoryName(outputFilePath);
+            string outDir = Path.GetDirectoryName(absOutputFilePath);
             if (!Directory.Exists(outDir))
             {
                 try { Directory.CreateDirectory(outDir); }
@@ -53,10 +66,9 @@ namespace TreeDim.StackBuilder.Reporting
                 catch (Exception ex)
                 { throw new Exception(string.Format("Directory {0} does not exist, and could not be created.", outDir), ex); }
             }
-
             // html file path
-            string htmlFilePath = Path.ChangeExtension(outputFilePath, "html");
-            BuildAnalysisReport(inputData, templatePath, htmlFilePath);
+            string htmlFilePath = Path.ChangeExtension(absOutputFilePath, "html");
+            BuildAnalysisReport(inputData, absTemplatePath, htmlFilePath);
             // opens word
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             wordApp.Visible = true;
@@ -74,7 +86,7 @@ namespace TreeDim.StackBuilder.Reporting
             wordDoc.PageSetup.LeftMargin = wordApp.CentimetersToPoints(margins.Left);
             // set print view 
             wordApp.ActiveWindow.ActivePane.View.Type = Microsoft.Office.Interop.Word.WdViewType.wdPrintView;
-            wordDoc.SaveAs(outputFilePath, Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDocumentDefault);
+            wordDoc.SaveAs(absOutputFilePath, Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDocumentDefault);
             _log.Info(string.Format("Saved doc report to {0}", outputFilePath));
             // delete image directory
             DeleteImageDirectory();

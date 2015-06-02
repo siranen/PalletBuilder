@@ -453,8 +453,11 @@ namespace TreeDim.StackBuilder.Reporting
             // verify if inputData is a valid entry
             if (!inputData.IsValid)
                 throw new Exception("Reporter.BuildAnalysisReport(): ReportData argument is invalid!");
+            // absolute path
+            string absOutputFilePath = ToAbsolute(outputFilePath);
+            string absReportTemplatePath = ToAbsolute(reportTemplatePath);
             // create directory if needed
-            ImageDirectory = Path.Combine( Path.GetDirectoryName(outputFilePath), "Images");
+            ImageDirectory = Path.Combine(Path.GetDirectoryName(absOutputFilePath), "Images");
             if (WriteImageFiles && !Directory.Exists(ImageDirectory))
                 Directory.CreateDirectory(ImageDirectory); 
             // create xml data file + XmlTextReader
@@ -465,24 +468,24 @@ namespace TreeDim.StackBuilder.Reporting
             // note xml file validation against xml schema produces a large number of errors
             // For the moment, I can not remove all errors
             if (_validateAgainstSchema)
-                Reporter.ValidateXmlDocument(xmlData, Path.Combine(Path.GetDirectoryName(reportTemplatePath), "ReportSchema.xsd"));
+                Reporter.ValidateXmlDocument(xmlData, Path.Combine(Path.GetDirectoryName(absReportTemplatePath), "ReportSchema.xsd"));
             // check availibility of files
-            if (!File.Exists(reportTemplatePath))
-                throw new System.IO.FileNotFoundException(string.Format("Report template path ({0}) is invalid", reportTemplatePath));
+            if (!File.Exists(absReportTemplatePath))
+                throw new System.IO.FileNotFoundException(string.Format("Report template path ({0}) is invalid", absReportTemplatePath));
             // load generated xslt
-            XmlTextReader xsltReader = new XmlTextReader(new FileStream(reportTemplatePath, FileMode.Open, FileAccess.Read));
+            XmlTextReader xsltReader = new XmlTextReader(new FileStream(absReportTemplatePath, FileMode.Open, FileAccess.Read));
             string threeLetterLanguageAbbrev = System.Globalization.CultureInfo.CurrentCulture.ThreeLetterWindowsLanguageName;
-            if (!File.Exists(Path.Combine(Path.GetDirectoryName(reportTemplatePath), threeLetterLanguageAbbrev + ".xml")))
+            if (!File.Exists(Path.Combine(Path.GetDirectoryName(absReportTemplatePath), threeLetterLanguageAbbrev + ".xml")))
             {
                 _log.Warn(string.Format("Language file {0}.xml could not be found! Trying ENU.xml...", threeLetterLanguageAbbrev));
                 threeLetterLanguageAbbrev = "ENU";
             }
-            if (!File.Exists(Path.Combine(Path.GetDirectoryName(reportTemplatePath), threeLetterLanguageAbbrev + ".xml")))
+            if (!File.Exists(Path.Combine(Path.GetDirectoryName(absReportTemplatePath), threeLetterLanguageAbbrev + ".xml")))
                 _log.Warn(string.Format("Language file {0}.xml could not be found!", threeLetterLanguageAbbrev));
             // generate word document
-            byte[] wordDoc = GetReport(xmlData, xsltReader, Path.Combine(Path.GetDirectoryName(reportTemplatePath), threeLetterLanguageAbbrev));
+            byte[] wordDoc = GetReport(xmlData, xsltReader, Path.Combine(Path.GetDirectoryName(absReportTemplatePath), threeLetterLanguageAbbrev));
             // write resulting array to HDD, show process information
-            using (FileStream fs = new FileStream(outputFilePath, FileMode.Create))
+            using (FileStream fs = new FileStream(absOutputFilePath, FileMode.Create))
                 fs.Write(wordDoc, 0, wordDoc.Length);
         }
         #endregion
@@ -2552,15 +2555,16 @@ namespace TreeDim.StackBuilder.Reporting
         {
             if (!WriteImageFiles)
                 return;
-            try
-            {
-                bmp.Save(Path.Combine(ImageDirectory, fileName), System.Drawing.Imaging.ImageFormat.Png);
-            }
-            catch (Exception ex)
-            {
-                _log.Error(ex.ToString());
-            }
+            try { bmp.Save(Path.Combine(ImageDirectory, fileName), System.Drawing.Imaging.ImageFormat.Png); }
+            catch (Exception ex) { _log.Error(ex.ToString()); }
+        }
 
+        public string ToAbsolute(string pathString)
+        {
+            if (Path.IsPathRooted(pathString))
+                return pathString;
+            else
+                return Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), pathString));
         }
         #endregion
 

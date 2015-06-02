@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<STACKBUILDER xmlns="http://www.treedim.com/StackBuilderSchema.xsd">
+  <data>
+    <items>
+      <library_boxes/>
+      <library_cases/>
+      <library_pallets/>
+      <library_interlayers/>
+      <library_bundles/>
+      <library_trucks/>
+    </items>
+    <analyses>
+      <palletAnalysis/>
+      <truckAnalysis/>
+      <caseAnalysis/>
+      <caseOptimisation/>
+    </analyses>
+  </data>
+  <output>
+    <analysisSolutionList/>
+    <viewItem/>
+    <viewSolution/>
+    <reportSolution/>
+    <genDocument/>
+  </output>
+</STACKBUILDER>

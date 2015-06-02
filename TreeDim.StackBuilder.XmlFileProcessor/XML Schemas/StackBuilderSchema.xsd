@@ -41,40 +41,40 @@
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
   <!-- Container Types -->
-  <xs:simpleType name="ListOfBools">
+  <xs:simpleType name="listOfBools">
     <xs:list itemType="bool"/>
   </xs:simpleType>
-  <xs:simpleType name="ListOfFloats">
+  <xs:simpleType name="listOfFloats">
     <xs:list itemType="float"/>
   </xs:simpleType>
-  <xs:simpleType name="ListOfHexBinary">
+  <xs:simpleType name="listOfHexBinary">
     <xs:list itemType="xs:hexBinary"/>
   </xs:simpleType>
-  <xs:simpleType name="ListOfInts">
+  <xs:simpleType name="listOfInts">
     <xs:list itemType="int"/>
   </xs:simpleType>
-  <xs:simpleType name="ListOfNames">
+  <xs:simpleType name="listOfNames">
     <xs:list itemType="Name"/>
   </xs:simpleType>
   <xs:simpleType name="int2">
-    <xs:restriction base="ListOfInts">
+    <xs:restriction base="listOfInts">
       <xs:minLength value="2"/>
       <xs:maxLength value="2"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="float2">
-    <xs:restriction base="ListOfFloats">
+    <xs:restriction base="listOfFloats">
       <xs:minLength value="2"/>
       <xs:maxLength value="2"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="float3">
-    <xs:restriction base="ListOfFloats">
+    <xs:restriction base="listOfFloats">
       <xs:minLength value="3"/>
       <xs:maxLength value="3"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="Axis">
+  <xs:simpleType name="axis">
     <xs:annotation>
       <xs:documentation>
         An enumerated type specifying the acceptable axis values.
@@ -86,7 +86,7 @@
       <xs:enumeration value="ZZ"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="AxisDir">
+  <xs:simpleType name="axisDir">
     <xs:annotation>
       <xs:documentation>
         An enumerated type specifying the acceptable oriented axis values.
@@ -101,7 +101,7 @@
       <xs:enumeration value="ZP"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="PatternName">
+  <xs:simpleType name="patternName">
     <xs:annotation>
       <xs:documentation>
         An enumerated type specifying the layer pattern.
@@ -116,10 +116,10 @@
       <xs:enumeration value="ENLARGED_SPIRAL"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="ListOfPatterns">
-    <xs:list itemType="PatternName"/>
+  <xs:simpleType name="listOfPatterns">
+    <xs:list itemType="patternName"/>
   </xs:simpleType>
-  <xs:simpleType name="LayerArrangement">
+  <xs:simpleType name="layerArrangement">
     <xs:annotation>
       <xs:documentation>
         An enumerated type specifying the layer arrangement.
@@ -131,8 +131,8 @@
       <xs:enumeration value="ROTATED180"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="ListOfLayerArrangements">
-    <xs:list itemType="LayerArrangement"/>
+  <xs:simpleType name="listOfLayerArrangements">
+    <xs:list itemType="layerArrangement"/>
   </xs:simpleType>
   <xs:simpleType name="palletType">
     <xs:restriction base="xs:string">
@@ -173,42 +173,42 @@
     </xs:restriction>
   </xs:simpleType>
   <!-- Complex types -->
-  <xs:element name="FaceColor">
+  <xs:element name="faceColor">
     <xs:annotation>
       <xs:documentation>
         Defines a color on a specific face.
       </xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:attribute name="FaceNormal" type="AxisDir" use="required"/>
+      <xs:attribute name="faceNormal" type="axisDir" use="required"/>
       <xs:attribute name="color" type="xs:hexBinary" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="FaceTexture">
+  <xs:element name="faceTexture">
     <xs:annotation>
       <xs:documentation>
         Defines a texture on a specific face.
       </xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:attribute name="FaceNormal" type="AxisDir" use="required"/>
-      <xs:attribute name="Position" type="float2" use="required"/>
-      <xs:attribute name="Size" type="float2" use="required"/>
-      <xs:attribute name="Angle" type="float" use="required"/>
-      <xs:attribute name="Bitmap" type="string" use="required"/>
+      <xs:attribute name="faceNormal" type="axisDir" use="required"/>
+      <xs:attribute name="position" type="float2" use="required"/>
+      <xs:attribute name="size" type="float2" use="required"/>
+      <xs:attribute name="angle" type="float" use="required"/>
+      <xs:attribute name="bitmap" type="string" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="FaceColors">
+  <xs:element name="faceColors">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="FaceColor" minOccurs="6" maxOccurs="6"/>
+        <xs:element ref="faceColor" minOccurs="6" maxOccurs="6"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="FaceTextures">
+  <xs:element name="faceTextures">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="FaceTexture" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="faceTexture" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -221,8 +221,8 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="FaceColors" minOccurs="1" maxOccurs="1"/>
-        <xs:element ref="FaceTextures" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="faceColors" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="faceTextures" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
       <xs:attribute name="id" type="xs:NCName" use="required"/>
       <xs:attribute name="name" type="string" use="required"/>
@@ -240,8 +240,8 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="FaceColors" minOccurs="1" maxOccurs="1"/>
-        <xs:element ref="FaceTextures" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="faceColors" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="faceTextures" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
       <xs:attribute name="id" type="xs:NCName" use="required"/>
       <xs:attribute name="name" type="string" use="required"/>
@@ -450,8 +450,8 @@
       <xs:attribute name="interlayerAntiSlipId" type="xs:NCName" use="optional"/>
       <xs:attribute name ="interlayerPeriod" type="int" use="optional"/>
       <xs:attribute name="overhang" type="float2" use="optional"/>
-      <xs:attribute name="allowedLayerPatterns" type="ListOfPatterns" use="optional"/>
-      <xs:attribute name="allowedLayerArrangements" type="ListOfLayerArrangements" use="optional"/>
+      <xs:attribute name="allowedLayerPatterns" type="listOfPatterns" use="optional"/>
+      <xs:attribute name="allowedLayerArrangements" type="listOfLayerArrangements" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="truckAnalysis">

@@ -356,17 +356,17 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
                 // description
                 bProperties.Description = caseItem.description;
                 // face colors
-                foreach (FaceColor fc in caseItem.FaceColors)
+                foreach (faceColor fc in caseItem.faceColors)
                 {
                     System.Drawing.Color color = System.Drawing.Color.FromArgb((int)fc.color[0], (int)fc.color[1], (int)fc.color[2], (int)fc.color[3]);
-                    switch (fc.FaceNormal)
+                    switch (fc.faceNormal)
                     {
-                        case AxisDir.XN: bProperties.SetColor(HalfAxis.HAxis.AXIS_X_N, color); break;
-                        case AxisDir.XP: bProperties.SetColor(HalfAxis.HAxis.AXIS_X_P, color); break;
-                        case AxisDir.YN: bProperties.SetColor(HalfAxis.HAxis.AXIS_Y_N, color); break;
-                        case AxisDir.YP: bProperties.SetColor(HalfAxis.HAxis.AXIS_Y_P, color); break;
-                        case AxisDir.ZN: bProperties.SetColor(HalfAxis.HAxis.AXIS_Z_N, color); break;
-                        case AxisDir.ZP: bProperties.SetColor(HalfAxis.HAxis.AXIS_Z_P, color); break;
+                        case axisDir.XN: bProperties.SetColor(HalfAxis.HAxis.AXIS_X_N, color); break;
+                        case axisDir.XP: bProperties.SetColor(HalfAxis.HAxis.AXIS_X_P, color); break;
+                        case axisDir.YN: bProperties.SetColor(HalfAxis.HAxis.AXIS_Y_N, color); break;
+                        case axisDir.YP: bProperties.SetColor(HalfAxis.HAxis.AXIS_Y_P, color); break;
+                        case axisDir.ZN: bProperties.SetColor(HalfAxis.HAxis.AXIS_Z_N, color); break;
+                        case axisDir.ZP: bProperties.SetColor(HalfAxis.HAxis.AXIS_Z_P, color); break;
                         default: break;
                     }
                 }
@@ -517,24 +517,24 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
            // allow aligned / alternate layers
             constraintSet.AllowAlignedLayers = false;
             constraintSet.AllowAlternateLayers = false;
-            foreach (LayerArrangement layerArr in xmlAnalysis.allowedLayerArrangements)
+            foreach (layerArrangement layerArr in xmlAnalysis.allowedLayerArrangements)
             {
-                if (layerArr == LayerArrangement.ALIGNED)
+                if (layerArr == layerArrangement.ALIGNED)
                     constraintSet.AllowAlignedLayers = true;
-                if (layerArr == LayerArrangement.ROTATED180 | layerArr == LayerArrangement.ROTATED90)
+                if (layerArr == layerArrangement.ROTATED180 | layerArr == layerArrangement.ROTATED90)
                     constraintSet.AllowAlternateLayers = true;
             }
             // allowed patterns
-            foreach (PatternName patternName in xmlAnalysis.allowedLayerPatterns)
+            foreach (patternName pName in xmlAnalysis.allowedLayerPatterns)
             {
-                switch (patternName)
+                switch (pName)
                 {
-                    case PatternName.COLUMN: constraintSet.SetAllowedPattern("Column"); break;
-                    case PatternName.DIAGONAL: constraintSet.SetAllowedPattern("Diagonal"); break;
-                    case PatternName.INTERLOCK: constraintSet.SetAllowedPattern("Interlock"); break;
-                    case PatternName.TRILOCK: constraintSet.SetAllowedPattern("Trilock"); break;
-                    case PatternName.SPIRAL: constraintSet.SetAllowedPattern("Spiral"); break;
-                    case PatternName.ENLARGED_SPIRAL: constraintSet.SetAllowedPattern("Enlarged spiral"); break;
+                    case patternName.COLUMN: constraintSet.SetAllowedPattern("Column"); break;
+                    case patternName.DIAGONAL: constraintSet.SetAllowedPattern("Diagonal"); break;
+                    case patternName.INTERLOCK: constraintSet.SetAllowedPattern("Interlock"); break;
+                    case patternName.TRILOCK: constraintSet.SetAllowedPattern("Trilock"); break;
+                    case patternName.SPIRAL: constraintSet.SetAllowedPattern("Spiral"); break;
+                    case patternName.ENLARGED_SPIRAL: constraintSet.SetAllowedPattern("Enlarged spiral"); break;
                     default: break;
                 }
             }
