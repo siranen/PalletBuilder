@@ -163,6 +163,7 @@
         <!-- Xml file processor samples -->
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Samples\Input1.xml" />
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Samples\Input2.xml" />
+        <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\BatchXmlProcessing.docx" />
         <File Source="..\Samples\TestXmlFileProcessor.bat" />
       </Component>
     </DirectoryRef>
