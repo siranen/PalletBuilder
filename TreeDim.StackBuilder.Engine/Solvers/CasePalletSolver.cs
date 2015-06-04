@@ -562,6 +562,7 @@ namespace TreeDim.StackBuilder.Engine
                 _patterns.Add(new LayerPatternColumn());
                 _patterns.Add(new LayerPatternInterlocked());
                 _patterns.Add(new LayerPatternInterlockedSymetric());
+                _patterns.Add(new LayerPatternInterlockedFilled());
                 _patterns.Add(new LayerPatternDiagonale());
                 _patterns.Add(new LayerPatternTrilock());
                 _patterns.Add(new LayerPatternSpirale());

@@ -100,8 +100,6 @@ namespace TreeDim.StackBuilder.Desktop
             viewColumnHeader.ForeColor = Color.White;
             viewColumnHeader.Font = new Font("Arial", 10, FontStyle.Bold);
             viewColumnHeader.ElementSort.SortStyle = DevAge.Drawing.HeaderSortStyle.None;
-         
-
 
             // create the grid
             gridSolutions.BorderStyle = BorderStyle.FixedSingle;
@@ -202,7 +200,6 @@ namespace TreeDim.StackBuilder.Desktop
             // select first solution
             gridSolutions.Selection.SelectRow(1, true);
             graphCtrlSolution.Invalidate();
-
         }
         #endregion
 
@@ -213,11 +210,15 @@ namespace TreeDim.StackBuilder.Desktop
         private void clickEvent_Click(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
-            int iSel = context.Position.Row - 1;
-            if (!_analysis.HasSolutionSelected(iSel))
-                _analysis.SelectSolutionByIndex(iSel);
+            int iSel = context.Position.Row;
+            // select row
+            gridSolutions.Selection.SelectRow(iSel, true);
+            // get selected solution
+            PackPalletSolution sol = gridSolutions.Rows[iSel].Tag as PackPalletSolution;
+            if (!_analysis.HasSolutionSelected(sol))
+                _analysis.SelectSolutionBySol(sol);
             else
-                _analysis.UnselectSolutionByIndex(iSel);        
+                _analysis.UnselectSolutionBySol(sol);        
         }
         private void onGridSolutionSelectionChanged(object sender, SourceGrid.RangeRegionChangedEventArgs e)
         {
@@ -243,11 +244,13 @@ namespace TreeDim.StackBuilder.Desktop
             try
             {
                 int iSel = GetCurrentSolutionIndex();
-                if (-1 == iSel) return;
-                if (!_analysis.HasSolutionSelected(iSel))
-                    _analysis.SelectSolutionByIndex(iSel);
+                // get selected solution
+                _sol = gridSolutions.Rows[iSel].Tag as PackPalletSolution;
+                if (null == _sol) return;
+                if (!_analysis.HasSolutionSelected(_sol))
+                    _analysis.SelectSolutionBySol(_sol);
                 else
-                    _analysis.UnselectSolutionByIndex(iSel);
+                    _analysis.UnselectSolutionBySol(_sol);
             }
             catch (Exception ex)
             {

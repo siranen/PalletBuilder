@@ -242,11 +242,15 @@ namespace TreeDim.StackBuilder.Desktop
         private void clickEvent_Click(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
-            int iSel = context.Position.Row - 1;
-            if (!_analysis.HasSolutionSelected(iSel))
-                _analysis.SelectSolutionByIndex(iSel);
+            int iSel = context.Position.Row;
+            // select row
+            gridSolutions.Selection.SelectRow(iSel, true);
+            // get selected solution
+            CasePalletSolution sol = gridSolutions.Rows[iSel].Tag as CasePalletSolution;
+            if (!_analysis.HasSolutionSelected(sol))
+                _analysis.SelectSolutionBySol(sol);
             else
-                _analysis.UnselectSolutionByIndex(iSel);
+                _analysis.UnSelectSolutionBySol(sol);        
         }
         private void onGridSolutionSelectionChanged(object sender, SourceGrid.RangeRegionChangedEventArgs e)
         {

@@ -111,10 +111,7 @@ namespace TreeDim.StackBuilder.Engine
                 --sizeXLength;
             }
         }
-        public override int GetNumberOfVariants(Layer layer)
-        {
-            return 2;
-        }
+        public override int GetNumberOfVariants(Layer layer) { return 1; }
         public override bool CanBeSwapped { get { return true; } }
         public override bool CanBeInverted { get { return true; } }
         #endregion

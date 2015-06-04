@@ -114,6 +114,7 @@ namespace TreeDim.StackBuilder.Basics
         #endregion
 
         #region Solution selection
+
         public void SelectSolutionByIndex(int index)
         {
             if (index < 0 || index > _solutions.Count)
@@ -153,6 +154,31 @@ namespace TreeDim.StackBuilder.Basics
         {
             if (index < 0 || index > _solutions.Count) return null;  // no solution with this index
             return _selectedSolutions.Find(delegate(SelPackPalletSolution selSol) { return selSol.Solution == _solutions[index]; });
+        }
+        public SelPackPalletSolution GetSelSolutionBySolution(PackPalletSolution sol)
+        {
+            return _selectedSolutions.Find(delegate(SelPackPalletSolution selSol) { return selSol.Solution == sol; });
+        }
+        public bool HasSolutionSelected(PackPalletSolution sol)
+        {
+            return (null != GetSelSolutionBySolution(sol));
+        }
+        public void SelectSolutionBySol(PackPalletSolution sol)
+        {
+            if (HasSolutionSelected(sol)) return;
+            // instantiate new SelSolution
+            SelPackPalletSolution selSolution = new SelPackPalletSolution(ParentDocument, this, sol);
+            // insert in list
+            _selectedSolutions.Add(selSolution);
+            // fire event
+            if (null != SolutionSelected)
+                SolutionSelected(this, selSolution);
+            // set document modified (not analysis, otherwise selected solutions are erased)
+            ParentDocument.Modify();
+        }
+        public void UnselectSolutionBySol(PackPalletSolution sol)
+        {
+            UnSelectSolution(GetSelSolutionBySolution(sol));
         }
         #endregion
 

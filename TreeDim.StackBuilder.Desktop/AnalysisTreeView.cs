@@ -1134,7 +1134,7 @@ namespace TreeDim.StackBuilder.Desktop
             // insert sub box node
             int indexIconBoxAnalysis = 4;
             if (analysis.BProperties is CaseOfBoxesProperties)
-                indexIconBoxAnalysis = 21;
+                indexIconBoxAnalysis = 18;
             else if (analysis.BProperties is BoxProperties)
                 indexIconBoxAnalysis = 4;
             else if (analysis.BProperties is BundleProperties)

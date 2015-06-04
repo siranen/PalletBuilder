@@ -969,6 +969,7 @@ namespace TreeDim.StackBuilder.Desktop
 
         public void SaveDocumentAs(IDocument doc, CancelEventArgs e)
         {
+            saveFileDialogSB.FileName = doc.Name + ".stb";
             if (saveFileDialogSB.ShowDialog() == DialogResult.OK)
                 doc.SaveAs(saveFileDialogSB.FileName);
             else

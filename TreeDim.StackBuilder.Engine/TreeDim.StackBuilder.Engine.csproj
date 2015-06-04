@@ -74,6 +74,7 @@
     <Compile Include="LayerPatterns\HCylinderLoadPatternColumnized.cs" />
     <Compile Include="LayerPatterns\HCylinderLoadPatternDefault.cs" />
     <Compile Include="LayerPatterns\HCylinderLoadPatternStaggered.cs" />
+    <Compile Include="LayerPatterns\LayerPatternInterlockedFilled.cs" />
     <Compile Include="LayerPatterns\LayerPatternInterlockedSymetric.cs" />
     <Compile Include="Solvers\CylinderSolver.cs" />
     <Compile Include="Solvers\BoxCaseSolver.cs" />

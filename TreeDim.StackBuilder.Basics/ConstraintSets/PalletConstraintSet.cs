@@ -127,7 +127,8 @@ namespace TreeDim.StackBuilder.Basics
         }
         public bool AllowPattern(string patternName)
         {
-            if (string.Equals(patternName, "Symetric Interlocked", StringComparison.CurrentCultureIgnoreCase))
+            if ((string.Equals(patternName, "Symetric Interlocked", StringComparison.CurrentCultureIgnoreCase))
+            || (string.Equals(patternName, "Interlocked Filled", StringComparison.CurrentCultureIgnoreCase)))
                 return _allowedPatterns.Contains("Interlocked");
             else
                 return _allowedPatterns.Contains(patternName);
