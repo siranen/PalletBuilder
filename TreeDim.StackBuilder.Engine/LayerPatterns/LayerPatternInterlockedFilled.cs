@@ -97,13 +97,18 @@ namespace TreeDim.StackBuilder.Engine
                                 , offsetY + j * (boxWidth + spaceYLength) + (fillSizeYLength > 0 ? (spaceYLength + boxLength) : 0.0))
                             , HalfAxis.HAxis.AXIS_X_P, HalfAxis.HAxis.AXIS_Y_P);
                     }
+
+                double spaceXFill = fillSizeXLength > 1
+                    ? (maxSizeXLength * (boxLength + spaceX) - fillSizeXLength * boxWidth) / (fillSizeXLength-1)
+                    : 0;
+                layer.UpdateMaxSpace(spaceXFill);
                 for (int i = 0; i < fillSizeXLength; ++i)
                     for (int j = 0; j < fillSizeYLength; ++j)
                     {
                         AddPosition(
                             layer
                             , new Vector2D(
-                                offsetX + (i + 1) * boxWidth
+                                offsetX + boxWidth + i * (boxWidth + spaceXFill)
                                 , offsetY + (maxSizeYLength / 2) * (boxWidth + spaceYLength) + j * boxLength)
                             , HalfAxis.HAxis.AXIS_Y_P, HalfAxis.HAxis.AXIS_X_N
                             );
@@ -146,13 +151,16 @@ namespace TreeDim.StackBuilder.Engine
                                 , offsetY + j * (boxLength + spaceYWidth) + (fillSizeYWidth > 0 ? (boxWidth + spaceYWidth) : 0.0))
                             , HalfAxis.HAxis.AXIS_Y_P, HalfAxis.HAxis.AXIS_X_N);
                     }
+
+                double spaceXFill = (actualLength - maxSizeXLength * (boxLength + spaceX) - fillSizeXWidth * boxLength) / fillSizeXWidth;
+                layer.UpdateMaxSpace(spaceXFill);
                 for (int i = 0; i < fillSizeXWidth; ++i)
                     for (int j = 0; j < fillSizeYWidth; ++j)
                     {
                         AddPosition(
                             layer
                             , new Vector2D(
-                                offsetX + maxSizeXLength * (boxLength + spaceX) + i * boxLength
+                                offsetX + maxSizeXLength * (boxLength + spaceX) + spaceXFill + i * (boxLength + spaceXFill)
                                 , offsetY + (maxSizeYWidth / 2) * (boxLength + spaceYWidth) + j * boxWidth)
                             , HalfAxis.HAxis.AXIS_X_P, HalfAxis.HAxis.AXIS_Y_P
                             );
@@ -206,12 +214,12 @@ namespace TreeDim.StackBuilder.Engine
                 double spaceXWidth = palletLength - sizeXLength * boxLength;
                 int fillSizeXWidth = (int)Math.Floor(spaceXWidth / boxLength);
                 double spaceYWidth = palletWidth - sizeYWidth * boxLength;
-                int fillSizeYWidth = (int)Math.Floor(spaceYLength / boxWidth);
+                int fillSizeYWidth = (int)Math.Floor(spaceYWidth / boxWidth);
 
-                int countLayer = sizeXLength * sizeYLength + sizeXWidth * sizeYWidth
-                    + fillSizeYLength * fillSizeXLength + fillSizeYWidth * fillSizeXWidth;
+                int countLayer = sizeXLength * sizeYLength + sizeXWidth * sizeYWidth;
+                    /*+ fillSizeYLength * fillSizeXLength + fillSizeYWidth * fillSizeXWidth;*/
 
-                if (countLayer >= optFound)
+                if (countLayer > optFound)
                 {
                     optFound = countLayer;
                     optSizeXLength = sizeXLength;

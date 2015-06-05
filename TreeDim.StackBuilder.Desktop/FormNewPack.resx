@@ -252,7 +252,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;uCtrlWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbColor.Type" xml:space="preserve">
     <value>OfficePickers.ColorPicker.ComboBoxColorPicker, OfficePickers, Version=1.1.5616.18718, Culture=neutral, PublicKeyToken=null</value>
@@ -285,12 +285,12 @@
     <value>15</value>
   </data>
   <data name="&gt;&gt;uCtrlWalls.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="cbDir.Items3" xml:space="preserve">
     <value>Y+</value>
   </data>
-  <assembly alias="Sharp3D.Math" name="Sharp3D.Math, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null" />
+  <assembly alias="Sharp3D.Math" name="Sharp3D.Math, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null" />
   <data name="uCtrlOuterDimensions.Value" type="Sharp3D.Math.Core.Vector3D, Sharp3D.Math">
     <value>(0, 0, 0)</value>
   </data>
@@ -430,7 +430,7 @@
     <value>5</value>
   </data>
   <data name="&gt;&gt;uCtrlOuterDimensions.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptTriDouble, TreeDim.StackBuilder.Basics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlOptTriDouble, TreeDim.StackBuilder.Basics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="cbColor.Items13" xml:space="preserve">
     <value>Color</value>
@@ -448,7 +448,7 @@
     <value>Weight</value>
   </data>
   <data name="&gt;&gt;uCtrlThickness.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;chkbTransparent.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -514,7 +514,7 @@
     <value>Color</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Desktop.FormNewBase, TreeDim.StackBuilder.Desktop, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="cbColor.Items3" xml:space="preserve">
     <value>Color</value>
@@ -523,7 +523,7 @@
     <value>1</value>
   </data>
   <data name="&gt;&gt;uCtrlLayout.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt, TreeDim.StackBuilder.Basics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="uCtrlWeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 20</value>
@@ -559,7 +559,7 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="lbBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 69</value>
@@ -622,7 +622,7 @@
     <value>4</value>
   </data>
   <data name="&gt;&gt;uCtrlHeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.19.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.20.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="chkbTransparent.Text" xml:space="preserve">
     <value>Transparent</value>
