@@ -233,6 +233,12 @@
     <Compile Include="FormEditPalletSolutionDB.Designer.cs">
       <DependentUpon>FormEditPalletSolutionDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormExcelLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExcelLibrary.Designer.cs">
+      <DependentUpon>FormExcelLibrary.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNewAnalysis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +461,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AboutBox.nl-NL.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutBox.resx">
       <SubType>Designer</SubType>
@@ -529,6 +536,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DockContentAnalysisCaseOfBoxes.ca-ES.resx">
       <DependentUpon>DockContentAnalysisCaseOfBoxes.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DockContentAnalysisCaseOfBoxes.de-DE.resx">
       <DependentUpon>DockContentAnalysisCaseOfBoxes.cs</DependentUpon>
@@ -754,6 +762,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditPalletSolutionDB.resx">
       <DependentUpon>FormEditPalletSolutionDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExcelLibrary.resx">
+      <DependentUpon>FormExcelLibrary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.ca-ES.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -1427,6 +1438,12 @@
     <Compile Include="FormSplashScreen.Designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolTipListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolTipListBox.Designer.cs">
+      <DependentUpon>ToolTipListBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowSettings.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1501,6 +1518,10 @@
     <ProjectReference Include="..\TreeDim.StackBuilder.Engine\TreeDim.StackBuilder.Engine.csproj">
       <Project>{2E646606-052D-4063-9218-1379430B070E}</Project>
       <Name>TreeDim.StackBuilder.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\treeDiM.StackBuilder.ExcelReader\treeDiM.StackBuilder.ExcelReader.csproj">
+      <Project>{E9B15DC7-07A3-4398-AE3F-2ED6B1F5C0A6}</Project>
+      <Name>treeDiM.StackBuilder.ExcelReader</Name>
     </ProjectReference>
     <ProjectReference Include="..\TreeDim.StackBuilder.Graphic\TreeDim.StackBuilder.Graphics.csproj">
       <Project>{2AD4C04C-5B8A-4E69-9B1C-402CB86860A7}</Project>

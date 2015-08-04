@@ -777,6 +777,8 @@ namespace TreeDim.StackBuilder.Desktop
             saveAsToolStripMenuItem.Enabled = (null != doc);
             // close
             closeToolStripMenuItem.Enabled = (null != doc);
+            // excel library
+            toolStripButtonExcelLibrary.Enabled = (null != doc);
             // new box
             newBoxToolStripMenuItem.Enabled = (null != doc);
             toolStripButtonAddNewBox.Enabled = (null != doc);
@@ -1287,6 +1289,18 @@ namespace TreeDim.StackBuilder.Desktop
             }
             catch (Exception ex) { _log.Error(ex.ToString()); Program.SendCrashReport(ex); }
         }
+
+        private void toolExcelLibrary(object sender, EventArgs e)
+        {
+            try
+            {
+                DocumentSB doc = ActiveDocument as DocumentSB;
+                if (null == doc) return;
+                FormExcelLibrary form = new FormExcelLibrary(doc);
+                form.ShowDialog();
+            }
+            catch (Exception ex) { _log.Error(ex.ToString()); Program.SendCrashReport(ex); }
+        }
         #endregion
 
         #region Document / View status change handlers
@@ -1604,7 +1618,5 @@ namespace TreeDim.StackBuilder.Desktop
             return _instance;
         }
         #endregion
-
-
     }
 }
