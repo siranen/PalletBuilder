@@ -46,15 +46,15 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataCase(int iRow, DataRow dtRow)
             : base(iRow, dtRow)
         {
-            outerDimensions[0] = double.Parse( (string)dtRow[2], CultureInfo.InvariantCulture);
-            outerDimensions[1] = double.Parse( (string)dtRow[3], CultureInfo.InvariantCulture);
-            outerDimensions[2] = double.Parse( (string)dtRow[4], CultureInfo.InvariantCulture);
+            outerDimensions[0] = (double)dtRow[2];
+            outerDimensions[1] = (double)dtRow[3];
+            outerDimensions[2] = (double)dtRow[4];
 
-            if (DBNull.Value != dtRow[5])   innerDimensions[0] = double.Parse( (string)dtRow[5], CultureInfo.InvariantCulture);
-            if (DBNull.Value != dtRow[6])   innerDimensions[0] = double.Parse( (string)dtRow[6], CultureInfo.InvariantCulture);
-            if (DBNull.Value != dtRow[7])   innerDimensions[0] = double.Parse( (string)dtRow[7], CultureInfo.InvariantCulture);
-            if (DBNull.Value != dtRow[8])   Weight = double.Parse( (string)dtRow[8], CultureInfo.InvariantCulture );
-            if (DBNull.Value != dtRow[9])   NetWeight = double.Parse( (string)dtRow[9], CultureInfo.InvariantCulture );
+            if (DBNull.Value != dtRow[5])   innerDimensions[0] = (double)dtRow[5];
+            if (DBNull.Value != dtRow[6])   innerDimensions[1] = (double)dtRow[6];
+            if (DBNull.Value != dtRow[7])   innerDimensions[2] = (double)dtRow[7];
+            if (DBNull.Value != dtRow[8])   Weight = (double)dtRow[8];
+            if (DBNull.Value != dtRow[9])   NetWeight = (double)dtRow[9];
         }
         public double[] OuterDimensions
         {
@@ -89,10 +89,12 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataBox(int iRow, System.Data.DataRow dtRow)
             : base(iRow, dtRow)
         {
-            dimensions[0] = double.Parse((string)dtRow[2], CultureInfo.InvariantCulture);
-            dimensions[1] = double.Parse((string)dtRow[3], CultureInfo.InvariantCulture);
-            dimensions[2] = double.Parse((string)dtRow[4], CultureInfo.InvariantCulture);
+            dimensions[0] = (double)dtRow[2];
+            dimensions[1] = (double)dtRow[3];
+            dimensions[2] = (double)dtRow[4];
 
+            if (DBNull.Value != dtRow[8]) Weight = (double)dtRow[8];
+            if (DBNull.Value != dtRow[9]) NetWeight = (double)dtRow[9];
         }
         public double[] Dimensions { get { return dimensions; } }
         public double Weight { get; set; }
@@ -117,11 +119,11 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataPallet(int iRow, DataRow dtRow)
             : base(iRow, dtRow)
         {
-            dimensions[0] = double.Parse((string)dtRow[2], CultureInfo.InvariantCulture);
-            dimensions[1] = double.Parse((string)dtRow[3], CultureInfo.InvariantCulture);
-            dimensions[2] = double.Parse((string)dtRow[4], CultureInfo.InvariantCulture);
+            dimensions[0] = (double)dtRow[2];
+            dimensions[1] = (double)dtRow[3];
+            dimensions[2] = (double)dtRow[4];
 
-            if (DBNull.Value != dtRow[5])   Weight = double.Parse((string)dtRow[5], CultureInfo.InvariantCulture);
+            if (DBNull.Value != dtRow[5])   Weight = (double)dtRow[5];
             if (DBNull.Value != dtRow[6])   TypeName = dtRow[6] as string;
         }
         public double[] Dimensions
@@ -150,11 +152,11 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataInterlayer(int iRow, System.Data.DataRow dtRow)
             : base(iRow, dtRow)
         {
-            dimensions[0] = double.Parse((string)dtRow[2], CultureInfo.InvariantCulture);
-            dimensions[1] = double.Parse((string)dtRow[3], CultureInfo.InvariantCulture);
-            dimensions[2] = double.Parse((string)dtRow[4], CultureInfo.InvariantCulture);
+            dimensions[0] = (double)dtRow[2];
+            dimensions[1] = (double)dtRow[3];
+            dimensions[2] = (double)dtRow[4];
 
-            if (DBNull.Value != dtRow[5]) Weight = double.Parse((string)dtRow[5], CultureInfo.InvariantCulture);
+            if (DBNull.Value != dtRow[5]) Weight = (double)dtRow[5];
         }
         public double[] Dimensions
         {
@@ -180,15 +182,15 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataPalletCap(int iRow, DataRow dtRow)
             : base(iRow, dtRow)
         {
-            dimensions[0] = double.Parse((string)dtRow[2], CultureInfo.InvariantCulture);
-            dimensions[1] = double.Parse((string)dtRow[3], CultureInfo.InvariantCulture);
-            dimensions[2] = double.Parse((string)dtRow[4], CultureInfo.InvariantCulture);
+            dimensions[0] = (double)dtRow[2];
+            dimensions[1] = (double)dtRow[3];
+            dimensions[2] = (double)dtRow[4];
 
-            innerDimensions[0] = double.Parse((string)dtRow[5], CultureInfo.InvariantCulture);
-            innerDimensions[1] = double.Parse((string)dtRow[6], CultureInfo.InvariantCulture);
-            innerDimensions[2] = double.Parse((string)dtRow[7], CultureInfo.InvariantCulture);
+            innerDimensions[0] = (double)dtRow[5];
+            innerDimensions[1] = (double)dtRow[6];
+            innerDimensions[2] = (double)dtRow[7];
 
-            if (DBNull.Value != dtRow[8]) Weight = double.Parse((string)dtRow[8], CultureInfo.InvariantCulture);
+            if (DBNull.Value != dtRow[8]) Weight = (double)dtRow[8];
         }
         public double Weight { get; set; }
 
@@ -211,10 +213,10 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataPalletFilm(int iRow, DataRow dtRow)
             : base(iRow, dtRow)
         {
-            Transparency = (1 == int.Parse((string)dtRow[2]));
-            Hatching = (1 == int.Parse((string)dtRow[3]));
-            Spacing = double.Parse((string)dtRow[4], CultureInfo.InvariantCulture);
-            Angle = double.Parse((string)dtRow[5], CultureInfo.InvariantCulture);
+            Transparency = (1 == (int)dtRow[2]);
+            Hatching = (1 == (int)dtRow[3]);
+            Spacing = (double)dtRow[4];
+            Angle = (double)dtRow[5];
         }
 
         public bool Transparency { get; set; }
@@ -235,12 +237,12 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataCylinder(int iRow, DataRow dtRow)
             : base(iRow, dtRow)
         {
-            Diameter = double.Parse((string)dtRow[2], CultureInfo.InvariantCulture);
-            InnerDiameter = double.Parse((string)dtRow[3], CultureInfo.InvariantCulture);
-            Height = double.Parse((string)dtRow[4], CultureInfo.InvariantCulture);
+            Diameter = (double)dtRow[2];
+            InnerDiameter = (double)dtRow[3];
+            Height = (double)dtRow[4];
 
-            if (DBNull.Value != dtRow[5]) Weight = double.Parse((string)dtRow[5], CultureInfo.InvariantCulture);
-            if (DBNull.Value != dtRow[6]) Weight = double.Parse((string)dtRow[6], CultureInfo.InvariantCulture);
+            if (DBNull.Value != dtRow[5]) Weight = (double)dtRow[5];
+            if (DBNull.Value != dtRow[6]) Weight = (double)dtRow[6];
         }
 
         public double Diameter      { get; set; }
