@@ -36,16 +36,16 @@
             this.tabControlLibrary = new System.Windows.Forms.TabControl();
             this.tabPageCases = new System.Windows.Forms.TabPage();
             this.tabPageBoxes = new System.Windows.Forms.TabPage();
+            this.tabPageCylinders = new System.Windows.Forms.TabPage();
             this.tabPagePallets = new System.Windows.Forms.TabPage();
             this.tabPageInterlayers = new System.Windows.Forms.TabPage();
-            this.tabPageCylinders = new System.Windows.Forms.TabPage();
             this.tabPagePalletCaps = new System.Windows.Forms.TabPage();
             this.tabPagePalletWrappers = new System.Windows.Forms.TabPage();
             this.listBoxItem = new ListBoxWithToolTip.ToolTipListBox();
-            this.graphControlItem = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             this.tbItem = new System.Windows.Forms.TextBox();
             this.tabControlLibrary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graphControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPathExcelLibrary
@@ -65,6 +65,7 @@
             this.bnInsert.TabIndex = 1;
             this.bnInsert.Text = "Insert";
             this.bnInsert.UseVisualStyleBackColor = true;
+            this.bnInsert.Click += new System.EventHandler(this.bnInsert_Click);
             // 
             // bnClose
             // 
@@ -88,6 +89,7 @@
             // 
             // excelFileSelect
             // 
+            this.excelFileSelect.Filter = "MS Excel work sheet (*.xls;*.xlsx)|*.xls;*.xlsx";
             this.excelFileSelect.Location = new System.Drawing.Point(98, 37);
             this.excelFileSelect.Name = "excelFileSelect";
             this.excelFileSelect.Size = new System.Drawing.Size(364, 20);
@@ -96,13 +98,13 @@
             // 
             // tabControlLibrary
             // 
+            this.tabControlLibrary.Controls.Add(this.tabPageCases);
             this.tabControlLibrary.Controls.Add(this.tabPageBoxes);
+            this.tabControlLibrary.Controls.Add(this.tabPageCylinders);
             this.tabControlLibrary.Controls.Add(this.tabPagePallets);
             this.tabControlLibrary.Controls.Add(this.tabPageInterlayers);
-            this.tabControlLibrary.Controls.Add(this.tabPageCylinders);
             this.tabControlLibrary.Controls.Add(this.tabPagePalletCaps);
             this.tabControlLibrary.Controls.Add(this.tabPagePalletWrappers);
-            this.tabControlLibrary.Controls.Add(this.tabPageCases);
             this.tabControlLibrary.Location = new System.Drawing.Point(7, 95);
             this.tabControlLibrary.Name = "tabControlLibrary";
             this.tabControlLibrary.SelectedIndex = 0;
@@ -125,17 +127,27 @@
             this.tabPageBoxes.Location = new System.Drawing.Point(4, 22);
             this.tabPageBoxes.Name = "tabPageBoxes";
             this.tabPageBoxes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBoxes.Size = new System.Drawing.Size(528, 267);
+            this.tabPageBoxes.Size = new System.Drawing.Size(528, 277);
             this.tabPageBoxes.TabIndex = 1;
             this.tabPageBoxes.Text = "Boxes";
             this.tabPageBoxes.UseVisualStyleBackColor = true;
+            // 
+            // tabPageCylinders
+            // 
+            this.tabPageCylinders.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCylinders.Name = "tabPageCylinders";
+            this.tabPageCylinders.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCylinders.Size = new System.Drawing.Size(528, 277);
+            this.tabPageCylinders.TabIndex = 4;
+            this.tabPageCylinders.Text = "Cylinders";
+            this.tabPageCylinders.UseVisualStyleBackColor = true;
             // 
             // tabPagePallets
             // 
             this.tabPagePallets.Location = new System.Drawing.Point(4, 22);
             this.tabPagePallets.Name = "tabPagePallets";
             this.tabPagePallets.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePallets.Size = new System.Drawing.Size(528, 267);
+            this.tabPagePallets.Size = new System.Drawing.Size(528, 277);
             this.tabPagePallets.TabIndex = 2;
             this.tabPagePallets.Text = "Pallets";
             this.tabPagePallets.UseVisualStyleBackColor = true;
@@ -145,27 +157,17 @@
             this.tabPageInterlayers.Location = new System.Drawing.Point(4, 22);
             this.tabPageInterlayers.Name = "tabPageInterlayers";
             this.tabPageInterlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInterlayers.Size = new System.Drawing.Size(528, 267);
+            this.tabPageInterlayers.Size = new System.Drawing.Size(528, 277);
             this.tabPageInterlayers.TabIndex = 3;
             this.tabPageInterlayers.Text = "Interlayers";
             this.tabPageInterlayers.UseVisualStyleBackColor = true;
-            // 
-            // tabPageCylinders
-            // 
-            this.tabPageCylinders.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCylinders.Name = "tabPageCylinders";
-            this.tabPageCylinders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCylinders.Size = new System.Drawing.Size(528, 267);
-            this.tabPageCylinders.TabIndex = 4;
-            this.tabPageCylinders.Text = "Cylinders";
-            this.tabPageCylinders.UseVisualStyleBackColor = true;
             // 
             // tabPagePalletCaps
             // 
             this.tabPagePalletCaps.Location = new System.Drawing.Point(4, 22);
             this.tabPagePalletCaps.Name = "tabPagePalletCaps";
             this.tabPagePalletCaps.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePalletCaps.Size = new System.Drawing.Size(528, 267);
+            this.tabPagePalletCaps.Size = new System.Drawing.Size(528, 277);
             this.tabPagePalletCaps.TabIndex = 5;
             this.tabPagePalletCaps.Text = "Pallet caps";
             this.tabPagePalletCaps.UseVisualStyleBackColor = true;
@@ -175,7 +177,7 @@
             this.tabPagePalletWrappers.Location = new System.Drawing.Point(4, 22);
             this.tabPagePalletWrappers.Name = "tabPagePalletWrappers";
             this.tabPagePalletWrappers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePalletWrappers.Size = new System.Drawing.Size(528, 267);
+            this.tabPagePalletWrappers.Size = new System.Drawing.Size(528, 277);
             this.tabPagePalletWrappers.TabIndex = 6;
             this.tabPagePalletWrappers.Text = "Pallet wrappers";
             this.tabPagePalletWrappers.UseVisualStyleBackColor = true;
@@ -187,20 +189,23 @@
             this.listBoxItem.Name = "listBoxItem";
             this.listBoxItem.Size = new System.Drawing.Size(158, 251);
             this.listBoxItem.TabIndex = 0;
+            this.listBoxItem.SelectedIndexChanged += new System.EventHandler(this.listBoxItem_SelectedIndexChanged);
+            this.listBoxItem.DoubleClick += new System.EventHandler(this.listBoxItem_DoubleClick);
             // 
-            // graphControlItem
+            // graphCtrl
             // 
-            this.graphControlItem.Location = new System.Drawing.Point(181, 126);
-            this.graphControlItem.Name = "graphControlItem";
-            this.graphControlItem.Size = new System.Drawing.Size(150, 251);
-            this.graphControlItem.TabIndex = 1;
+            this.graphCtrl.Location = new System.Drawing.Point(181, 126);
+            this.graphCtrl.Name = "graphCtrl";
+            this.graphCtrl.Size = new System.Drawing.Size(349, 157);
+            this.graphCtrl.TabIndex = 1;
             // 
             // tbItem
             // 
-            this.tbItem.Location = new System.Drawing.Point(337, 126);
+            this.tbItem.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbItem.Location = new System.Drawing.Point(179, 289);
             this.tbItem.Multiline = true;
             this.tbItem.Name = "tbItem";
-            this.tbItem.Size = new System.Drawing.Size(193, 251);
+            this.tbItem.Size = new System.Drawing.Size(351, 88);
             this.tbItem.TabIndex = 2;
             // 
             // FormExcelLibrary
@@ -210,7 +215,7 @@
             this.CancelButton = this.bnClose;
             this.ClientSize = new System.Drawing.Size(555, 400);
             this.Controls.Add(this.tbItem);
-            this.Controls.Add(this.graphControlItem);
+            this.Controls.Add(this.graphCtrl);
             this.Controls.Add(this.listBoxItem);
             this.Controls.Add(this.tabControlLibrary);
             this.Controls.Add(this.excelFileSelect);
@@ -224,7 +229,7 @@
             this.ShowIcon = false;
             this.Text = "Add items from library...";
             this.tabControlLibrary.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.graphControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +252,6 @@
         private System.Windows.Forms.TabPage tabPagePalletWrappers;
         private ListBoxWithToolTip.ToolTipListBox listBoxItem;
         private System.Windows.Forms.TextBox tbItem;
-        private Graphics.Graphics3DControl graphControlItem;
+        private Graphics.Graphics3DControl graphCtrl;
     }
 }

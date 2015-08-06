@@ -139,7 +139,7 @@ namespace TreeDim.StackBuilder.Desktop
         }
         #endregion
 
-        #region Draw pallet
+        #region Implement IDrawingContainer
         public void Draw(Graphics3DControl ctrl, Graphics3D graphics)
         {
             if (0 == cbType.Items.Count)

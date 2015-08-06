@@ -823,5 +823,17 @@ namespace TreeDim.StackBuilder.Desktop.Properties {
                 return ((string)(this["DonatePageUrl"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("K:\\GitHub\\StackBuilder\\Samples\\SampleBook.xls")]
+        public string ExcelLibraryPath {
+            get {
+                return ((string)(this["ExcelLibraryPath"]));
+            }
+            set {
+                this["ExcelLibraryPath"] = value;
+            }
+        }
     }
 }

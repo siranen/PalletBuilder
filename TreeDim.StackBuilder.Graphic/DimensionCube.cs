@@ -29,6 +29,12 @@ namespace TreeDim.StackBuilder.Graphics
             for (int i = 0; i < 3; ++i) _showArrow[i] = true;
             BuildPoints();
         }
+        public DimensionCube(double[] dim)
+        {
+            for (int i = 0; i < 3; ++i) _dim[i] = dim[i];
+            for (int i = 0; i < 3; ++i) _showArrow[i] = true;
+            BuildPoints();
+        }
         public DimensionCube(Vector3D position, double length, double width, double height, Color color, bool above)
         {
             _position = position;

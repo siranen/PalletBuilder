@@ -9,6 +9,16 @@ using System.Globalization;
 
 namespace treeDiM.StackBuilder.ExcelReader
 {
+    #region Invalid Row Exception
+    internal class InvalidRowException : Exception
+    {
+        public InvalidRowException(string Type, int rowId, string column, Type expectedType)
+        {        
+        }
+
+
+    }
+    #endregion
     #region DataType
     public class DataType : Object
     {
@@ -21,7 +31,9 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataType(int rowId, DataRow dtRow)
         {
             RowId = rowId;
+            if (!(dtRow[0] is string)) throw new InvalidRowException("DataType", rowId, "Name", typeof(string));
             Name = dtRow[0] as string;
+            if (!(dtRow[1] is string)) throw new InvalidRowException("DataType", rowId, "Description", typeof(string));
             Description = dtRow[1] as string;
         }
         public int RowId { get; set; }
@@ -30,8 +42,8 @@ namespace treeDiM.StackBuilder.ExcelReader
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Name          = " + Name );
-            sb.AppendLine("Description   = " + Description);
+            sb.AppendLine("Name             = " + Name );
+            sb.AppendLine("Description      = " + Description);
             return sb.ToString();
         }
     }
@@ -93,8 +105,8 @@ namespace treeDiM.StackBuilder.ExcelReader
             dimensions[1] = (double)dtRow[3];
             dimensions[2] = (double)dtRow[4];
 
-            if (DBNull.Value != dtRow[8]) Weight = (double)dtRow[8];
-            if (DBNull.Value != dtRow[9]) NetWeight = (double)dtRow[9];
+            if (DBNull.Value != dtRow[5]) Weight = (double)dtRow[5];
+            if (DBNull.Value != dtRow[6]) NetWeight = (double)dtRow[6];
         }
         public double[] Dimensions { get { return dimensions; } }
         public double Weight { get; set; }
@@ -139,7 +151,7 @@ namespace treeDiM.StackBuilder.ExcelReader
             StringBuilder sb = new StringBuilder(base.ToString());
             sb.AppendLine(string.Format("Dimensions       = {0}*{1}*{2}", dimensions[0], dimensions[1], dimensions[2]));
             sb.AppendLine(string.Format("Weight           = {0}", Weight));
-            sb.AppendLine(TypeName);
+            sb.AppendLine(string.Format("Type             = {0}", TypeName));
             return sb.ToString();
         }
         // DATA MEMBERS

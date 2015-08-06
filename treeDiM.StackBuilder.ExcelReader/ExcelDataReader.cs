@@ -48,10 +48,15 @@ namespace treeDiM.StackBuilder.ExcelReader
                         {
                             dataType = BuildDataType(dtTable.TableName, iRow, dtTable.Rows[iRow]);
                         }
+                        catch (InvalidRowException /*ex*/)
+                        {
+                            break;
+                        }
                         catch (Exception ex)
                         {
                             _log.Error(string.Format("Failed to read {0}({1}) with message : {2}", dtTable.TableName, iRow, ex.Message));
                             dataType = null;
+                            break;
                         }
                         if (null != dataType)
                             listItems.Add(dataType);
