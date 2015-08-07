@@ -34,17 +34,9 @@
             this.bnReload = new System.Windows.Forms.Button();
             this.excelFileSelect = new TreeDim.UserControls.FileSelect();
             this.tabControlLibrary = new System.Windows.Forms.TabControl();
-            this.tabPageCases = new System.Windows.Forms.TabPage();
-            this.tabPageBoxes = new System.Windows.Forms.TabPage();
-            this.tabPageCylinders = new System.Windows.Forms.TabPage();
-            this.tabPagePallets = new System.Windows.Forms.TabPage();
-            this.tabPageInterlayers = new System.Windows.Forms.TabPage();
-            this.tabPagePalletCaps = new System.Windows.Forms.TabPage();
-            this.tabPagePalletWrappers = new System.Windows.Forms.TabPage();
             this.listBoxItem = new ListBoxWithToolTip.ToolTipListBox();
             this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
             this.tbItem = new System.Windows.Forms.TextBox();
-            this.tabControlLibrary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,89 +90,12 @@
             // 
             // tabControlLibrary
             // 
-            this.tabControlLibrary.Controls.Add(this.tabPageCases);
-            this.tabControlLibrary.Controls.Add(this.tabPageBoxes);
-            this.tabControlLibrary.Controls.Add(this.tabPageCylinders);
-            this.tabControlLibrary.Controls.Add(this.tabPagePallets);
-            this.tabControlLibrary.Controls.Add(this.tabPageInterlayers);
-            this.tabControlLibrary.Controls.Add(this.tabPagePalletCaps);
-            this.tabControlLibrary.Controls.Add(this.tabPagePalletWrappers);
             this.tabControlLibrary.Location = new System.Drawing.Point(7, 95);
             this.tabControlLibrary.Name = "tabControlLibrary";
             this.tabControlLibrary.SelectedIndex = 0;
             this.tabControlLibrary.Size = new System.Drawing.Size(536, 303);
             this.tabControlLibrary.TabIndex = 5;
             this.tabControlLibrary.Selected += new System.Windows.Forms.TabControlEventHandler(this.onTabPageSelected);
-            // 
-            // tabPageCases
-            // 
-            this.tabPageCases.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCases.Name = "tabPageCases";
-            this.tabPageCases.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCases.Size = new System.Drawing.Size(528, 277);
-            this.tabPageCases.TabIndex = 0;
-            this.tabPageCases.Text = "Cases";
-            this.tabPageCases.UseVisualStyleBackColor = true;
-            // 
-            // tabPageBoxes
-            // 
-            this.tabPageBoxes.Location = new System.Drawing.Point(4, 22);
-            this.tabPageBoxes.Name = "tabPageBoxes";
-            this.tabPageBoxes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBoxes.Size = new System.Drawing.Size(528, 277);
-            this.tabPageBoxes.TabIndex = 1;
-            this.tabPageBoxes.Text = "Boxes";
-            this.tabPageBoxes.UseVisualStyleBackColor = true;
-            // 
-            // tabPageCylinders
-            // 
-            this.tabPageCylinders.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCylinders.Name = "tabPageCylinders";
-            this.tabPageCylinders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCylinders.Size = new System.Drawing.Size(528, 277);
-            this.tabPageCylinders.TabIndex = 4;
-            this.tabPageCylinders.Text = "Cylinders";
-            this.tabPageCylinders.UseVisualStyleBackColor = true;
-            // 
-            // tabPagePallets
-            // 
-            this.tabPagePallets.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePallets.Name = "tabPagePallets";
-            this.tabPagePallets.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePallets.Size = new System.Drawing.Size(528, 277);
-            this.tabPagePallets.TabIndex = 2;
-            this.tabPagePallets.Text = "Pallets";
-            this.tabPagePallets.UseVisualStyleBackColor = true;
-            // 
-            // tabPageInterlayers
-            // 
-            this.tabPageInterlayers.Location = new System.Drawing.Point(4, 22);
-            this.tabPageInterlayers.Name = "tabPageInterlayers";
-            this.tabPageInterlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInterlayers.Size = new System.Drawing.Size(528, 277);
-            this.tabPageInterlayers.TabIndex = 3;
-            this.tabPageInterlayers.Text = "Interlayers";
-            this.tabPageInterlayers.UseVisualStyleBackColor = true;
-            // 
-            // tabPagePalletCaps
-            // 
-            this.tabPagePalletCaps.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePalletCaps.Name = "tabPagePalletCaps";
-            this.tabPagePalletCaps.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePalletCaps.Size = new System.Drawing.Size(528, 277);
-            this.tabPagePalletCaps.TabIndex = 5;
-            this.tabPagePalletCaps.Text = "Pallet caps";
-            this.tabPagePalletCaps.UseVisualStyleBackColor = true;
-            // 
-            // tabPagePalletWrappers
-            // 
-            this.tabPagePalletWrappers.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePalletWrappers.Name = "tabPagePalletWrappers";
-            this.tabPagePalletWrappers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePalletWrappers.Size = new System.Drawing.Size(528, 277);
-            this.tabPagePalletWrappers.TabIndex = 6;
-            this.tabPagePalletWrappers.Text = "Pallet wrappers";
-            this.tabPagePalletWrappers.UseVisualStyleBackColor = true;
             // 
             // listBoxItem
             // 
@@ -228,7 +143,6 @@
             this.Name = "FormExcelLibrary";
             this.ShowIcon = false;
             this.Text = "Add items from library...";
-            this.tabControlLibrary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -243,13 +157,6 @@
         private System.Windows.Forms.Button bnReload;
         private UserControls.FileSelect excelFileSelect;
         private System.Windows.Forms.TabControl tabControlLibrary;
-        private System.Windows.Forms.TabPage tabPageCases;
-        private System.Windows.Forms.TabPage tabPageBoxes;
-        private System.Windows.Forms.TabPage tabPagePallets;
-        private System.Windows.Forms.TabPage tabPageInterlayers;
-        private System.Windows.Forms.TabPage tabPageCylinders;
-        private System.Windows.Forms.TabPage tabPagePalletCaps;
-        private System.Windows.Forms.TabPage tabPagePalletWrappers;
         private ListBoxWithToolTip.ToolTipListBox listBoxItem;
         private System.Windows.Forms.TextBox tbItem;
         private Graphics.Graphics3DControl graphCtrl;

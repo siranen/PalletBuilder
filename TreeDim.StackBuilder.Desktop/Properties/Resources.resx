@@ -637,4 +637,25 @@ Closing form...</value>
   <data name="ID_LAYERCOUNT" xml:space="preserve">
     <value># Layers</value>
   </data>
+  <data name="ID_BOXES" xml:space="preserve">
+    <value>Boxes</value>
+  </data>
+  <data name="ID_CASES" xml:space="preserve">
+    <value>Cases</value>
+  </data>
+  <data name="ID_CYLINDERS" xml:space="preserve">
+    <value>Cylinders</value>
+  </data>
+  <data name="ID_INTERLAYERS" xml:space="preserve">
+    <value>Interlayers</value>
+  </data>
+  <data name="ID_PALLETCAPS" xml:space="preserve">
+    <value>Pallet caps</value>
+  </data>
+  <data name="ID_PALLETFILMS" xml:space="preserve">
+    <value>Pallet films</value>
+  </data>
+  <data name="ID_PALLETS" xml:space="preserve">
+    <value>Pallets</value>
+  </data>
 </root>

@@ -204,6 +204,8 @@ namespace treeDiM.StackBuilder.ExcelReader
 
             if (DBNull.Value != dtRow[8]) Weight = (double)dtRow[8];
         }
+        public double[] Dimensions { get { return dimensions; } }
+        public double[] InnerDimensions { get { return innerDimensions; } }
         public double Weight { get; set; }
 
         public override string ToString()

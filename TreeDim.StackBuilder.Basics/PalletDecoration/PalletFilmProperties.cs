@@ -25,7 +25,9 @@ namespace TreeDim.StackBuilder.Basics
         public PalletFilmProperties(Document doc,
             string name, string description,
             bool useTransparency,
-            bool useHatching, double hatchSpacing, double hatchAngle,
+            bool useHatching
+            , double hatchSpacing
+            , double hatchAngle,
             Color color)
             : base(doc, name, description)
         {

@@ -282,6 +282,9 @@ namespace TreeDim.StackBuilder.Basics
             boxPropClone.Name = boxProp.Name;
             boxPropClone.Description = boxProp.Description;
             boxPropClone.SetAllColors(boxProp.Colors);
+            boxPropClone.ShowTape = boxProp.ShowTape;
+            boxPropClone.TapeWidth = boxProp.TapeWidth;
+            boxPropClone.TapeColor = boxProp.TapeColor;
             // insert in list
             _typeList.Add(boxPropClone);
             // notify listeners
@@ -356,6 +359,22 @@ namespace TreeDim.StackBuilder.Basics
             return bundle;
         }
 
+        public CylinderProperties CreateNewCylinder(CylinderProperties cyl)
+        {
+            // cylinder
+            CylinderProperties cylinder = new CylinderProperties(this
+                , cyl.Name, cyl.Description
+                , cyl.RadiusOuter, cyl.RadiusInner, cyl.Height
+                , cyl.Weight
+                , cyl.ColorTop, cyl.ColorWallOuter, cyl.ColorWallInner);
+            // insert in list
+            _typeList.Add(cylinder);
+            // notify listeners
+            NotifyOnNewTypeCreated(cylinder);
+            Modify();
+            return cylinder;
+        }
+
         public CylinderProperties CreateNewCylinder(
             string name, string description
             , double radiusOuter, double radiusInner, double height
@@ -418,6 +437,23 @@ namespace TreeDim.StackBuilder.Basics
             Modify();
             return palletCorners;
         }
+        public PalletCapProperties CreateNewPalletCap(PalletCapProperties palletCap)
+        { 
+            // instantiate and initialize
+                PalletCapProperties palletCapClone = new PalletCapProperties(
+                    this,
+                    palletCap.Name, palletCap.Description,
+                    palletCap.Length, palletCap.Width, palletCap.Height,
+                    palletCap.InsideLength, palletCap.InsideWidth, palletCap.InsideHeight,
+                    palletCap.Weight, palletCap.Color);
+                // insert in list
+                _typeList.Add(palletCapClone);
+                // notify listeners
+                NotifyOnNewTypeCreated(palletCapClone);
+                Modify();
+                return palletCapClone;
+        }
+
         public PalletCapProperties CreateNewPalletCap(
             string name, string description,
             double length, double width, double height,
@@ -439,6 +475,24 @@ namespace TreeDim.StackBuilder.Basics
             Modify();
             return palletCap;
         }
+
+        public PalletFilmProperties CreateNewPalletFilm(PalletFilmProperties palletFilm)
+        {
+            // instantiate and initialize
+            PalletFilmProperties palletFilmClone = new PalletFilmProperties(
+                this,
+                palletFilm.Name, palletFilm.Description,
+                palletFilm.UseTransparency, palletFilm.UseHatching,
+                palletFilm.HatchSpacing, palletFilm.HatchAngle,
+                palletFilm.Color);
+            // insert in list
+            _typeList.Add(palletFilmClone);
+            // notify listeners
+            NotifyOnNewTypeCreated(palletFilmClone);
+            Modify();
+            return palletFilmClone; 
+        }
+
         public PalletFilmProperties CreateNewPalletFilm(
             string name, string description,
             bool useTransparency,
