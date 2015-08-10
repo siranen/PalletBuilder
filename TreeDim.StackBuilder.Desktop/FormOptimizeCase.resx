@@ -127,23 +127,27 @@
   <data name="&gt;&gt;nudWallThickness.Parent" xml:space="preserve">
     <value>gbCase</value>
   </data>
-  <data name="&gt;&gt;cbPallet.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lbWallThickness.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;nudWallsHeightDir.Parent" xml:space="preserve">
+    <value>gbCase</value>
   </data>
   <data name="&gt;&gt;chkVerticalOrientationOnly.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;btClose.Name" xml:space="preserve">
+    <value>btClose</value>
+  </data>
   <data name="&gt;&gt;gridSolutions.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="uCtrlOverhangWidth.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="&gt;&gt;btAddCasePalletAnalysis.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;nudMinCaseWidth.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="lbMaxCaseDimensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
   </data>
   <data name="uLengthWallThickness.Text" xml:space="preserve">
     <value>uLength</value>
@@ -167,7 +171,6 @@
   <data name="lbPallet.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="nudNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 20</value>
   </data>
@@ -189,17 +192,14 @@
   <data name="gbCase.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 202</value>
   </data>
-  <data name="gridSolutions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 175</value>
-  </data>
   <data name="lbMinCaseDimensions.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btAddPackPalletAnalysis.Text" xml:space="preserve">
     <value>Add pack/pallet analysis</value>
   </data>
-  <data name="&gt;&gt;nudMinCaseWidth.Name" xml:space="preserve">
-    <value>nudMinCaseWidth</value>
+  <data name="&gt;&gt;cbPallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btSetMaximum.Name" xml:space="preserve">
     <value>btSetMaximum</value>
@@ -207,20 +207,14 @@
   <data name="&gt;&gt;nudMaxCaseHeight.Name" xml:space="preserve">
     <value>nudMaxCaseHeight</value>
   </data>
-  <data name="&gt;&gt;statusStripDef.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="nudWallsWidthDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>246, 81</value>
   </data>
-  <data name="&gt;&gt;nudWallsHeightDir.Parent" xml:space="preserve">
-    <value>gbCase</value>
+  <data name="lbNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 13</value>
   </data>
   <data name="btOptimize.Text" xml:space="preserve">
     <value>Optimize</value>
-  </data>
-  <data name="&gt;&gt;uCtrlPalletHeight.Name" xml:space="preserve">
-    <value>uCtrlPalletHeight</value>
   </data>
   <data name="&gt;&gt;gridSolutions.Name" xml:space="preserve">
     <value>gridSolutions</value>
@@ -228,11 +222,8 @@
   <data name="uCtrlOverhangLength.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lbPallet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
-  </data>
-  <data name="cbPallet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 21</value>
+  <data name="btOptimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 65</value>
@@ -273,8 +264,8 @@
   <data name="&gt;&gt;nudWallThickness.Name" xml:space="preserve">
     <value>nudWallThickness</value>
   </data>
-  <data name="&gt;&gt;lbBoxDimensions.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="gbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 107</value>
   </data>
   <data name="groupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -282,8 +273,8 @@
   <data name="lbMaxCaseDimensions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;splitContainerCasePallet.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="uLengthWallThickness.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 110</value>
   </data>
   <data name="&gt;&gt;statusStripDef.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -306,14 +297,17 @@
   <data name="&gt;&gt;lbWalls.Name" xml:space="preserve">
     <value>lbWalls</value>
   </data>
-  <data name="gbPallet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 107</value>
+  <data name="&gt;&gt;btAddCasePalletAnalysis.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel1.Parent" xml:space="preserve">
+    <value>splitContainerCasePallet</value>
   </data>
   <data name="&gt;&gt;btAddCasePalletAnalysis.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="nudWallsLengthDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 81</value>
+  <data name="&gt;&gt;lbHeight.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="btClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -327,44 +321,29 @@
   <data name="uLengthWallThickness.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Overhang/Underhang (both side cumulated)</value>
-  </data>
-  <data name="toolStripStatusLabelDef.Text" xml:space="preserve">
-    <value>toolStripStatusLabelDef</value>
-  </data>
   <data name="chkVerticalOrientationOnly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btSetMinimum.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 21</value>
   </data>
-  <data name="uCtrlOverhangWidth.Text" xml:space="preserve">
-    <value>Width</value>
-  </data>
   <data name="&gt;&gt;gbPallet.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="statusStripDef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 22</value>
   </data>
   <data name="&gt;&gt;lbLength.Name" xml:space="preserve">
     <value>lbLength</value>
   </data>
-  <data name="&gt;&gt;btAddCasePalletAnalysis.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;statusStripDef.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="nudMinCaseWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="graphCtrlBoxesLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 159</value>
   </data>
   <data name="&gt;&gt;uCtrlOverhangWidth.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="cbBoxes.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="lbBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -381,8 +360,8 @@
   <data name="&gt;&gt;cbPallet.Parent" xml:space="preserve">
     <value>gbPallet</value>
   </data>
-  <data name="graphCtrlBoxesLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 159</value>
+  <data name="lbPalletDimensions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;btAddPackPalletAnalysis.Name" xml:space="preserve">
     <value>btAddPackPalletAnalysis</value>
@@ -405,9 +384,6 @@
   <data name="&gt;&gt;nudMaxCaseHeight.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="lbPalletDimensions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;nudWallsLengthDir.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -429,6 +405,9 @@
   <data name="&gt;&gt;lbHeight.Name" xml:space="preserve">
     <value>lbHeight</value>
   </data>
+  <data name="lbWalls.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;lbWallThickness.Name" xml:space="preserve">
     <value>lbWallThickness</value>
   </data>
@@ -444,9 +423,6 @@
   <data name="uCtrlOverhangWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 38</value>
   </data>
-  <data name="lbPalletDimensions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
-  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
   </data>
@@ -456,11 +432,14 @@
   <data name="btSetMinimum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbWalls.Text" xml:space="preserve">
-    <value>Number of walls</value>
+  <data name="&gt;&gt;cbPallet.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;nudMinCaseLength.Parent" xml:space="preserve">
-    <value>gbCase</value>
+  <data name="&gt;&gt;nudWallSurfaceMass.Name" xml:space="preserve">
+    <value>nudWallSurfaceMass</value>
+  </data>
+  <data name="&gt;&gt;graphCtrlBoxesLayout.Type" xml:space="preserve">
+    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btAddPackPalletAnalysis.Parent" xml:space="preserve">
     <value>$this</value>
@@ -473,6 +452,9 @@
   </data>
   <data name="lbBoxDimensions.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbBoxDimensions.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="nudMaxCaseHeight.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -492,14 +474,14 @@
   <data name="&gt;&gt;toolStripStatusLabelDef.Name" xml:space="preserve">
     <value>toolStripStatusLabelDef</value>
   </data>
+  <data name="&gt;&gt;nudMinCaseHeight.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="&gt;&gt;nudMaxCaseLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="nudWallThickness.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;nudWallsHeightDir.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -516,14 +498,8 @@
   <data name="btAddPackPalletAnalysis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="&gt;&gt;lbWalls.Parent" xml:space="preserve">
-    <value>gbCase</value>
-  </data>
   <data name="uLengthWallThickness.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="lbWallThickness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 110</value>
   </data>
   <data name="btAddCasePalletAnalysis.Location" type="System.Drawing.Point, System.Drawing">
     <value>387, 744</value>
@@ -534,23 +510,20 @@
   <data name="&gt;&gt;lbWallThickness.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btSetMinimum.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="gridSolutions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;nudWallsHeightDir.Name" xml:space="preserve">
+    <value>nudWallsHeightDir</value>
+  </data>
+  <data name="&gt;&gt;nudMinCaseHeight.Name" xml:space="preserve">
+    <value>nudMinCaseHeight</value>
   </data>
   <data name="nudWallSurfaceMass.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 130</value>
   </data>
-  <data name="&gt;&gt;gbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lbMaxCaseDimensions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;cbBoxes.Parent" xml:space="preserve">
-    <value>groupBox</value>
   </data>
   <data name="chkVerticalOrientationOnly.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 84</value>
@@ -561,8 +534,8 @@
   <data name="&gt;&gt;chkVerticalOrientationOnly.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="nudWallsHeightDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 81</value>
+  <data name="lbWallThickness.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 110</value>
   </data>
   <data name="uCtrlOverhangWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 20</value>
@@ -570,14 +543,17 @@
   <data name="&gt;&gt;cbPallet.Name" xml:space="preserve">
     <value>cbPallet</value>
   </data>
+  <data name="&gt;&gt;nudMinCaseWidth.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
   <data name="lbPallet.Text" xml:space="preserve">
     <value>Pallet</value>
   </data>
   <data name="&gt;&gt;btClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btOptimize.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="uCtrlOverhangLength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 15</value>
   </data>
   <data name="&gt;&gt;uSurfaceMassCase.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -587,6 +563,9 @@
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbWallThickness.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;nudWallsLengthDir.Parent" xml:space="preserve">
     <value>gbCase</value>
@@ -615,9 +594,6 @@
   <data name="&gt;&gt;uSurfaceMassCase.Parent" xml:space="preserve">
     <value>gbCase</value>
   </data>
-  <data name="&gt;&gt;uSurfaceMassCase.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lbMaxCaseDimensions.Text" xml:space="preserve">
     <value>Max. case dimensions</value>
   </data>
@@ -630,8 +606,14 @@
   <data name="gbCase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;btSetMinimum.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="lbBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Width</value>
   </data>
   <data name="lbPallet.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 19</value>
@@ -645,20 +627,20 @@
   <data name="lbHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;lbNumber.Name" xml:space="preserve">
+    <value>lbNumber</value>
+  </data>
   <data name="lbMaxCaseDimensions.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="lbBox.Text" xml:space="preserve">
     <value>Box</value>
   </data>
-  <data name="gridSolutions.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
   <data name="lbBoxDimensions.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 13</value>
   </data>
-  <data name="lbPallet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btSetMinimum.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;lbPalletDimensions.Name" xml:space="preserve">
     <value>lbPalletDimensions</value>
@@ -669,8 +651,8 @@
   <data name="nudWallsWidthDir.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
   </data>
-  <data name="btSetMinimum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 33</value>
+  <data name="gridSolutions.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
   <data name="uSurfaceMassCase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -702,8 +684,8 @@
   <data name="nudMinCaseHeight.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="lbSurfaceMass.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="toolStripStatusLabelDef.Text" xml:space="preserve">
+    <value>toolStripStatusLabelDef</value>
   </data>
   <data name="nudWallsHeightDir.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -747,8 +729,8 @@
   <data name="groupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 108</value>
   </data>
-  <data name="&gt;&gt;splitContainerCasePallet.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="gbPallet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="nudMinCaseLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 33</value>
@@ -762,11 +744,17 @@
   <data name="groupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="uSurfaceMassCase.Text" xml:space="preserve">
+    <value>uSurfaceMass</value>
+  </data>
+  <data name="nudMinCaseLength.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="graphCtrlPallet.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lbMaxCaseDimensions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
+  <data name="lbWalls.Text" xml:space="preserve">
+    <value>Number of walls</value>
   </data>
   <data name="&gt;&gt;uCtrlOverhangLength.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -789,17 +777,23 @@
   <data name="gbCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>574, 155</value>
   </data>
+  <data name="&gt;&gt;btSetMinimum.Name" xml:space="preserve">
+    <value>btSetMinimum</value>
+  </data>
   <data name="nudMaxCaseHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>317, 57</value>
   </data>
   <data name="&gt;&gt;uLengthWallThickness.Parent" xml:space="preserve">
     <value>gbCase</value>
   </data>
+  <data name="&gt;&gt;lbBox.Name" xml:space="preserve">
+    <value>lbBox</value>
+  </data>
   <data name="lbSurfaceMass.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
   </data>
-  <data name="uCtrlOverhangWidth.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+  <data name="&gt;&gt;lbNumber.Parent" xml:space="preserve">
+    <value>groupBox</value>
   </data>
   <data name="&gt;&gt;splitContainerCasePallet.Parent" xml:space="preserve">
     <value>$this</value>
@@ -813,8 +807,8 @@
   <data name="&gt;&gt;nudWallSurfaceMass.Parent" xml:space="preserve">
     <value>gbCase</value>
   </data>
-  <data name="&gt;&gt;lbNumber.Parent" xml:space="preserve">
-    <value>groupBox</value>
+  <data name="uCtrlOverhangWidth.Text" xml:space="preserve">
+    <value>Width</value>
   </data>
   <data name="&gt;&gt;lbBoxDimensions.Name" xml:space="preserve">
     <value>lbBoxDimensions</value>
@@ -831,11 +825,14 @@
   <data name="lbSurfaceMass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 13</value>
+  <data name="&gt;&gt;lbMinCaseDimensions.ZOrder" xml:space="preserve">
+    <value>22</value>
   </data>
-  <data name="lbLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+  <data name="&gt;&gt;lbWalls.Parent" xml:space="preserve">
+    <value>gbCase</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;lbWallThickness.Parent" xml:space="preserve">
     <value>gbCase</value>
@@ -843,17 +840,17 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;lbHeight.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="lbWalls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
+  <data name="&gt;&gt;gridSolutions.Type" xml:space="preserve">
+    <value>SourceGrid.Grid, SourceGrid, Version=4.30.5611.24765, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
   </data>
   <data name="&gt;&gt;uCtrlPalletHeight.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lbPallet.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="nudWallsLengthDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 81</value>
   </data>
   <data name="&gt;&gt;groupBox.Name" xml:space="preserve">
     <value>groupBox</value>
@@ -867,14 +864,17 @@
   <data name="&gt;&gt;gbPallet.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
   <data name="&gt;&gt;lbWalls.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="lbSurfaceMass.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbLength.Text" xml:space="preserve">
     <value>Length</value>
+  </data>
+  <data name="lbWallThickness.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;gbCase.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -887,6 +887,12 @@
   </data>
   <data name="gbPallet.Text" xml:space="preserve">
     <value>Pallet</value>
+  </data>
+  <data name="nudMinCaseWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;nudMinCaseWidth.Name" xml:space="preserve">
+    <value>nudMinCaseWidth</value>
   </data>
   <data name="toolStripStatusLabelDef.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 17</value>
@@ -908,9 +914,6 @@
   </data>
   <data name="&gt;&gt;splitContainerCasePallet.Panel2.Parent" xml:space="preserve">
     <value>splitContainerCasePallet</value>
-  </data>
-  <data name="uCtrlPalletHeight.Text" xml:space="preserve">
-    <value>Maximum pallet height</value>
   </data>
   <data name="&gt;&gt;uCtrlPalletHeight.Parent" xml:space="preserve">
     <value>gbPallet</value>
@@ -942,23 +945,23 @@
   <data name="&gt;&gt;groupBox.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;chkVerticalOrientationOnly.Name" xml:space="preserve">
-    <value>chkVerticalOrientationOnly</value>
+  <data name="lbBoxDimensions.Text" xml:space="preserve">
+    <value>(box dimensions)</value>
+  </data>
+  <data name="&gt;&gt;nudWallsLengthDir.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;lbBoxDimensions.Parent" xml:space="preserve">
     <value>groupBox</value>
   </data>
-  <data name="nudMaxCaseLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 57</value>
-  </data>
   <data name="btSetMaximum.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;lbMinCaseDimensions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbPalletDimensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
   </data>
-  <data name="lbBoxDimensions.Text" xml:space="preserve">
-    <value>(box dimensions)</value>
+  <data name="&gt;&gt;uSurfaceMassCase.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btOptimize.Location" type="System.Drawing.Point, System.Drawing">
     <value>497, 363</value>
@@ -996,26 +999,17 @@
   <data name="&gt;&gt;uCtrlPalletHeight.Type" xml:space="preserve">
     <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="uLengthWallThickness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 110</value>
-  </data>
   <data name="uCtrlPalletHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 62</value>
   </data>
   <data name="lbSurfaceMass.Text" xml:space="preserve">
     <value>Surface mass</value>
   </data>
-  <data name="&gt;&gt;btAddPackPalletAnalysis.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;lbNumber.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;cbPallet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="uCtrlOverhangLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 20</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Overhang/Underhang (both side cumulated)</value>
   </data>
   <data name="gridSolutions.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1029,8 +1023,8 @@
   <data name="uSurfaceMassCase.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="&gt;&gt;nudWallsWidthDir.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;uCtrlPalletHeight.Name" xml:space="preserve">
+    <value>uCtrlPalletHeight</value>
   </data>
   <data name="lbNumber.Text" xml:space="preserve">
     <value>Number of boxes per case</value>
@@ -1041,9 +1035,6 @@
   <data name="&gt;&gt;nudWallsWidthDir.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="uCtrlOverhangLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 15</value>
-  </data>
   <data name="btOptimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1053,20 +1044,20 @@
   <data name="groupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 27</value>
   </data>
-  <data name="uSurfaceMassCase.Text" xml:space="preserve">
-    <value>uSurfaceMass</value>
+  <data name="&gt;&gt;lbMinCaseDimensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbMaxCaseDimensions.Parent" xml:space="preserve">
-    <value>gbCase</value>
+  <data name="uCtrlOverhangLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 20</value>
+  </data>
+  <data name="btSetMinimum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 33</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Type" xml:space="preserve">
     <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;nudMinCaseHeight.Parent" xml:space="preserve">
     <value>gbCase</value>
-  </data>
-  <data name="btOptimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="chkVerticalOrientationOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1095,14 +1086,14 @@
   <data name="&gt;&gt;nudWallsHeightDir.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbWalls.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="lbPallet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="splitContainerCasePallet.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 579</value>
   </data>
-  <data name="btSetMaximum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 57</value>
+  <data name="gridSolutions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;groupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1110,14 +1101,14 @@
   <data name="&gt;&gt;lbPalletDimensions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainerCasePallet.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cbBoxes.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 21</value>
   </data>
   <data name="lbWalls.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="nudWallsHeightDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 81</value>
   </data>
   <data name="uSurfaceMassCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1125,14 +1116,20 @@
   <data name="graphCtrlBoxesLayout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="&gt;&gt;lbMaxCaseDimensions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="statusStripDef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 22</value>
   </data>
   <data name="uSurfaceMassCase.Location" type="System.Drawing.Point, System.Drawing">
     <value>245, 134</value>
   </data>
-  <data name="&gt;&gt;btClose.Name" xml:space="preserve">
-    <value>btClose</value>
+  <data name="&gt;&gt;btAddPackPalletAnalysis.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;nudWallsWidthDir.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;nudMinCaseLength.Parent" xml:space="preserve">
+    <value>gbCase</value>
   </data>
   <data name="&gt;&gt;nudMinCaseHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1149,17 +1146,14 @@
   <data name="&gt;&gt;nudNumber.Name" xml:space="preserve">
     <value>nudNumber</value>
   </data>
-  <data name="&gt;&gt;uCtrlOverhangWidth.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
   <data name="statusStripDef.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="&gt;&gt;cbBoxes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;graphCtrlBoxesLayout.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="cbBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lbBoxDimensions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1176,11 +1170,8 @@
   <data name="nudMaxCaseWidth.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Width</value>
-  </data>
-  <data name="lbMinCaseDimensions.Text" xml:space="preserve">
-    <value>Min. case dimensions</value>
+  <data name="nudMaxCaseLength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 57</value>
   </data>
   <data name="lbWallThickness.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1200,8 +1191,8 @@
   <data name="lbBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 20</value>
   </data>
-  <data name="&gt;&gt;nudWallSurfaceMass.Name" xml:space="preserve">
-    <value>nudWallSurfaceMass</value>
+  <data name="&gt;&gt;cbBoxes.Parent" xml:space="preserve">
+    <value>groupBox</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Name" xml:space="preserve">
     <value>graphCtrlPallet</value>
@@ -1209,8 +1200,8 @@
   <data name="&gt;&gt;uCtrlOverhangLength.Type" xml:space="preserve">
     <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="lbWallThickness.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lbMinCaseDimensions.Text" xml:space="preserve">
+    <value>Min. case dimensions</value>
   </data>
   <data name="splitContainerCasePallet.Size" type="System.Drawing.Size, System.Drawing">
     <value>584, 159</value>
@@ -1221,8 +1212,8 @@
   <data name="btAddCasePalletAnalysis.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="nudMinCaseLength.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lbBoxDimensions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1236,17 +1227,17 @@
   <data name="btAddPackPalletAnalysis.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 23</value>
   </data>
-  <data name="&gt;&gt;lbLength.Parent" xml:space="preserve">
-    <value>gbCase</value>
+  <data name="&gt;&gt;nudMaxCaseHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;uLengthWallThickness.Name" xml:space="preserve">
     <value>uLengthWallThickness</value>
   </data>
-  <data name="&gt;&gt;lbBox.Name" xml:space="preserve">
-    <value>lbBox</value>
+  <data name="&gt;&gt;lbMaxCaseDimensions.Parent" xml:space="preserve">
+    <value>gbCase</value>
   </data>
-  <data name="&gt;&gt;nudWallsLengthDir.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="lbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
   </data>
   <data name="btAddCasePalletAnalysis.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 23</value>
@@ -1266,8 +1257,8 @@
   <data name="nudMaxCaseLength.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
   </data>
-  <data name="gbPallet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;uCtrlOverhangWidth.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="uCtrlPalletHeight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1278,20 +1269,26 @@
   <data name="&gt;&gt;btAddPackPalletAnalysis.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbNumber.Name" xml:space="preserve">
-    <value>lbNumber</value>
+  <data name="gridSolutions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 175</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>584, 794</value>
   </data>
-  <data name="&gt;&gt;nudWallsHeightDir.Name" xml:space="preserve">
-    <value>nudWallsHeightDir</value>
+  <data name="&gt;&gt;splitContainerCasePallet.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btOptimize.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="uSurfaceMassCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
   </data>
   <data name="nudWallSurfaceMass.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
+  </data>
+  <data name="&gt;&gt;lbMaxCaseDimensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Optimize case dimensions...</value>
@@ -1302,11 +1299,8 @@
   <data name="&gt;&gt;btAddCasePalletAnalysis.Name" xml:space="preserve">
     <value>btAddCasePalletAnalysis</value>
   </data>
-  <data name="btSetMinimum.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="cbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 21</value>
   </data>
   <data name="gridSolutions.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 398</value>
@@ -1323,8 +1317,8 @@
   <data name="&gt;&gt;nudWallThickness.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;nudMinCaseHeight.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;gbPallet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lbBoxDimensions.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 44</value>
@@ -1353,8 +1347,8 @@
   <data name="uCtrlOverhangLength.Text" xml:space="preserve">
     <value>Length</value>
   </data>
-  <data name="&gt;&gt;nudMinCaseHeight.Name" xml:space="preserve">
-    <value>nudMinCaseHeight</value>
+  <data name="uCtrlPalletHeight.Text" xml:space="preserve">
+    <value>Maximum pallet height</value>
   </data>
   <data name="&gt;&gt;lbSurfaceMass.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1362,20 +1356,20 @@
   <data name="&gt;&gt;nudMinCaseLength.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;chkVerticalOrientationOnly.Name" xml:space="preserve">
+    <value>chkVerticalOrientationOnly</value>
+  </data>
   <data name="lbLength.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbLength.Parent" xml:space="preserve">
+    <value>gbCase</value>
   </data>
   <data name="&gt;&gt;nudMaxCaseWidth.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="uCtrlPalletHeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="&gt;&gt;lbMinCaseDimensions.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;nudMaxCaseHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbWalls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
   </data>
   <data name="lbBoxDimensions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1392,14 +1386,14 @@
   <data name="&gt;&gt;lbPalletDimensions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lbNumber.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 63</value>
   </data>
-  <data name="&gt;&gt;splitContainerCasePallet.Panel1.Parent" xml:space="preserve">
-    <value>splitContainerCasePallet</value>
+  <data name="uCtrlPalletHeight.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1410,26 +1404,35 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="graphCtrlPallet.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 159</value>
-  </data>
-  <data name="&gt;&gt;gridSolutions.Type" xml:space="preserve">
-    <value>SourceGrid.Grid, SourceGrid, Version=4.30.5611.24765, Culture=neutral, PublicKeyToken=df6f5e538749e85d</value>
   </data>
   <data name="lbHeight.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="lbLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="btSetMaximum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 57</value>
+  </data>
   <data name="uCtrlOverhangLength.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="&gt;&gt;btSetMinimum.Name" xml:space="preserve">
-    <value>btSetMinimum</value>
+  <data name="&gt;&gt;splitContainerCasePallet.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="statusStripDef.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 689</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>fr-FR</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>73</value>

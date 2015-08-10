@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,149 +59,171 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="btAddSolution.Text" xml:space="preserve">
-		<value>ケースやパレットの分析を作成する</value>
-	</data>
-	<data name="btClose.Text" xml:space="preserve">
-		<value>閉じる</value>
-	</data>
-	<data name="groupBox.Text" xml:space="preserve">
-		<value>ボックス（内積）</value>
-	</data>
-	<data name="gbPallet.Text" xml:space="preserve">
-		<value>パレット</value>
-	</data>
-	<data name="lbNumber.Text" xml:space="preserve">
-		<value>ケース当たり箱数</value>
-	</data>
-	<data name="label3.Text" xml:space="preserve">
-		<value>幅</value>
-	</data>
-	<data name="lbMinCaseDimensions.Text" xml:space="preserve">
-		<value>最小ケース寸法（mm）</value>
-	</data>
-	<data name="btSetMinimum.Text" xml:space="preserve">
-		<value>最小値を設定</value>
-	</data>
-	<data name="lbLength.Text" xml:space="preserve">
-		<value>長さ</value>
-	</data>
-	<data name="btOptimize.Text" xml:space="preserve">
-		<value>最適化</value>
-	</data>
-	<data name="$this.Text" xml:space="preserve">
-		<value>ケースの寸法を最適化する...</value>
-	</data>
-	<data name="btSetMaximum.Text" xml:space="preserve">
-		<value>最大値を設定</value>
-	</data>
-	<data name="lbWallThickness.Text" xml:space="preserve">
-		<value>壁の厚さ（mm）</value>
-	</data>
-	<data name="lbBoxDimensions.Text" xml:space="preserve">
-		<value>ケースやパレットの分析を作成する</value>
-	</data>
-	<data name="lbHeight.Text" xml:space="preserve">
-		<value>高さ</value>
-	</data>
-	<data name="lbWalls.Text" xml:space="preserve">
-		<value>側面の数</value>
-	</data>
-	<data name="toolStripStatusLabelDef.Text" xml:space="preserve">
-		<value>toolStripStatusLabelDef</value>
-	</data>
-	<data name="lbPalletHeight.Text" xml:space="preserve">
-		<value>最大パレットの高さ（mm）</value>
-	</data>
-	<data name="lbBox.Text" xml:space="preserve">
-		<value>ボックス</value>
-	</data>
-	<data name="statusStripDef.Text" xml:space="preserve">
-		<value>statusStripDef</value>
-	</data>
-	<data name="lbPallet.Text" xml:space="preserve">
-		<value>パレット</value>
-	</data>
-	<data name="gbCase.Text" xml:space="preserve">
-		<value>ケースの制約</value>
-	</data>
-	<data name="lbMaxCaseDimensions.Text" xml:space="preserve">
-		<value>最大ケース寸法（mm）</value>
-	</data>
-	<data name="lbPalletDimensions.Text" xml:space="preserve">
-		<value>（寸法）</value>
-	</data>
-	<data name="chkVerticalOrientationOnly.Text" xml:space="preserve">
-		<value>箱は垂直方向のみ使用する</value>
-	</data>
-	<data name="uSurfaceMassCase.Text" xml:space="preserve">
-		<value>uSurfaceMass</value>
-	</data>
-	<data name="lbSurfaceMass.Text" xml:space="preserve">
-		<value>面の集まり</value>
-	</data>
-	<data name="uLengthWallThickness.Text" xml:space="preserve">
-		<value>uLength</value>
-	</data>
-	<data name="uLengthPalletHeight.Text" xml:space="preserve">
-		<value>uLength</value>
-	</data>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btClose.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkVerticalOrientationOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="chkVerticalOrientationOnly.Text" xml:space="preserve">
+    <value>箱は垂直方向のみ使用する</value>
+  </data>
+  <data name="lbNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="lbNumber.Text" xml:space="preserve">
+    <value>ケース当たり箱数</value>
+  </data>
+  <data name="lbBoxDimensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="lbBoxDimensions.Text" xml:space="preserve">
+    <value>ケースやパレットの分析を作成する</value>
+  </data>
+  <data name="lbBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lbBox.Text" xml:space="preserve">
+    <value>ボックス</value>
+  </data>
+  <data name="groupBox.Text" xml:space="preserve">
+    <value>ボックス（内積）</value>
+  </data>
+  <data name="lbSurfaceMass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lbSurfaceMass.Text" xml:space="preserve">
+    <value>面の集まり</value>
+  </data>
+  <data name="btSetMaximum.Text" xml:space="preserve">
+    <value>最大値を設定</value>
+  </data>
+  <data name="btSetMinimum.Text" xml:space="preserve">
+    <value>最小値を設定</value>
+  </data>
+  <data name="lbWallThickness.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lbWallThickness.Text" xml:space="preserve">
+    <value>壁の厚さ（mm）</value>
+  </data>
+  <data name="lbHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
+  </data>
+  <data name="lbHeight.Text" xml:space="preserve">
+    <value>高さ</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>幅</value>
+  </data>
+  <data name="lbLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
+  </data>
+  <data name="lbLength.Text" xml:space="preserve">
+    <value>長さ</value>
+  </data>
+  <data name="lbWalls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lbWalls.Text" xml:space="preserve">
+    <value>側面の数</value>
+  </data>
+  <data name="lbMaxCaseDimensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="lbMaxCaseDimensions.Text" xml:space="preserve">
+    <value>最大ケース寸法（mm）</value>
+  </data>
+  <data name="lbMinCaseDimensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="lbMinCaseDimensions.Text" xml:space="preserve">
+    <value>最小ケース寸法（mm）</value>
+  </data>
+  <data name="gbCase.Text" xml:space="preserve">
+    <value>ケースの制約</value>
+  </data>
+  <data name="lbPalletDimensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lbPalletDimensions.Text" xml:space="preserve">
+    <value>（寸法）</value>
+  </data>
+  <data name="lbPallet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lbPallet.Text" xml:space="preserve">
+    <value>パレット</value>
+  </data>
+  <data name="gbPallet.Text" xml:space="preserve">
+    <value>パレット</value>
+  </data>
+  <data name="btOptimize.Text" xml:space="preserve">
+    <value>最適化</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ケースの寸法を最適化する...</value>
+  </data>
 </root>

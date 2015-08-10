@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Security.Permissions;
 
 using treeDiM.StackBuilder.ExcelReader;
 
@@ -53,7 +55,9 @@ namespace TreeDim.StackBuilder.Desktop
         private void Reload(object sender, EventArgs e)
         {
             string filePath = excelFileSelect.FileName;
-            if (treeDiM.StackBuilder.ExcelReader.ExcelDataReader.LoadFile(filePath, ref _listTypes)) { }
+            try {  if (treeDiM.StackBuilder.ExcelReader.ExcelDataReader.LoadFile(filePath, ref _listTypes)) { } }
+            catch (System.Security.SecurityException ex)    {   MessageBox.Show(ex.Message);    }
+            catch (Exception ex)                            {   MessageBox.Show(ex.Message);    }
 
             if (_listTypes.Count > 0)
             {
@@ -82,6 +86,7 @@ namespace TreeDim.StackBuilder.Desktop
             else
                 tabControlLibrary.Hide();
         }
+
         private void onTabPageSelected(object sender, TabControlEventArgs e)
         {
             listBoxItem.Items.Clear();

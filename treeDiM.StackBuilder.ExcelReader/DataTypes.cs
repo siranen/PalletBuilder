@@ -94,7 +94,7 @@ namespace treeDiM.StackBuilder.ExcelReader
         private double[] outerDimensions = new double[3];
         private double[] innerDimensions = new double[3];
     }
-#endregion
+    #endregion
     #region DataBox
     public class DataBox : DataType
     {
@@ -227,8 +227,8 @@ namespace treeDiM.StackBuilder.ExcelReader
         public DataPalletFilm(int iRow, DataRow dtRow)
             : base(iRow, dtRow)
         {
-            Transparency = (1 == (int)dtRow[2]);
-            Hatching = (1 == (int)dtRow[3]);
+            Transparency = (1.0 == (double)dtRow[2]);
+            Hatching = (1.0 == (double)dtRow[3]);
             Spacing = (double)dtRow[4];
             Angle = (double)dtRow[5];
         }
@@ -241,6 +241,10 @@ namespace treeDiM.StackBuilder.ExcelReader
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(base.ToString());
+            sb.AppendLine(string.Format("Transparency     = {0}", Transparency));
+            sb.AppendLine(string.Format("Hatching         = {0}", Hatching));
+            sb.AppendLine(string.Format("Spacing          = {0}", Spacing));
+            sb.AppendLine(string.Format("Weight           = {0}", Angle));
             return sb.ToString();
         }
     }

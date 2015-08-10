@@ -22,7 +22,9 @@
         <File Source="..\TreeDim.Stackbuilder.Desktop\Bin\Release\CrashReporter.NET.dll" Checksum="yes" />
         <File Source="..\TreeDim.Stackbuilder.Desktop\Bin\Release\iTextSharp.dll" Checksum="yes" />
         <File Source="..\TreeDim.Stackbuilder.Desktop\Bin\Release\Cureos.Measures.dll" Checksum="yes" />
-      </Component>
+        <File Source="..\TreeDim.Stackbuilder.Desktop\Bin\Release\Excel.dll" Checksum="yes"/>
+        <File Source="..\TreeDim.Stackbuilder.Desktop\Bin\Release\ICSharpCode.SharpZipLib.dll" Checksum="yes"/>
+       </Component>
       <Component Id="Application" Guid="{58548AED-E30F-4b0c-A910-C94BE00640C8}">
         <File Source="..\TreeDim.StackBuilder.Desktop\Bin\Release\TreeDim.StackBuilder.Desktop.exe" KeyPath="yes" Checksum="yes" />
         <!--File type association : begin-->
@@ -42,6 +44,7 @@
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Bin\Release\TreeDim.StackBuilder.XmlFileProcessor.exe" Checksum="yes" />
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Bin\Release\TreeDim.StackBuilder.XmlFileProcessor.exe.config" Checksum="yes" />
         <File Source="..\TreeDim.StackBuilder.Desktop\Bin\Release\TreeDim.StackBuilder.ColladaExporter.dll" Checksum="yes" />
+        <File Source="..\TreeDim.Stackbuilder.Desktop\Bin\Release\treeDiM.StackBuilder.ExcelReader.dll" Checksum="yes"/>
         <File Id="Plossum_CommandLine.dll" Source="..\TreeDim.StackBuilder.XmlFileProcessor\Bin\Release\Plossum CommandLine.dll" Checksum="yes" />
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Bin\Release\C5.dll" Checksum="yes" />
         <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\interop.schemalibraryclass.dll" Checksum="yes"/>
@@ -52,6 +55,7 @@
         <util:XmlFile Id="SetGLGELibPath" File="[BIN]TreeDim.StackBuilder.Desktop.exe.config" Action="setValue" ElementPath="/configuration/applicationSettings/TreeDim.StackBuilder.ColladaExporter.Properties.Settings/setting[\[]@name='GLGEFilePath'[\]]/value" Value="[GLGE]glge-compiled-min.js" />
         <util:XmlFile Id="SetGLGEHTMLPath" File="[BIN]TreeDim.StackBuilder.Desktop.exe.config" Action="setValue" ElementPath="/configuration/applicationSettings/TreeDim.StackBuilder.ColladaExporter.Properties.Settings/setting[\[]@name='HTMLFilePath'[\]]/value" Value="[GLGE]glge.html" />
         <util:XmlFile Id="SetShowLogConsole" File="[BIN]TreeDim.StackBuilder.Desktop.exe.config" Action="setValue" ElementPath="/configuration/userSettings/TreeDim.StackBuilder.Desktop.Properties.Settings/setting[\[]@name='ShowLogConsole'[\]]/value" Value="False" />
+        <util:XmlFile Id="SetExcelLibraryPath" File="[BIN]TreeDim.StackBuilder.Desktop.exe.config" Action="setValue" ElementPath="/configuration/userSettings/TreeDim.StackBuilder.Desktop.Properties.Settings/setting[\[]@name='ExcelLibraryPath'[\]]/value" Value="[SAMPLES]SampleBook.xlsx"/>
         <!--update config file-->
       </Component>
       <Component Id="AutoUpdater" Guid="{AD812321-44AD-4213-8B16-8A641CB4D23F}">
@@ -160,6 +164,10 @@
       <Component Id="Samples" Guid="{E46693C3-7E18-4278-9DEE-8D7C5ED96552}">
         <File Source="..\Samples\Matches.stb" />
         <File Source="..\Samples\Case_44_28_29.stb" />
+        <!-- Excel sample library-->
+        <File Source="..\Samples\SampleBook.xlsx">
+          <Permission User="Everyone" GenericAll="yes" />
+        </File>
         <!-- Xml file processor samples -->
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Samples\Input1.xml" />
         <File Source="..\TreeDim.StackBuilder.XmlFileProcessor\Samples\Input2.xml" />
