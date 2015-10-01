@@ -7,13 +7,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Desktop.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewInterlayer : Form, IDrawingContainer
     {

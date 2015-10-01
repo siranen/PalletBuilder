@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class DockContentLogConsole : DockContent
     {

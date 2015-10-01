@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 #endregion
 
-namespace TreeDim.AutoUpdater
+namespace treeDiM.AutoUpdater
 {
     public class Updater
     {
@@ -35,7 +35,7 @@ namespace TreeDim.AutoUpdater
                 {
                     string processToEnd = Path.GetFileName(Application.ExecutablePath);
                     string postProcess = Application.ExecutablePath;
-                    string updater = Path.Combine(Application.StartupPath, "TreeDim.Update.exe");
+                    string updater = Path.Combine(Application.StartupPath, "treeDiM.Update.exe");
                     Updater.installUpdateRestart(_updateInfoList[3], _updateInfoList[4], _resourceDownloadFolder, processToEnd, postProcess, string.Empty, updater);
                     return true;
                 }

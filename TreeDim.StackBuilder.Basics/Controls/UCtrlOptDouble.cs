@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     public partial class UCtrlOptDouble : UserControl
     {

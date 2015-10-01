@@ -7,7 +7,7 @@ using System.IO;
 using System.ComponentModel;
 #endregion
 
-namespace TreeDim.Update
+namespace treeDiM.Update
 {
     public delegate void BytesDownloadedEventHandler(ByteArgs e);
 

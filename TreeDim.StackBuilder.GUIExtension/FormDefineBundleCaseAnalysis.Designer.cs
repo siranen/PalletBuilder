@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension
+﻿namespace treeDiM.StackBuilder.GUIExtension
 {
     partial class FormDefineBundleCaseAnalysis
     {
@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDefineBundleCaseAnalysis));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
             this.gridSolutions = new SourceGrid.Grid();
-            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.gbFlatDim = new System.Windows.Forms.GroupBox();
             this.nudFlatWeight = new System.Windows.Forms.NumericUpDown();
             this.lbWeight = new System.Windows.Forms.Label();
@@ -436,7 +436,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainerHoriz;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
         private SourceGrid.Grid gridSolutions;
         private System.Windows.Forms.GroupBox gbFlatDim;
         private System.Windows.Forms.Label lbWidth;

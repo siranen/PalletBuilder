@@ -73,21 +73,21 @@
       <Project>{8F9BA4D3-D6AF-42A6-B74F-0DF6568C148B}</Project>
       <Name>Sharp3D.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\TreeDim.StackBuilder.Basics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\treeDiM.StackBuilder.Basics.csproj">
       <Project>{444C01D0-53FD-49A1-9D55-267B49161357}</Project>
-      <Name>TreeDim.StackBuilder.Basics</Name>
+      <Name>treeDiM.StackBuilder.Basics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\TreeDim.StackBuilder.Engine.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\treeDiM.StackBuilder.Engine.csproj">
       <Project>{2E646606-052D-4063-9218-1379430B070E}</Project>
-      <Name>TreeDim.StackBuilder.Engine</Name>
+      <Name>treeDiM.StackBuilder.Engine</Name>
     </ProjectReference>
     <ProjectReference Include="..\treeDiM.StackBuilder.Plugin\treeDiM.StackBuilder.Plugin.csproj">
       <Project>{75769E19-2CCC-4DF0-88D9-CBAC14BB6329}</Project>
       <Name>treeDiM.StackBuilder.Plugin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.UserControls\TreeDim.UserControls.csproj">
+    <ProjectReference Include="..\TreeDim.UserControls\treeDiM.UserControls.csproj">
       <Project>{7FF9B713-8D36-4887-BF50-2B9E2B28808D}</Project>
-      <Name>TreeDim.UserControls</Name>
+      <Name>treeDiM.UserControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

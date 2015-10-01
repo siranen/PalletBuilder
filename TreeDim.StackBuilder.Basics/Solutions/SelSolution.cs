@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region Case / pallet selected solution
     public class SelCasePalletSolution : ItemBase

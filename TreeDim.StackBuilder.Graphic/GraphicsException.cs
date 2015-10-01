@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     public class GraphicsException : Exception
     {

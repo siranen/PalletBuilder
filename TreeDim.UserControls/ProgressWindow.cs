@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TreeDim.UserControls
+namespace treeDiM.UserControls
 {
     public partial class ProgressWindow : Form, IProgressCallback
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     public class TruckConstraintSet
     {

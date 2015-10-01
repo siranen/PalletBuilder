@@ -5,7 +5,7 @@ using System.Text;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region CasePalletAnalysis
     public class CasePalletAnalysis : ItemBase

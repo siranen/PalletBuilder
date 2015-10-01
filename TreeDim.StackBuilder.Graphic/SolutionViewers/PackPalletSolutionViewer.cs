@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     public class PackPalletSolutionViewer
     {

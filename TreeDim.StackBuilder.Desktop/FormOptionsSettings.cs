@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormOptionsSettings : GLib.Options.OptionsForm
     {

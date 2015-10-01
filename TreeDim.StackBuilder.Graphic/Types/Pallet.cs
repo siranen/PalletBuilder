@@ -5,10 +5,10 @@ using System.Text;
 using Sharp3D.Math.Core;
 using System.Drawing;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     #region Position
     public struct Position

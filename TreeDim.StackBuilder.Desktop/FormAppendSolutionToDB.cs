@@ -7,11 +7,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Desktop.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     /// <summary>
     /// Form used to append solution to database

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Basics.Properties;
+using treeDiM.StackBuilder.Basics.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     public class PackPalletSolution : IBaseSolution, IComparable
     {

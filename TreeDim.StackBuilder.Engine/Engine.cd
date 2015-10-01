@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TreeDim.StackBuilder.Engine.Layer">
+  <Class Name="treeDiM.StackBuilder.Engine.Layer">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAYAAgAAgIAWAACAgAAgAAAEAlgAAFAAAAACIAQAQ=</HashCode>
       <FileName>Layer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPattern">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPattern">
     <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AABAAAAABAKAAEAAAAgAAAQAACAUAABAAAAAAEAGQAA=</HashCode>
       <FileName>LayerPatterns\LayerPattern.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPatternColumn">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPatternColumn">
     <Position X="5" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAQAAAAQAAAAAAAAAEAEAAA=</HashCode>
       <FileName>LayerPatterns\LayerPatternColumn.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.CasePalletSolver">
+  <Class Name="treeDiM.StackBuilder.Engine.CasePalletSolver">
     <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>BAEAAAAAAgAACEEAAhAAAAAAACqCCAAAAAAAAAAAAAE=</HashCode>
@@ -29,45 +29,45 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPatternInterlocked">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPatternInterlocked">
     <Position X="7.25" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAQAAAAQAAAAAACAAEAEAAA=</HashCode>
       <FileName>LayerPatterns\LayerPatternInterlocked.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPatternSpirale">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPatternSpirale">
     <Position X="9.5" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAQAAAAQAAAAAAAAAEAEAAA=</HashCode>
       <FileName>LayerPatterns\LayerPatternSpirale.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPatternEnlargedSpirale">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPatternEnlargedSpirale">
     <Position X="11.75" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAQAAAAQAAAAAAAAAEAEAAA=</HashCode>
       <FileName>LayerPatterns\LayerPatternEnlargedSpirale.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Basics.TruckAnalysis">
+  <Class Name="treeDiM.StackBuilder.Basics.TruckAnalysis">
     <Position X="0.5" Y="6" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="TreeDim.StackBuilder.Basics.TruckConstraintSet">
+  <Class Name="treeDiM.StackBuilder.Basics.TruckConstraintSet">
     <Position X="0.5" Y="9.75" Width="2.25" />
     <TypeIdentifier />
   </Class>
-  <Class Name="TreeDim.StackBuilder.Basics.TruckSolution">
+  <Class Name="treeDiM.StackBuilder.Basics.TruckSolution">
     <Position X="0.5" Y="12.75" Width="1.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="TreeDim.StackBuilder.Basics.TruckProperties">
+  <Class Name="treeDiM.StackBuilder.Basics.TruckProperties">
     <Position X="3.25" Y="9.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.TruckSolver">
+  <Class Name="treeDiM.StackBuilder.Engine.TruckSolver">
     <Position X="3.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACEAAAAAAAAAAAAiACAAAAAAAAAAAAAA=</HashCode>
@@ -75,28 +75,28 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.PrimeMultiple">
+  <Class Name="treeDiM.StackBuilder.Engine.PrimeMultiple">
     <Position X="8" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAQAAAAAAACAA=</HashCode>
       <FileName>Solvers\CaseOptimizer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.CaseOptimizer">
+  <Class Name="treeDiM.StackBuilder.Engine.CaseOptimizer">
     <Position X="6.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACIBAAAAAAAAEkgQIAAAAAAAAAAABAAAAAAAAAAIE=</HashCode>
       <FileName>Solvers\CaseOptimizer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPatternDiagonale">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPatternDiagonale">
     <Position X="14.25" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAQAAAAQAAAAAACAAEAEAAA=</HashCode>
       <FileName>LayerPatterns\LayerPatternDiagonale.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeDim.StackBuilder.Engine.LayerPatternTrilock">
+  <Class Name="treeDiM.StackBuilder.Engine.LayerPatternTrilock">
     <Position X="16.5" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAQCAAAQAAAAAACAAEAEAAA=</HashCode>

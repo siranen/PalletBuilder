@@ -5,11 +5,11 @@ using System.Text;
 using System.Drawing;
 using System.Diagnostics;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     /// <summary>
     /// This class displays a computed solution using a gdi+ graphics from a control, a memory bitmap....

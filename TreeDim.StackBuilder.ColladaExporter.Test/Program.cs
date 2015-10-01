@@ -7,13 +7,13 @@ using System.IO;
 using log4net;
 using log4net.Config;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.Graphics;
-using TreeDim.StackBuilder.ColladaExporter;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.Graphics;
+using treeDiM.StackBuilder.ColladaExporter;
 #endregion
 
-namespace TreeDim.StackBuilder.ColladaExporter.Test
+namespace treeDiM.StackBuilder.ColladaExporter.Test
 {
     #region Program
     class Program

@@ -7,15 +7,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 using Sharp3D.Math.Core;
 using log4net;
 
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Desktop.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewAnalysisBundle : FormNewBase
     {
@@ -287,7 +287,7 @@ namespace TreeDim.StackBuilder.Desktop
         {
             get
             {
-                string[] patternNames = TreeDim.StackBuilder.Engine.CasePalletSolver.PatternNames;
+                string[] patternNames = treeDiM.StackBuilder.Engine.CasePalletSolver.PatternNames;
                 List<string> listAllowedPatterns = new List<string>();
                 foreach (object itemChecked in checkedListBoxPatterns.CheckedItems)
                 {
@@ -306,7 +306,7 @@ namespace TreeDim.StackBuilder.Desktop
             set
             {
                 // get list of existing patterns
-                List<string> patternNameList = TreeDim.StackBuilder.Engine.CasePalletSolver.PatternNameList;
+                List<string> patternNameList = treeDiM.StackBuilder.Engine.CasePalletSolver.PatternNameList;
                 int iCountAllowedPatterns = 0;
                 string[] vPatternNames = value.Split(',');
                 foreach (string patternName in vPatternNames)

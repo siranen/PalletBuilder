@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class OptionPanelDebugging
     {
@@ -35,8 +35,8 @@
             // chkShowLogConsole
             // 
             resources.ApplyResources(this.chkShowLogConsole, "chkShowLogConsole");
-            this.chkShowLogConsole.Checked = global::TreeDim.StackBuilder.Desktop.Properties.Settings.Default.ShowLogConsole;
-            this.chkShowLogConsole.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::TreeDim.StackBuilder.Desktop.Properties.Settings.Default, "ShowLogConsole", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkShowLogConsole.Checked = global::treeDiM.StackBuilder.Desktop.Properties.Settings.Default.ShowLogConsole;
+            this.chkShowLogConsole.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::treeDiM.StackBuilder.Desktop.Properties.Settings.Default, "ShowLogConsole", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.chkShowLogConsole.Name = "chkShowLogConsole";
             this.chkShowLogConsole.UseVisualStyleBackColor = true;
             this.chkShowLogConsole.CheckedChanged += new System.EventHandler(this.chkShowLogConsole_CheckedChanged);

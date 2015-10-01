@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     public class CylinderPalletConstraintSet
     {

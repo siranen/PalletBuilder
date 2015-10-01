@@ -1,4 +1,4 @@
-﻿namespace TreeDim.UserControls
+﻿namespace treeDiM.UserControls
 {
     partial class ProgressWindow
     {

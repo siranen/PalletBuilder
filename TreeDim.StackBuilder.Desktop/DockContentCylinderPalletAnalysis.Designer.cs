@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class DockContentCylinderPalletAnalysis
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DockContentCylinderPalletAnalysis));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.btSelectSolution = new System.Windows.Forms.Button();
             this.gridSolutions = new SourceGrid.Grid();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).BeginInit();
@@ -99,7 +99,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainerHoriz;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
         private System.Windows.Forms.Button btSelectSolution;
         private SourceGrid.Grid gridSolutions;
     }

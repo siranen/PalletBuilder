@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 using Sharp3D.Math.Core;
 
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     /// <summary>
     /// Used to draw boxes/cases to picture boxes in winforms UIs
@@ -41,8 +41,8 @@ namespace TreeDim.StackBuilder.Graphics
                 case HalfAxis.HAxis.AXIS_Z_P: lengthAxis = HalfAxis.HAxis.AXIS_X_P; widthAxis = HalfAxis.HAxis.AXIS_Y_P; break;
                 default: break;
             }
-            box.LengthAxis = TreeDim.StackBuilder.Basics.HalfAxis.ToVector3D(lengthAxis);
-            box.WidthAxis = TreeDim.StackBuilder.Basics.HalfAxis.ToVector3D(widthAxis);
+            box.LengthAxis = treeDiM.StackBuilder.Basics.HalfAxis.ToVector3D(lengthAxis);
+            box.WidthAxis = treeDiM.StackBuilder.Basics.HalfAxis.ToVector3D(widthAxis);
             // draw box
             graphics.AddBox(box);
             graphics.Flush();

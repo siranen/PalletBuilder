@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class OptionPanelReporting
     {
@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionPanelReporting));
             this.folderBrowserDlg = new System.Windows.Forms.FolderBrowserDialog();
-            this.fileSelectCtrlReportTemplate = new TreeDim.UserControls.FileSelect();
+            this.fileSelectCtrlReportTemplate = new treeDiM.UserControls.FileSelect();
             this.label1 = new System.Windows.Forms.Label();
-            this.fileSelectCompanyLogo = new TreeDim.UserControls.FileSelect();
+            this.fileSelectCompanyLogo = new treeDiM.UserControls.FileSelect();
             this.lbImageSizes = new System.Windows.Forms.Label();
             this.cbImageSizes = new System.Windows.Forms.ComboBox();
             this.lbReportTemplate = new System.Windows.Forms.Label();
@@ -218,7 +218,7 @@
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDlg;
-        private TreeDim.UserControls.FileSelect fileSelectCtrlReportTemplate;
+        private treeDiM.UserControls.FileSelect fileSelectCtrlReportTemplate;
         private System.Windows.Forms.Label label1;
         private UserControls.FileSelect fileSelectCompanyLogo;
         private System.Windows.Forms.Label lbImageSizes;

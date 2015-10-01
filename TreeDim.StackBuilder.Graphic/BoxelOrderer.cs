@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     #region Helper classes
     internal class BoxComparerZ : IComparer<Box>

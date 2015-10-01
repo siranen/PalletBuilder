@@ -8,20 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Desktop.Properties;
 
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewAnalysisHCylinder : Form
     {
         #region Data members
         private CylinderProperties[] _cylinderProperties;
         private PalletProperties[] _palletProperties;
-        private TreeDim.StackBuilder.Basics.Document _document;
+        private treeDiM.StackBuilder.Basics.Document _document;
         private HCylinderPalletAnalysis _analysis;
         protected static readonly ILog _log = LogManager.GetLogger(typeof(FormNewAnalysisHCylinder));
         #endregion

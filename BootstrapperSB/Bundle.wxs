@@ -21,7 +21,7 @@
     </BootstrapperApplicationRef>
     <WixVariable Id="WixStdbaLogo" Value="WixUIBanner.png" />
     <Variable Name="InstallFolder" Type="string" Value="[ProgramFilesFolder]treeDiM\PLMPack\StackBuilder" />
-    <Variable Name="LaunchTarget" Value="[InstallFolder]\Bin\TreeDim.StackBuilder.Desktop.exe"/>
+    <Variable Name="LaunchTarget" Value="[InstallFolder]\Bin\treeDiM.StackBuilder.Desktop.exe"/>
     <Chain>
       <PackageGroupRef Id="Netfx4Full"/>
       <!-- Note: DisplayInternalUI is set to yes in order to show registration dialog -->

@@ -10,12 +10,12 @@ using WeifenLuo.WinFormsUI.Docking;
 using log4net;
 
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Desktop.Properties;
-using TreeDim.EdgeCrushTest;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Desktop.Properties;
+using treeDiM.EdgeCrushTest;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class DockContentECTAnalysis : DockContent, IView, IItemListener
     {

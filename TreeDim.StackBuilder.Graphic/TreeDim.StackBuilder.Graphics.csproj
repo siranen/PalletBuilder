@@ -8,8 +8,8 @@
     <ProjectGuid>{2AD4C04C-5B8A-4E69-9B1C-402CB86860A7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TreeDim.StackBuilder.Graphics</RootNamespace>
-    <AssemblyName>TreeDim.StackBuilder.Graphics</AssemblyName>
+    <RootNamespace>treeDiM.StackBuilder.Graphics</RootNamespace>
+    <AssemblyName>treeDiM.StackBuilder.Graphics</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -126,9 +126,9 @@
       <Project>{8F9BA4D3-D6AF-42A6-B74F-0DF6568C148B}</Project>
       <Name>Sharp3D.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\TreeDim.StackBuilder.Basics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\treeDiM.StackBuilder.Basics.csproj">
       <Project>{444C01D0-53FD-49A1-9D55-267B49161357}</Project>
-      <Name>TreeDim.StackBuilder.Basics</Name>
+      <Name>treeDiM.StackBuilder.Basics</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +174,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

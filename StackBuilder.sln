@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GUI controls", "GUI controls", "{C6DE47A1-1707-4139-9638-37CA983F3086}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test projects", "Test projects", "{36E4D3C5-28FD-46B9-8763-C3316F67C6BE}"
@@ -13,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML Help", "HTML Help", "{
 		StartPage\stackbuilder_start_page_FRA.htm = StartPage\stackbuilder_start_page_FRA.htm
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Engine", "TreeDim.StackBuilder.Engine\TreeDim.StackBuilder.Engine.csproj", "{2E646606-052D-4063-9218-1379430B070E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.Engine", "TreeDim.StackBuilder.Engine\treeDiM.StackBuilder.Engine.csproj", "{2E646606-052D-4063-9218-1379430B070E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Graphics", "TreeDim.StackBuilder.Graphic\TreeDim.StackBuilder.Graphics.csproj", "{2AD4C04C-5B8A-4E69-9B1C-402CB86860A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.Graphics", "TreeDim.StackBuilder.Graphic\treeDiM.StackBuilder.Graphics.csproj", "{2AD4C04C-5B8A-4E69-9B1C-402CB86860A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Desktop", "TreeDim.StackBuilder.Desktop\TreeDim.StackBuilder.Desktop.csproj", "{A8A2C6D7-58CF-4DA2-A754-C9686173B5EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.Desktop", "TreeDim.StackBuilder.Desktop\treeDiM.StackBuilder.Desktop.csproj", "{A8A2C6D7-58CF-4DA2-A754-C9686173B5EE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1505A6E5-E6F9-4408-A5C8-968417081CBD} = {1505A6E5-E6F9-4408-A5C8-968417081CBD}
 	EndProjectSection
@@ -26,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Graphi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Engine.Test", "TreeDim.StackBuilder.Engine.Test\TreeDim.StackBuilder.Engine.Test.csproj", "{B6A88209-B71C-4045-BF3D-371BC9D21784}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Basics", "TreeDim.StackBuilder.Basics\TreeDim.StackBuilder.Basics.csproj", "{444C01D0-53FD-49A1-9D55-267B49161357}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.Basics", "TreeDim.StackBuilder.Basics\treeDiM.StackBuilder.Basics.csproj", "{444C01D0-53FD-49A1-9D55-267B49161357}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficePickers", "OfficePickers\OfficePickers.csproj", "{CAD56B75-481B-4C76-B090-4BC2FF5E5681}"
 EndProject
@@ -42,31 +44,31 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SetupSB", "SetupSB\SetupSB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Graphics.BoxelOrderer.Test", "Test\TreeDim.Stackbuilder.Graphics.BoxelOrderer.Test\TreeDim.StackBuilder.Graphics.BoxelOrderer.Test.csproj", "{70C5EAF0-C268-4395-9CF6-115DFB502236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Reporting.XsltGenerator", "TreeDim.StackBuilder.Reporting.XsltGenerator\TreeDim.StackBuilder.Reporting.XsltGenerator.csproj", "{73F7AD40-F55C-4B68-887A-DA188BA4B4CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.Reporting.XsltGenerator", "TreeDim.StackBuilder.Reporting.XsltGenerator\treeDiM.StackBuilder.Reporting.XsltGenerator.csproj", "{73F7AD40-F55C-4B68-887A-DA188BA4B4CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Engine.TestCaseOptimisation", "TreeDim.StackBuilder.Engine.TestCaseOptimisation\TreeDim.StackBuilder.Engine.TestCaseOptimisation.csproj", "{2A6670DA-F272-4D77-AF6E-F3710AED677E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.EdgeCrushTest", "TreeDim.EdgeCrushTest\TreeDim.EdgeCrushTest.csproj", "{E4240EE0-60B3-4435-BD09-F81D56C0899A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.EdgeCrushTest", "TreeDim.EdgeCrushTest\treeDiM.EdgeCrushTest.csproj", "{E4240EE0-60B3-4435-BD09-F81D56C0899A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.XmlFileProcessor", "TreeDim.StackBuilder.XmlFileProcessor\TreeDim.StackBuilder.XmlFileProcessor.csproj", "{108EA949-8BA4-4686-88FD-AE6E75C064DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.XmlFileProcessor", "TreeDim.StackBuilder.XmlFileProcessor\treeDiM.StackBuilder.XmlFileProcessor.csproj", "{108EA949-8BA4-4686-88FD-AE6E75C064DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{984497B5-C76B-49C3-9C6D-00E25252DD93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Reporting.Test", "TreeDim.StackBuilder.Reporting.Test\TreeDim.StackBuilder.Reporting.Test.csproj", "{E82AB523-ACE9-41F5-B5D6-F2D9AD6D2576}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.Reporting", "TreeDim.StackBuilder.Reporting\TreeDim.StackBuilder.Reporting.csproj", "{1505A6E5-E6F9-4408-A5C8-968417081CBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.Reporting", "TreeDim.StackBuilder.Reporting\treeDiM.StackBuilder.Reporting.csproj", "{1505A6E5-E6F9-4408-A5C8-968417081CBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionsLib", "OptionsLib\OptionsLib.csproj", "{5035348F-344F-4822-823E-6CB4D79D80D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.AutoUpdater", "TreeDim.AutoUpdater\TreeDim.AutoUpdater.csproj", "{0B5CE6C7-757A-45C0-B695-5D4EE4E22336}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.AutoUpdater", "TreeDim.AutoUpdater\treeDiM.AutoUpdater.csproj", "{0B5CE6C7-757A-45C0-B695-5D4EE4E22336}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Updater", "Updater", "{FB780BE9-6525-4B6F-AC3B-C0573EA74D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.Update", "TreeDim.Update\TreeDim.Update.csproj", "{2A0BA1B2-A0F1-479F-9083-2EC11D6B70DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.Update", "TreeDim.Update\treeDiM.Update.csproj", "{2A0BA1B2-A0F1-479F-9083-2EC11D6B70DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsgBoxCheck", "MsgBoxCheck\MsgBoxCheck.csproj", "{43D66268-9336-4118-A30E-FC43CED0E62D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.ColladaExporter", "TreeDim.StackBuilder.ColladaExporter\TreeDim.StackBuilder.ColladaExporter.csproj", "{785A5666-FE91-4796-A720-13C9A727BA5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.ColladaExporter", "TreeDim.StackBuilder.ColladaExporter\treeDiM.StackBuilder.ColladaExporter.csproj", "{785A5666-FE91-4796-A720-13C9A727BA5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.ColladaExporter.Test", "TreeDim.StackBuilder.ColladaExporter.Test\TreeDim.StackBuilder.ColladaExporter.Test.csproj", "{58436B36-D49F-4C14-92E7-EF083858003C}"
 EndProject
@@ -75,11 +77,11 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "BootstrapperSB", "Bootstrap
 		{125DBC33-AA7A-4F67-BD19-3D0BD6C6BA9B} = {125DBC33-AA7A-4F67-BD19-3D0BD6C6BA9B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.GUIExtension", "TreeDim.StackBuilder.GUIExtension\TreeDim.StackBuilder.GUIExtension.csproj", "{E335B93B-F816-44E9-B4BB-612FF1673637}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.StackBuilder.GUIExtension", "TreeDim.StackBuilder.GUIExtension\treeDiM.StackBuilder.GUIExtension.csproj", "{E335B93B-F816-44E9-B4BB-612FF1673637}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.StackBuilder.GUIExtension.Test", "TreeDim.StackBuilder.GUIExtension.Test\TreeDim.StackBuilder.GUIExtension.Test.csproj", "{8E3FC372-5F2A-4885-9667-83B41A325E4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeDim.UserControls", "TreeDim.UserControls\TreeDim.UserControls.csproj", "{7FF9B713-8D36-4887-BF50-2B9E2B28808D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeDiM.UserControls", "TreeDim.UserControls\treeDiM.UserControls.csproj", "{7FF9B713-8D36-4887-BF50-2B9E2B28808D}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "StackBuilderGUIExtMSM", "StackBuilderGUIExtMSM\StackBuilderGUIExtMSM.wixproj", "{EBD65A1F-9A23-4A42-81C1-40D03D50A6F5}"
 EndProject
@@ -450,25 +452,25 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CAD56B75-481B-4C76-B090-4BC2FF5E5681} = {C6DE47A1-1707-4139-9638-37CA983F3086}
-		{5035348F-344F-4822-823E-6CB4D79D80D7} = {C6DE47A1-1707-4139-9638-37CA983F3086}
-		{43D66268-9336-4118-A30E-FC43CED0E62D} = {C6DE47A1-1707-4139-9638-37CA983F3086}
-		{7FF9B713-8D36-4887-BF50-2B9E2B28808D} = {C6DE47A1-1707-4139-9638-37CA983F3086}
 		{D5FBE9D8-DFAE-49F0-B9DA-0795B98D887F} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
 		{B6A88209-B71C-4045-BF3D-371BC9D21784} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
+		{CAD56B75-481B-4C76-B090-4BC2FF5E5681} = {C6DE47A1-1707-4139-9638-37CA983F3086}
+		{125DBC33-AA7A-4F67-BD19-3D0BD6C6BA9B} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
 		{70C5EAF0-C268-4395-9CF6-115DFB502236} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
+		{73F7AD40-F55C-4B68-887A-DA188BA4B4CE} = {984497B5-C76B-49C3-9C6D-00E25252DD93}
 		{2A6670DA-F272-4D77-AF6E-F3710AED677E} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
 		{E82AB523-ACE9-41F5-B5D6-F2D9AD6D2576} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
-		{58436B36-D49F-4C14-92E7-EF083858003C} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
-		{8E3FC372-5F2A-4885-9667-83B41A325E4B} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
-		{125DBC33-AA7A-4F67-BD19-3D0BD6C6BA9B} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
-		{A4249447-3954-42AB-AF4A-AEEB007BA105} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
-		{EBD65A1F-9A23-4A42-81C1-40D03D50A6F5} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
-		{DCE973AD-D647-4989-8F16-F43FF7E058A2} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
-		{73F7AD40-F55C-4B68-887A-DA188BA4B4CE} = {984497B5-C76B-49C3-9C6D-00E25252DD93}
 		{1505A6E5-E6F9-4408-A5C8-968417081CBD} = {984497B5-C76B-49C3-9C6D-00E25252DD93}
+		{5035348F-344F-4822-823E-6CB4D79D80D7} = {C6DE47A1-1707-4139-9638-37CA983F3086}
 		{0B5CE6C7-757A-45C0-B695-5D4EE4E22336} = {FB780BE9-6525-4B6F-AC3B-C0573EA74D32}
 		{2A0BA1B2-A0F1-479F-9083-2EC11D6B70DF} = {FB780BE9-6525-4B6F-AC3B-C0573EA74D32}
+		{43D66268-9336-4118-A30E-FC43CED0E62D} = {C6DE47A1-1707-4139-9638-37CA983F3086}
+		{58436B36-D49F-4C14-92E7-EF083858003C} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
+		{A4249447-3954-42AB-AF4A-AEEB007BA105} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
+		{8E3FC372-5F2A-4885-9667-83B41A325E4B} = {36E4D3C5-28FD-46B9-8763-C3316F67C6BE}
+		{7FF9B713-8D36-4887-BF50-2B9E2B28808D} = {C6DE47A1-1707-4139-9638-37CA983F3086}
+		{EBD65A1F-9A23-4A42-81C1-40D03D50A6F5} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
+		{DCE973AD-D647-4989-8F16-F43FF7E058A2} = {F2DEFE3C-291D-4F9B-A01C-4EEA7988A183}
 		{75769E19-2CCC-4DF0-88D9-CBAC14BB6329} = {78A832C5-F1BB-4A1F-95FD-6531DDA2E9EE}
 		{C5AAB10A-8D08-419F-9D5C-2FC78FEF8B53} = {78A832C5-F1BB-4A1F-95FD-6531DDA2E9EE}
 	EndGlobalSection

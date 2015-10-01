@@ -6,7 +6,7 @@ using System.Text;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region BoxCaseAnalysis
     public class BoxCaseAnalysis : ItemBase

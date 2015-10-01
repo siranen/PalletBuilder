@@ -5,11 +5,11 @@ using System.Text;
 using System.Drawing;
 
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     /// <summary>
     /// Drawable truck (used to draw a truck with a Graphics3D object)

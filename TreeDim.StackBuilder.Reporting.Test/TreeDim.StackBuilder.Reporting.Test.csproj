@@ -70,21 +70,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\TreeDim.StackBuilder.Basics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\treeDiM.StackBuilder.Basics.csproj">
       <Project>{444C01D0-53FD-49A1-9D55-267B49161357}</Project>
-      <Name>TreeDim.StackBuilder.Basics</Name>
+      <Name>treeDiM.StackBuilder.Basics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\TreeDim.StackBuilder.Engine.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\treeDiM.StackBuilder.Engine.csproj">
       <Project>{2E646606-052D-4063-9218-1379430B070E}</Project>
-      <Name>TreeDim.StackBuilder.Engine</Name>
+      <Name>treeDiM.StackBuilder.Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Graphic\TreeDim.StackBuilder.Graphics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Graphic\treeDiM.StackBuilder.Graphics.csproj">
       <Project>{2AD4C04C-5B8A-4E69-9B1C-402CB86860A7}</Project>
-      <Name>TreeDim.StackBuilder.Graphics</Name>
+      <Name>treeDiM.StackBuilder.Graphics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Reporting\TreeDim.StackBuilder.Reporting.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Reporting\treeDiM.StackBuilder.Reporting.csproj">
       <Project>{1505A6E5-E6F9-4408-A5C8-968417081CBD}</Project>
-      <Name>TreeDim.StackBuilder.Reporting</Name>
+      <Name>treeDiM.StackBuilder.Reporting</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

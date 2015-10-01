@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Text;
 
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     #region BoxCaseSolver
     public class BoxCaseSolver : IBoxCaseAnalysisSolver

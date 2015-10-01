@@ -1,4 +1,4 @@
-﻿namespace TreeDim.EdgeCrushTest
+﻿namespace treeDiM.EdgeCrushTest
 {
     partial class FormEditCardboardQualityData
     {

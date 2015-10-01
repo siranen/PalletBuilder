@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace TreeDim.EdgeCrushTest
+namespace treeDiM.EdgeCrushTest
 {
     public class Exception : System.Exception
     {
@@ -52,11 +52,11 @@ namespace TreeDim.EdgeCrushTest
             switch (error)
             {
                 case ErrorType.ERROR_INVALIDCARDBOARD:
-                    return string.Format(TreeDim.EdgeCrushTest.Properties.Resource.EXCEPTION_INVALIDCARDBOARDID, arg);
+                    return string.Format(treeDiM.EdgeCrushTest.Properties.Resource.EXCEPTION_INVALIDCARDBOARDID, arg);
                 case ErrorType.ERROR_INVALIDCASETYPE:
-                    return string.Format(TreeDim.EdgeCrushTest.Properties.Resource.EXCEPTION_INVALIDCASETYPE, arg);
+                    return string.Format(treeDiM.EdgeCrushTest.Properties.Resource.EXCEPTION_INVALIDCASETYPE, arg);
                 case ErrorType.ERROR_INVALIDFORMULATYPE:
-                    return TreeDim.EdgeCrushTest.Properties.Resource.EXCEPTION_INVALIDFORMULA;
+                    return treeDiM.EdgeCrushTest.Properties.Resource.EXCEPTION_INVALIDFORMULA;
                 default:
                     return string.Empty;
             }

@@ -261,7 +261,7 @@
     <value>fileSelectCtrl</value>
   </data>
   <data name="&gt;&gt;fileSelectCtrl.Type" xml:space="preserve">
-    <value>TreeDim.UserControls.FileSelect, TreeDim.UserControls, Version=1.0.5422.38419, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.UserControls.FileSelect, treeDiM.UserControls, Version=1.0.5422.38419, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileSelectCtrl.Parent" xml:space="preserve">
     <value>$this</value>

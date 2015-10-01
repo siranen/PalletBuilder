@@ -1132,7 +1132,7 @@
     <value>vcWeight</value>
   </data>
   <data name="&gt;&gt;vcWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlDouble, TreeDim.StackBuilder.Basics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.StackBuilder.Basics.UCtrlDouble, treeDiM.StackBuilder.Basics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;vcWeight.Parent" xml:space="preserve">
     <value>gbWeight</value>
@@ -1157,17 +1157,13 @@
   </data>
   <data name="ovcNetWeight.Value" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFNUcmVlRGltLlN0YWNrQnVpbGRlci5CYXNpY3MsIFZlcnNpb249
-        Mi4wLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAJVRyZWVEaW0u
-        U3RhY2tCdWlsZGVyLkJhc2ljcy5PcHREb3VibGUCAAAACl9hY3RpdmF0ZWQEX3ZhbAAAAQYCAAAAAAAA
-        AAAAAAAACw==
-</value>
+    </value>
   </data>
   <data name="&gt;&gt;ovcNetWeight.Name" xml:space="preserve">
     <value>ovcNetWeight</value>
   </data>
   <data name="&gt;&gt;ovcNetWeight.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Basics.UCtrlOptDouble, TreeDim.StackBuilder.Basics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.StackBuilder.Basics.UCtrlOptDouble, treeDiM.StackBuilder.Basics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ovcNetWeight.Parent" xml:space="preserve">
     <value>gbWeight</value>
@@ -1314,7 +1310,7 @@
     <value>graphCtrl</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.StackBuilder.Graphics.Graphics3DControl, treeDiM.StackBuilder.Graphics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrl.Parent" xml:space="preserve">
     <value>$this</value>

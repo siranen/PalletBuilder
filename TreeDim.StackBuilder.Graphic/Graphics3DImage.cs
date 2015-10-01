@@ -8,7 +8,7 @@ using System.Drawing.Imaging;
 using System.Windows.Forms;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     public class Graphics3DImage : Graphics3D
     {

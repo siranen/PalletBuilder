@@ -6,7 +6,7 @@ using System.Drawing;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     public abstract class Graphics2D
     {

@@ -7,7 +7,7 @@ using Sharp3D.Math.Core;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     #region CylinderLayerPattern
     internal abstract class CylinderLayerPattern

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     public class EngineException : Exception
     {

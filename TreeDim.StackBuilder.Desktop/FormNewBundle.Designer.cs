@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewBundle
     {
@@ -54,7 +54,7 @@
             this.lbLength = new System.Windows.Forms.Label();
             this.bnCancel = new System.Windows.Forms.Button();
             this.bnOk = new System.Windows.Forms.Button();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.statusStripDef = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDef = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbFaceColor.SuspendLayout();
@@ -405,7 +405,7 @@
         private System.Windows.Forms.GroupBox gbFaceColor;
         private System.Windows.Forms.NumericUpDown nudWeight;
         private System.Windows.Forms.NumericUpDown nudLength;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.GroupBox gbWeight;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.TextBox tbName;

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TreeDim.StackBuilder.Graphics" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="treeDiM.StackBuilder.Graphics" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="DimCasePalletSol1" Type="System.Int32" Scope="User">

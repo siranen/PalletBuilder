@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 using log4net;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Desktop.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewCylinder : Form, IDrawingContainer
     {

@@ -8,10 +8,10 @@ using System.Xml;
 
 using log4net;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Reporting
+namespace treeDiM.StackBuilder.Reporting
 {
     public class ReporterHtml : Reporter
     {

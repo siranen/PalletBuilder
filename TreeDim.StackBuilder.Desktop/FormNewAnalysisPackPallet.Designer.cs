@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewAnalysisPackPallet
     {
@@ -41,16 +41,16 @@
             this.lbLayerSwapPeriod = new System.Windows.Forms.Label();
             this.nudSwapPeriod = new System.Windows.Forms.NumericUpDown();
             this.gbOverhang = new System.Windows.Forms.GroupBox();
-            this.uCtrlOptOverhangYMin = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
-            this.uCtrlOptOverhangXMin = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
-            this.uCtrlOverhangY = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.uCtrlOverhangX = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.uCtrlOptMinimumSpace = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOptOverhangYMin = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOptOverhangXMin = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOverhangY = new treeDiM.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlOverhangX = new treeDiM.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlOptMinimumSpace = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.uCtrlOptMaximumWeight = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
-            this.uCtrlOptMaximumHeight = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
-            this.uCtrlOptMaximumLayerWeight = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
-            this.uCtrlOptMaximumSpace = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOptMaximumWeight = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOptMaximumHeight = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOptMaximumLayerWeight = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
+            this.uCtrlOptMaximumSpace = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
             this.gbAdditionnalFiltering = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudInterlayerPeriod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSwapPeriod)).BeginInit();
@@ -166,9 +166,9 @@
             0,
             -2147483648});
             this.uCtrlOptOverhangYMin.Name = "uCtrlOptOverhangYMin";
-            this.uCtrlOptOverhangYMin.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlOptOverhangYMin.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptOverhangYMin.Value")));
-            this.uCtrlOptOverhangYMin.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptOverhangYMin.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOptOverhangYMin.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptOverhangYMin.Value")));
+            this.uCtrlOptOverhangYMin.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptOverhangXMin
             // 
@@ -179,9 +179,9 @@
             0,
             -2147483648});
             this.uCtrlOptOverhangXMin.Name = "uCtrlOptOverhangXMin";
-            this.uCtrlOptOverhangXMin.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlOptOverhangXMin.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptOverhangXMin.Value")));
-            this.uCtrlOptOverhangXMin.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptOverhangXMin.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOptOverhangXMin.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptOverhangXMin.Value")));
+            this.uCtrlOptOverhangXMin.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOverhangY
             // 
@@ -192,9 +192,9 @@
             0,
             -2147483648});
             this.uCtrlOverhangY.Name = "uCtrlOverhangY";
-            this.uCtrlOverhangY.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangY.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangY.Value = 0D;
-            this.uCtrlOverhangY.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOverhangY.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOverhangX
             // 
@@ -205,9 +205,9 @@
             0,
             -2147483648});
             this.uCtrlOverhangX.Name = "uCtrlOverhangX";
-            this.uCtrlOverhangX.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangX.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangX.Value = 0D;
-            this.uCtrlOverhangX.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOverhangX.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMinimumSpace
             // 
@@ -218,9 +218,9 @@
             0,
             65536});
             this.uCtrlOptMinimumSpace.Name = "uCtrlOptMinimumSpace";
-            this.uCtrlOptMinimumSpace.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlOptMinimumSpace.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMinimumSpace.Value")));
-            this.uCtrlOptMinimumSpace.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptMinimumSpace.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOptMinimumSpace.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMinimumSpace.Value")));
+            this.uCtrlOptMinimumSpace.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // groupBox1
             // 
@@ -239,9 +239,9 @@
             0,
             -2147483648});
             this.uCtrlOptMaximumWeight.Name = "uCtrlOptMaximumWeight";
-            this.uCtrlOptMaximumWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
-            this.uCtrlOptMaximumWeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumWeight.Value")));
-            this.uCtrlOptMaximumWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptMaximumWeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.uCtrlOptMaximumWeight.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumWeight.Value")));
+            this.uCtrlOptMaximumWeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMaximumHeight
             // 
@@ -252,9 +252,9 @@
             0,
             65536});
             this.uCtrlOptMaximumHeight.Name = "uCtrlOptMaximumHeight";
-            this.uCtrlOptMaximumHeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlOptMaximumHeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumHeight.Value")));
-            this.uCtrlOptMaximumHeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptMaximumHeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOptMaximumHeight.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumHeight.Value")));
+            this.uCtrlOptMaximumHeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMaximumLayerWeight
             // 
@@ -265,9 +265,9 @@
             0,
             -2147483648});
             this.uCtrlOptMaximumLayerWeight.Name = "uCtrlOptMaximumLayerWeight";
-            this.uCtrlOptMaximumLayerWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
-            this.uCtrlOptMaximumLayerWeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumLayerWeight.Value")));
-            this.uCtrlOptMaximumLayerWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptMaximumLayerWeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.uCtrlOptMaximumLayerWeight.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumLayerWeight.Value")));
+            this.uCtrlOptMaximumLayerWeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // uCtrlOptMaximumSpace
             // 
@@ -278,9 +278,9 @@
             0,
             65536});
             this.uCtrlOptMaximumSpace.Name = "uCtrlOptMaximumSpace";
-            this.uCtrlOptMaximumSpace.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
-            this.uCtrlOptMaximumSpace.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumSpace.Value")));
-            this.uCtrlOptMaximumSpace.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
+            this.uCtrlOptMaximumSpace.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOptMaximumSpace.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("uCtrlOptMaximumSpace.Value")));
+            this.uCtrlOptMaximumSpace.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onConstraintSetModified);
             // 
             // gbAdditionnalFiltering
             // 

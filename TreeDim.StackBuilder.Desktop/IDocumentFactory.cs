@@ -5,7 +5,7 @@ using System.Text;
 using System.ComponentModel;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     interface IDocumentFactory
     {

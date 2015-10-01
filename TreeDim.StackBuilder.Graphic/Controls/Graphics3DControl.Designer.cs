@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Graphics
+﻿namespace treeDiM.StackBuilder.Graphics
 {
     partial class Graphics3DControl
     {

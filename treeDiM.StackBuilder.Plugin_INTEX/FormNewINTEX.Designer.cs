@@ -48,7 +48,7 @@
             this.lbPallet = new System.Windows.Forms.Label();
             this.cbPallet = new System.Windows.Forms.ComboBox();
             this.lbFilePath = new System.Windows.Forms.Label();
-            this.fileSelectCtrl = new TreeDim.UserControls.FileSelect();
+            this.fileSelectCtrl = new treeDiM.UserControls.FileSelect();
             this.uLengthX = new System.Windows.Forms.Label();
             this.uLengthY = new System.Windows.Forms.Label();
             this.uLengthZ = new System.Windows.Forms.Label();
@@ -359,7 +359,7 @@
         private System.Windows.Forms.Label lbPallet;
         private System.Windows.Forms.ComboBox cbPallet;
         private System.Windows.Forms.Label lbFilePath;
-        private TreeDim.UserControls.FileSelect fileSelectCtrl;
+        private treeDiM.UserControls.FileSelect fileSelectCtrl;
         private System.Windows.Forms.Label uLengthX;
         private System.Windows.Forms.Label uLengthY;
         private System.Windows.Forms.Label uLengthZ;

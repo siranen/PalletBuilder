@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension
+﻿namespace treeDiM.StackBuilder.GUIExtension
 {
     partial class FormDefineReport
     {
@@ -34,7 +34,7 @@
             this.bnOK = new System.Windows.Forms.Button();
             this.bnCancel = new System.Windows.Forms.Button();
             this.lbPath = new System.Windows.Forms.Label();
-            this.fileSelectCtrl = new TreeDim.UserControls.FileSelect();
+            this.fileSelectCtrl = new treeDiM.UserControls.FileSelect();
             this.chkOpenFile = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -117,7 +117,7 @@
         private System.Windows.Forms.Button bnOK;
         private System.Windows.Forms.Button bnCancel;
         private System.Windows.Forms.Label lbPath;
-        private TreeDim.UserControls.FileSelect fileSelectCtrl;
+        private treeDiM.UserControls.FileSelect fileSelectCtrl;
         private System.Windows.Forms.CheckBox chkOpenFile;
     }
 }

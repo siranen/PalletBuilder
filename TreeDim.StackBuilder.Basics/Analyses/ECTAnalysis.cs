@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-using TreeDim.EdgeCrushTest;
+using treeDiM.EdgeCrushTest;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     /// <summary>
     /// ECT analysis
@@ -16,7 +16,7 @@ namespace TreeDim.StackBuilder.Basics
         #region Data members
         private CasePalletAnalysis _analysis;
         private SelCasePalletSolution _selSolution;
-        private TreeDim.EdgeCrushTest.McKeeFormula.QualityData _qualityData;
+        private treeDiM.EdgeCrushTest.McKeeFormula.QualityData _qualityData;
         private McKeeFormula.FormulaType _mcKeeFormula;
         private string _caseType;
         private string _printSurface;

@@ -9,10 +9,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-using TreeDim.StackBuilder.GUIExtension.Properties;
+using treeDiM.StackBuilder.GUIExtension.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension
+namespace treeDiM.StackBuilder.GUIExtension
 {
     public partial class FormDefineReport : Form
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TreeDim.StackBuilder.Basics.Controls
+namespace treeDiM.StackBuilder.Basics.Controls
 {
     public partial class UCtrlTriDouble : UserControl
     {

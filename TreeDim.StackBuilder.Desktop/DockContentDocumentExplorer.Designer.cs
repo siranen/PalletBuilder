@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class DockContentDocumentExplorer
     {
@@ -36,7 +36,7 @@
             this.TabbedDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoHideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._documentTreeView = new TreeDim.StackBuilder.Desktop.AnalysisTreeView();
+            this._documentTreeView = new treeDiM.StackBuilder.Desktop.AnalysisTreeView();
             this.ContextMenuDock.SuspendLayout();
             this.SuspendLayout();
             // 

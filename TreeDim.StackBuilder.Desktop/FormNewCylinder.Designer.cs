@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewCylinder
     {
@@ -49,7 +49,7 @@
             this.uMassWeight = new System.Windows.Forms.Label();
             this.nudWeight = new System.Windows.Forms.NumericUpDown();
             this.lbWeight = new System.Windows.Forms.Label();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.statusStripDef = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDef = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbFaceColor = new System.Windows.Forms.GroupBox();
@@ -635,7 +635,7 @@
         private System.Windows.Forms.Label uMassWeight;
         private System.Windows.Forms.NumericUpDown nudWeight;
         private System.Windows.Forms.Label lbWeight;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.StatusStrip statusStripDef;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDef;
         private System.Windows.Forms.GroupBox gbFaceColor;

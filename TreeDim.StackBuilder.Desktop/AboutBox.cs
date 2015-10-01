@@ -6,12 +6,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Resources;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Desktop.Properties;
 
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     partial class AboutBox : Form
     {
@@ -29,10 +29,10 @@ namespace TreeDim.StackBuilder.Desktop
             //  - Project->Properties->Application->Assembly Information
             //  - AssemblyInfo.cs
 
-            ResourceManager resourceManager = new ResourceManager("TreeDim.StackBuilder.Desktop",
+            ResourceManager resourceManager = new ResourceManager("treeDiM.StackBuilder.Desktop",
                 Assembly.GetExecutingAssembly());
 
-            this.Text = String.Format(TreeDim.StackBuilder.Desktop.Properties.Resources.ID_ABOUT, AssemblyTitle);
+            this.Text = String.Format(treeDiM.StackBuilder.Desktop.Properties.Resources.ID_ABOUT, AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;

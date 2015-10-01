@@ -69,13 +69,13 @@
       <Project>{8F9BA4D3-D6AF-42A6-B74F-0DF6568C148B}</Project>
       <Name>Sharp3D.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\TreeDim.StackBuilder.Basics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\treeDiM.StackBuilder.Basics.csproj">
       <Project>{444C01D0-53FD-49A1-9D55-267B49161357}</Project>
-      <Name>TreeDim.StackBuilder.Basics</Name>
+      <Name>treeDiM.StackBuilder.Basics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\TreeDim.StackBuilder.Engine.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\treeDiM.StackBuilder.Engine.csproj">
       <Project>{2E646606-052D-4063-9218-1379430B070E}</Project>
-      <Name>TreeDim.StackBuilder.Engine</Name>
+      <Name>treeDiM.StackBuilder.Engine</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

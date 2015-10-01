@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension
+﻿namespace treeDiM.StackBuilder.GUIExtension
 {
     partial class FormDefineCaseOptimization
     {
@@ -45,7 +45,7 @@
             this.nudPalletHeight = new System.Windows.Forms.NumericUpDown();
             this.lbPalletHeight = new System.Windows.Forms.Label();
             this.gbPallet = new System.Windows.Forms.GroupBox();
-            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPallet = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.cbPallet = new System.Windows.Forms.ComboBox();
             this.lbPallet = new System.Windows.Forms.Label();
             this.btSetMaximum = new System.Windows.Forms.Button();
@@ -75,8 +75,8 @@
             this.toolStripButtonStackBuilder = new System.Windows.Forms.ToolStripButton();
             this.saveFileDialogAsStb = new System.Windows.Forms.SaveFileDialog();
             this.splitContainerCasePallet = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlBoxesLayout = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
-            this.graphCtrlPalletLayout = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlBoxesLayout = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPalletLayout = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.statusStripDef.SuspendLayout();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBoxHeight)).BeginInit();
@@ -619,7 +619,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonStackBuilder;
         private System.Windows.Forms.SaveFileDialog saveFileDialogAsStb;
         private SourceGrid.Grid gridSolutions;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
         private System.Windows.Forms.SplitContainer splitContainerCasePallet;
         private Graphics.Graphics3DControl graphCtrlBoxesLayout;
         private Graphics.Graphics3DControl graphCtrlPalletLayout;

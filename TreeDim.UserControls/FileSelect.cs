@@ -1,6 +1,6 @@
 ﻿#define Net20 //remove or comment this line to remove any functionality only available in .net 2.0 (and higher)
 
-namespace TreeDim.UserControls
+namespace treeDiM.UserControls
 {
     /*
     * For complete functionality, you need these 2 components (if not added allready)
@@ -13,7 +13,7 @@ namespace TreeDim.UserControls
     using System.Windows.Forms;
     using System.ComponentModel;
     using System.IO;
-    using TreeDim.IO;
+    using treeDiM.IO;
     using System.Drawing;
     /// 
     /// Control to quickly select files
@@ -446,7 +446,7 @@ namespace TreeDim.UserControls
     }
 
 }
-namespace TreeDim.IO
+namespace treeDiM.IO
 {
 
     using System;

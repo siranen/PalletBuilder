@@ -80,9 +80,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TreeDim.StackBuilder.GUIExtension\TreeDim.StackBuilder.GUIExtension.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.GUIExtension\treeDiM.StackBuilder.GUIExtension.csproj">
       <Project>{E335B93B-F816-44E9-B4BB-612FF1673637}</Project>
-      <Name>TreeDim.StackBuilder.GUIExtension</Name>
+      <Name>treeDiM.StackBuilder.GUIExtension</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

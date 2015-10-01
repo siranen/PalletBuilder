@@ -8,13 +8,13 @@ using System.IO;
 using log4net;
 using log4net.Config;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.Graphics;
-using TreeDim.StackBuilder.Reporting;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Reporting;
 #endregion
 
-namespace TreeDim.StackBuilder.Reporting.Test
+namespace treeDiM.StackBuilder.Reporting.Test
 {
     class Program
     {
@@ -49,7 +49,7 @@ namespace TreeDim.StackBuilder.Reporting.Test
                 }
                 // build output file path
                 string outputFilePath = Path.ChangeExtension(Path.GetTempFileName(), "doc");
-                string templatePath = @"..\..\..\TreeDim.StackBuilder.Reporting\ReportTemplates\";
+                string templatePath = @"..\..\..\treeDiM.StackBuilder.Reporting\ReportTemplates\";
                 ReporterMSWord reporter = new ReporterMSWord(
                     new ReportData(analyses[0], analyses[0].GetSelSolutionBySolutionIndex(0))
                     , templatePath, outputFilePath, new Margins());

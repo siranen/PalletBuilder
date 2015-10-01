@@ -17,11 +17,11 @@ using log4net;
 
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 #endregion
 
-namespace TreeDim.StackBuilder.Reporting
+namespace treeDiM.StackBuilder.Reporting
 {
     #region MyXmlUrlResolver
     class MyXmlUrlResolver : XmlUrlResolver
@@ -31,7 +31,7 @@ namespace TreeDim.StackBuilder.Reporting
             if (baseUri != null)
                 return base.ResolveUri(baseUri, relativeUri);
             else
-                return base.ResolveUri(new Uri(@"K:\GitHub\StackBuilder\TreeDim.StackBuilder.Reporting\ReportTemplates"), relativeUri);
+                return base.ResolveUri(new Uri(@"K:\GitHub\StackBuilder\treeDiM.StackBuilder.Reporting\ReportTemplates"), relativeUri);
         }
     }
     #endregion
@@ -1876,7 +1876,7 @@ namespace TreeDim.StackBuilder.Reporting
             XmlElement elemDynamicBCT = xmlDoc.CreateElement("bct_dynamic", ns);
             elemEctAnalysis.AppendChild(elemDynamicBCT);
             Dictionary<KeyValuePair<string, string>, double> ectDictionary = ectAnalysis.DynamicBCTDictionary;
-            foreach (string storageKey in TreeDim.EdgeCrushTest.McKeeFormula.StockCoefDictionary.Keys)
+            foreach (string storageKey in treeDiM.EdgeCrushTest.McKeeFormula.StockCoefDictionary.Keys)
             {
                 XmlElement elemBCTStorage = xmlDoc.CreateElement("bct_dynamic_storage", ns);
                 elemDynamicBCT.AppendChild(elemBCTStorage);
@@ -1895,7 +1895,7 @@ namespace TreeDim.StackBuilder.Reporting
                       , "humidity_86_100"
                    };
                 int indexHumidity = 0;
-                foreach (string humidityKey in TreeDim.EdgeCrushTest.McKeeFormula.HumidityCoefDictionary.Keys)
+                foreach (string humidityKey in treeDiM.EdgeCrushTest.McKeeFormula.HumidityCoefDictionary.Keys)
                 {
                     // get value of ect for "storage time" + "humidity"
                     double ectValue = ectDictionary[new KeyValuePair<string, string>(storageKey, humidityKey)];

@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     public class Graphics2DImage : Graphics2D
     {

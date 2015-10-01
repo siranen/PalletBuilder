@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]

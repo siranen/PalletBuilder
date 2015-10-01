@@ -8,10 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using log4net;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Desktop.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class DockContentStartPage : DockContent
     {

@@ -6,7 +6,7 @@ using System.Text;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region Limit enum : the different reasons the stacking process might be stopped
     public enum Limit

@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewBox
     {
@@ -57,13 +57,13 @@
             this.btBitmaps = new System.Windows.Forms.Button();
             this.chkAllFaces = new System.Windows.Forms.CheckBox();
             this.gbWeight = new System.Windows.Forms.GroupBox();
-            this.vcWeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.ovcNetWeight = new TreeDim.StackBuilder.Basics.UCtrlOptDouble();
+            this.vcWeight = new treeDiM.StackBuilder.Basics.UCtrlDouble();
+            this.ovcNetWeight = new treeDiM.StackBuilder.Basics.UCtrlOptDouble();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.statusStripDef = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDef = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbTape = new System.Windows.Forms.GroupBox();
@@ -468,9 +468,9 @@
             0,
             -2147483648});
             this.vcWeight.Name = "vcWeight";
-            this.vcWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.vcWeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
             this.vcWeight.Value = 0D;
-            this.vcWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onBoxPropertyChanged);
+            this.vcWeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onBoxPropertyChanged);
             // 
             // ovcNetWeight
             // 
@@ -481,9 +481,9 @@
             0,
             0});
             this.ovcNetWeight.Name = "ovcNetWeight";
-            this.ovcNetWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
-            this.ovcNetWeight.Value = ((TreeDim.StackBuilder.Basics.OptDouble)(resources.GetObject("ovcNetWeight.Value")));
-            this.ovcNetWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onBoxPropertyChanged);
+            this.ovcNetWeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.ovcNetWeight.Value = ((treeDiM.StackBuilder.Basics.OptDouble)(resources.GetObject("ovcNetWeight.Value")));
+            this.ovcNetWeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptDouble.onValueChanged(this.onBoxPropertyChanged);
             // 
             // lblName
             // 
@@ -734,7 +734,7 @@
         private OfficePickers.ColorPicker.ComboBoxColorPicker cbColor;
         private System.Windows.Forms.GroupBox gbFaceColor;
         private System.Windows.Forms.GroupBox gbWeight;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox tbName;

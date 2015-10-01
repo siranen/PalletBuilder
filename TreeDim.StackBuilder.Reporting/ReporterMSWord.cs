@@ -8,13 +8,13 @@ using System.Xml;
 
 using log4net;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 
 
 using Microsoft.Office.Interop;
 #endregion
 
-namespace TreeDim.StackBuilder.Reporting
+namespace treeDiM.StackBuilder.Reporting
 {
     #region Margins
     public class Margins

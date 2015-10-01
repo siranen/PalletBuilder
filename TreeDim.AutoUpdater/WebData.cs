@@ -7,7 +7,7 @@ using System.IO;
 using System.Net;
 #endregion
 
-namespace TreeDim.AutoUpdater
+namespace treeDiM.AutoUpdater
 {
     class WebData
     {

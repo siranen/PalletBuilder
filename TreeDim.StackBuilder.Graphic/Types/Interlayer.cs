@@ -5,7 +5,7 @@ using System.Text;
 using System.Drawing;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     public class Interlayer
     {

@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Diagnostics;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region PalletSolutionKey
     public class PalletSolutionKey : IComparable<PalletSolutionKey>

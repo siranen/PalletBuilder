@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TreeDim.StackBuilder.GUIExtension.Test")]
+[assembly: AssemblyTitle("treeDiM.StackBuilder.GUIExtension.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("treeDiM")]
-[assembly: AssemblyProduct("TreeDim.StackBuilder.GUIExtension.Test")]
+[assembly: AssemblyProduct("treeDiM.StackBuilder.GUIExtension.Test")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

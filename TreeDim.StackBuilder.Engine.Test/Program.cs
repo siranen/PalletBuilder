@@ -5,16 +5,16 @@ using System.Text;
 using System.Drawing;
 using System.IO;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.Graphics;
 
 using Sharp3D.Math.Core;
 using log4net;
 using log4net.Config;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine.Test
+namespace treeDiM.StackBuilder.Engine.Test
 {
     class Program
     {

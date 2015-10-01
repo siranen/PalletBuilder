@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.GUIExtension.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.GUIExtension.Properties;
 using System.IO;
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension
+namespace treeDiM.StackBuilder.GUIExtension
 {
     public class Palletization
     {

@@ -75,7 +75,7 @@
     <!-- Include 'Start' custom action-->
     <?if $(var.ShowLaunchAppCheckBox) = "yes"?>
     <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch PLMPack StackBuilder" />
-    <Property Id="WixShellExecTarget" Value="[#TreeDim.StackBuilder.Desktop.exe]" />
+    <Property Id="WixShellExecTarget" Value="[#treeDiM.StackBuilder.Desktop.exe]" />
     <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
     <?endif?>
   </Product>

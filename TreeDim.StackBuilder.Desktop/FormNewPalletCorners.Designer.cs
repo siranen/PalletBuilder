@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewPalletCorners
     {
@@ -37,7 +37,7 @@
             this.uLengthLength = new System.Windows.Forms.Label();
             this.uLengthWidth = new System.Windows.Forms.Label();
             this.uLengthThickness = new System.Windows.Forms.Label();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.lbColor = new System.Windows.Forms.Label();
             this.cbColorCorners = new OfficePickers.ColorPicker.ComboBoxColorPicker();
             this.lbWeight = new System.Windows.Forms.Label();
@@ -275,7 +275,7 @@
         private System.Windows.Forms.Label uLengthLength;
         private System.Windows.Forms.Label uLengthWidth;
         private System.Windows.Forms.Label uLengthThickness;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.Label lbColor;
         private OfficePickers.ColorPicker.ComboBoxColorPicker cbColorCorners;
         private System.Windows.Forms.Label lbWeight;

@@ -6,4 +6,4 @@ How to use XmlFileProcessor
 An example of input file (XmlFileProcessorInput.xml) is provided under directory Samples
 
 - launch XmlFileProcessor with a valid command line e.g.:
-TreeDim.StackBuilder.XmlFileProcessor.exe  /i "k:\Codeplex\StackBuilder\Samples\XmlFileProcessorInput.xml"
+treeDiM.StackBuilder.XmlFileProcessor.exe  /i "k:\Codeplex\StackBuilder\Samples\XmlFileProcessorInput.xml"

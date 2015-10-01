@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewPack
     {
@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNewPack));
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.lbBox = new System.Windows.Forms.Label();
             this.cbInnerBox = new System.Windows.Forms.ComboBox();
             this.lbDir = new System.Windows.Forms.Label();
             this.cbDir = new System.Windows.Forms.ComboBox();
-            this.uCtrlOuterDimensions = new TreeDim.StackBuilder.Basics.UCtrlOptTriDouble();
-            this.uCtrlLayout = new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt();
+            this.uCtrlOuterDimensions = new treeDiM.StackBuilder.Basics.UCtrlOptTriDouble();
+            this.uCtrlLayout = new treeDiM.StackBuilder.Basics.Controls.UCtrlTriInt();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.uCtrlHeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.uCtrlWalls = new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt();
+            this.uCtrlHeight = new treeDiM.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlWalls = new treeDiM.StackBuilder.Basics.Controls.UCtrlTriInt();
             this.chkbTransparent = new System.Windows.Forms.CheckBox();
             this.lbType = new System.Windows.Forms.Label();
             this.cbType = new System.Windows.Forms.ComboBox();
-            this.uCtrlWeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.uCtrlThickness = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlWeight = new treeDiM.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlThickness = new treeDiM.StackBuilder.Basics.UCtrlDouble();
             this.lbWrapperColor = new System.Windows.Forms.Label();
             this.cbColor = new OfficePickers.ColorPicker.ComboBoxColorPicker();
             ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).BeginInit();
@@ -97,12 +97,12 @@
             0,
             0});
             this.uCtrlOuterDimensions.Name = "uCtrlOuterDimensions";
-            this.uCtrlOuterDimensions.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOuterDimensions.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOuterDimensions.Value = ((Sharp3D.Math.Core.Vector3D)(resources.GetObject("uCtrlOuterDimensions.Value")));
             this.uCtrlOuterDimensions.X = 0D;
             this.uCtrlOuterDimensions.Y = 0D;
             this.uCtrlOuterDimensions.Z = 0D;
-            this.uCtrlOuterDimensions.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlOptTriDouble.onValueChanged(this.onPackChanged);
+            this.uCtrlOuterDimensions.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlOptTriDouble.onValueChanged(this.onPackChanged);
             // 
             // uCtrlLayout
             // 
@@ -111,7 +111,7 @@
             this.uCtrlLayout.NoX = 1;
             this.uCtrlLayout.NoY = 1;
             this.uCtrlLayout.NoZ = 1;
-            this.uCtrlLayout.ValueChanged += new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt.onValueChanged(this.onPackChanged);
+            this.uCtrlLayout.ValueChanged += new treeDiM.StackBuilder.Basics.Controls.UCtrlTriInt.onValueChanged(this.onPackChanged);
             // 
             // groupBox1
             // 
@@ -137,9 +137,9 @@
             0,
             0});
             this.uCtrlHeight.Name = "uCtrlHeight";
-            this.uCtrlHeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlHeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlHeight.Value = 40D;
-            this.uCtrlHeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
+            this.uCtrlHeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
             // 
             // uCtrlWalls
             // 
@@ -148,7 +148,7 @@
             this.uCtrlWalls.NoX = 1;
             this.uCtrlWalls.NoY = 1;
             this.uCtrlWalls.NoZ = 1;
-            this.uCtrlWalls.ValueChanged += new TreeDim.StackBuilder.Basics.Controls.UCtrlTriInt.onValueChanged(this.onPackChanged);
+            this.uCtrlWalls.ValueChanged += new treeDiM.StackBuilder.Basics.Controls.UCtrlTriInt.onValueChanged(this.onPackChanged);
             // 
             // chkbTransparent
             // 
@@ -184,9 +184,9 @@
             0,
             -2147483648});
             this.uCtrlWeight.Name = "uCtrlWeight";
-            this.uCtrlWeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
+            this.uCtrlWeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_MASS;
             this.uCtrlWeight.Value = 0D;
-            this.uCtrlWeight.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
+            this.uCtrlWeight.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
             // 
             // uCtrlThickness
             // 
@@ -197,9 +197,9 @@
             0,
             0});
             this.uCtrlThickness.Name = "uCtrlThickness";
-            this.uCtrlThickness.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlThickness.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlThickness.Value = 0D;
-            this.uCtrlThickness.ValueChanged += new TreeDim.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
+            this.uCtrlThickness.ValueChanged += new treeDiM.StackBuilder.Basics.UCtrlDouble.onValueChanged(this.onPackChanged);
             // 
             // lbWrapperColor
             // 

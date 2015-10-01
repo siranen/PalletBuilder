@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension
+namespace treeDiM.StackBuilder.GUIExtension
 {
     #region Combo box item private classes
     public class BoxItem

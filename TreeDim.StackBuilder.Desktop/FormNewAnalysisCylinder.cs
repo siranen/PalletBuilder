@@ -7,13 +7,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 using log4net;
 
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Desktop.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewAnalysisCylinder : Form
     {
@@ -21,7 +21,7 @@ namespace TreeDim.StackBuilder.Desktop
         private CylinderProperties[] _cylinderProperties;
         private PalletProperties[] _palletProperties;
         private InterlayerProperties[] _interlayerProperties;
-        private TreeDim.StackBuilder.Basics.Document _document;
+        private treeDiM.StackBuilder.Basics.Document _document;
         private CylinderPalletAnalysis _analysis;
         protected static readonly ILog _log = LogManager.GetLogger(typeof(FormNewAnalysisCylinder));
         #endregion

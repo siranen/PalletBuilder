@@ -15,17 +15,17 @@ using WeifenLuo.WinFormsUI.Docking;
 using log4net;
 using Utilities;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.Reporting;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.Reporting;
 
-using TreeDim.StackBuilder.Desktop.Properties;
-using TreeDim.StackBuilder.ColladaExporter;
+using treeDiM.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.ColladaExporter;
 
 using treeDiM.StackBuilder.Plugin;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormMain
         : Form, IDocumentFactory, IMRUClient, IDocumentListener
@@ -55,12 +55,12 @@ namespace TreeDim.StackBuilder.Desktop
             // set static instance
             _instance = this;
             // set analysis solver
-            CasePalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.CasePalletSolver();
-            PackPalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.PackPalletSolver();
-            CylinderPalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.CylinderSolver();
-            HCylinderPalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.HCylinderSolver();
-            BoxCasePalletAnalysis.Solver = new TreeDim.StackBuilder.Engine.BoxCasePalletSolver();
-            BoxCaseAnalysis.Solver = new TreeDim.StackBuilder.Engine.BoxCaseSolver();
+            CasePalletAnalysis.Solver = new treeDiM.StackBuilder.Engine.CasePalletSolver();
+            PackPalletAnalysis.Solver = new treeDiM.StackBuilder.Engine.PackPalletSolver();
+            CylinderPalletAnalysis.Solver = new treeDiM.StackBuilder.Engine.CylinderSolver();
+            HCylinderPalletAnalysis.Solver = new treeDiM.StackBuilder.Engine.HCylinderSolver();
+            BoxCasePalletAnalysis.Solver = new treeDiM.StackBuilder.Engine.BoxCasePalletSolver();
+            BoxCaseAnalysis.Solver = new treeDiM.StackBuilder.Engine.BoxCaseSolver();
             // load content
             _deserializeDockContent = new DeserializeDockContent(ReloadContent);
 

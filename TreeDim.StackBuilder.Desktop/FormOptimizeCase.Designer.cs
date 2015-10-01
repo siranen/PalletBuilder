@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormOptimizeCase
     {
@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptimizeCase));
             this.splitContainerCasePallet = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlBoxesLayout = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
-            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlBoxesLayout = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPallet = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.btClose = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.chkVerticalOrientationOnly = new System.Windows.Forms.CheckBox();
@@ -65,7 +65,7 @@
             this.lbMaxCaseDimensions = new System.Windows.Forms.Label();
             this.lbMinCaseDimensions = new System.Windows.Forms.Label();
             this.gbPallet = new System.Windows.Forms.GroupBox();
-            this.uCtrlPalletHeight = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlPalletHeight = new treeDiM.StackBuilder.Basics.UCtrlDouble();
             this.lbPalletDimensions = new System.Windows.Forms.Label();
             this.cbPallet = new System.Windows.Forms.ComboBox();
             this.lbPallet = new System.Windows.Forms.Label();
@@ -76,8 +76,8 @@
             this.statusStripDef = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDef = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.uCtrlOverhangWidth = new TreeDim.StackBuilder.Basics.UCtrlDouble();
-            this.uCtrlOverhangLength = new TreeDim.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlOverhangWidth = new treeDiM.StackBuilder.Basics.UCtrlDouble();
+            this.uCtrlOverhangLength = new treeDiM.StackBuilder.Basics.UCtrlDouble();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerCasePallet)).BeginInit();
             this.splitContainerCasePallet.Panel1.SuspendLayout();
             this.splitContainerCasePallet.Panel2.SuspendLayout();
@@ -464,7 +464,7 @@
             0,
             0});
             this.uCtrlPalletHeight.Name = "uCtrlPalletHeight";
-            this.uCtrlPalletHeight.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlPalletHeight.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlPalletHeight.Value = 0D;
             // 
             // lbPalletDimensions
@@ -547,7 +547,7 @@
             0,
             -2147483648});
             this.uCtrlOverhangWidth.Name = "uCtrlOverhangWidth";
-            this.uCtrlOverhangWidth.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangWidth.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangWidth.Value = 0D;
             // 
             // uCtrlOverhangLength
@@ -559,7 +559,7 @@
             0,
             -2147483648});
             this.uCtrlOverhangLength.Name = "uCtrlOverhangLength";
-            this.uCtrlOverhangLength.Unit = TreeDim.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
+            this.uCtrlOverhangLength.Unit = treeDiM.StackBuilder.Basics.UnitsManager.UnitType.UT_LENGTH;
             this.uCtrlOverhangLength.Value = 0D;
             // 
             // FormOptimizeCase
@@ -653,8 +653,8 @@
         private System.Windows.Forms.Button btSetMaximum;
         private System.Windows.Forms.Button btSetMinimum;
         private System.Windows.Forms.SplitContainer splitContainerCasePallet;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlBoxesLayout;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlBoxesLayout;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
         private System.Windows.Forms.CheckBox chkVerticalOrientationOnly;
         private System.Windows.Forms.Label uLengthWallThickness;
         private System.Windows.Forms.Label uSurfaceMassCase;

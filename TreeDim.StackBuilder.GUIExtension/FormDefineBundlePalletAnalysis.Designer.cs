@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension
+﻿namespace treeDiM.StackBuilder.GUIExtension
 {
     partial class FormDefineBundlePalletAnalysis
     {
@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDefineBundlePalletAnalysis));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.gridSolutions = new SourceGrid.Grid();
-            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonReport = new System.Windows.Forms.ToolStripButton();
@@ -56,7 +56,7 @@
             this.lbPalletDescription = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
             this.cbPallet = new System.Windows.Forms.ComboBox();
-            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPallet = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.label1 = new System.Windows.Forms.Label();
             this.bnRefresh = new System.Windows.Forms.Button();
             this.saveFileDialogAsStb = new System.Windows.Forms.SaveFileDialog();
@@ -424,8 +424,8 @@
         private System.Windows.Forms.Button bnRefresh;
         private System.Windows.Forms.Label label1;
         private SourceGrid.Grid gridSolutions;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
         private System.Windows.Forms.ComboBox cbPallet;
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Label lbPalletDescription;

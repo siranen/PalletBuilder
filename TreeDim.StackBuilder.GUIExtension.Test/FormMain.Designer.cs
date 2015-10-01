@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension.Test
+﻿namespace treeDiM.StackBuilder.GUIExtension.Test
 {
     partial class FormMain
     {

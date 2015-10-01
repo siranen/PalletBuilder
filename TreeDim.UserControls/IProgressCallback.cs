@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TreeDim.UserControls
+namespace treeDiM.UserControls
 {
     /// <summary>
     /// This defines an interface which can be implemented by UI elements

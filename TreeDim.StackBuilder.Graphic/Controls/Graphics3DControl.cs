@@ -12,7 +12,7 @@ using Sharp3D.Math.Core;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     #region IDrawingContainer
     public interface IDrawingContainer

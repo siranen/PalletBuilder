@@ -8,14 +8,14 @@
     <ProjectGuid>{A8A2C6D7-58CF-4DA2-A754-C9686173B5EE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TreeDim.StackBuilder.Desktop</RootNamespace>
-    <AssemblyName>TreeDim.StackBuilder.Desktop</AssemblyName>
+    <RootNamespace>treeDiM.StackBuilder.Desktop</RootNamespace>
+    <AssemblyName>treeDiM.StackBuilder.Desktop</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <StartupObject>TreeDim.StackBuilder.Desktop.Program</StartupObject>
+    <StartupObject>treeDiM.StackBuilder.Desktop.Program</StartupObject>
     <ApplicationIcon>treeDim.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
@@ -42,7 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\TreeDim.StackBuilder.Desktop.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\treeDiM.StackBuilder.Desktop.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -1138,6 +1138,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewAnalysisPackPallet.resx">
       <DependentUpon>FormNewAnalysisPackPallet.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewPallet.ca-ES.resx">
       <DependentUpon>FormNewPallet.cs</DependentUpon>
@@ -1499,33 +1500,33 @@
       <Project>{8F9BA4D3-D6AF-42A6-B74F-0DF6568C148B}</Project>
       <Name>Sharp3D.Math</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.AutoUpdater\TreeDim.AutoUpdater.csproj">
+    <ProjectReference Include="..\TreeDim.AutoUpdater\treeDiM.AutoUpdater.csproj">
       <Project>{0B5CE6C7-757A-45C0-B695-5D4EE4E22336}</Project>
-      <Name>TreeDim.AutoUpdater</Name>
+      <Name>treeDiM.AutoUpdater</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.EdgeCrushTest\TreeDim.EdgeCrushTest.csproj">
+    <ProjectReference Include="..\TreeDim.EdgeCrushTest\treeDiM.EdgeCrushTest.csproj">
       <Project>{E4240EE0-60B3-4435-BD09-F81D56C0899A}</Project>
-      <Name>TreeDim.EdgeCrushTest</Name>
+      <Name>treeDiM.EdgeCrushTest</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\TreeDim.StackBuilder.Basics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Basics\treeDiM.StackBuilder.Basics.csproj">
       <Project>{444C01D0-53FD-49A1-9D55-267B49161357}</Project>
-      <Name>TreeDim.StackBuilder.Basics</Name>
+      <Name>treeDiM.StackBuilder.Basics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.ColladaExporter\TreeDim.StackBuilder.ColladaExporter.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.ColladaExporter\treeDiM.StackBuilder.ColladaExporter.csproj">
       <Project>{785A5666-FE91-4796-A720-13C9A727BA5C}</Project>
-      <Name>TreeDim.StackBuilder.ColladaExporter</Name>
+      <Name>treeDiM.StackBuilder.ColladaExporter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\TreeDim.StackBuilder.Engine.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Engine\treeDiM.StackBuilder.Engine.csproj">
       <Project>{2E646606-052D-4063-9218-1379430B070E}</Project>
-      <Name>TreeDim.StackBuilder.Engine</Name>
+      <Name>treeDiM.StackBuilder.Engine</Name>
     </ProjectReference>
     <ProjectReference Include="..\treeDiM.StackBuilder.ExcelReader\treeDiM.StackBuilder.ExcelReader.csproj">
       <Project>{E9B15DC7-07A3-4398-AE3F-2ED6B1F5C0A6}</Project>
       <Name>treeDiM.StackBuilder.ExcelReader</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Graphic\TreeDim.StackBuilder.Graphics.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Graphic\treeDiM.StackBuilder.Graphics.csproj">
       <Project>{2AD4C04C-5B8A-4E69-9B1C-402CB86860A7}</Project>
-      <Name>TreeDim.StackBuilder.Graphics</Name>
+      <Name>treeDiM.StackBuilder.Graphics</Name>
     </ProjectReference>
     <ProjectReference Include="..\treeDiM.StackBuilder.Plugin\treeDiM.StackBuilder.Plugin.csproj">
       <Project>{75769E19-2CCC-4DF0-88D9-CBAC14BB6329}</Project>
@@ -1535,13 +1536,13 @@
       <Project>{C5AAB10A-8D08-419F-9D5C-2FC78FEF8B53}</Project>
       <Name>treeDiM.StackBuilder.Plugin_INTEX</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.StackBuilder.Reporting\TreeDim.StackBuilder.Reporting.csproj">
+    <ProjectReference Include="..\TreeDim.StackBuilder.Reporting\treeDiM.StackBuilder.Reporting.csproj">
       <Project>{1505A6E5-E6F9-4408-A5C8-968417081CBD}</Project>
-      <Name>TreeDim.StackBuilder.Reporting</Name>
+      <Name>treeDiM.StackBuilder.Reporting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TreeDim.UserControls\TreeDim.UserControls.csproj">
+    <ProjectReference Include="..\TreeDim.UserControls\treeDiM.UserControls.csproj">
       <Project>{7FF9B713-8D36-4887-BF50-2B9E2B28808D}</Project>
-      <Name>TreeDim.UserControls</Name>
+      <Name>treeDiM.UserControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -1646,7 +1647,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\signtool.exe" sign /f "$(SolutionDir)\Signing\treeDiM.pfx" /p Knowledge_1 /t http://timestamp.comodoca.com/authenticode $(TargetPath)</PostBuildEvent>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\signtool.exe" sign /f "$(SolutionDir)Signing\treeDiM.pfx" /p Knowledge_1 /t http://timestamp.comodoca.com/authenticode $(TargetPath)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

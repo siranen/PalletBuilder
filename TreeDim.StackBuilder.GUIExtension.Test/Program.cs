@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace TreeDim.StackBuilder.GUIExtension.Test
+namespace treeDiM.StackBuilder.GUIExtension.Test
 {
     static class Program
     {

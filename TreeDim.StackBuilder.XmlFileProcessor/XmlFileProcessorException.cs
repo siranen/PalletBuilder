@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 #endregion
 
-namespace TreeDim.StackBuilder.XmlFileProcessor
+namespace treeDiM.StackBuilder.XmlFileProcessor
 {
     class XmlFileProcessorException : Exception
     {

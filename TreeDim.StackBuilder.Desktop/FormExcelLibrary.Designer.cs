@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormExcelLibrary
     {
@@ -32,10 +32,10 @@
             this.bnInsert = new System.Windows.Forms.Button();
             this.bnClose = new System.Windows.Forms.Button();
             this.bnReload = new System.Windows.Forms.Button();
-            this.excelFileSelect = new TreeDim.UserControls.FileSelect();
+            this.excelFileSelect = new treeDiM.UserControls.FileSelect();
             this.tabControlLibrary = new System.Windows.Forms.TabControl();
             this.listBoxItem = new ListBoxWithToolTip.ToolTipListBox();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.tbItem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.graphCtrl)).BeginInit();
             this.SuspendLayout();

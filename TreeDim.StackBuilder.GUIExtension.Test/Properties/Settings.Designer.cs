@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TreeDim.StackBuilder.GUIExtension.Test.Properties {
+namespace treeDiM.StackBuilder.GUIExtension.Test.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

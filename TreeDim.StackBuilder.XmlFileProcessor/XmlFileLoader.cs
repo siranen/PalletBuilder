@@ -16,17 +16,17 @@ using log4net.Config;
 using Sharp3D.Math.Core;
 
 // stackbuilder
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 
 // properties
-using TreeDim.StackBuilder.XmlFileProcessor.Properties;
+using treeDiM.StackBuilder.XmlFileProcessor.Properties;
 
 // reporting
-using TreeDim.StackBuilder.Reporting;
+using treeDiM.StackBuilder.Reporting;
 #endregion
 
-namespace TreeDim.StackBuilder.XmlFileProcessor
+namespace treeDiM.StackBuilder.XmlFileProcessor
 {
     public class XmlFileLoader
     {
@@ -198,7 +198,7 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
             // load analysis
             CasePalletAnalysis analysis = LoadPalletAnalysis(null, vSol.solutionRef.analysisId);
             // compute solutions
-            TreeDim.StackBuilder.Engine.CasePalletSolver solver = new TreeDim.StackBuilder.Engine.CasePalletSolver();
+            treeDiM.StackBuilder.Engine.CasePalletSolver solver = new treeDiM.StackBuilder.Engine.CasePalletSolver();
             solver.ProcessAnalysis(analysis);
             // retrieve wanted solution
             List<Basics.CasePalletSolution> solutions = analysis.Solutions;
@@ -218,7 +218,7 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
             if (solutionList.maxNumberOfSolutionsSpecified)
                 analysis.ConstraintSet.NumberOfSolutionsKept = (int)solutionList.maxNumberOfSolutions;
             // compute solutions
-            TreeDim.StackBuilder.Engine.CasePalletSolver solver = new TreeDim.StackBuilder.Engine.CasePalletSolver();
+            treeDiM.StackBuilder.Engine.CasePalletSolver solver = new treeDiM.StackBuilder.Engine.CasePalletSolver();
             solver.ProcessAnalysis(analysis);
             // instantiate pallet solution list
             PALLETSOLUTIONLIST palletSolutionList = new PALLETSOLUTIONLIST();
@@ -250,7 +250,7 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
             if (null == analysis)
                 return;
             // compute solutions
-            TreeDim.StackBuilder.Engine.CasePalletSolver solver = new TreeDim.StackBuilder.Engine.CasePalletSolver();
+            treeDiM.StackBuilder.Engine.CasePalletSolver solver = new treeDiM.StackBuilder.Engine.CasePalletSolver();
             solver.ProcessAnalysis(analysis);
             // retrieve wanted solution
             List<Basics.CasePalletSolution> solutions = analysis.Solutions;
@@ -286,8 +286,8 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
             { throw new UnauthorizedAccessException(string.Format("User not allowed to write under {0}", Directory.GetParent(outDir).FullName)); }
             // save document
             document.Write(genDoc.path);
-            // open generated document using TreeDim.StackBuilder.Desktop
-            string stackbuilderExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "TreeDim.StackBuilder.Desktop.exe");
+            // open generated document using treeDiM.StackBuilder.Desktop
+            string stackbuilderExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "treeDiM.StackBuilder.Desktop.exe");
             if (genDoc.open && File.Exists(stackbuilderExePath))
             {
                 // build start info
@@ -587,7 +587,7 @@ namespace TreeDim.StackBuilder.XmlFileProcessor
                     , null
                     , null
                     , constraintSet
-                    , new TreeDim.StackBuilder.Engine.CasePalletSolver());
+                    , new treeDiM.StackBuilder.Engine.CasePalletSolver());
             }
             else
             {

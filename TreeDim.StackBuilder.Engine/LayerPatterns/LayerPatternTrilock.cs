@@ -5,10 +5,10 @@ using System.Text;
 using System.Diagnostics;
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     class LayerPatternTrilock : LayerPattern
     {

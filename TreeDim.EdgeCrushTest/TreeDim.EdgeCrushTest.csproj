@@ -8,8 +8,8 @@
     <ProjectGuid>{E4240EE0-60B3-4435-BD09-F81D56C0899A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TreeDim.EdgeCrushTest</RootNamespace>
-    <AssemblyName>TreeDim.EdgeCrushTest</AssemblyName>
+    <RootNamespace>treeDiM.EdgeCrushTest</RootNamespace>
+    <AssemblyName>treeDiM.EdgeCrushTest</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

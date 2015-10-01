@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TreeDim.StackBuilder.ColladaExporter")]
+[assembly: AssemblyTitle("treeDiM.StackBuilder.ColladaExporter")]
 [assembly: AssemblyDescription("Generates COLLADA model (pallet+cases+animation)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TreeDiM")]
-[assembly: AssemblyProduct("TreeDim.StackBuilder.ColladaExporter")]
+[assembly: AssemblyProduct("treeDiM.StackBuilder.ColladaExporter")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("TreeDiM")]
 [assembly: AssemblyCulture("")]

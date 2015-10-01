@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 #endregion
 
-namespace TreeDim.EdgeCrushTest
+namespace treeDiM.EdgeCrushTest
 {
     public partial class FormEditCardboardQualityData : Form
     {

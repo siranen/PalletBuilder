@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Drawing;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     /// <summary>
     /// Custom draw list box inherits ListBox and shows images

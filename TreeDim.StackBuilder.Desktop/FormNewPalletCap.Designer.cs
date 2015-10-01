@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewPalletCap
     {
@@ -45,7 +45,7 @@
             this.lbInsideLength = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.uLengthLength = new System.Windows.Forms.Label();
             this.uLengthWidth = new System.Windows.Forms.Label();
             this.uLengthHeight = new System.Windows.Forms.Label();
@@ -331,7 +331,7 @@
         private System.Windows.Forms.Label lbInsideLength;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.Label uLengthLength;
         private System.Windows.Forms.Label uLengthWidth;
         private System.Windows.Forms.Label uLengthHeight;

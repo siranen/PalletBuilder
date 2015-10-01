@@ -7,16 +7,16 @@ using System.IO;
 
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 
 using Collada141;
 using log4net;
 
-using TreeDim.StackBuilder.ColladaExporter.Properties;
+using treeDiM.StackBuilder.ColladaExporter.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.ColladaExporter
+namespace treeDiM.StackBuilder.ColladaExporter
 {
     #region Loop
     public class Loop

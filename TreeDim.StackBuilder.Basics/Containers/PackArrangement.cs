@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     public class PackArrangement
     {

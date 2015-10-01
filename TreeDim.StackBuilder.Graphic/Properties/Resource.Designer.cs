@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TreeDim.StackBuilder.Graphics.Properties {
+namespace treeDiM.StackBuilder.Graphics.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TreeDim.StackBuilder.Graphics.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TreeDim.StackBuilder.Graphics.Properties.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("treeDiM.StackBuilder.Graphics.Properties.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

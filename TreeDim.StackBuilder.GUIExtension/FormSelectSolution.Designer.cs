@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension
+﻿namespace treeDiM.StackBuilder.GUIExtension
 {
     partial class FormSelectSolution
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSelectSolution));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.gridSolutions = new SourceGrid.Grid();
             this.toolStripTools = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonReport = new System.Windows.Forms.ToolStripButton();
@@ -131,7 +131,7 @@
         private System.Windows.Forms.ToolStrip toolStripTools;
         private System.Windows.Forms.ToolStripButton toolStripButtonReport;
         private System.Windows.Forms.ToolStripButton toolStripButtonStackBuilder;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
         private System.Windows.Forms.SaveFileDialog saveFileDialogAsStb;
     }
 }

@@ -8,14 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.Desktop.Properties;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     /// <summary>
     /// This forms enables optimizing case dimensions

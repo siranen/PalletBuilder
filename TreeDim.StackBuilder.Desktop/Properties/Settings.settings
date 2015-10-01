@@ -1,23 +1,23 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TreeDim.StackBuilder.Desktop.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="treeDiM.StackBuilder.Desktop.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="FormMainPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormMainPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewDocumentPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewDocumentPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewBoxPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewBoxPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewPalletPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewPalletPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewInterlayerPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewInterlayerPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewBundlePosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewBundlePosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DocumentAuthor" Type="System.String" Scope="User">
@@ -32,7 +32,7 @@
     <Setting Name="AllowedPatterns" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewAnalysis" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewAnalysis" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AllowVerticalX" Type="System.Boolean" Scope="User">
@@ -50,13 +50,13 @@
     <Setting Name="PalletOverhangWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FormNewTruckPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewTruckPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewAnalysisPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewAnalysisPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewBundleAnalysisPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewBundleAnalysisPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="KeepBestSolutions" Type="System.Boolean" Scope="User">
@@ -68,7 +68,7 @@
     <Setting Name="ShowLogConsole" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FormNewTruckAnalysisPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewTruckAnalysisPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AllowSeveralPalletLayers" Type="System.Boolean" Scope="User">
@@ -86,7 +86,7 @@
     <Setting Name="MinDistancePalletTruckRoof" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FormNewCaseAnalysisPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewCaseAnalysisPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AllowVerticalX_CaseAnalysis" Type="System.Boolean" Scope="User">
@@ -116,7 +116,7 @@
     <Setting Name="OverhangY" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FormEditBitmapsPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormEditBitmapsPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ShowImagesPallet" Type="System.Boolean" Scope="User">
@@ -149,10 +149,10 @@
     <Setting Name="PalletHeight" Type="System.Double" Scope="User">
       <Value Profile="(Default)">1200</Value>
     </Setting>
-    <Setting Name="FormOptimizeCasePosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormOptimizeCasePosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FormNewCaseOfBoxesPosition" Type="TreeDim.StackBuilder.Desktop.WindowSettings" Scope="User">
+    <Setting Name="FormNewCaseOfBoxesPosition" Type="treeDiM.StackBuilder.Desktop.WindowSettings" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ForceVerticalBoxOrientation" Type="System.Boolean" Scope="User">
@@ -180,13 +180,13 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CompanyLogoPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\..\..\TreeDim.StackBuilder.Reporting\ReportTemplates\TreeDim.png</Value>
+      <Value Profile="(Default)">..\..\..\treeDiM.StackBuilder.Reporting\ReportTemplates\treeDiM.png</Value>
     </Setting>
     <Setting Name="ReporterImageSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ReportTemplatePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">..\..\..\TreeDim.StackBuilder.Reporting\ReportTemplates\ReportTemplateHtml.xsl</Value>
+      <Value Profile="(Default)">..\..\..\treeDiM.StackBuilder.Reporting\ReportTemplates\ReportTemplateHtml.xsl</Value>
     </Setting>
     <Setting Name="HasPluginINTEX" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

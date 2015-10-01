@@ -13,10 +13,10 @@ using CrashReporterDotNET;
 using log4net;
 using log4net.Config;
 // treeDiM
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Desktop.Properties;
 
-using TreeDim.AutoUpdater;
+using treeDiM.AutoUpdater;
 #endregion
 
 #region File association
@@ -26,7 +26,7 @@ using System.Reflection;
 using System.IO;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     static class Program
     {
@@ -54,7 +54,7 @@ namespace TreeDim.StackBuilder.Desktop
             // note: arguments are handled within FormMain constructor
             // using Environment.GetCommandLineArgs()
             // force CultureToUse culture if specified in config file
-            string specifiedCulture = TreeDim.StackBuilder.Desktop.Properties.Settings.Default.CultureToUse;
+            string specifiedCulture = treeDiM.StackBuilder.Desktop.Properties.Settings.Default.CultureToUse;
             if (!string.IsNullOrEmpty(specifiedCulture))
             {
                 try

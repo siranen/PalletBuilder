@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewCaseOfBoxes
     {
@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNewCaseOfBoxes));
             this.splitContainerCaseOfBoxes = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlCaseDefinition = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
-            this.graphCtrlBoxCase = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlCaseDefinition = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlBoxCase = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.lbName = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
             this.bnOK = new System.Windows.Forms.Button();
@@ -299,7 +299,7 @@
         private System.Windows.Forms.Label lbFace;
         private System.Windows.Forms.StatusStrip statusStripDef;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDef;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlCaseDefinition;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlBoxCase;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlCaseDefinition;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlBoxCase;
     }
 }

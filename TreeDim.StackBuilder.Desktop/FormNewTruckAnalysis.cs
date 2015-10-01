@@ -7,13 +7,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Desktop.Properties;
 using Sharp3D.Math.Core;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewTruckAnalysis : Form
     {

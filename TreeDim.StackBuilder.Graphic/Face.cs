@@ -5,10 +5,10 @@ using System.Text;
 using System.Drawing;
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     #region Segment
     public class Segment

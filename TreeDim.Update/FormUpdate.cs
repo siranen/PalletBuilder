@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Threading;
 #endregion
 
-namespace TreeDim.Update
+namespace treeDiM.Update
 {
     //Procesing
     //Remove previous download file

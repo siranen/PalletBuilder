@@ -15,8 +15,8 @@ using log4net.Config;
 using Sharp3D.Math.Core;
 
 // stackbuilder
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 
 // plossum command line
 using Plossum;
@@ -24,10 +24,10 @@ using Plossum.CommandLine;
 
 #endregion
 
-namespace TreeDim.StackBuilder.XmlFileProcessor
+namespace treeDiM.StackBuilder.XmlFileProcessor
 {
     #region Command line manager : class Options
-    [CommandLineManager(ApplicationName = "TreeDim.StackBuilder.XmlFileProcessor.exe", Copyright = "Copyright (c) TreeDim")]
+    [CommandLineManager(ApplicationName = "treeDiM.StackBuilder.XmlFileProcessor.exe", Copyright = "Copyright (c) TreeDim")]
     class Options
     {
         [CommandLineOption(Description = "Displays this help text")]

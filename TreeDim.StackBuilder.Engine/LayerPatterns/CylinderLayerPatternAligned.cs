@@ -6,7 +6,7 @@ using System.Text;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     class CylinderLayerPatternAligned : CylinderLayerPattern
     {

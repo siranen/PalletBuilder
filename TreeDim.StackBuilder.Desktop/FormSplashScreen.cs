@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Reflection;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     /// <summary>
     /// Splash screen form

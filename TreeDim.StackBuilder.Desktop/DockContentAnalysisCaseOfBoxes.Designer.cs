@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class DockContentAnalysisCaseOfBoxes
     {
@@ -32,8 +32,8 @@
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
             this.splitContainerHorizInside = new System.Windows.Forms.SplitContainer();
             this.splitContainerVertInside = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlCase = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
-            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlCase = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPallet = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.gridSolutions = new SourceGrid.Grid();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).BeginInit();
             this.splitContainerHoriz.Panel1.SuspendLayout();
@@ -139,7 +139,7 @@
         private System.Windows.Forms.SplitContainer splitContainerHoriz;
         private System.Windows.Forms.SplitContainer splitContainerHorizInside;
         private System.Windows.Forms.SplitContainer splitContainerVertInside;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlCase;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlCase;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
     }
 }

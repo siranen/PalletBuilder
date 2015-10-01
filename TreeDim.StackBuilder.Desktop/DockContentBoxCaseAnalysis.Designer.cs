@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class DockContentBoxCaseAnalysis
     {
@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DockContentBoxCaseAnalysis));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
             this.btSelectSolution = new System.Windows.Forms.Button();
-            this.graphCtrlSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.gridSolutions = new SourceGrid.Grid();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).BeginInit();
             this.splitContainerHoriz.Panel1.SuspendLayout();
@@ -103,7 +103,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainerHoriz;
         private SourceGrid.Grid gridSolutions;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlSolution;
         private System.Windows.Forms.Button btSelectSolution;
     }
 }

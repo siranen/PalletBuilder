@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormEditBitmaps
     {
@@ -53,7 +53,7 @@
             this.bnAdd = new System.Windows.Forms.Button();
             this.bnRemove = new System.Windows.Forms.Button();
             this.openImageFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.listBoxTextures = new TreeDim.StackBuilder.Desktop.ListBoxImages();
+            this.listBoxTextures = new treeDiM.StackBuilder.Desktop.ListBoxImages();
             this.lbImage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarHorizAngle)).BeginInit();
@@ -322,7 +322,7 @@
         private System.Windows.Forms.ComboBox cbFace;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TrackBar trackBarHorizAngle;
-        private TreeDim.StackBuilder.Desktop.ListBoxImages listBoxTextures;
+        private treeDiM.StackBuilder.Desktop.ListBoxImages listBoxTextures;
         private System.Windows.Forms.Label lbOrigin;
         private System.Windows.Forms.Label lbSize;
         private System.Windows.Forms.Label lbAngle;

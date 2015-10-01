@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TreeDim.AutoUpdater.Properties {
+namespace treeDiM.AutoUpdater.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

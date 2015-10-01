@@ -11,16 +11,16 @@ using System.Diagnostics;
 
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
-using TreeDim.StackBuilder.Engine;
-using TreeDim.StackBuilder.GUIExtension.Properties;
-using TreeDim.StackBuilder.Reporting;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Engine;
+using treeDiM.StackBuilder.GUIExtension.Properties;
+using treeDiM.StackBuilder.Reporting;
 
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension
+namespace treeDiM.StackBuilder.GUIExtension
 {
     public partial class FormDefineBundlePalletAnalysis : Form, IDrawingContainer
     {

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension
+namespace treeDiM.StackBuilder.GUIExtension
 {
     public partial class FormDefineAnalysis : Form, IDrawingContainer
     {

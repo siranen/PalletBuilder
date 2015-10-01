@@ -7,7 +7,7 @@ using System.Drawing;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region Pair class
     public class Pair<T1, T2>

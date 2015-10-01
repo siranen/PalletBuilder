@@ -8,10 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-using TreeDim.StackBuilder;
+using treeDiM.StackBuilder;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class OptionPanelDimensions : GLib.Options.OptionsPanel
     {

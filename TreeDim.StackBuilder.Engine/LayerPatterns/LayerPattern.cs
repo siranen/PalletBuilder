@@ -2,13 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 
 using Sharp3D.Math.Core;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     /// <summary>
     /// Layer pattern abstract class

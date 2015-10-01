@@ -499,7 +499,7 @@
     <value>graphCtrlPallet</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.StackBuilder.Graphics.Graphics3DControl, treeDiM.StackBuilder.Graphics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrlPallet.Parent" xml:space="preserve">
     <value>gbPallet</value>
@@ -1229,7 +1229,7 @@
     <value>graphCtrlBoxesLayout</value>
   </data>
   <data name="&gt;&gt;graphCtrlBoxesLayout.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.StackBuilder.Graphics.Graphics3DControl, treeDiM.StackBuilder.Graphics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrlBoxesLayout.Parent" xml:space="preserve">
     <value>splitContainerCasePallet.Panel1</value>
@@ -1265,7 +1265,7 @@
     <value>graphCtrlPalletLayout</value>
   </data>
   <data name="&gt;&gt;graphCtrlPalletLayout.Type" xml:space="preserve">
-    <value>TreeDim.StackBuilder.Graphics.Graphics3DControl, TreeDim.StackBuilder.Graphics, Version=2.0.21.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>treeDiM.StackBuilder.Graphics.Graphics3DControl, treeDiM.StackBuilder.Graphics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;graphCtrlPalletLayout.Parent" xml:space="preserve">
     <value>splitContainerCasePallet.Panel2</value>

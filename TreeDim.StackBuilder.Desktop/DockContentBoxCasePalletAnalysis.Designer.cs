@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class DockContentBoxCasePalletAnalysis
     {
@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DockContentBoxCasePalletAnalysis));
             this.splitContainerHoriz = new System.Windows.Forms.SplitContainer();
             this.splitContainerVert = new System.Windows.Forms.SplitContainer();
-            this.graphCtrlCaseSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlCaseSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.btSelectSolution = new System.Windows.Forms.Button();
-            this.graphCtrlPalletSolution = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPalletSolution = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.gridSolutions = new SourceGrid.Grid();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerHoriz)).BeginInit();
             this.splitContainerHoriz.Panel1.SuspendLayout();
@@ -126,8 +126,8 @@
 
         private System.Windows.Forms.Button btSelectSolution;
         private SourceGrid.Grid gridSolutions;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlCaseSolution;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPalletSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlCaseSolution;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlPalletSolution;
         private System.Windows.Forms.SplitContainer splitContainerHoriz;
         private System.Windows.Forms.SplitContainer splitContainerVert;
     }

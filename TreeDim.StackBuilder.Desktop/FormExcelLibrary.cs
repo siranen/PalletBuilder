@@ -12,13 +12,13 @@ using System.Security.Permissions;
 
 using treeDiM.StackBuilder.ExcelReader;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
 
 using ListBoxWithToolTip;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     #region FormExcelLibrary
     public partial class FormExcelLibrary : Form, IDrawingContainer

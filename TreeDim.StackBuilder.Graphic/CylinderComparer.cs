@@ -6,7 +6,7 @@ using System.Text;
 using Sharp3D.Math.Core;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics
+namespace treeDiM.StackBuilder.Graphics
 {
     #region Box comparison
     public class CylinderComparerSimplifiedPainterAlgo : IComparer<Cylinder>

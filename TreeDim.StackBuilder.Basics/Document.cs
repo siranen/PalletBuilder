@@ -11,13 +11,13 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Linq;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 
 using Sharp3D.Math.Core;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     #region IDocumentListener
     /// <summary>

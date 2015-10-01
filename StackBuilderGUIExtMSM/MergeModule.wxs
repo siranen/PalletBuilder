@@ -4,32 +4,32 @@
     <Package Id="27807e7c-accd-496f-8cfe-09de354c6051" Manufacturer="Microsoft" InstallerVersion="200" />
     <DirectoryRef Id="BIN32">
       <Component Id="StackBuilder" Guid="{AF1B8D78-642E-4370-8BFC-3775DDB3B67E}">
-        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.GUIExtension.dll" KeyPath="yes" />
-        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Basics.dll" />
-        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Engine.dll" />
-        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Graphics.dll" />
-        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.StackBuilder.Reporting.dll" />
-        <File Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\TreeDim.EdgeCrushTest.dll" />
+        <File Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\treeDiM.StackBuilder.GUIExtension.dll" KeyPath="yes" />
+        <File Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\treeDiM.StackBuilder.Basics.dll" />
+        <File Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\treeDiM.StackBuilder.Engine.dll" />
+        <File Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\treeDiM.StackBuilder.Graphics.dll" />
+        <File Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\treeDiM.StackBuilder.Reporting.dll" />
+        <File Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\treeDiM.EdgeCrushTest.dll" />
       </Component>
       <Component Id="SourceGrid" Guid="{35E01101-97AF-427B-A2E7-DD37F99A21C6}">
-        <File KeyPath="yes" Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\SourceGrid.dll" />
+        <File KeyPath="yes" Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\SourceGrid.dll" />
       </Component>
       <Component Id ="Cureos.Measures.dll" Guid="{9B81D151-632D-4BC9-86BB-F4747CF33C18}">
-        <File KeyPath="yes" Source="..\TreeDim.StackBuilder.GUIExtension\Bin\Release\Cureos.Measures.dll" />
+        <File KeyPath="yes" Source="..\treeDiM.StackBuilder.GUIExtension\Bin\Release\Cureos.Measures.dll" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="REPORTTEMPLATES">
       <Component Id="ReportTemplates" Guid="{08CB4826-0A0B-4c82-9783-E037106599AE}">
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\ReportTemplateHtml.xsl" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\ENU.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\FRA.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\DEU.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\CAT.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\ESP.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\JPN.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\ITA.xml" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\ReportTypes.xsd" Checksum="yes" />
-        <File Source="..\TreeDim.StackBuilder.Reporting\ReportTemplates\ReportSchema.xsd" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\ReportTemplateHtml.xsl" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\ENU.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\FRA.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\DEU.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\CAT.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\ESP.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\JPN.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\ITA.xml" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\ReportTypes.xsd" Checksum="yes" />
+        <File Source="..\treeDiM.StackBuilder.Reporting\ReportTemplates\ReportSchema.xsd" Checksum="yes" />
       </Component>
     </DirectoryRef>
   </Module>

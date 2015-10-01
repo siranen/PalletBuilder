@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 #pragma warning disable 1591
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     /* Author: Don Kirkby http://donkirkby.googlecode.com/
      * Released under the MIT licence http://www.opensource.org/licenses/mit-license.php

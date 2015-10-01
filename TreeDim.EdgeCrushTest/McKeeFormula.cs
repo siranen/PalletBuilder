@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Text;
 
 using System.IO;
-using TreeDim.EdgeCrushTest.Properties;
+using treeDiM.EdgeCrushTest.Properties;
 
 using log4net;
 #endregion
 
-namespace TreeDim.EdgeCrushTest
+namespace treeDiM.EdgeCrushTest
 {
     public partial class McKeeFormula
     {
@@ -80,7 +80,7 @@ namespace TreeDim.EdgeCrushTest
                         qualityData.Thickness, qualityData.RigidityDX, qualityData.RigidityDY,
                         qualityData.ECT) * caseTypeCoef;
                 default:
-                    throw new TreeDim.EdgeCrushTest.Exception(Exception.ErrorType.ERROR_INVALIDFORMULATYPE, string.Empty); 
+                    throw new treeDiM.EdgeCrushTest.Exception(Exception.ErrorType.ERROR_INVALIDFORMULATYPE, string.Empty); 
             }
         }
         #endregion
@@ -117,8 +117,8 @@ namespace TreeDim.EdgeCrushTest
         {
             switch (type)
             {
-                case McKeeFormula.FormulaType.MCKEE_CLASSIC: return TreeDim.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_CLASSIC;
-                case McKeeFormula.FormulaType.MCKEE_IMPROVED: return TreeDim.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_IMPROVED;
+                case McKeeFormula.FormulaType.MCKEE_CLASSIC: return treeDiM.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_CLASSIC;
+                case McKeeFormula.FormulaType.MCKEE_IMPROVED: return treeDiM.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_IMPROVED;
                 default: return "";
             }
         }
@@ -127,9 +127,9 @@ namespace TreeDim.EdgeCrushTest
         /// </summary>
         public static McKeeFormula.FormulaType TextToMode(string sMode)
         {
-            if (string.Equals(sMode, TreeDim.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_CLASSIC))
+            if (string.Equals(sMode, treeDiM.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_CLASSIC))
                 return McKeeFormula.FormulaType.MCKEE_CLASSIC;
-            else if (string.Equals(sMode, TreeDim.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_IMPROVED))
+            else if (string.Equals(sMode, treeDiM.EdgeCrushTest.Properties.Resource.MCKEEFORMULA_IMPROVED))
                 return McKeeFormula.FormulaType.MCKEE_IMPROVED;
             else
                 return McKeeFormula.FormulaType.MCKEE_CLASSIC;
@@ -143,7 +143,7 @@ namespace TreeDim.EdgeCrushTest
             {
                 Dictionary<string, double> caseTypeDictionary = new Dictionary<string,double>()
                 {
-                    { TreeDim.EdgeCrushTest.Properties.Resource.CASETYPE_AMERICANCASE, 1.0 }
+                    { treeDiM.EdgeCrushTest.Properties.Resource.CASETYPE_AMERICANCASE, 1.0 }
                 };
                 return caseTypeDictionary;
             }
@@ -176,13 +176,13 @@ namespace TreeDim.EdgeCrushTest
             {
                 Dictionary<string, double> jStockCoef = new Dictionary<string, double>()
                 {
-                    {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_0DAY, 1.0}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_1_3DAYS, 0.7}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_4_10DAYS, 0.65}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_11_30DAYS, 0.6}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_1_3MONTHES, 0.55}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_3_4MONTHES, 0.5}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.STORAGEDURATION_4_MONTHES, 0.45}
+                    {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_0DAY, 1.0}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_1_3DAYS, 0.7}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_4_10DAYS, 0.65}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_11_30DAYS, 0.6}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_1_3MONTHES, 0.55}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_3_4MONTHES, 0.5}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.STORAGEDURATION_4_MONTHES, 0.45}
                 };
                 return jStockCoef;
             }
@@ -196,10 +196,10 @@ namespace TreeDim.EdgeCrushTest
             {
                 Dictionary<string, double> printCoefDictionary = new Dictionary<string,double>()
                 {
-                    {TreeDim.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_SIMPLE, 1.0}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_DISTRIBUTED, 0.9}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_COMPLEX, 0.8}
-                    , {TreeDim.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_COVERED, 0.7}
+                    {treeDiM.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_SIMPLE, 1.0}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_DISTRIBUTED, 0.9}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_COMPLEX, 0.8}
+                    , {treeDiM.EdgeCrushTest.Properties.Resource.PRINTEDSURFACE_COVERED, 0.7}
                 };
                 return printCoefDictionary;
             }

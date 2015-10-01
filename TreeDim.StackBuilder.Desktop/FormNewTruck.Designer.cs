@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Desktop
+﻿namespace treeDiM.StackBuilder.Desktop
 {
     partial class FormNewTruck
     {
@@ -46,7 +46,7 @@
             this.lbLength = new System.Windows.Forms.Label();
             this.cbColor = new OfficePickers.ColorPicker.ComboBoxColorPicker();
             this.lbColor = new System.Windows.Forms.Label();
-            this.graphCtrl = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrl = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.label1 = new System.Windows.Forms.Label();
             this.nudAdmissibleLoadWeight = new System.Windows.Forms.NumericUpDown();
             this.uMassAdmissibleLoad = new System.Windows.Forms.Label();
@@ -304,7 +304,7 @@
 
         private System.Windows.Forms.Button bnCancel;
         private System.Windows.Forms.Button bnOK;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrl;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrl;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Label lbDescription;

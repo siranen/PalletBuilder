@@ -7,10 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     /// <summary>
     /// Custom draw list box inherits ListBox

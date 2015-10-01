@@ -5,10 +5,10 @@ using System.Text;
 using Sharp3D.Math.Core;
 using log4net;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 #endregion
 
-namespace TreeDim.StackBuilder.Engine
+namespace treeDiM.StackBuilder.Engine
 {
     public class LayerPosition
     {

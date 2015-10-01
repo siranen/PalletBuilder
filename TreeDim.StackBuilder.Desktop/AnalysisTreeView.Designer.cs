@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TreeDim.StackBuilder.Desktop {
+namespace treeDiM.StackBuilder.Desktop {
     using System;
     
     
@@ -35,7 +35,7 @@ namespace TreeDim.StackBuilder.Desktop {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TreeDim.StackBuilder.Desktop.AnalysisTreeView", typeof(AnalysisTreeView).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("treeDiM.StackBuilder.Desktop.AnalysisTreeView", typeof(AnalysisTreeView).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Basics
+﻿namespace treeDiM.StackBuilder.Basics
 {
     partial class UCtrlDouble
     {

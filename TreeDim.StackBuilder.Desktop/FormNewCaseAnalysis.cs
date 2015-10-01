@@ -7,15 +7,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
-using TreeDim.StackBuilder.Desktop.Properties;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Desktop.Properties;
 
 using Sharp3D.Math.Core;
 using log4net;
 #endregion
 
-namespace TreeDim.StackBuilder.Desktop
+namespace treeDiM.StackBuilder.Desktop
 {
     public partial class FormNewCaseAnalysis : Form
     {
@@ -138,7 +138,7 @@ namespace TreeDim.StackBuilder.Desktop
         {
             get
             {
-                string[] patternNames = TreeDim.StackBuilder.Engine.BoxCasePalletSolver.PatternNames;
+                string[] patternNames = treeDiM.StackBuilder.Engine.BoxCasePalletSolver.PatternNames;
                 List<string> listAllowedPatterns = new List<string>();
                 foreach (object itemChecked in checkedListBoxPatterns.CheckedItems)
                 {
@@ -157,7 +157,7 @@ namespace TreeDim.StackBuilder.Desktop
             set
             {
                 // get list of existing patterns
-                List<string> patternNameList = TreeDim.StackBuilder.Engine.CasePalletSolver.PatternNameList;
+                List<string> patternNameList = treeDiM.StackBuilder.Engine.CasePalletSolver.PatternNameList;
                 string allowedPatterns = value;
                 int iCountAllowedPatterns = 0;
                 string[] vPatternNames = value.Split(',');
@@ -647,8 +647,8 @@ namespace TreeDim.StackBuilder.Desktop
                 case HalfAxis.HAxis.AXIS_Z_P: lengthAxis = HalfAxis.HAxis.AXIS_X_P; widthAxis = HalfAxis.HAxis.AXIS_Y_P; break;
                 default: break;
             }
-            box.LengthAxis = TreeDim.StackBuilder.Basics.HalfAxis.ToVector3D(lengthAxis);
-            box.WidthAxis = TreeDim.StackBuilder.Basics.HalfAxis.ToVector3D(widthAxis);
+            box.LengthAxis = treeDiM.StackBuilder.Basics.HalfAxis.ToVector3D(lengthAxis);
+            box.WidthAxis = treeDiM.StackBuilder.Basics.HalfAxis.ToVector3D(widthAxis);
 
             // draw box
             graphics.AddBox(box);

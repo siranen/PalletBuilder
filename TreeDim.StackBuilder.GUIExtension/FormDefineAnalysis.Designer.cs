@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.GUIExtension
+﻿namespace treeDiM.StackBuilder.GUIExtension
 {
     partial class FormDefineAnalysis
     {
@@ -54,7 +54,7 @@
             this.gbPallet = new System.Windows.Forms.GroupBox();
             this.lbDescription = new System.Windows.Forms.Label();
             this.lbPalletDescription = new System.Windows.Forms.Label();
-            this.graphCtrlPallet = new TreeDim.StackBuilder.Graphics.Graphics3DControl();
+            this.graphCtrlPallet = new treeDiM.StackBuilder.Graphics.Graphics3DControl();
             this.cbPallet = new System.Windows.Forms.ComboBox();
             this.lbPallet = new System.Windows.Forms.Label();
             this.gbConstraints = new System.Windows.Forms.GroupBox();
@@ -515,7 +515,7 @@
         private System.Windows.Forms.GroupBox gbPallet;
         private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Label lbPalletDescription;
-        private TreeDim.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
+        private treeDiM.StackBuilder.Graphics.Graphics3DControl graphCtrlPallet;
         private System.Windows.Forms.ComboBox cbPallet;
         private System.Windows.Forms.Label lbPallet;
         private System.Windows.Forms.GroupBox gbConstraints;

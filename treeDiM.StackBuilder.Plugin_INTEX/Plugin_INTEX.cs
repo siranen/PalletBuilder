@@ -10,8 +10,8 @@ using System.IO;
 
 using log4net;
 using Sharp3D.Math.Core;
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Engine;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Engine;
 #endregion
 
 namespace treeDiM.StackBuilder.Plugin

@@ -7,10 +7,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TreeDim.StackBuilder.GUIExtension;
+using treeDiM.StackBuilder.GUIExtension;
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension.Test
+namespace treeDiM.StackBuilder.GUIExtension.Test
 {
     public partial class FormMain : Form
     {

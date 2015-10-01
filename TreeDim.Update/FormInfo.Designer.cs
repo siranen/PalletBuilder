@@ -1,4 +1,4 @@
-namespace TreeDim.Update
+namespace treeDiM.Update
 {
     partial class FormInfo
     {

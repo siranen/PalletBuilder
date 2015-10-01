@@ -5,7 +5,7 @@ using System.Text;
 using System.Drawing;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics
+namespace treeDiM.StackBuilder.Basics
 {
     public class InterlayerProperties : ItemBase
     {

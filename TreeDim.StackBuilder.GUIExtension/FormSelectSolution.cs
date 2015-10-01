@@ -13,14 +13,14 @@ using log4net;
 
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
-using TreeDim.StackBuilder.Graphics;
-using TreeDim.StackBuilder.Reporting;
+using treeDiM.StackBuilder.Basics;
+using treeDiM.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Reporting;
 
-using TreeDim.StackBuilder.GUIExtension.Properties;
+using treeDiM.StackBuilder.GUIExtension.Properties;
 #endregion
 
-namespace TreeDim.StackBuilder.GUIExtension
+namespace treeDiM.StackBuilder.GUIExtension
 {
     public partial class FormSelectSolution : Form, IDrawingContainer
     {

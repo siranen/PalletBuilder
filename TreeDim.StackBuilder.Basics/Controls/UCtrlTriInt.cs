@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 #endregion
 
-namespace TreeDim.StackBuilder.Basics.Controls
+namespace treeDiM.StackBuilder.Basics.Controls
 {
     public partial class UCtrlTriInt : UserControl
     {

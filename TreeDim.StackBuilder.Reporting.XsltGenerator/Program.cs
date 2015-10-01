@@ -12,7 +12,7 @@ using log4net;
 using log4net.Config;
 #endregion
 
-namespace TreeDim.StackBuilder.Reporting.XsltGenerator
+namespace treeDiM.StackBuilder.Reporting.XsltGenerator
 {
     class Program
     {
@@ -39,7 +39,7 @@ namespace TreeDim.StackBuilder.Reporting.XsltGenerator
             {
                 // generate xslt from xml
                 ProcessStartInfo startInfo = new ProcessStartInfo(
-                    @"..\..\..\TreeDim.StackBuilder.ReportingMSWord\ReportTemplate\WML2XSLT.EXE"
+                    @"..\..\..\treeDiM.StackBuilder.ReportingMSWord\ReportTemplate\WML2XSLT.EXE"
                     , string.Format("{0} -o {1} -ns \"http://treeDim/StackBuilder/ReportSchema.xsd\""
                     , filePathIn
                     , filePathTemp));

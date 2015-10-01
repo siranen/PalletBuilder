@@ -1,18 +1,18 @@
 ﻿#region Using directives
 using System.Collections.Generic;
 using System.Text;
-using TreeDim.StackBuilder.Graphics;
+using treeDiM.StackBuilder.Graphics;
 
 using System.Drawing;
 using System.IO;
 using Sharp3D.Math.Core;
 
-using TreeDim.StackBuilder.Basics;
+using treeDiM.StackBuilder.Basics;
 using log4net;
 using log4net.Config;
 #endregion
 
-namespace TreeDim.StackBuilder.Graphics.Test
+namespace treeDiM.StackBuilder.Graphics.Test
 {
     class Program
     {

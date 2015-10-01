@@ -1,4 +1,4 @@
-﻿namespace TreeDim.StackBuilder.Basics.Controls
+﻿namespace treeDiM.StackBuilder.Basics.Controls
 {
     partial class UCtrlTriDouble
     {
