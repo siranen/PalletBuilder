@@ -118,30 +118,30 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="textBoxDescription.Text" xml:space="preserve">
-    <value>説明</value>
+    <value>opis katalogowy</value>
   </data>
 	<data name="labelProductName.Text" xml:space="preserve">
-    <value>製品名</value>
+    <value>Nazwa produktu</value>
   </data>
 	<data name="$this.Text" xml:space="preserve">
-    <value>StackBuilderについて...</value>
+    <value>O programie PalletBuilder...</value>
   </data>
 	<data name="labelCompanyName.Text" xml:space="preserve">
-    <value>企業名</value>
+    <value>Nazwa firmy</value>
   </data>
 	<data name="okButton.Text" xml:space="preserve">
     <value>[OK]</value>
   </data>
 	<data name="linkLabelUrl.Text" xml:space="preserve">
-    <value>www.digital-sleeve.com</value>
+    <value>Andrzej Piotrowski</value>
   </data>
 	<data name="linkLabelEmail.Text" xml:space="preserve">
-    <value>info@digital-sleeve.com</value>
+    <value>Andrzej Piotrowski</value>
   </data>
 	<data name="labelVersion.Text" xml:space="preserve">
-    <value>バージョン</value>
+    <value>wersja</value>
   </data>
 	<data name="labelCopyright.Text" xml:space="preserve">
-    <value>著作権</value>
+    <value>prawa autorskie</value>
   </data>
 </root>
