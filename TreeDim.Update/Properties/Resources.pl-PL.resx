@@ -118,21 +118,21 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="ID_CANCELING" xml:space="preserve">
-    <value>キャンセル中...</value>
+    <value>Anulowanie...</value>
   </data>
 	<data name="ID_DOWNLOADCOMPLETE" xml:space="preserve">
-    <value>ダウンロード完了!</value>
+    <value>Zakończenie pobrania!</value>
   </data>
 	<data name="ID_DOWNLOADINGFILE" xml:space="preserve">
-    <value>ダウンロード・ファイル {0} ({1}%)...</value>
+    <value>Pobierz plik {0} ({1}%)...</value>
   </data>
 	<data name="ID_ERROROCCURRED" xml:space="preserve">
-    <value>エラーが起きました。アップデートを中止します…</value>
+    <value>Wystąpił błąd. Zatrzymam aktualizację…</value>
   </data>
 	<data name="ID_LAUNCHINGSETUP" xml:space="preserve">
-    <value>セットアップ {0} を起動...</value>
+    <value>Konfiguracja {0}...</value>
   </data>
 	<data name="ID_STOPPINGPROCESS" xml:space="preserve">
-    <value>プロセス {0} を停止中…</value>
+    <value>Proces sie zatrzymuje {0}…</value>
   </data>
 </root>
